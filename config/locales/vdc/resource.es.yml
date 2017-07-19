@@ -1,0 +1,10 @@
+es:
+  hyrax:
+    icons:
+      resource:     'fa fa-file-text-o'
+    select_type:
+      resource:
+        # TODO: translate `human_name` into Spanish
+        name:               "Resource"
+        # TODO: translate `human_name` into Spanish
+        description:        "Resource trabajos"

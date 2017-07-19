@@ -1,0 +1,10 @@
+zh:
+  hyrax:
+    icons:
+      resource:     'fa fa-file-text-o'
+    select_type:
+      resource:
+        # TODO: translate `human_name` into Chinese
+        name:               "Resource"
+        # TODO: translate `human_name` into Chinese
+        description:        "Resource 作品"

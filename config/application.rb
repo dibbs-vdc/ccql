@@ -9,10 +9,15 @@ Bundler.require(*Rails.groups)
 module Ccql
   class Application < Rails::Application
 
-      # The compile method (default in tinymce-rails 4.5.2) doesn't work when also
-      # using tinymce-rails-imageupload, so revert to the :copy method
-      # https://github.com/spohlenz/tinymce-rails/issues/183
-      config.tinymce.install = :copy
+    # The compile method (default in tinymce-rails 4.5.2) doesn't work when also
+    # using tinymce-rails-imageupload, so revert to the :copy method
+    # https://github.com/spohlenz/tinymce-rails/issues/183
+    config.tinymce.install = :copy
+
+    # Turn off async jobs (for development only) 
+    # TODO: turn back on for production env
+    config.active_job.queue_adapter = :inline
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
