@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718205816) do
+ActiveRecord::Schema.define(version: 20170720133331) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -437,19 +437,19 @@ ActiveRecord::Schema.define(version: 20170718205816) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                                 default: "",       null: false
+    t.string   "encrypted_password",                    default: "",       null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                         default: 0,        null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "guest",                  default: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
+    t.boolean  "guest",                                 default: false
     t.string   "facebook_handle"
     t.string   "twitter_handle"
     t.string   "googleplus_handle"
@@ -473,6 +473,33 @@ ActiveRecord::Schema.define(version: 20170718205816) do
     t.string   "arkivo_subscription"
     t.binary   "zotero_token"
     t.string   "zotero_userid"
+    t.boolean  "collaboration_instutional_repo",        default: true,     null: false
+    t.boolean  "collaboration_institional_repo",        default: false,    null: false
+    t.string   "collaboration_institional_repo_name"
+    t.string   "vdc_referral_method"
+    t.string   "vdc_referral_method_other"
+    t.string   "first_name",                            default: "",       null: false
+    t.string   "last_name",                             default: "",       null: false
+    t.string   "organization",                          default: "",       null: false
+    t.string   "organization_other"
+    t.string   "vdc_role",                              default: "",       null: false
+    t.string   "vdc_role_other"
+    t.string   "discipline",                            default: "",       null: false
+    t.string   "discipline_other"
+    t.string   "edu_person_principal_name",             default: "",       null: false
+    t.string   "cv_link"
+    t.boolean  "collaboration_open_science_framework"
+    t.boolean  "collaboration_linkedin",                default: false,    null: false
+    t.boolean  "collaboration_vivo",                    default: false,    null: false
+    t.boolean  "collaboration_institutional_repo",      default: false,    null: false
+    t.string   "collaboration_institutional_repo_name"
+    t.string   "collaboration_other"
+    t.boolean  "usage_deposit_files",                   default: false,    null: false
+    t.boolean  "usage_use_files",                       default: false,    null: false
+    t.boolean  "usage_use_tools_on_vdc_data",           default: false,    null: false
+    t.boolean  "usage_use_tools_on_external_data",      default: false,    null: false
+    t.string   "usage_description"
+    t.string   "usage_duration",                        default: "unsure", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

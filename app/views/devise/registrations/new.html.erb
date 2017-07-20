@@ -1,0 +1,184 @@
+<h2>Registration</h2>
+
+<p>
+Application to Participate in the Virtual Data Collaboratory
+</p>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <%# TODO: make :vdc_referral_method customizable via config %>
+    <%# f.input :vdc_referral_method, 
+                label: "How did you learn about us?", 
+                required: false, 
+                as: :radio_buttons, 
+                collection: [['Talk or presentation', 'talk'], 
+                             ['Article or other publication', 'publication'], 
+                             ['Google search', 'google'], 
+                             ['Personal referral', 'personal'], 
+                             ['Other' , 'other']],
+                input_html: {class: "form-basic" } ,
+                item_wrapper_class: 'inline' %>
+
+    <%# TODO: Find a way to remove bold from radio labels %>
+    <div class="form-group">
+      <%= f.label "How did you learn about us?" %><br />
+      <%= f.radio_button :vdc_referral_method, "talk" %>
+      <%= f.label :vdc_referral_method, "Talk or presentation" %><br />
+      <%= f.radio_button :vdc_referral_method, "publication" %>
+      <%= f.label :vdc_referral_method, "Article or other publication" %><br />
+      <%= f.radio_button :vdc_referral_method, "google" %>
+      <%= f.label :vdc_referral_method, "Google search" %><br />
+      <%= f.radio_button :vdc_referral_method, "personal" %>
+      <%= f.label :vdc_referral_method, "Personal referral" %><br />
+      <%= f.radio_button :vdc_referral_method, value: "Other", class: "custom" %>
+      <%= f.label "Other: ", class: "custom" %>
+      <%= f.text_field :vdc_referral_method_other, :label => "Other", class: "user-defined" %>
+    </div>
+
+    <%= f.input :first_name, required: true%>
+    <%= f.input :last_name, required: true%>
+
+    <%# TODO: Find a way to remove the blank option %>
+    <%= f.input :organization, 
+                :label => "Organization or Institution", 
+                :collection => [["Rutgers University", "rutgers"],
+                                ["Other", "other"]],
+                :required => true,
+                :selected => "rutgers"%>
+    <%= f.input :organization_other, required: false, label: "Other organization or institution", hint: ("If you selected other for organization or institution, please describe it below." if @minimum_password_length) %>
+
+    <%= f.input :department, required: false %>
+
+    <%= f.input :vdc_role, label: "Role", required: true %>
+    <%# TODO: Find a way to remove bold from radio labels %>
+    <div class="form-group">
+      <%= f.label "Role", :required => true %><br />
+
+      <%= f.radio_button :vdc_role, "professor" %>
+      <%= f.label :vdc_role, "Professor" %><br />
+
+      <%= f.radio_button :vdc_role, "associate professor" %>
+      <%= f.label :vdc_role, "Associate Professor" %><br />
+
+      <%= f.radio_button :vdc_role, "assistant professor" %>
+      <%= f.label :vdc_role, "Assistant Professor" %><br />
+
+      <%= f.radio_button :vdc_role, "postdoctoral position" %>
+      <%= f.label :vdc_role, "Postdoctoral Position" %><br />
+
+      <%= f.radio_button :vdc_role, "graduate student" %>
+      <%= f.label :vdc_role, "Graduate Student" %><br />
+
+      <%= f.radio_button :vdc_role, "undergraduate student" %>
+      <%= f.label :vdc_role, "Undergraduate Student" %><br />
+      
+      <%= f.radio_button :vdc_role, "researcher" %>
+      <%= f.label :vdc_role, "Researcher" %><br />
+
+      <%= f.radio_button :vdc_role, "staff" %>
+      <%= f.label :vdc_role, "Staff" %><br />
+
+      <%= f.radio_button :vdc_role, value: "Other", class: "custom" %>
+      <%= f.label "Other: ", class: "custom" %>
+      <%= f.text_field :vdc_role_other, :label => "Other", class: "user-defined" %>
+    </div>
+
+
+    <%# TODO: come back to this one %>
+    <%= f.input :discipline, required: true %>
+    <%= f.input :discipline_other, required: false, label: "Other discipline", hint: ("If you selected other, please describe it below.") %>
+
+    <%= f.input :orcid, required: true %>
+    <%= f.input :edu_person_principal_name, required: true %>
+    <%= f.input :address, required: false %>
+    <%= f.input :email, required: true %>
+    <%= f.input :website, required: false %>
+    <%= f.input :cv_link, required: false %>
+
+    <%# TODO: Come back to this one %>
+    <%# f.input :cv_file, required: false %>
+
+    <%# TODO: Find a way to remove bold from radio labels %>
+    <div class="form-group">
+      <%= f.label "Additional sites" %><br />
+
+      <%= f.check_box :collaboration_open_science_framework %>
+      <%= f.label :collaboration_open_science_framework, "Open Science Framework" %><br />
+
+      <%= f.check_box :collaboration_linkedin %>
+      <%= f.label :collaboration_linkedin, "LinkedIn" %><br />
+
+      <%= f.check_box :collaboration_vivo %>
+      <%= f.label :collaboration_vivo, "VIVO" %><br />
+
+      <%= f.check_box :collaboration_institutional_repo %>
+      <%= f.label :collaboration_institutional_repo, "Institutional Repository" %>
+      <%= f.text_field :collaboration_institutional_repo_name, class: "user-defined" %><br />
+
+      <%= f.check_box :collaboration_other %>
+      <%= f.label :collaboration_other, "Other: " %>
+      <%= f.text_field :collaboration_other, class: "user-defined" %><br />
+    </div>
+
+    <%# TODO: Find a way to remove bold from check box labels %> 
+    <%# TODO: Find a way to add hint (currently not showing up) %>
+    <div class="form-group">
+      <%= f.label "How will you use the VDC?", required: true, hint: ("Select all that apply.") %><br />
+
+      <%= f.check_box :usage_deposit_files %>
+      <%= f.label :usage_deposit_files, "Deposit files" %><br />
+
+      <%= f.check_box :usage_use_files %>
+      <%= f.label :usage_use_files, "Use files deposited by others" %><br />
+
+      <%= f.check_box :usage_use_tools_on_vdc_data %>
+      <%= f.label :usage_use_tools_on_vdc_data, "Use tools at the VDC on VDC files" %><br />
+
+      <%= f.check_box :usage_use_tools_on_external_data %>
+      <%= f.label :usage_use_tools_on_external_data, "Use tools at the VDC on files located elsewhere" %><br />
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Intended Use" %><br />
+      <%= f.text_area :usage_description, :placeholder => "Please briefly describe your intended use of the VDC", :cols => "50", :rows => "5" %><br />
+    </div>
+
+    <%# TODO: Remove these password fields. Keep them in for now while putting the form together. %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+  </div>
+
+    <%# TODO: Find a way to remove bold from radio labels %>
+    <div class="form-group">
+      <%= f.label "How long is your intended participation in the VDC?", required: true %><br />
+
+      <%= f.radio_button :usage_duration, "less_than_one_year" %>
+      <%= f.label :usage_duration, "<1 year" %><br />
+
+      <%= f.radio_button :usage_duration, "one_to_three_years" %>
+      <%= f.label :usage_duration, "1-3 years" %><br />
+
+      <%= f.radio_button :usage_duration, "more_than_three_years" %>
+      <%= f.label :usage_duration, ">3 years" %><br />
+
+      <%= f.radio_button :usage_duration, "unsure" %>
+      <%= f.label :usage_duration, "Don't know" %><br />
+    </div>
+
+  <p>
+  While all published data will remain permanently in the VDC, the VDC reserves the right to close dormant 
+  accounts, defined as accounts that have not been visited via login in a year.  Members will be alerted after 
+  a year of no login that their account will be closed in 3 months due to inactivity.  To maintain the account 
+  after notice, simply login.  One week before termination, the member will be alerted a second time.  5 
+  Business days later, the account will be terminated.  Files on terminated accounts that have not been 
+  published for open access by others will be maintained as offline storage for six months after termination.  
+  Files may be obtained by contacting XXXX.
+  </p>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Register" %>
+  </div>
+<% end %>
