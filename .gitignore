@@ -19,3 +19,6 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore precompiled public assets (TODO: Not sure yet if this should be ignored)
+/public/assets/*
