@@ -23,4 +23,18 @@ class User < ApplicationRecord
   def to_s
     email
   end
+
+  # Method to help with admin user registration approval
+  def active_for_authentication? 
+    super && approved? 
+  end 
+  
+  # MEthod to help with  admin user registration approval
+  def inactive_message 
+    if !approved? 
+      :not_approved 
+    else 
+      super # Use whatever other message 
+    end 
+  end
 end
