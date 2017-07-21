@@ -32,7 +32,7 @@
                   <%= @presenter.last_accessed(user).to_formatted_s(:long_ordinal) %>
                 </relative-time>
               </td>
-              <td> approval button
+              <td><%= button_to 'Approve', {controller: "pending_registrations",  action: "approve_user", user_id: user.id}, method: :post %>
               </td>
             </tr>
           <% end %>

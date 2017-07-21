@@ -35,6 +35,8 @@ end
 
 Hyrax::Engine.routes.draw do  
   namespace :admin do
+    # TODO: Not sure if this is an appropriate route to add...
+    post 'pending_registrations/approve_user'
     resources :pending_registrations, only: [:index]
   end
 end
