@@ -3,7 +3,7 @@ module Hyrax
     class DashboardPresenter
       # @return [Fixnum] the number of currently registered users
       def user_count
-        ::User.where(guest: false).count
+        ::User.where(guest: false).where(approved: true).count
       end
 
       def repository_objects

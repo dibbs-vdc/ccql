@@ -34,7 +34,7 @@ module Hyrax
       #
       def recent_users
         # no dates return the top few based on limit
-        return ::User.order('created_at DESC').limit(limit) if start_date.blank?
+        return ::User.order('created_at DESC').where(approved: true).limit(limit) if start_date.blank?
 
         ::User.recent_users start_date, end_date
       end

@@ -156,7 +156,7 @@ module Hyrax::User
 
     def recent_users(start_date, end_date = nil)
       end_date ||= DateTime.current # doing or eq here so that if the user passes nil we still get now
-      User.where(created_at: start_date..end_date)
+      User.where(created_at: start_date..end_date).where(approved: true)
     end
   end
 end
