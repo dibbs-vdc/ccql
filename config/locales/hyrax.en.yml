@@ -43,6 +43,18 @@ en:
           subject_tesim: Subject
           title_tesim: Title
   hyrax:
+    admin:
+      sidebar:
+        registration_approval: "Approve Pending Users"
+      pending_registrations:
+        index:
+          title:          "Approve Pending Users"
+          id_label:       "Email"
+          access_label:   "Last Access"
+          approval_label: "Approve"
+          describe_pending_registrations_html: 
+            one: "There is <b>%{count} user</b> pending approval in this repository."
+            other: "There are <b>%{count} users</b> pending approval in this repository."
     product_name:           "Hyrax"
     product_twitter_handle: "@HydraSphere"
     institution_name:       "Institution"

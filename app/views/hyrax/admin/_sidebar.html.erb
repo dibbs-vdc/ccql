@@ -30,4 +30,9 @@
   <%= menu.nav_link(hyrax.admin_users_path) do %>
     <span class="fa fa-user"></span> <%= t('hyrax.admin.sidebar.users') %>
   <% end %>
+
+  <%= menu.nav_link(hyrax.admin_pending_registrations_path) do %>
+  <%# menu.nav_link(hyrax.admin_users_path) do %>
+    <span class="fa fa-user"></span> <%= t('hyrax.admin.sidebar.registration_approval') %>
+  <% end %>
 </ul>
