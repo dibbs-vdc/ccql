@@ -473,9 +473,6 @@ ActiveRecord::Schema.define(version: 20170721132123) do
     t.string   "arkivo_subscription"
     t.binary   "zotero_token"
     t.string   "zotero_userid"
-    t.boolean  "collaboration_instutional_repo",        default: true,     null: false
-    t.boolean  "collaboration_institional_repo",        default: false,    null: false
-    t.string   "collaboration_institional_repo_name"
     t.string   "vdc_referral_method"
     t.string   "vdc_referral_method_other"
     t.string   "first_name",                            default: "",       null: false
