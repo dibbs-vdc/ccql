@@ -14,7 +14,7 @@ Hyrax.config do |config|
   # config.default_active_workflow_name = 'default'
 
   # Email recipient of messages sent via the contact form
-  # config.contact_email = "repo-admin@example.org"
+  config.contact_email = "jk1508@rutgers.edu"
 
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"

@@ -37,4 +37,10 @@ class User < ApplicationRecord
       super # Use whatever other message 
     end 
   end
+
+  after_create :send_admin_mail_after_registration
+  def send_admin_mail_after_registration
+    AdminMailer.new_user_waiting_for_approval(self).deliver
+    AdminMailer.new_user_waiting_for_approval_admin_notification(self).deliver
+  end
 end

@@ -12,6 +12,7 @@ module Hyrax
       user.approved = true
       user.save
 
+      AdminMailer.new_user_approval(user).deliver      
       redirect_to hyrax.admin_pending_registrations_path, notice: "Approved #{user.email}"
     end
   end
