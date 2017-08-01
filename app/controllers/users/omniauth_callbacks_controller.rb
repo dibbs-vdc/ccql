@@ -1,7 +1,13 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
- def shibboleth
-    @user = User.find_or_create_system_user(request.env["HTTP_EPPN"])
-    sign_in_and_redirect @user
+
+  def shibboleth
+    key = request.env["HTTP_EPPN"]
+    if User.find_by_user_key(key)
+      @user = User.find_or_create_system_user(key)
+      sign_in_and_redirect @user
+    else
+      redirect_to new_user_registration_url
+    end
   end
 
   def failure
