@@ -485,6 +485,7 @@ ActiveRecord::Schema.define(version: 20170721132123) do
     t.string   "discipline_other"
     t.string   "edu_person_principal_name",             default: "",       null: false
     t.string   "cv_link"
+    t.string   "cv_upload"
     t.boolean  "collaboration_open_science_framework"
     t.boolean  "collaboration_linkedin",                default: false,    null: false
     t.boolean  "collaboration_vivo",                    default: false,    null: false

@@ -12,6 +12,7 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     add_column :users, :discipline_other,  :string
     add_column :users, :edu_person_principal_name,  :string, null: false, default: ''
     add_column :users, :cv_link,  :string
+    add_column :users, :cv_upload,  :string
 
     add_column :users, :collaboration_open_science_framework, :boolean
     add_column :users, :collaboration_linkedin, :boolean, null: false, default: false
