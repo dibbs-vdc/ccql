@@ -1,5 +1,22 @@
 <h2>Registration</h2>
 
+<%# request.env.inspect %>
+<%# 
+
+# FOR DEBUGGING
+
+# file origin.rb
+target  = "/home/vdc/20170804_jkdump.txt"
+content = <<-RUBY
+  #{request.env.inspect}
+RUBY
+
+File.open(target, "w+") do |f|
+  f.write(content)
+end
+
+%>
+
 <p>
 Application to Participate in the Virtual Data Collaboratory
 </p>
@@ -48,13 +65,14 @@ Application to Participate in the Virtual Data Collaboratory
                                 ["Other", "other"]],
                 :required => true,
                 :selected => "rutgers"%>
-    <%= f.input :organization_other, required: false, label: "Other organization or institution", hint: ("If you selected other for organization or institution, please describe it below." if @minimum_password_length) %>
+    <%= f.input :organization_other, required: false, label: "Other organization or institution", hint: ("If you selected other for organization or institution, please describe it below.") %>
 
     <%= f.input :department, required: false %>
 
     <%# TODO: Find a way to remove bold from radio labels %>
     <div class="form-group">
-      <%= f.label "Role", :required => true %><br />
+      <%= f.label "Role", required: true, hint: ("If you selected other for organization or institution, please describe it below.") %><br />
+      <%= f.hint "Select the one that best applies." %>
 
       <%= f.radio_button :vdc_role, "professor" %>
       <%= f.label :vdc_role, "Professor" %><br />
@@ -86,18 +104,40 @@ Application to Participate in the Virtual Data Collaboratory
     </div>
 
 
-    <%# TODO: come back to this one %>
-    <%= f.input :discipline, required: true %>
+    <%# TODO: Make this yaml configurable %>
+    <% discipline_grouped_options = [
+         ['NATURAL SCIENCES',
+           ['Agriculture', 'Biological Sciences', 'Computer and Information Sciences']],
+         ['ENGINEERING', []], 
+         ['SOCIAL SCIENCES', []], 
+         ['ARTS', []], 
+         ['EDUCATION', []], 
+         ['BUSINESS', []], 
+         ['OTHER', ['Other']]
+       ] 
+    %>
+    <%= f.label :discipline, required: true %><br />
+    <%= f.hint "Please identify the discipline(s) in which you work." %>
+    <%= f.select :discipline,
+          grouped_options_for_select(discipline_grouped_options),
+          {},
+          {size: 11, multiple: true, include_blank: false}
+    %><br />
+    <br />
     <%= f.input :discipline_other, required: false, label: "Other discipline", hint: ("If you selected other, please describe it below.") %>
 
-    <%= f.input :orcid, required: true %>
-    <%= f.input :edu_person_principal_name, required: true %>
+
+    <%= f.input :orcid, required: true, hint: raw("An ORCID ID is required. If you do not have an ORCID ID, please register first #{link_to 'here', 'https://orcid.org/register', target: :_blank} and obtain an ID. It's free, simple and only takes a few minutes. If you do not remember your ORCID, you can search on your name to locate your ORCID. (Click #{link_to 'here', 'https://orcid.org/orcid-search/search', target: :_blank} to find your ORCID ID.)") %>
+
     <%= f.input :address, required: false %>
     <%= f.input :email, required: true %>
     <%= f.input :website, required: false %>
+
+    
     <%= f.input :cv_link, required: false %>
 
     <%# TODO: Come back to this one %>
+    <%= f.file_field :cv_upload, required: false %>
     <%# f.input :cv_file, required: false %>
 
     <%# TODO: Find a way to remove bold from radio labels %>
@@ -138,6 +178,9 @@ Application to Participate in the Virtual Data Collaboratory
 
       <%= f.check_box :usage_use_tools_on_external_data %>
       <%= f.label :usage_use_tools_on_external_data, "Use tools at the VDC on files located elsewhere" %><br />
+
+      <%= f.check_box :usage_contact_others, label: "Contact other researchers in my field."  %>
+      <%= f.label :contact_other_researchers, "Contact other researchers in my field." %><br />
     </div>
 
     <div class="form-group">

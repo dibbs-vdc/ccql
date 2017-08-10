@@ -1,0 +1,19 @@
+terms:
+    - id: 0
+      term: Funding Source 0
+      active: true
+    - id: 1
+      term: Funding Source 1 
+      active: true
+    - id: 2
+      term: Funding Source 2 
+      active: true
+    - id: 3
+      term: Division of Mathematical Sciences
+      active: true
+    - id: 4
+      term: Janice's Funding Source 0 
+      active: true
+    - id: 5
+      term: Janice's Funding Source 1 
+      active: true

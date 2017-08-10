@@ -25,4 +25,53 @@ class SolrDocument
   # Do content negotiation for AF models. 
 
   use_extension( Hydra::ContentNegotiation )
+
+  def vdc_type
+    self[Solrizer.solr_name('vdc_type')]
+  end
+
+  def identifier_doi
+    self[Solrizer.solr_name('identifier_doi')]
+  end
+
+  def authoritative_name
+    self[Solrizer.solr_name('authoritative_name')]    
+  end
+
+  def authoritative_name_uri
+    self[Solrizer.solr_name('authoritative_name_uri')]
+  end
+
+  def genre
+    self[Solrizer.solr_name('genre')]
+  end
+
+  def abstract
+    self[Solrizer.solr_name('abstract')]
+  end
+
+  def funder
+    self[Solrizer.solr_name('funder')]
+  end
+
+  def research_problem
+    self[Solrizer.solr_name('research_problem')]
+  end
+
+  def note
+    self[Solrizer.solr_name('note')]
+  end
+
+  def readme
+    self[Solrizer.solr_name('readme')]
+  end
+
+  def coverage_spatial
+    self[Solrizer.solr_name('coverage_spatial')]
+  end
+
+  def coverage_temporal
+    self[Solrizer.solr_name('coverage_temporal')]
+  end
+
 end

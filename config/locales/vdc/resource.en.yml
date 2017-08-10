@@ -5,4 +5,4 @@ en:
     select_type:
       resource:
         name:               "Resource"
-        description:        "Resource works"
+        description:        "Resources"

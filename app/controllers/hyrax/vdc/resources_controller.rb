@@ -7,5 +7,7 @@ module Hyrax
     include Hyrax::WorksControllerBehavior
     include Hyrax::BreadcrumbsForWorks
     self.curation_concern_type = ::Vdc::Resource
+
+    self.show_presenter = Hyrax::Vdc::ResourcePresenter
   end
 end
