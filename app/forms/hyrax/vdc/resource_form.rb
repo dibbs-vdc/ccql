@@ -7,13 +7,15 @@ module Hyrax
     #####
     # Defaults fields to be KEPT in the VDC Resource
     #   creator
-    #   title
+    #   title (assigned to vdc_title by the vdc resource actor)
     #   date_created # TODO: Can this be used instead of date?
     #   license # TODO: Can this be used for VDC purposes?
 
     #####
     # New fields to be ADDED to the VDC Resource
 
+    self.required_fields += [:vdc_creator]
+    self.terms += [:vdc_creator]
     self.required_fields += [:genre]
     self.terms += [:genre]
 
@@ -24,6 +26,7 @@ module Hyrax
     self.terms += [:note]
     self.terms += [:coverage_spatial]
     self.terms += [:coverage_temporal]
+    self.terms += [:identifier_doi]
 
     # TODO: Relationships and their UI need to be discussed more before potentially adding this back in.
     #self.terms += [:relation] # TODO
@@ -34,14 +37,16 @@ module Hyrax
     # Default fields to be REMOVED from the VDC Resource
     self.required_fields -= [:keyword]
     self.required_fields -= [:rights]
+    self.required_fields -= [:creator]
     self.terms -= [:keyword]
+    self.terms -= [:creator]
     self.terms -= [:contributor]
     self.terms -= [:publisher]
     self.terms -= [:subject]
     self.terms -= [:language]
     self.terms -= [:identifier]
     self.terms -= [:based_near]
-    #self.terms -= [:related_url]
+    self.terms -= [:related_url]
     self.terms -= [:source]
     self.terms -= [:description] # Removed in favor of :abstract
 

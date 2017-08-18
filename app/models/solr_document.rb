@@ -34,6 +34,10 @@ class SolrDocument
     self[Solrizer.solr_name('identifier_doi')]
   end
 
+  def vdc_creator
+    self[Solrizer.solr_name('vdc_creator')]
+  end
+
   def authoritative_name
     self[Solrizer.solr_name('authoritative_name')]    
   end
@@ -64,6 +68,14 @@ class SolrDocument
 
   def readme
     self[Solrizer.solr_name('readme')]
+  end
+
+  def extent
+    self[Solrizer.solr_name('extent')]
+  end
+
+  def format
+    self[Solrizer.solr_name('format')]
   end
 
   def coverage_spatial

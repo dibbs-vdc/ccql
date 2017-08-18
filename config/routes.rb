@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   devise_for :users, 
              :controllers => { 
-               :omniauth_callbacks => 'users/omniauth_callbacks'
+               :omniauth_callbacks => 'users/omniauth_callbacks',
+               :registrations => "users/registrations"
              }  
 
   mount Qa::Engine => '/authorities'
@@ -42,5 +43,13 @@ Hyrax::Engine.routes.draw do
     # TODO: Not sure if this is an appropriate route to add...
     post 'pending_registrations/approve_user'
     resources :pending_registrations, only: [:index]
+
   end
+
+  if Rails.env.development?
+    namespace :vdc do
+      resources :people  
+    end
+  end
+
 end

@@ -17,11 +17,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  #mount_uploader :cv_file, CvFileUploader
+
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
   # the account.
   def to_s
-    email
+    "#{last_name}, #{first_name}"
   end
 
   # Method to help with admin user registration approval

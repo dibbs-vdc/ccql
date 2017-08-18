@@ -15,8 +15,8 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     # Department (already exists in User)
 
     # Role in the VDC (e.g., Professor, Postdoctoral Position, Other, etc.)
-    add_column :users, :vdc_role,  :string, null: false, default: ''
-    add_column :users, :vdc_role_other,  :string
+    add_column :users, :position,  :string, null: false, default: ''
+    add_column :users, :position_other,  :string
 
     # Discipline (Can be more than one, e.g., Agriculture)
     add_column :users, :discipline,  :string, null: false, default: ''
@@ -32,7 +32,7 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     # CV link or uploaded file
     # TODO: Should cv_upload be the location of the file on disk?
     add_column :users, :cv_link,  :string
-    add_column :users, :cv_upload,  :string
+    add_column :users, :cv_file,  :string
     
     # Additional sites
     add_column :users, :sites_open_science_framework, :boolean, null: false, default: false
@@ -48,7 +48,7 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     add_column :users, :sites_institutional_repo_name, :string
 
     add_column :users, :sites_other, :boolean, null: false, default: false
-    add_column :users, :sites_other_profile, :string
+    add_column :users, :sites_other_url, :string
 
     # How will you use the VDC?
     add_column :users, :usage_deposit_files, :boolean, null: false, default: false
@@ -62,5 +62,9 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
 
     # How long is your intended participation in the VDC?
     add_column :users, :usage_duration, :string, null: false, default: "unsure"    
+
+    # This will be the Fedora 4 UUID for the Vdc::Person object that 
+    # corresponds to a particular user
+    add_column :users, :identifier_system, :string
   end
 end

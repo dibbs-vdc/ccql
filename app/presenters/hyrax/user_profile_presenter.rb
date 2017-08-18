@@ -26,5 +26,10 @@ module Hyrax
     def trophies
       @trophies ||= Hyrax::TrophyPresenter.find_by_user(user)
     end
+
+    def full_name
+      "#{@user.last_name}, #{@user.first_name}"
+    end
+
   end
 end

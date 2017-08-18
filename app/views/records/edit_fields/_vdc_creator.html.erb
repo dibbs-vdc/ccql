@@ -1,0 +1,6 @@
+<% # app/views/records/edit_fields/_vdc_creator.html.erb %>
+
+<div>
+  <%# For now, automatically add the current user as the creator %>
+  <%= f.input :vdc_creator, label: "Creator", :input_html => { value: @default_creator }, readonly: true %>
+</div>

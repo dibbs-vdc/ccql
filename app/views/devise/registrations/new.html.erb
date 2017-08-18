@@ -137,8 +137,8 @@ Application to Participate in the Virtual Data Collaboratory
     <%= f.input :cv_link, required: false %>
 
     <%# TODO: Come back to this one %>
-    <%= f.file_field :cv_upload, required: false %>
-    <%# f.input :cv_file, required: false %>
+    <%# f.file_field :cv_upload, required: false %>
+    <%= f.input :cv_file, required: false %>
 
     <%# TODO: Find a way to remove bold from radio labels %>
     <div class="form-group">
@@ -209,6 +209,9 @@ Application to Participate in the Virtual Data Collaboratory
       <%= f.radio_button :usage_duration, "unsure" %>
       <%= f.label :usage_duration, "Don't know" %><br />
     </div>
+
+    <%# TODO: Is there another option beside hidden field to get the eppn? %>
+    <%= f.hidden_field :edu_person_principal_name, value: request.env["HTTP_EPPN"] %>
 
   <p>
   While all published data will remain permanently in the VDC, the VDC reserves the right to close dormant 
