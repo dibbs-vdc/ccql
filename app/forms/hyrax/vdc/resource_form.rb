@@ -19,9 +19,26 @@ module Hyrax
     self.required_fields += [:genre]
     self.terms += [:genre]
 
-    # OPTIONAL
-    self.terms += [:funder]
+    # Removing default term for ordering fields on the form.
+    # Default ones appear first.
+    # These fields will be put back later in the order
+    # that we want them to appear.
+    # TODO: I'm sure there's a better way to do this?
+    #       Maybe in the toggle javascript, make sure that
+    #       I don't move whole form groups? Instead, just move
+    #       children elements between option and required form groups?
+    self.terms -= [:rights]
+    self.terms -= [:date_created]
+
+    # OPTIONAL/REQUIRED (depending on visibility)
+    # We want these to come first so that when they change position
+    # from required
     self.terms += [:abstract]
+
+    # OPTIONAL
+    self.terms += [:rights]
+    self.terms += [:date_created]
+    self.terms += [:funder]
     self.terms += [:research_problem]
     self.terms += [:note]
     self.terms += [:coverage_spatial]
