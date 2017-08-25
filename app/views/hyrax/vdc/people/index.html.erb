@@ -16,8 +16,8 @@
       <td><%= person.edu_person_principal_name %></td>
       <td><%= person.preferred_name %></td>
       <td><%= person.email %></td>
-      <td><%= link_to 'Show', vdc_person_path(person) %></td>
-      <td><%= link_to 'Destroy', vdc_person_path(person),
+      <td><%= link_to 'Show', admin_vdc_person_path(person) %></td>
+      <td><%= link_to 'Destroy', admin_vdc_person_path(person),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
 

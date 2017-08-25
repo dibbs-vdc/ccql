@@ -1,0 +1,12 @@
+<h2>Edit Registration for: <%= @user %></h2>
+
+<%= simple_form_for(:user, url: admin_user_path(@user, id: @user.id), method: :patch) do |f| %>
+
+  <%= render 'registration_form', f: f %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update" %>
+  </div>
+
+<% end %>
+

@@ -9,6 +9,8 @@ module Hyrax
 
     #self.show_presenter = Hyrax::Vdc::ResourcePresenter #TODO: Put one eventually?
 
+    before_action :ensure_admin!
+
     def new
       self.vdc_type = "Person"
     end
@@ -21,7 +23,8 @@ module Hyrax
       @person = ::Vdc::Person.find(id)
     rescue Ldp::Gone
       flash[:notice] = "This person (#{id}) no longer exists, and the linked data pointer is gone."
-      redirect_to vdc_people_path
+      redirect_to admin_vdc_people_path
+      #TODO: What other errors should I be catching here?
     end
 
     def index
@@ -40,7 +43,19 @@ module Hyrax
       @person = ::Vdc::Person.find(params[:id])
       @person.destroy!
  
-      redirect_to vdc_people_path
+      redirect_to admin_vdc_people_path
+    rescue Ldp::Gone
+      flash[:notice] = "This person (#{params[:id]}) no longer exists, and the linked data pointer is gone."
+      redirect_to admin_vdc_people_path
+      #TODO: What other errors should I be catching here?
     end
+
+    private
+
+      def ensure_admin!
+        # Only user authorized to read the admin dash can access this controller
+        authorize! :read, :admin_dashboard
+      end
+
   end
 end
