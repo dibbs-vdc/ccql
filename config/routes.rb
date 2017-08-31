@@ -8,11 +8,16 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  devise_for :users, 
-             :controllers => { 
-               :omniauth_callbacks => 'users/omniauth_callbacks',
-               :registrations => "users/registrations"
-             }
+  devise_for :users, skip: [:registrations],
+             controllers: { :omniauth_callbacks => 'users/omniauth_callbacks',
+                            :registrations => "users/registrations" }
+
+  # Only allow new/create/cancel for new user registrations
+  as :user do
+    get   "/users/sign_up" => "users/registrations#new", :as => :new_user_registration
+    post  "/user" => "users/registrations#create", :as => :user_registration
+    get   "/users/cancel" => "users/registrations#cancel", :as => :cancel_user_registration
+  end
 
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'
@@ -53,5 +58,4 @@ Hyrax::Engine.routes.draw do
       end
     end
   end
-
 end

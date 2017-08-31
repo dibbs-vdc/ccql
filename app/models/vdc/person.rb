@@ -76,7 +76,8 @@ class Vdc::Person < ActiveFedora::Base
   # TODO: Does a Vdc::Person belong to a Vdc::Resource? Or, is it the opposite?
   #belongs_to :vdc_resource, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isPartOf
   #belongs_to :vdc_resource, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isReplacedBy
-  # TODO: Flesh out more belongs_to relationships?
+  # TODO: Flesh out more belongs_to relationships? Determine better how these area already being fleshed out in fedora
+  #       For example, Fedora has versioning for each individual file. How is that done?
 
   # TODO: Get Person objects indexed in Solr
 

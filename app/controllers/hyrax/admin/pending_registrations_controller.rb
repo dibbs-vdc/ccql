@@ -5,8 +5,10 @@ module Hyrax
   class Admin::PendingRegistrationsController < AdminController
     include Hyrax::Admin::UsersControllerBehavior
 
+    # TODO: Should this be moved to the Person Controller??
     def create_person_from_user(user)
-      # TODO: Add Person to Fedora
+      # TODO: Understand how transactions work in Fedora and
+      #       make sure it's being done properly here.
       # TODO: before saving, do some validation on the Person to make sure it's constructed properly
       p = ::Vdc::Person.new
       p.vdc_type = "Person"
@@ -21,6 +23,7 @@ module Hyrax
       p.edu_person_principal_name = user.edu_person_principal_name if user.edu_person_principal_name != nil
 
       p.email = user.email
+      # TODO: This "other" should probably be a constant somewhere...
       if user.organization.downcase == "other" then
         p.organization = user.organization_other
       else
@@ -33,25 +36,31 @@ module Hyrax
       p.website = user.website
       p.save
 
-      # TODO: attach cv if it exists with these instructions 
       # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
-      # NOTE: I have no idea if this adheres to pcdm standards. 
-      #p.cv_upload.content = File.open("/home/vdc/rails_apps/ccql/README.md")
-      #p.cv_upload.mime_type = "application/text"
-      #p.cv_upload.original_name = "README.md"
-
+      # TODO: I have no idea if this adheres to pcdm standards. Find out.
       # TODO: some validation here
-      # TODO: only once you're ready... save
-
-      # Once this person has been saved, do post-processing
+      if user.cv_file.file.exists?
+        file_path = user.cv_file.current_path
+        p.cv_upload.content = File.open(file_path)
+        p.cv_upload.mime_type = user.cv_file.content_type
+        p.cv_upload.original_name = user.cv_file_identifier
+        p.save
+        p.cv = p.cv_upload.uri
+        p.save
+      elsif user.cv_link.gsub(/\s+/, '') != ''
+        p.cv = RDF::URI(user.cv_link)
+        p.save
+      end
+      
+      # Additional post-proessing
+      # TODO: Is there a better way to do this?
       p.identifier_system = p.id
-      #p.cv = RDF::URI(p.cv_upload.uri) # set only after the cv_upload has been saved to fedora
       p.save
       p
     end
 
+    # TODO: This isn't quite working yet....
     def update_person_from_user(user)
-      # TODO: Add Person to Fedora
       # TODO: before saving, do some validation on the Person to make sure it's constructed properly
       p = ::Vdc::Person.find(user.identifier_system)
       if p = nil
@@ -82,16 +91,8 @@ module Hyrax
       p.website = user.website
       p.save
 
-      # TODO: attach cv if it exists with these instructions 
-      # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
-      # NOTE: I have no idea if this adheres to pcdm standards. 
-      #p.cv_upload.content = File.open("/home/vdc/rails_apps/ccql/README.md")
-      #p.cv_upload.mime_type = "application/text"
-      #p.cv_upload.original_name = "README.md"
-
-      # TODO: some validation here
-      # TODO: only once you're ready... save
-      #p.save
+      # TODO: update cv if necessary...
+      # TODO: some validation here??
 
       p
     end
@@ -113,8 +114,7 @@ module Hyrax
       user.identifier_system = person.id
       user.save
 
-      #TODO: Turn mailer back on!!!!
-      #AdminMailer.new_user_approval(user).deliver
+      AdminMailer.new_user_approval(user).deliver
       redirect_to hyrax.admin_pending_registrations_path, notice: "Approved #{user.email}"
     end
   end

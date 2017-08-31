@@ -34,6 +34,7 @@ module Hyrax
     # We want these to come first so that when they change position
     # from required
     self.terms += [:abstract]
+    self.terms += [:identifier_doi]
 
     # OPTIONAL
     self.terms += [:rights]
@@ -43,7 +44,6 @@ module Hyrax
     self.terms += [:note]
     self.terms += [:coverage_spatial]
     self.terms += [:coverage_temporal]
-    self.terms += [:identifier_doi]
 
     # TODO: Relationships and their UI need to be discussed more before potentially adding this back in.
     #self.terms += [:relation] # TODO

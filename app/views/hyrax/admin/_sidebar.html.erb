@@ -32,7 +32,13 @@
   <% end %>
 
   <%= menu.nav_link(hyrax.admin_pending_registrations_path) do %>
-  <%# menu.nav_link(hyrax.admin_users_path) do %>
-    <span class="fa fa-user"></span> <%= t('hyrax.admin.sidebar.registration_approval') %>
+  <%# TODO: Change the icon %>
+    <span class="fa fa-question"></span> <%= t('hyrax.admin.sidebar.registration_approval') %>
+  <% end %>
+
+  <% if Rails.env.development? %>
+    <%= menu.nav_link(admin_vdc_people_path) do %>
+      <span class="fa fa-database"></span> [DEV ONLY] People
+    <% end %>
   <% end %>
 </ul>

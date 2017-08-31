@@ -437,19 +437,19 @@ ActiveRecord::Schema.define(version: 20170721132123) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                                 default: "",       null: false
-    t.string   "encrypted_password",                    default: "",       null: false
+    t.string   "email",                            default: "",       null: false
+    t.string   "encrypted_password",               default: "",       null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         default: 0,        null: false
+    t.integer  "sign_in_count",                    default: 0,        null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
-    t.boolean  "guest",                                 default: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.boolean  "guest",                            default: false
     t.string   "facebook_handle"
     t.string   "twitter_handle"
     t.string   "googleplus_handle"
@@ -475,30 +475,38 @@ ActiveRecord::Schema.define(version: 20170721132123) do
     t.string   "zotero_userid"
     t.string   "vdc_referral_method"
     t.string   "vdc_referral_method_other"
-    t.string   "first_name",                            default: "",       null: false
-    t.string   "last_name",                             default: "",       null: false
-    t.string   "organization",                          default: "",       null: false
+    t.string   "first_name",                       default: "",       null: false
+    t.string   "last_name",                        default: "",       null: false
+    t.string   "organization",                     default: "",       null: false
     t.string   "organization_other"
-    t.string   "vdc_role",                              default: "",       null: false
-    t.string   "vdc_role_other"
-    t.string   "discipline",                            default: "",       null: false
+    t.string   "position",                         default: "",       null: false
+    t.string   "position_other"
+    t.string   "discipline",                       default: "",       null: false
     t.string   "discipline_other"
-    t.string   "edu_person_principal_name",             default: "",       null: false
+    t.string   "edu_person_principal_name",        default: "",       null: false
     t.string   "cv_link"
-    t.string   "cv_upload"
-    t.boolean  "collaboration_open_science_framework"
-    t.boolean  "collaboration_linkedin",                default: false,    null: false
-    t.boolean  "collaboration_vivo",                    default: false,    null: false
-    t.boolean  "collaboration_institutional_repo",      default: false,    null: false
-    t.string   "collaboration_institutional_repo_name"
-    t.string   "collaboration_other"
-    t.boolean  "usage_deposit_files",                   default: false,    null: false
-    t.boolean  "usage_use_files",                       default: false,    null: false
-    t.boolean  "usage_use_tools_on_vdc_data",           default: false,    null: false
-    t.boolean  "usage_use_tools_on_external_data",      default: false,    null: false
+    t.string   "cv_file"
+    t.boolean  "sites_open_science_framework",     default: false,    null: false
+    t.string   "sites_open_science_framework_url"
+    t.boolean  "sites_researchgate",               default: false,    null: false
+    t.string   "sites_researchgate_url"
+    t.boolean  "sites_linkedin",                   default: false,    null: false
+    t.string   "sites_linkedin_url"
+    t.boolean  "sites_vivo",                       default: false,    null: false
+    t.string   "sites_vivo_url"
+    t.boolean  "sites_institutional_repo",         default: false,    null: false
+    t.string   "sites_institutional_repo_url"
+    t.boolean  "sites_other",                      default: false,    null: false
+    t.string   "sites_other_url"
+    t.boolean  "usage_deposit_files",              default: false,    null: false
+    t.boolean  "usage_use_files",                  default: false,    null: false
+    t.boolean  "usage_use_tools_on_vdc_data",      default: false,    null: false
+    t.boolean  "usage_use_tools_on_external_data", default: false,    null: false
+    t.boolean  "usage_contact_others",             default: false,    null: false
     t.string   "usage_description"
-    t.string   "usage_duration",                        default: "unsure", null: false
-    t.boolean  "approved",                              default: false,    null: false
+    t.string   "usage_duration",                   default: "unsure", null: false
+    t.string   "identifier_system"
+    t.boolean  "approved",                         default: false,    null: false
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

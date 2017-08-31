@@ -14,7 +14,7 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
 
     # Department (already exists in User)
 
-    # Role in the VDC (e.g., Professor, Postdoctoral Position, Other, etc.)
+    # Position in the VDC (e.g., Professor, Postdoctoral Position, Other, etc.)
     add_column :users, :position,  :string, null: false, default: ''
     add_column :users, :position_other,  :string
 
@@ -36,7 +36,10 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     
     # Additional sites
     add_column :users, :sites_open_science_framework, :boolean, null: false, default: false
-    add_column :users, :sites_open_science_framework_profile, :string
+    add_column :users, :sites_open_science_framework_url, :string
+
+    add_column :users, :sites_researchgate, :boolean, null: false, default: false
+    add_column :users, :sites_researchgate_url, :string
 
     add_column :users, :sites_linkedin, :boolean, null: false, default: false
     add_column :users, :sites_linkedin_url, :string
@@ -45,7 +48,7 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     add_column :users, :sites_vivo_url, :string
 
     add_column :users, :sites_institutional_repo, :boolean, null: false, default: false
-    add_column :users, :sites_institutional_repo_name, :string
+    add_column :users, :sites_institutional_repo_url, :string
 
     add_column :users, :sites_other, :boolean, null: false, default: false
     add_column :users, :sites_other_url, :string

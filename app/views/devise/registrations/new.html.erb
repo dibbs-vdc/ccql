@@ -26,9 +26,12 @@ Application to Participate in the Virtual Data Collaboratory
   <%= render 'registration_form', f: f %>
 
   <div class="form-inputs">
-    <%# TODO: Remove these password fields. Keep them in for now while putting the form together. %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%# TODO: Maybe pull this out into a helper function %>
+    <% if request.env["HTTP_EPPN"].gsub(/\s+/, "") == '' %>
+      <%# TODO: Not sure if this is the best way to do this. For now, assume that if the EPPN exists, then shibboleth was successful. %>
+      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, required: true %>
+    <% end %>
   </div>
 
   <div class="form-actions">

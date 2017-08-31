@@ -1,4 +1,14 @@
-  <%= f.error_notification %>
+  <%# f.error_notification %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger" id="error_explanation">
+    <p><%= pluralize(@user.errors.count, "error") %> prohibited this registration from being saved:</p>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="form-inputs">
 
@@ -47,36 +57,36 @@
 
     <%# TODO: Find a way to remove bold from radio labels %>
     <div class="form-group">
-      <%= f.label "Role", required: true, hint: ("If you selected other for organization or institution, please describe it below.") %><br />
+      <%= f.label "Position", required: true, hint: ("If you selected other for organization or institution, please describe it below.") %><br />
       <%= f.hint "Select the one that best applies." %>
 
-      <%= f.radio_button :vdc_role, "professor" %>
-      <%= f.label :vdc_role, "Professor" %><br />
+      <%= f.radio_button :position, "professor" %>
+      <%= f.label :position, "Professor" %><br />
 
-      <%= f.radio_button :vdc_role, "associate professor" %>
-      <%= f.label :vdc_role, "Associate Professor" %><br />
+      <%= f.radio_button :position, "associate professor" %>
+      <%= f.label :position, "Associate Professor" %><br />
 
-      <%= f.radio_button :vdc_role, "assistant professor" %>
-      <%= f.label :vdc_role, "Assistant Professor" %><br />
+      <%= f.radio_button :position, "assistant professor" %>
+      <%= f.label :position, "Assistant Professor" %><br />
 
-      <%= f.radio_button :vdc_role, "postdoctoral position" %>
-      <%= f.label :vdc_role, "Postdoctoral Position" %><br />
+      <%= f.radio_button :position, "postdoctoral position" %>
+      <%= f.label :position, "Postdoctoral Position" %><br />
 
-      <%= f.radio_button :vdc_role, "graduate student" %>
-      <%= f.label :vdc_role, "Graduate Student" %><br />
+      <%= f.radio_button :position, "graduate student" %>
+      <%= f.label :position, "Graduate Student" %><br />
 
-      <%= f.radio_button :vdc_role, "undergraduate student" %>
-      <%= f.label :vdc_role, "Undergraduate Student" %><br />
+      <%= f.radio_button :position, "undergraduate student" %>
+      <%= f.label :position, "Undergraduate Student" %><br />
       
-      <%= f.radio_button :vdc_role, "researcher" %>
-      <%= f.label :vdc_role, "Researcher" %><br />
+      <%= f.radio_button :position, "researcher" %>
+      <%= f.label :position, "Researcher" %><br />
 
-      <%= f.radio_button :vdc_role, "staff" %>
-      <%= f.label :vdc_role, "Staff" %><br />
+      <%= f.radio_button :position, "staff" %>
+      <%= f.label :position, "Staff" %><br />
 
-      <%= f.radio_button :vdc_role, value: "Other", class: "custom" %>
+      <%= f.radio_button :position, value: "Other", class: "custom" %>
       <%= f.label "Other: ", class: "custom" %>
-      <%= f.text_field :vdc_role_other, :label => "Other", class: "user-defined" %>
+      <%= f.text_field :position_other, :label => "Other", class: "user-defined" %>
     </div>
 
 
@@ -108,34 +118,70 @@
     <%= f.input :address, required: false %>
     <%= f.input :email, required: true %>
     <%= f.input :website, required: false %>
-
     
-    <%= f.input :cv_link, required: false %>
-
-    <%# TODO: Come back to this one %>
-    <%# f.file_field :cv_upload, required: false %>
-    <%= f.input :cv_file, required: false %>
+    <div class="form-group">
+      <%= f.label "Curriculum vitae", required: false %><br />
+      <%= f.hint "You may add a CV either as a URL to a web-based CV or upload a file." %>
+      <%= f.input :cv_link, label: "URL", required: false %>
+      <%= f.label "File", required: false %><br />
+      <%= f.hint "MS Word or PDF files only." %>
+      <%= f.file_field :cv_file, multiple: false %>
+    </div>
 
     <%# TODO: Find a way to remove bold from radio labels %>
     <div class="form-group">
-      <%= f.label "Additional sites" %><br />
+      <%= f.label "Additional sites", required: false %>
+      <table>
+      <tr>
+        <td>
+          <%= f.check_box :sites_open_science_framework %>
+          <%= f.label :sites_open_science_framework, "Open Science Framework" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_open_science_framework_url, class: "user-defined" %>
+        </td>
+      </tr>
 
-      <%= f.check_box :collaboration_open_science_framework %>
-      <%= f.label :collaboration_open_science_framework, "Open Science Framework" %><br />
+      <tr>
+        <td>
+          <%= f.check_box :sites_linkedin %>
+          <%= f.label :sites_linkedin, "LinkedIn" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_linkedin_url, class: "user-defined" %>
+        </td>
+      </tr>
 
-      <%= f.check_box :collaboration_linkedin %>
-      <%= f.label :collaboration_linkedin, "LinkedIn" %><br />
+      <tr>
+        <td>
+          <%= f.check_box :sites_vivo %>
+          <%= f.label :sites_vivo, "VIVO" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_vivo_url, class: "user-defined" %>
+        </td>
+      </tr>
 
-      <%= f.check_box :collaboration_vivo %>
-      <%= f.label :collaboration_vivo, "VIVO" %><br />
+      <tr>
+        <td>
+          <%= f.check_box :sites_institutional_repo %>
+          <%= f.label :sites_institutional_repo, "Institutional Repository" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_institutional_repo_url, class: "user-defined" %>
+        </td>
+      </tr>
 
-      <%= f.check_box :collaboration_institutional_repo %>
-      <%= f.label :collaboration_institutional_repo, "Institutional Repository" %>
-      <%= f.text_field :collaboration_institutional_repo_name, class: "user-defined" %><br />
-
-      <%= f.check_box :collaboration_other %>
-      <%= f.label :collaboration_other, "Other: " %>
-      <%= f.text_field :collaboration_other, class: "user-defined" %><br />
+      <tr>
+        <td>
+          <%= f.check_box :sites_other %>
+          <%= f.label :sites_other, "Other: " %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_other_url, class: "user-defined" %>
+        </td>
+      </tr>
+      </table>
     </div>
 
     <%# TODO: Find a way to remove bold from check box labels %> 

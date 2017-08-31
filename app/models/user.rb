@@ -5,7 +5,14 @@ class User < ApplicationRecord
   include Hyrax::User
   include Hyrax::UserUsageStats
 
-
+  #validates :first_name, presence: true
+  #validates :last_name, presence: true
+  #validates :email, presence: true
+  #validates :organization, presence: true
+  #validates :position, presence: true
+  #validates :discipline, presence: true
+  #validates :orcid, presence: true
+  #validates :email, presence: true
 
   if Blacklight::Utils.needs_attr_accessible?
     attr_accessible :email, :password, :password_confirmation
@@ -17,7 +24,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  #mount_uploader :cv_file, CvFileUploader
+  mount_uploader :cv_file, CvFileUploader
+  validates_integrity_of :cv_file # Checks for type whitelist
+  validates_processing_of :cv_file
 
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
@@ -40,9 +49,26 @@ class User < ApplicationRecord
     end 
   end
 
+  validate :validate_organization
+  def validate_organization
+    #TODO: Should I make 'other' a constant?
+    if (organization == 'other') and (organization_other.strip == '')
+      errors.add(:organization_other, 'You must provide a description of you organization if "Other" is selected.')
+    end
+  end
+
   after_create :send_admin_mail_after_registration
   def send_admin_mail_after_registration
     AdminMailer.new_user_waiting_for_approval(self).deliver
     AdminMailer.new_user_waiting_for_approval_admin_notification(self).deliver
   end
+
+    def password_required?
+      if !persisted?
+        false
+      else
+        !password.nil? || !password_confirmation.nil?
+      end
+    end
+
 end
