@@ -41,7 +41,10 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  match "/download_cv/:id/", :controller => "hyrax/admin/users", :action => "download_cv", via: :get
+
 end
+
 
 Hyrax::Engine.routes.draw do  
   namespace :admin do

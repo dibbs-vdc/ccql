@@ -126,7 +126,12 @@
       <%= f.label "File", required: false %><br />
       <%= f.hint "MS Word or PDF files only." %>
       <%= f.file_field :cv_file, multiple: false %>
-    </div>
+
+      <% if (@user != nil) and (!@user.cv_file.file.nil?) %> 
+        <%# @user.cv_file.current_path %>
+        <%= link_to 'Download current CV', "/download_cv/#{@user.id}" %>
+      <% end %>
+   </div>
 
     <%# TODO: Find a way to remove bold from radio labels %>
     <div class="form-group">

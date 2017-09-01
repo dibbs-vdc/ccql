@@ -39,7 +39,7 @@ module Hyrax
       # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
       # TODO: I have no idea if this adheres to pcdm standards. Find out.
       # TODO: some validation here
-      if user.cv_file.file.exists?
+      if !user.cv_file.file.nil?
         file_path = user.cv_file.current_path
         p.cv_upload.content = File.open(file_path)
         p.cv_upload.mime_type = user.cv_file.content_type

@@ -17,14 +17,21 @@ module Hyrax
      end
    end
 
+   def download_cv
+     @user = ::User.find_by(id: params[:id])
+     send_file @user.cv_file.current_path if !@user.cv_file.file.nil?
+  end
+
   private
  
     def user_admin_params
       params.require(:user).permit(key_attributes)
     end
 
-    # TODO: This is a copy of the registrations_controller key attributes.
+    # TODO: This is almost a copy of the registrations_controller key attributes.
     #       Is there a way to avoid duplication?
+    # TODO: Find a better way to update :edu_person_principal_name or
+    #       to not accidentally overwrite it. (taken out of whitelist for now)
     def key_attributes
       [:vdc_referral_method,:vdc_referral_method_other,:first_name, :last_name, 
        :organization, :organization_other, 
@@ -32,7 +39,6 @@ module Hyrax
        :vdc_role, :vdc_role_other, 
        :discipline, :discipline_other, 
        :orcid,
-       :edu_person_principal_name, 
        :address, :email,
        :cv_link, :cv_file, 
        :sites_open_science_framework, :sites_open_science_framework_profile,
