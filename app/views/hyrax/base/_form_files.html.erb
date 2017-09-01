@@ -43,34 +43,6 @@
           <%= t('hyrax.base.form_files.dropzone') %>
         </div>
 
-        <h2><%= t('hyrax.base.form_files.local_readme_upload') %></h2>
-        <!-- The readme-fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-        <div class="row readme-fileupload-buttonbar">
-            <div class="col-xs-7">
-                <!-- The fileinput-button span is used to style the file input field as button -->
-                <span class="btn btn-success fileinput-button">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span>Add files...</span>
-                    <input type="file" name="files[]" multiple id="vdc-resource-readme-files">
-                </span>
-                <button type="reset" class="btn btn-warning cancel hidden readme">
-                    <span class="glyphicon glyphicon-ban-circle"></span>
-                    <span>Cancel upload</span>
-                </button>
-                <!-- The global file processing state -->
-                <span class="readme-fileupload-process"></span>
-            </div>
-            <!-- The global readme progress state -->
-            <div class="col-xs-5 readme-fileupload-progress fade">
-                <!-- The global progress bar -->
-                <div class="progress progress-striped active readme" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                    <div class="readme-progress-bar readme-progress-bar-success" style="width:0%;"></div>
-                </div>
-                <!-- The extended global progress state -->
-                <div class="readme-progress-extended">&nbsp;</div>
-            </div>
-        </div>
-
      </div>
 
 <%= render 'hyrax/uploads/js_templates' %>
