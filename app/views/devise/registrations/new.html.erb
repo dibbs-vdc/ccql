@@ -27,7 +27,7 @@ Application to Participate in the Virtual Data Collaboratory
 
   <div class="form-inputs">
     <%# TODO: Maybe pull this out into a helper function %>
-    <% if request.env["HTTP_EPPN"].gsub(/\s+/, "") == '' %>
+    <% if request.env["HTTP_EPPN"].nil? or (request.env["HTTP_EPPN"].gsub(/\s+/, "") == '') %>
       <%# TODO: Not sure if this is the best way to do this. For now, assume that if the EPPN exists, then shibboleth was successful. %>
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true %>
