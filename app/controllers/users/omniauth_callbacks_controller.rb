@@ -1,11 +1,12 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def shibboleth
-    key = request.env["HTTP_EPPN"]
-    @user = User.find_by_user_key(key)
-    if @user
-      #@user = User.find_or_create_system_user(key)
+    eppn = request.env["HTTP_EPPN"]
+    users = User.where(['edu_person_principal_name = ?', eppn])
+    if !users.empty?
+      @user = users.first
       sign_in_and_redirect @user
+      # TODO: What to do if there is more than 1 account with the same eppn? Need to put a unique validation on eppn.
     else
       redirect_to new_user_registration_url
     end
