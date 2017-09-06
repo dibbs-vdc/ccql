@@ -53,10 +53,11 @@ class User < ApplicationRecord
   def validate_organization
     #TODO: Should I make 'other' a constant?
     if (organization == 'other') and (organization_other.strip == '')
-      errors.add(:organization_other, 'You must provide a description of you organization if "Other" is selected.')
+      errors.add(:organization_other, 'You must provide a description of your organization if "Other" is selected.')
     end
   end
 
+  #TODO: Should this be in a controller instead?
   after_create :send_admin_mail_after_registration
   def send_admin_mail_after_registration
     AdminMailer.new_user_waiting_for_approval(self).deliver

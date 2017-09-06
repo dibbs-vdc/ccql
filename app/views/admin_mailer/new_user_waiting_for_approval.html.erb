@@ -4,11 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thank you for registering with the VDC!</h1>
+    <p>Dear <%= "#{@user.first_name} #{@user.last_name}" %>,</p>
     <p>
-      You have successfully registered and are waiting for approval from our administrators.
-      You will receive another email once you are approved.
+      You have successfully applied to participate in the 
+      Virtual Data Collaboratory.  Your application is under 
+      review by the VDC Administration.  You will receive an 
+      email response within the next few days.
     </p>
-    <p>Thanks for signing up and have a great day!</p>
   </body>
 </html>

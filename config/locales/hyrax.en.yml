@@ -57,7 +57,7 @@ en:
             other: "There are <b>%{count} users</b> pending approval in this repository."
     base: 
       form_files:
-        local_readme_upload: "Add Local README files" 
+        local_readme_upload: "Add Local README Files" 
     product_name:           "Data Collaboratory"
     product_twitter_handle: "@HydraSphere"
     institution_name:       "Rutgers"
