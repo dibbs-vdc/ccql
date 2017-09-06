@@ -40,7 +40,12 @@ module Hyrax
 
       def destroy
         @person = ::Vdc::Person.find(params[:id])
+        @user = ::User.where(identifier_system: @person.id).first
+        # TODO: raise exception if user or person is not found
         @person.destroy!
+        @user.identifier_system = nil
+        @user.save
+        # TODO: Gotta find out how to put this in a transaction....
  
         redirect_to admin_vdc_people_path
       rescue Ldp::Gone

@@ -9,9 +9,14 @@ module Hyrax
     end
 
    def update
+     #session[:return_to] ||= request.referer
      @user = ::User.find_by(id: params[:id])
      if @user.update(user_admin_params)
-       redirect_to hyrax.admin_pending_registrations_path, notice: "Updated registration for #{@user.email}"
+       if @user.identifier_system.nil?
+         redirect_to hyrax.admin_pending_registrations_path, notice: "Updated registration for #{@user.email}"
+       else
+         redirect_to hyrax.admin_users_path, notice: "Updated registration for #{@user.email}"
+       end
      else
        render 'edit'
      end

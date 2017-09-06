@@ -4,6 +4,8 @@
 module Hyrax
   class Admin::PendingRegistrationsController < AdminController
     include Hyrax::Admin::UsersControllerBehavior
+    
+    before_action :ensure_admin!
 
     # TODO: Should this be moved to the Person Controller??
     def create_person_from_user(user)
@@ -59,12 +61,11 @@ module Hyrax
       p
     end
 
-    # TODO: This isn't quite working yet....
     def update_person_from_user(user)
       # TODO: before saving, do some validation on the Person to make sure it's constructed properly
       p = ::Vdc::Person.find(user.identifier_system)
-      if p = nil
-        #TODO: put some error message here?
+      if p.nil?
+        flash[:error] = "This person (#{user.identifier_system}) does not exist."
         return
       end
 
@@ -79,6 +80,7 @@ module Hyrax
       p.edu_person_principal_name = user.edu_person_principal_name if user.edu_person_principal_name != nil
 
       p.email = user.email
+      # TODO: This "other" should probably be a constant somewhere...
       if user.organization.downcase == "other" then
         p.organization = user.organization_other
       else
@@ -89,17 +91,27 @@ module Hyrax
       p.position = user.position
       p.discipline = user.discipline
       p.website = user.website
+
+      # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
+      # TODO: I have no idea if this adheres to pcdm standards. Find out.
+      # TODO: some validation here
+      if !user.cv_file.file.nil?
+        file_path = user.cv_file.current_path
+        p.cv_upload.content = File.open(file_path)
+        p.cv_upload.mime_type = user.cv_file.content_type
+        p.cv_upload.original_name = user.cv_file_identifier
+        p.save
+        p.cv = p.cv_upload.uri
+      elsif user.cv_link.gsub(/\s+/, '') != ''
+        p.cv = RDF::URI(user.cv_link)
+      end
+      
       p.save
-
-      # TODO: update cv if necessary...
-      # TODO: some validation here??
-
       p
     end
 
 
 
-    
     # TODO: Find a way to limit approval to admins only
     # TODO: should this be some sort of background job?
     def approve_user
@@ -117,5 +129,40 @@ module Hyrax
       AdminMailer.new_user_approval(user).deliver
       redirect_to hyrax.admin_pending_registrations_path, notice: "Approved #{user.email}"
     end
+
+   def create_person
+      # TODO: error handling?
+      user = ::User.find(params[:user_id])
+
+      person = create_person_from_user(user)
+
+      # Now that we have the person id in Fedora, we can save it to user
+      user.identifier_system = person.id
+      user.save
+
+      redirect_to hyrax.admin_users_path, notice: "Created Person #{user.email}"
+    end
+
+    
+    # TODO: Should this be moved to people controller? Argh... this is confusing.
+    # TODO: Find a way to limit approval to admins only
+    # TODO: should this be some sort of background job?
+    def update_person
+      # TODO: error handling?
+      user = ::User.find(params[:user_id])
+
+      person = update_person_from_user(user)
+
+      #AdminMailer.user_info_updated(user).deliver
+      redirect_to hyrax.admin_users_path, notice: "Updated Person #{user.email}"
+    end
+
+    private
+
+      def ensure_admin!
+        # Only user authorized to read the admin dash can access this controller
+        authorize! :read, :admin_dashboard
+      end
+
   end
 end
