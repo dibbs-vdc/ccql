@@ -1,0 +1,34 @@
+<%# Modified from Hyrax Gem 1.0.2 %>
+
+<% provide :page_title, construct_page_title(@presenter.title) %>
+
+<div itemscope itemtype="http://schema.org/CollectionPage" class="row">
+  <div class="col-sm-10 pull-right">
+    <header>
+      <h1><%= @presenter %>
+          <%= link_to hyrax.admin_sets_path do %>
+            <span class="label label-info"><%= t('hyrax.homepage.admin_sets.admin_collection_label') %></span>
+          <% end %>
+      </h1>
+    </header>
+    <%= render 'collection_description', presenter: @presenter %>
+    <%= render 'show_descriptions' %>
+  </div>
+  <div class="col-sm-2">
+    <% if has_thumbnail? @presenter.solr_document %>
+      <div class="document-thumbnail">
+        <%= render_thumbnail_tag @presenter.solr_document, {}, suppress_link: true %>
+      </div>
+    <% else %>
+      <span class="fa fa-sitemap collection-icon-search"></span>
+    <% end %>
+  </div>
+</div>
+
+<h2><%= t('hyrax.homepage.admin_sets.works_in_collection') %></h2>
+
+<%= render 'sort_and_per_page', collection: @presenter %>
+
+<%= render_document_index @member_docs %>
+
+<%= render 'paginate' %>
