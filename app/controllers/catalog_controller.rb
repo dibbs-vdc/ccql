@@ -31,7 +31,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       qt: "search",
       rows: 10,
-      qf: "title_tesim description_tesim creator_tesim keyword_tesim funder_tesim"
+      qf: "title_tesim description_tesim creator_tesim keyword_tesim funder_tesim all_text_timv"
     }
 
     # solr field configuration for document/show views
@@ -52,6 +52,8 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("publisher", :facetable), limit: 5
     config.add_facet_field solr_name("file_format", :facetable), limit: 5
     config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
+    # TODO: Figure out ramifications of changing Collections to Projects in Solr
+    #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Projects'
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
