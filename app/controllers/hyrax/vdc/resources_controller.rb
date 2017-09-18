@@ -24,10 +24,8 @@ module Hyrax
 
     def edit
       super
-      # TODO: This isn't right. If someone else is editing this (other than the creator), the
-      #       creator will get overwritten incorrectly.
-      user_profile_presenter = Hyrax::UserProfilePresenter.new(current_user, current_ability)
-      @default_creator = user_profile_presenter.full_name
+      @default_creator = @form.vdc_creator
     end
   end
 end
+

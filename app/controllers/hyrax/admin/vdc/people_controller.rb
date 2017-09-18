@@ -1,21 +1,31 @@
 module Hyrax
   module Admin
     class Vdc::PeopleController < ApplicationController
-      #include Hyrax::WorksControllerBehavior #TODO: Put back eventually?
-      #include Hyrax::BreadcrumbsForWorks     #TODO: Put back eventually?
-      #self.curation_concern_type = ::Vdc::Person #TODO: Put back eventually?
-
-      #self.show_presenter = Hyrax::Vdc::ResourcePresenter #TODO: Put one eventually?
-
       before_action :ensure_admin!
 
+      # TODO: Should I just remove this?
       def new
-        super
         self.vdc_type = "Person"
       end
 
-      #def create
-      #end
+      # TODO: should this be some sort of background job?
+      # TODO: error handling?
+      def create
+        user = ::User.find(params[:user_id])
+        person = ::Vdc::UserToPersonSyncService.new({user: user}).create_person_from_user(user)
+        redirect_to hyrax.admin_users_path, notice: "Created Person #{user.email}"
+      end
+  
+      # TODO: should this be some sort of background job?
+      # TODO: error handling?
+      def update
+        user = ::User.find(params[:user_id])
+        person = ::Vdc::UserToPersonSyncService.new({user: user}).update_person_from_user(user)
+        byebug
+        AdminMailer.updated_person_admin_notification(user).deliver
+        byebug
+        redirect_to hyrax.admin_users_path, notice: "Updated Person #{user.email}. Email notification sent to admin."
+      end
 
       def show
         id = params[:id]
@@ -27,7 +37,8 @@ module Hyrax
       end
 
       def index
-        # TODO: Is there a better way to populate all of the
+        # TODO: Is there a better way to populate all of the people? 
+        #       Eventually index and look up from solr?
         @people = ::Vdc::Person.all
       end
 

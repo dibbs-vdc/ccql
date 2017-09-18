@@ -1,4 +1,4 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Vdc::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def shibboleth
     eppn = request.env["HTTP_EPPN"]
