@@ -1,6 +1,6 @@
 class VdcTypeAttributeRenderer < Hyrax::Renderers::FacetedAttributeRenderer
   def label
-    "Type"
+    "Type (VDC)"
   end
 
   def attribute_value_to_html(value)

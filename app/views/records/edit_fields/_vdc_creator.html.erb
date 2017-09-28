@@ -2,5 +2,37 @@
 
 <div>
   <%# For now, automatically add the current user as the creator %>
-  <%= f.input :vdc_creator, label: "Creator", :input_html => { value: @default_creator }, readonly: true %>
+  <%# f.input :vdc_creator, label: "Creator", :input_html => { value: @default_creator }, readonly: true %>
+
+  <%# Trying out auto-complete with QA.. I can eventually select from a list of names, but it populates eventually with the uuid... i want the label to be displayed... %>
+  <%#
+  f.input :vdc_creator,
+  input_html: {
+    class: 'form-control',
+    data: { 'autocomplete-url' => "/authorities/search/vdc_creator_authority/find",
+      'autocomplete' => :vdc_creator }
+  } ,
+  required: f.object.required?(:vdc_creator) %>
+
+  <%# TODO: Not sure how to do select from service not from db or yaml... For now, just generate a select statement... clean up later. %> 
+  <%
+     users = ::User.all
+     # Should return array of hashes with ids, labels, and values(optional)                                                                                                           
+     user_collection = []
+     users.each do |u|
+       preferred_name = "#{u.last_name}, #{u.first_name}"
+       if u.approved and (u.identifier_system != nil)
+          user_collection << [preferred_name, u.identifier_system]
+       end
+     end
+  %>
+
+  <%= f.input :vdc_creator, :label => "Creator (VDC)", required: f.object.required?(:vdc_creator),
+    as: :select,
+    collection: user_collection,
+    include_blank: true,
+    input_html: { class: 'form-control', multiple: false }
+  %>
+ 
 </div>
+

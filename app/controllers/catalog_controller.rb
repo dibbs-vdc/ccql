@@ -31,8 +31,10 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       qt: "search",
       rows: 10,
-      qf: "title_tesim description_tesim creator_tesim keyword_tesim funder_tesim all_text_timv"
+      qf: "title_tesim description_tesim creator_tesim keyword_tesim vdc_creator_tesim all_text_timv"
     }
+    # NOTE: Alternative query fields...  qf: "title_tesim description_tesim creator_tesim keyword_tesim funder_tesim vdc_creator_tesim vdc_title_tesim all_text_timv"
+
 
     # solr field configuration for document/show views
     config.index.title_field = solr_name("title", :stored_searchable)
@@ -51,9 +53,12 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("based_near", :facetable), limit: 5
     config.add_facet_field solr_name("publisher", :facetable), limit: 5
     config.add_facet_field solr_name("file_format", :facetable), limit: 5
-    config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
+    #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
+    config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Projects'
     # TODO: Figure out ramifications of changing Collections to Projects in Solr
-    #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Projects'
+    
+    # VDC Facets
+    config.add_facet_field solr_name("vdc_creator", :facetable), label: "Creator (VDC)", limit: 5
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
@@ -71,7 +76,6 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("keyword", :stored_searchable), itemprop: 'keywords', link_to_search: solr_name("keyword", :facetable)
     config.add_index_field solr_name("subject", :stored_searchable), itemprop: 'about', link_to_search: solr_name("subject", :facetable)
     config.add_index_field solr_name("creator", :stored_searchable), itemprop: 'creator', link_to_search: solr_name("creator", :facetable)
-    config.add_index_field solr_name("vdc_creator", :stored_searchable), itemprop: 'vdc_creator', link_to_search: solr_name("vdc_creator", :facetable)
     config.add_index_field solr_name("contributor", :stored_searchable), itemprop: 'contributor', link_to_search: solr_name("contributor", :facetable)
     config.add_index_field solr_name("proxy_depositor", :symbol), label: "Depositor", helper_method: :link_to_profile
     config.add_index_field solr_name("depositor"), label: "Owner", helper_method: :link_to_profile
@@ -88,9 +92,13 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("embargo_release_date", :stored_sortable, type: :date), label: "Embargo release date", helper_method: :human_readable_date
     config.add_index_field solr_name("lease_expiration_date", :stored_sortable, type: :date), label: "Lease expiration date", helper_method: :human_readable_date
     # VDC-specific:
-    config.add_index_field solr_name("vdc_type", :stored_searchable), label: "Vdc Type"
+    #config.add_index_field solr_name("vdc_type", :stored_searchable), label: "Vdc Type" # OK
+    config.add_index_field solr_name("vdc_type", :stored_searchable), label: "Type (VDC)", link_to_search: solr_name("vdc_type", :facetable)
     config.add_index_field solr_name("identifier_doi", :stored_searchable), label: "DOI"
-    #config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)"
+    #config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', helper_method: :link_to_profile # NG
+    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', helper_method: :link_to_person #NG
+    #config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', link_to_search: solr_name("vdc_creator", :facetable) # OK - link to search for id
+
     config.add_index_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     config.add_index_field solr_name("genre", :facetable), label: "Genre"
     config.add_index_field solr_name("abstract", :stored_searchable), label: "Abstract"
@@ -124,7 +132,7 @@ class CatalogController < ApplicationController
     # VDC-specific:
     config.add_show_field solr_name("vdc_type", :stored_searchable), label: "Vdc Type"
     config.add_show_field solr_name("identifier_doi", :stored_searchable), label: "DOI"
-    #config.add_show_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)"
+    config.add_show_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)"
     config.add_show_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     config.add_show_field solr_name("genre", :facetable), label: "Genre"
     config.add_show_field solr_name("abstract", :stored_searchable), label: "Abstract"
@@ -295,6 +303,26 @@ class CatalogController < ApplicationController
         pf: solr_name
       }
     end
+
+    # Add VDC Search Fields: begin
+
+    config.add_search_field('vdc_type') do |field|
+      solr_name = solr_name("vdc_type", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('vdc_creator') do |field|
+      solr_name = solr_name("vdc_creator", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    # Add VDC Search Fields: end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and

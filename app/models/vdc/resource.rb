@@ -17,17 +17,19 @@ class Vdc::Resource < ActiveFedora::Base
   self.human_readable_type = 'Resource'
 
   property :vdc_type, predicate: ::RDF::URI("https://datacollaboratory.org/resource#vdcType"), multiple: false do |index|
-    index.as :stored_searchable, :facetable # TODO: Should this be searchable?
+    index.as :stored_searchable, :facetable 
   end
 
-  property :identifier_system, predicate: ::RDF::URI("https://datacollaboratory.org/resource#identifierSystem"), multiple: false
+  property :identifier_system, predicate: ::RDF::URI("https://datacollaboratory.org/resource#identifierSystem"), multiple: false do |index|
+    index.as :stored_searchable
+  end
 
   property :identifier_doi, predicate: ::RDF::URI("https://datacollaboratory.org/resource#identifierDoi"), multiple: false do |index|
     index.as :stored_searchable, :facetable # TODO: Should this be searchable?
   end  
 
   property :vdc_creator, predicate: ::RDF::URI("https://datacollaboratory.org/resource#creator"), multiple: false do |index|
-    index.as :stored_searchable # TODO: Should this be searchable?
+    index.as :stored_searchable, :facetable # TODO: Should this be searchable?
   end
 
   property :authoritative_name, predicate: ::RDF::URI("https://datacollaboratory.org/person#authoritativeName"), multiple: false do |index|
