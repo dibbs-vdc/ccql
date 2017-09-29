@@ -2,11 +2,10 @@ module Hyrax
   class Vdc::CollectionForm < Hyrax::Forms::CollectionForm
 
     #####
-    # Defaults fields to be KEPT in the VDC Resource
+    # Defaults fields to be KEPT in the Collection
     #   creator
-    #   title (assigned to vdc_title by the vdc resource actor)
+    #   title (assigned to vdc_title by the collection actor)
     #   date_created # TODO: Can this be used instead of date?
-    #   license # TODO: Can this be used for VDC purposes?
 
     # Removing default term for ordering fields on the form.
     # Default ones appear first.
@@ -19,7 +18,7 @@ module Hyrax
     self.terms -= [:date_created]
 
     #####
-    # New fields to be ADDED to the VDC Resource
+    # New fields to be ADDED to the Collection
 
     self.required_fields += [:vdc_creator]
     self.terms += [:vdc_creator]
@@ -42,7 +41,7 @@ module Hyrax
     self.terms += [:note]
 
     #####
-    # Default fields to be REMOVED from the VDC Resource
+    # Default fields to be REMOVED from the Collection
     self.required_fields -= [:keyword]
     self.required_fields -= [:rights]
     self.required_fields -= [:creator]
