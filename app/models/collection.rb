@@ -3,4 +3,55 @@ class Collection < ActiveFedora::Base
   include ::Hyrax::CollectionBehavior
   # You can replace these metadata if they're not suitable
   include Hyrax::BasicMetadata
+
+  property :vdc_type, predicate: ::RDF::URI("https://datacollaboratory.org/collection#vdcType"), multiple: false
+
+  property :identifier_system, predicate: ::RDF::URI("https://datacollaboratory.org/collection#identifierSystem"), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
+  property :vdc_creator, predicate: ::RDF::URI("https://datacollaboratory.org/collection#creator"), multiple: false do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  # NOTE: :title already exists as core metadata (default is multiple, which needs to be turned off in the form)
+  #       http://samvera.github.io/customize-metadata-model.html#core-metadata
+  #       The pre-existing title must exist, but we'll create an additional
+  #       :vdc_title mapped to a different predicate in post-processing.
+
+  # To be set from :title in post processing
+  property :vdc_title, predicate: ::RDF::URI("https://datacollaboratory.org/collection#title"), multiple: false do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :abstract, predicate: ::RDF::URI("https://datacollaboratory.org/collection#abstract"), multiple: false do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :funder, predicate: ::RDF::URI("https://datacollaboratory.org/collection#funder"), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :collection_size, predicate: ::RDF::URI("https://datacollaboratory.org/collection#size"), multiple: false do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :note, predicate: ::RDF::URI("https://datacollaboratory.org/collection#note"), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  # NOTE: :date_created (for creationDate) already exists as basic metadata (default is multiple, 
+  #       which needs to be turned off in the form)
+  #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
+
+  # TODO: I don't know if this is the best way to apply vdc metadata.
+  #       For the resource work, I'm using the generated actor for post-processing metadata changes. 
+  #       However, for collections, there doesn't seem to be something like that (or, perhaps I've missed it).
+  #       I need some sort of consistent way of doing this... eventually.
+  #       For now, this apply_vdc_metadata is being called after create and update in the collections controller. 
+  def apply_vdc_metadata
+    self.vdc_type = "collection"
+    self.vdc_title = self.title[0]
+    self.identifier_system = self.id # TODO: Redundant?
+  end  
 end

@@ -86,4 +86,8 @@ class SolrDocument
     self[Solrizer.solr_name('coverage_temporal')]
   end
 
+  def collection_size
+    self[Solrizer.solr_name('collection_size')]
+  end
+
 end
