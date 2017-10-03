@@ -42,6 +42,7 @@ module Hyrax
     self.terms += [:funder]
     self.terms += [:research_problem]
     self.terms += [:note]
+    self.terms += [:discipline]
     self.terms += [:coverage_spatial]
     self.terms += [:coverage_temporal]
 

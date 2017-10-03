@@ -574,7 +574,7 @@ en:
       form:
         option:
           all:
-            label_long:   "All of Hyrax"
+            label_long:   "All of the VDC"
             label_short:  "All"
           my_collections:
             label_long:   "My Projects"
@@ -586,7 +586,7 @@ en:
             label_long:   "My Works"
             label_short:  "My Works"
         q:
-          label:          "Search Hyrax"
+          label:          "Search the VDC"
           placeholder:    "Enter search terms"
     select_type:
       description: "General purpose worktype"

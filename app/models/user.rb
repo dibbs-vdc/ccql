@@ -31,8 +31,11 @@ class User < ApplicationRecord
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
   # the account.
+  # TODO: Need to eventually change the depositor email used in solr searches. 
+  #       Should switch to using the uuid or something else that can't potentially 
+  # change in the future.
   def to_s
-    "#{last_name}, #{first_name}"
+    email 
   end
 
   # Method to help with admin user registration approval

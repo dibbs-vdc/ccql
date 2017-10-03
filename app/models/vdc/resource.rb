@@ -78,15 +78,20 @@ class Vdc::Resource < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  # NOTE: :date_created (for creationDate) already exists as basic metadata (default is multiple, 
-  #       which needs to be turned off in the form)
+  # NOTE: :date_created (for creationDate) already exists as basic metadata
   #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
+  
+  property :creation_date, predicate: ::RDF::URI("https://datacollaboratory.org/resource#creationDate"), multiple: true
 
   # TODO: Is this searchable?
   property :extent, predicate: ::RDF::URI("https://datacollaboratory.org/resource#extent"), multiple: false
 
   # TODO: Is this searchable?
   property :format, predicate: ::RDF::URI("https://datacollaboratory.org/resource#format"), multiple: true
+
+  property :discipline, predicate: ::RDF::URI("https://datacollaboratory.org/resource#discipline"), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
 
   property :coverage_spatial, predicate: ::RDF::URI("https://datacollaboratory.org/resource#coverageSpatial"), multiple: true do |index|
     index.as :stored_searchable, :facetable

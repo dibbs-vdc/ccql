@@ -1,16 +1,18 @@
 <%= presenter.attribute_to_html(:title) %>
 <%= presenter.attribute_to_html(:vdc_creator, render_as: :vdc_creator) %>
-<%= presenter.attribute_to_html(:vdc_type, render_as: :faceted) %>
+<%# presenter.attribute_to_html(:vdc_type, render_as: :faceted) %>
 <%= presenter.attribute_to_html(:identifier_doi) %>
 <%# presenter.attribute_to_html(:authoritative_name, render_as: :faceted) %>
 <%# presenter.attribute_to_html(:authoritative_name_uri, render_as: :faceted) %>
+<%= presenter.attribute_to_html(:genre) %>
 <%= presenter.attribute_to_html(:abstract) %>
-<%= presenter.attribute_to_html(:genre, render_as: :faceted) %>
 <%= presenter.attribute_to_html(:funder, render_as: :faceted, search_field: 'funder') %>
-<%# presenter.attribute_to_html(:research_problem, render_as: :faceted) %>
+<%= presenter.attribute_to_html(:research_problem) %>
 <%= presenter.attribute_to_html(:note) %>
 <%# presenter.attribute_to_html(:readme) %>
-<%# presenter.attribute_to_html(:extent) %>
+<%= presenter.attribute_to_html(:extent) %>
+<%# presenter.attribute_to_html(:format) %>
+<%= presenter.attribute_to_html(:discipline) %>
 <%= presenter.attribute_to_html(:coverage_spatial) %>
 <%= presenter.attribute_to_html(:coverage_temporal) %>
 <%= presenter.attribute_to_html(:source) %>

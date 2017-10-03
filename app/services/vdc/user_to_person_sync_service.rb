@@ -60,7 +60,7 @@ class Vdc::UserToPersonSyncService
     p.save
 
     # Now that we have the person id in Fedora, we can save it to user
-    user.identifier_system = person.id
+    user.identifier_system = p.id
     user.save
 
     p

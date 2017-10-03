@@ -90,4 +90,8 @@ class SolrDocument
     self[Solrizer.solr_name('collection_size')]
   end
 
+  def discipline
+    self[Solrizer.solr_name('discipline')]
+  end
+
 end

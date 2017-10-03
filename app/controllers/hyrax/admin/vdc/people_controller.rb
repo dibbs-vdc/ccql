@@ -21,9 +21,7 @@ module Hyrax
       def update
         user = ::User.find(params[:user_id])
         person = ::Vdc::UserToPersonSyncService.new({user: user}).update_person_from_user(user)
-        byebug
         AdminMailer.updated_person_admin_notification(user).deliver
-        byebug
         redirect_to hyrax.admin_users_path, notice: "Updated Person #{user.email}. Email notification sent to admin."
       end
 
@@ -54,8 +52,10 @@ module Hyrax
         @user = ::User.where(identifier_system: @person.id).first
         # TODO: raise exception if user or person is not found
         @person.destroy!
-        @user.identifier_system = nil
-        @user.save
+        if @user != nil
+          @user.identifier_system = nil
+          @user.save
+        end
         # TODO: Gotta find out how to put this in a transaction....
  
         redirect_to admin_vdc_people_path
