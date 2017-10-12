@@ -1,0 +1,13 @@
+    <div class="form-group">
+      <%= f.label "Curriculum vitae", required: false %><br />
+      <%= f.hint "You may add a CV either as a URL to a web-based CV or upload a file." %>
+      <%= f.input :cv_link, label: "URL", required: false %>
+      <%= f.label "File", required: false %><br />
+      <%= f.hint "MS Word or PDF files only." %>
+      <%= f.file_field :cv_file, multiple: false %>
+
+      <% if (@user != nil) and (!@user.cv_file.file.nil?) %> 
+        <%# @user.cv_file.current_path %>
+        <%= link_to 'Download current CV', "/download_cv/#{@user.id}" %>
+      <% end %>
+   </div>

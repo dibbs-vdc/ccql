@@ -14,46 +14,27 @@ class Vdc::UserToPersonSyncService
     # TODO: before saving, do some validation on the Person to make sure it's constructed properly
     p = ::Vdc::Person.new
     p.vdc_type = "Person"
-    p.orcid = ::RDF::URI(user.orcid)
-    p.preferred_name = user.last_name + ", " + user.first_name
+
+    p.orcid = person_orcid(user)
+    p.preferred_name = person_preferred_name(user)
 
     # TODO: How do I auto-populate p.authoritative_name and p.authoritative_name_uri?
     #       Currently, left blank.
     # p.authoritative_name = ?
     # p.authoritative_name_uri = ?
 
-    p.edu_person_principal_name = user.edu_person_principal_name if user.edu_person_principal_name != nil
-
+    p.edu_person_principal_name = user.edu_person_principal_name
     p.email = user.email
-    # TODO: This "other" should probably be a constant somewhere...
-    if user.organization.downcase == "other" then
-      p.organization = user.organization_other
-    else
-      p.organization = user.organization
-    end
-
+    p.organization = person_organization(user)
     p.department = user.department
     p.position = user.position
-    p.discipline = user.discipline
-    p.website = user.website
+    p.discipline = person_discipline(user)
+    p.website = person_website(user)
+    p.cv = person_cv(user)
+    p.related_description = person_related_description(user)      
+
     p.save
 
-    # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
-    # TODO: Find out what to add to make this adhere to PCDM standards
-    # TODO: some validation here
-    if !user.cv_file.file.nil?
-      file_path = user.cv_file.current_path
-      p.cv_upload.content = File.open(file_path)
-      p.cv_upload.mime_type = user.cv_file.content_type
-      p.cv_upload.original_name = user.cv_file_identifier
-      p.save
-      p.cv = p.cv_upload.uri
-      p.save
-    elsif user.cv_link.gsub(/\s+/, '') != ''
-      p.cv = RDF::URI(user.cv_link)
-      p.save
-    end
-      
     # Additional post-proessing
     # TODO: Is there a better way to do this?
     p.identifier_system = p.id
@@ -74,44 +55,95 @@ class Vdc::UserToPersonSyncService
       return
     end
 
-    p.orcid = ::RDF::URI(user.orcid)
-    p.preferred_name = user.last_name + ", " + user.first_name
+    p.orcid = person_orcid(user)
+    p.preferred_name = person_preferred_name(user)
 
     # TODO: How do I auto-populate p.authoritative_name and p.authoritative_name_uri?
     #       Currently, left blank.
     # p.authoritative_name = ?
     # p.authoritative_name_uri = ?
 
-    p.edu_person_principal_name = user.edu_person_principal_name if user.edu_person_principal_name != nil
-
+    p.edu_person_principal_name = user.edu_person_principal_name
     p.email = user.email
-    # TODO: This "other" should probably be a constant somewhere...
-    if user.organization.downcase == "other" then
-      p.organization = user.organization_other
-    else
-      p.organization = user.organization
-    end
-
+    p.organization = person_organization(user)
     p.department = user.department
     p.position = user.position
-    p.discipline = user.discipline
-    p.website = user.website
+    p.discipline = person_discipline(user)
+    p.website = person_website(user)
+    p.cv = person_cv(user)
+    p.related_description = person_related_description(user)      
 
-    # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
-    # TODO: I have no idea if this adheres to pcdm standards. Find out.
-    # TODO: some validation here
-    if !user.cv_file.file.nil?
-      file_path = user.cv_file.current_path
-      p.cv_upload.content = File.open(file_path)
-      p.cv_upload.mime_type = user.cv_file.content_type
-      p.cv_upload.original_name = user.cv_file_identifier
-      p.save
-      p.cv = p.cv_upload.uri
-    elsif user.cv_link.gsub(/\s+/, '') != ''
-      p.cv = RDF::URI(user.cv_link)
-    end
-      
     p.save
     p
   end
+
+  def person_orcid(user)
+    ::RDF::URI(user.orcid)
+  end
+
+  def person_preferred_name(user)
+    user.last_name + ", " + user.first_name
+  end
+
+  def person_organization(user)
+    # TODO: This "other" should probably be a constant somewhere...
+    # TODO: validation
+    if user.organization.downcase == "other" then
+      return user.organization_other
+    else
+      return user.organization
+    end
+  end
+  
+  def person_discipline(user)
+    # NOTE: A side-effect of using the multi-select in the form for
+    #       selecting disciplines is that there's always an empty string
+    #       as one of the values. We'd like to not include that in 
+    #       the person.
+    return user.discipline.reject!(&:empty?)
+  end
+
+  def person_website(user)
+    if !user.website.nil? and !user.website.empty?
+      # TODO: need some url parsing and validation.
+      # return RDF::URI(user.website)
+      unless user.website[/\Ahttp/]
+         return "http://#{user.website}"
+      end
+    end
+    return user.website    
+  end
+  
+  def person_cv(user)
+    # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
+    # TODO: Does not adhere to PCDM standards. Find a way to make this a pcdm object too.
+    # TODO: some validation here needed
+    if !user.cv_file.file.nil?
+      file_url = user.cv_file.url
+      return RDF::URI(file_url)
+    elsif valid_site(user.cv_link)
+      return user.cv_link
+    end
+    return nil
+  end
+
+  def person_related_description(user)
+    potential_urls = [user.sites_open_science_framework_url, user.sites_researchgate_url, 
+                      user.sites_vivo_url, user.sites_institutional_repo_url, 
+                      user.sites_linkedin_url, user.sites_other_url]
+    descriptions = []
+
+    potential_urls.each do |purl|
+      # TODO: Make this a ::RDF::URI(purl) if it's an acutally valid url, 
+      #       instead of a string. For now, I don't know of a good and 
+      #       comprehensive way to check for this.
+      descriptions << purl if valid_site(purl)
+    end
+    return descriptions
+  end
+
+  def valid_site(site)
+    return (!site.nil? and (site.gsub(/\s+/, '') != ''))
+  end
+
 end

@@ -13,7 +13,7 @@ module Hyrax
       if @user.update(user_admin_params)
         if @user.identifier_system.nil?
           # The user has not been approved yet.
-          redirect_to hyrax.admin_pending_registrations_path, notice: "Updated registration for #{@user.email}"
+          redirect_to hyrax.admin_vdc_pending_registrations_path, notice: "Updated registration for #{@user.email}"
         else
           # The user has been approved in the past.
           redirect_to hyrax.admin_users_path, notice: "Updated registration for #{@user.email}"
@@ -42,15 +42,17 @@ module Hyrax
         [:vdc_referral_method,:vdc_referral_method_other,:first_name, :last_name, 
          :organization, :organization_other, 
          :department,
-         :vdc_role, :vdc_role_other, 
-         :discipline, :discipline_other, 
+         :position, :position_other, 
+         {:discipline => []}, :discipline_other, 
          :orcid,
          :address, :email,
          :cv_link, :cv_file, 
-         :sites_open_science_framework, :sites_open_science_framework_profile,
+         :website,
+         :sites_open_science_framework, :sites_open_science_framework_url,
+         :sites_researchgate, :sites_researchgate_url,
          :sites_linkedin, :sites_linkedin_url,
          :sites_vivo, :sites_vivo_url,
-         :sites_institutional_repo, :sites_institutional_repo_name,
+         :sites_institutional_repo, :sites_institutional_repo_url,
          :sites_other, :sites_other_url,
          :usage_deposit_files, :usage_use_files, :usage_use_tools_on_vdc_data,
          :usage_use_tools_on_external_data, :usage_contact_others,

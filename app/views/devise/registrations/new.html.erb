@@ -4,15 +4,9 @@
 <%# 
 
 # FOR DEBUGGING
-
-# file origin.rb
 target  = "/home/vdc/20170804_jkdump.txt"
-content = <<-RUBY
-  #{request.env.inspect}
-RUBY
-
 File.open(target, "w+") do |f|
-  f.write(content)
+  f.write(request.env.inspect)
 end
 
 %>

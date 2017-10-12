@@ -10,13 +10,11 @@ class CvFileUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   def store_dir
-    # TODO: Is there a better way to set this dir?
-    Rails.root.to_s + "/tmp/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   def cache_dir
-    # TODO: Is there a better way to set this dir?
-    Rails.root.to_s + "/tmp/uploads/cache/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "tmp/uploads/cache/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -51,4 +49,8 @@ class CvFileUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  # TODO: make this configurable
+  def asset_host
+    return "http://localhost:3000"
+  end
 end

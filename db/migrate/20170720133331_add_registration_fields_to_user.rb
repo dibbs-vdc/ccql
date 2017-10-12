@@ -18,8 +18,8 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     add_column :users, :position,  :string, null: false, default: ''
     add_column :users, :position_other,  :string
 
-    # Discipline (Can be more than one, e.g., Agriculture)
-    add_column :users, :discipline,  :string, null: false, default: ''
+    # Discipline (Can be more than one, e.g., ['Agriculture','Biology'])
+    add_column :users, :discipline, :text, array: true, default: [].to_yaml 
     add_column :users, :discipline_other,  :string
 
     # Orcid (already exists in User)

@@ -1,0 +1,42 @@
+    <%# TODO: Find a way to remove bold from check box labels %> 
+    <%# TODO: Find a way to add hint (currently not showing up) %>
+    <div class="form-group">
+      <%= f.label "How will you use the VDC?", required: true, hint: ("Select all that apply.") %><br />
+
+      <%= f.check_box :usage_deposit_files %>
+      <%= f.label :usage_deposit_files, "Deposit files" %><br />
+
+      <%= f.check_box :usage_use_files %>
+      <%= f.label :usage_use_files, "Use files deposited by others" %><br />
+
+      <%= f.check_box :usage_use_tools_on_vdc_data %>
+      <%= f.label :usage_use_tools_on_vdc_data, "Use tools at the VDC on VDC files" %><br />
+
+      <%= f.check_box :usage_use_tools_on_external_data %>
+      <%= f.label :usage_use_tools_on_external_data, "Use tools at the VDC on files located elsewhere" %><br />
+
+      <%= f.check_box :usage_contact_others, label: "Contact other researchers in my field."  %>
+      <%= f.label :contact_other_researchers, "Contact other researchers in my field." %><br />
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Intended Use" %><br />
+      <%= f.text_area :usage_description, :placeholder => "Please briefly describe your intended use of the VDC", :cols => "50", :rows => "5" %><br />
+    </div>
+
+    <%# TODO: Find a way to remove bold from radio labels %>
+    <div class="form-group">
+      <%= f.label "How long is your intended participation in the VDC?", required: true %><br />
+
+      <%= f.radio_button :usage_duration, "less_than_one_year" %>
+      <%= f.label :usage_duration, "<1 year" %><br />
+
+      <%= f.radio_button :usage_duration, "one_to_three_years" %>
+      <%= f.label :usage_duration, "1-3 years" %><br />
+
+      <%= f.radio_button :usage_duration, "more_than_three_years" %>
+      <%= f.label :usage_duration, ">3 years" %><br />
+
+      <%= f.radio_button :usage_duration, "unsure" %>
+      <%= f.label :usage_duration, "Don't know" %><br />
+    </div>

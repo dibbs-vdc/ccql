@@ -28,6 +28,8 @@ class User < ApplicationRecord
   validates_integrity_of :cv_file # Checks for type whitelist
   validates_processing_of :cv_file
 
+  serialize :discipline
+
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
   # the account.
@@ -43,7 +45,7 @@ class User < ApplicationRecord
     super && approved? 
   end 
   
-  # MEthod to help with  admin user registration approval
+  # Method to help with  admin user registration approval
   def inactive_message 
     if !approved? 
       :not_approved 
@@ -54,10 +56,30 @@ class User < ApplicationRecord
 
   validate :validate_organization
   def validate_organization
-    #TODO: Should I make 'other' a constant?
+    #TODO: Should I make 'other' a constant somewhere?
     if (organization == 'other') and (organization_other.strip == '')
       errors.add(:organization_other, 'You must provide a description of your organization if "Other" is selected.')
     end
+  end
+
+  after_validation :check_url_protocols
+  def check_url_protocols
+    # TODO: There's gotta be a more efficient way to do this...
+
+    self.website = add_url_protocol(self.website)
+    self.cv_link = add_url_protocol(self.cv_link)
+    self.sites_open_science_framework_url = add_url_protocol(self.sites_open_science_framework_url)
+    self.sites_researchgate_url = add_url_protocol(self.sites_researchgate_url)
+    self.sites_linkedin_url = add_url_protocol(self.sites_linkedin_url)
+    self.sites_vivo_url = add_url_protocol(self.sites_vivo_url)
+    self.sites_institutional_repo_url = add_url_protocol(self.sites_institutional_repo_url)
+    self.sites_other_url = add_url_protocol(self.sites_other_url)
+  end
+
+  def add_url_protocol(url)
+    return url if !url || url.blank?
+    return url if url[/\Ahttp/] 
+    return "http://#{url}"
   end
 
   #TODO: Should this be in a controller instead?
@@ -67,12 +89,25 @@ class User < ApplicationRecord
     AdminMailer.new_user_waiting_for_approval_admin_notification(self).deliver
   end
 
-    def password_required?
-      if !persisted?
-        false
-      else
-        !password.nil? || !password_confirmation.nil?
-      end
+  def password_required?
+    if !persisted?
+      false
+    else
+      !password.nil? || !password_confirmation.nil?
     end
+  end
+
+  # NOTE: discipline is set via a multi-select form input field.
+  #       These multi-selects always send a hidden blank field
+  #       which muddles things when trying to save and display values.
+  #       I'm not sure how to get around this, but for now, I'm
+  #       putting in code to remove blank fields before validation
+  #
+  #       https://stackoverflow.com/questions/8929230/why-is-the-first-element-always-blank-in-my-rails-multi-select-using-an-embedde 
+  #before_validation do |user|
+    #byebug
+    #self.discipline = self.discipline.reject(&:blank?) if self.discipline #NG
+    #user.discipline.reject!(&:blank?) if user.discipline #NG
+  #end
 
 end

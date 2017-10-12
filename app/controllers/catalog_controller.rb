@@ -95,7 +95,8 @@ class CatalogController < ApplicationController
     # VDC-specific index (search results) view fields:
     #config.add_index_field solr_name("vdc_type", :stored_searchable), label: "Type (VDC)", link_to_search: solr_name("vdc_type", :facetable)
     config.add_index_field solr_name("identifier_doi", :stored_searchable), label: "DOI"
-    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', helper_method: :link_to_person 
+    #config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', helper_method: :link_to_person 
+    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', helper_method: :link_to_person_profile 
     #config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', link_to_search: solr_name("vdc_creator", :facetable) 
     #config.add_index_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     #config.add_index_field solr_name("genre", :facetable), label: "Genre"

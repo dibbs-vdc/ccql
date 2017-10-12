@@ -543,7 +543,7 @@ en:
         tab_label:          'Recently Uploaded'
         title:              'Recently Uploaded'
     icons:
-      collection:       'fa fa-cubes'
+      collection:       'fa fa-sitemap'
       default:          'fa fa-cube'
     mailbox:
       date:     'Date'
@@ -672,6 +672,7 @@ en:
       orcid:
         alt: "ORCID icon"
         label: "ORCID Profile"
+      tab_info: "Additional Information"
       tab_activity: "Activity"
       tab_highlighted: "Highlighted"
       tab_profile: "Profile"
