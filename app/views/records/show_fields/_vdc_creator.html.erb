@@ -1,0 +1,8 @@
+<% record.vdc_creator.each do |vdc_creator| %>
+<span itemprop="vdc_creator" itemscope itemtype="https://datacollaboratory.org/collection#creator">
+  <span itemprop="name"><%= link_to_person_profile_with_id(vdc_creator) %>
+</span>
+<br />
+<% end %>
+
+

@@ -40,6 +40,14 @@ module HyraxHelper
       text
     end
 
+    # TODO: Make more efficient with solr lookup somehow
+    def link_to_person_profile_with_id(person_id)
+      person = ::Vdc::Person.find(person_id)
+      text = person.preferred_name
+      user = User.find_by(identifier_system: person.id)
+      link_to text, Hyrax::Engine.routes.url_helpers.profile_path(user)
+    end
+
     # TODO: Not sure why, but this helper function is not being called...
     # Used by the gallery view                                                                                                                                             
     def collection_thumbnail(_document, _image_options = {}, _url_options = {})
