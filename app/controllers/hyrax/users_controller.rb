@@ -33,7 +33,7 @@ module Hyrax
       respond_to do |wants|
         wants.html { super }
         wants.jsonld do 
-          render body: ::Vdc::Person.find(@user.identifier_system).resource.dump(:jsonld), content_type: 'application/json'
+          render body: "{ \"@graph\": #{::Vdc::Person.find(@user.identifier_system).resource.dump(:jsonld)} }", content_type: 'application/json'
         end
         wants.ttl do
           render body: ::Vdc::Person.find(@user.identifier_system).resource.dump(:ttl), content_type: 'text/turtle'
