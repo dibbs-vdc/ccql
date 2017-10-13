@@ -15,14 +15,14 @@ module Hyrax
       user.save
 
       if user.identifier_system.nil?
-        person = Vdc::UserToPersonSyncService.new({user: user}).create_person_from_user(user)
+        person = ::Vdc::UserToPersonSyncService.new({user: user}).create_person_from_user(user)
         # Now that we have the person id in Fedora, we can save it to user
         user.identifier_system = person.id
         user.save
       else
         # There might be a case where a user was denied at one point, but reinstated later.
         # In this case, it would make sense to not create a new id for this user.
-        person = Vdc::UserToPersonSyncService.new({user: user}).update_person_from_user(user)
+        person = ::Vdc::UserToPersonSyncService.new({user: user}).update_person_from_user(user)
       end
 
       AdminMailer.new_user_approval(user).deliver
