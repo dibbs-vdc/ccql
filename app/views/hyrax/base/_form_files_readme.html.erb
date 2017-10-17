@@ -1,10 +1,11 @@
-     <div id="fileupload">
+<hr />
+     <div id="readme-fileupload">
         <!-- Redirect browsers with JavaScript disabled to the origin page -->
         <noscript><input type="hidden" name="redirect" value="<%= main_app.root_path %>"></noscript>
         <!-- The table listing the files available for upload/download -->
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
 
-        <h2><%= t('hyrax.base.form_files.local_upload') %></h2>
+        <h3><%= t('hyrax.base.form_files.local_readme_upload') %></h3>
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
         <div class="row fileupload-buttonbar">
             <div class="col-xs-7">
@@ -39,14 +40,4 @@
                 <div class="progress-extended">&nbsp;</div>
             </div>
         </div>
-        <div class="dropzone">
-          <%= t('hyrax.base.form_files.dropzone') %>
-        </div>
-
      </div>
-
-<%= render 'hyrax/uploads/js_templates' %>
-<% if Hyrax.config.browse_everything? %>
-  <h2><%= t('hyrax.base.form_files.external_upload') %></h2>
-  <%= render 'browse_everything', f: f %>
-<% end %>

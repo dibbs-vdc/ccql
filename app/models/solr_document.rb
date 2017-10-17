@@ -66,8 +66,8 @@ class SolrDocument
     self[Solrizer.solr_name('note')]
   end
 
-  def readme
-    self[Solrizer.solr_name('readme')]
+  def readme_abstract
+    self[Solrizer.solr_name('readme_abstract')]
   end
 
   def extent

@@ -45,6 +45,7 @@ module Hyrax
     self.terms += [:discipline]
     self.terms += [:coverage_spatial]
     self.terms += [:coverage_temporal]
+    self.terms += [:readme_abstract]
 
     # TODO: Relationships and their UI need to be discussed more before potentially adding this back in.
     #self.terms += [:relation] # TODO

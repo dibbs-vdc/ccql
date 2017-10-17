@@ -32,9 +32,8 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::FacetedAttributeRenderer
     department = "Department: #{person.department}"
     position = "Position: #{person.position}"
     discipline = "Discipline(s): #{person.discipline.map(&:inspect).reject(&:blank?).join(', ').gsub('"', '')}"
-    id = "ID: #{person.id}"
     br = "<br />".html_safe
 
-    profile+br+orcid+br+organization+br+email+br+department+br+position+br+discipline+br+id
+    profile+br+orcid+br+organization+br+email+br+department+br+position+br+discipline
   end
 end

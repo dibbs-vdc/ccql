@@ -490,8 +490,8 @@ en:
       suffix:           "@rutgers.edu"
     product_name:           "Virtual Data Collaboratory"
     product_twitter_handle: "@HydraSphere"
-    institution_name:       "Rutgers"
-    institution_name_full:  "Rutgers University"
+    institution_name:       "VDC"
+    institution_name_full:  "Virtual Data Collaboratory"
     account_name:           "My Institution Account Id"
     footer:
       copyright_html: "<strong>Copyright &copy; 2017 Project Hydra</strong> Licensed under the Apache License, Version 2.0"

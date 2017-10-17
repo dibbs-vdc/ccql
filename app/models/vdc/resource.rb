@@ -10,8 +10,6 @@ class Vdc::Resource < ActiveFedora::Base
   # visibility is selected. Form-level validations will also exist for those
   # that do change based on visibility.
   validates :title, presence: { message: 'Your resource must have a title.' }
-  #validates :vdc_creator, presence: { message: 'Your resouce must have a creator.' }
-  #validates :genre, presence: { message: 'Your resource must have a genre.' }
   
   #self.human_readable_type = 'Vdc/Resource'
   self.human_readable_type = 'Resource'
@@ -74,8 +72,12 @@ class Vdc::Resource < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :readme, predicate: ::RDF::URI("https://datacollaboratory.org/resource#readme"), multiple: true do |index|
-    index.as :stored_searchable, :facetable
+  property :readme_file, predicate: ::RDF::URI("https://datacollaboratory.org/resource#readmeFile"), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
+  property :readme_abstract, predicate: ::RDF::URI("https://datacollaboratory.org/resource#readmeAbstract"), multiple: false do |index|
+    index.as :stored_searchable
   end
 
   # NOTE: :date_created (for creationDate) already exists as basic metadata

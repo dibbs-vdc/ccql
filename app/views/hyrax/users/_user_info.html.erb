@@ -24,7 +24,4 @@
               Also, it'll be nice to have a place to change up commas, etc.%>
     <%= user.discipline.reject(&:empty?).join(', ') %>
   </dd>
-
-  <dt><i class="fa fa-id-card"></i> Fedora ID</dt>
-  <dd><%= user.identifier_system %></dd>
 </dl>
