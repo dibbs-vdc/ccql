@@ -11,14 +11,6 @@ module Hyrax
     #   date_created # TODO: Can this be used instead of date?
     #   license # TODO: Can this be used for VDC purposes?
 
-    #####
-    # New fields to be ADDED to the VDC Resource
-
-    self.required_fields += [:vdc_creator]
-    self.terms += [:vdc_creator]
-    self.required_fields += [:genre]
-    self.terms += [:genre]
-
     # Removing default term for ordering fields on the form.
     # Default ones appear first.
     # These fields will be put back later in the order
@@ -27,8 +19,20 @@ module Hyrax
     #       Maybe in the toggle javascript, make sure that
     #       I don't move whole form groups? Instead, just move
     #       children elements between option and required form groups?
+    self.required_fields -= [:date_created]
     self.terms -= [:rights]
-    self.terms -= [:date_created]
+
+    #####
+    # New fields to be ADDED to the VDC Resource
+
+    self.required_fields += [:vdc_creator]
+    self.terms += [:vdc_creator]
+    self.required_fields += [:genre]
+    self.terms += [:genre]
+    self.terms += [:research_problem]
+    self.required_fields += [:research_problem]
+    self.terms += [:date_created]
+    self.required_fields += [:date_created]
 
     # OPTIONAL/REQUIRED (depending on visibility)
     # We want these to come first so that when they change position
@@ -38,9 +42,7 @@ module Hyrax
 
     # OPTIONAL
     self.terms += [:rights]
-    self.terms += [:date_created]
     self.terms += [:funder]
-    self.terms += [:research_problem]
     self.terms += [:note]
     self.terms += [:discipline]
     self.terms += [:coverage_spatial]
