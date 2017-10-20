@@ -10,6 +10,7 @@ default: &default
 
 development:
   <<: *default
+  login_url: <%= ENV.fetch("ADMIN_MAILER_LOGIN_URL", "http://localhost:3000/") %>
 
 production:
   <<: *default
