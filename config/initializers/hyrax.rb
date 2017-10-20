@@ -14,7 +14,7 @@ Hyrax.config do |config|
   # config.default_active_workflow_name = 'default'
 
   # Email recipient of messages sent via the contact form
-  config.contact_email = "jk1508@rutgers.edu"
+  config.contact_email = ENV.fetch('HYRAX_CONTACT_EMAIL', 'please-change-me-at-config-initializers-hyrax@example.com')
 
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
@@ -196,3 +196,8 @@ Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
 Qa::Authorities::Local.register_subauthority('subjects', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('languages', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('genres', 'Qa::Authorities::Local::TableBasedAuthority')
+
+# VDC-related authorities
+Qa::Authorities::Local.register_subauthority('vdc_funding_sources', 'Qa::Authorities::Local::FileBasedAuthority')
+Qa::Authorities::Local.register_subauthority('vdc_genres', 'Qa::Authorities::Local::FileBasedAuthority')
+Qa::Authorities::Local.register_subauthority('vdc_disciplines', 'Qa::Authorities::Local::FileBasedAuthority')
