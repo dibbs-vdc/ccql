@@ -1,8 +1,8 @@
 # VDC Admin Mailer Configuration
 #
 default: &default
-  default_from: <%= ENV["ADMIN_MAILER_DEFAULT_FROM"] %>
-  admin_email: <%= ENV["ADMIN_MAILER_ADMIN_EMAIL"] %>
+  default_from: <%= ENV.fetch("ADMIN_MAILER_DEFAULT_FROM", "no-reply@localhost") %>
+  admin_email: <%= ENV.fetch("ADMIN_MAILER_ADMIN_EMAIL", "admin@localhost") %>
   new_user_waiting_for_approval_subject: 'Thank you for registering with the VDC'
   new_user_approval_subject: 'Your registration with the VDC has been approved'
   new_user_waiting_for_approval_admin_notification_subject: 'Pending registration with the VDC - %{user_email}'
