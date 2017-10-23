@@ -23,3 +23,4 @@
 # Ignore precompiled public assets (TODO: Not sure yet if this should be ignored)
 /public/assets/*
 /public/uploads/config/secrets.yml
+/config/role_map.yml
