@@ -59,7 +59,7 @@ $ fcrepo_wrapper -p 8984 --no-jms -d tmp/fcrepo4-development-data
 
 #### Running this application
 
-Run the following commands to get the Rails application running on localhost:3000.
+Run the following commands to get the Rails application running on localhost:3000. Before running it for the first time, look up the setup notes: https://github.com/dibbs-vdc/ccql/wiki/Setup--Notes
 
 ```
 
