@@ -13,7 +13,7 @@
       <% end %>
 
       <dt><i class="fa fa-building-o"></i> Position</dt>
-      <dd><%= user.position.capitalize %></dd>
+      <dd><%= sync_service.person_position(user).capitalize %></dd>
 
       <%# TODO: What's the best way to avoid all these nil and blank checks? %>
       <% if !user.website.nil? && !user.website.blank? %>
