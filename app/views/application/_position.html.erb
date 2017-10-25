@@ -27,8 +27,8 @@
   <%= f.radio_button :position, "staff" %>
   <%= f.label :position, "Staff" %><br />
 
-  <%= f.radio_button :position, value: "Other", class: "custom" %>
-  <%= f.label "Other: ", class: "custom" %>
-  <%= f.text_field :position_other, :label => "Other", class: "user-defined" %>
+  <%= f.radio_button :position, "other" %>
+  <%= f.label :position, "Other: " %>
+  <%= f.text_field :position_other %>
 </div>
 

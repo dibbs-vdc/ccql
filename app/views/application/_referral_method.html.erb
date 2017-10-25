@@ -9,14 +9,14 @@
   <%= f.label :vdc_referral_method, "Google search" %><br />
   <%= f.radio_button :vdc_referral_method, "personal" %>
   <%= f.label :vdc_referral_method, "Personal referral" %><br />
-  <%= f.radio_button :vdc_referral_method, value: "Other", class: "custom" %>
-  <%= f.label "Other: ", class: "custom", required: false %>
-  <%= f.text_field :vdc_referral_method_other, :label => "Other", class: "user-defined" %>
+  <%= f.radio_button :vdc_referral_method, value: "Other" %>
+  <%= f.label :vdc_referral_method, "Other: " %>
+  <%= f.text_field :vdc_referral_method_other %>
 </div>
 
 <%# TODO: make :vdc_referral_method customizable via config %>
 
-<%# NOTE: Below is NG %>
+<%# NOTE: Below is No good because of the need to input text for the other option %>
 <%# f.input :vdc_referral_method, 
             label: "How did you learn about us?", 
             required: false, 

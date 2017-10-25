@@ -1,6 +1,7 @@
 # Service to create and update a Fedora Person object, given a user.
 
 # TODO: Get rid of all the repetition please...
+# TODO: Put the admin restrictions in here in addition to the controllers?
 
 class Vdc::UserToPersonSyncService
 
@@ -27,7 +28,7 @@ class Vdc::UserToPersonSyncService
     p.email = user.email
     p.organization = person_organization(user)
     p.department = user.department
-    p.position = user.position
+    p.position = person_position(user)
     p.discipline = person_discipline(user)
     p.website = person_website(user)
     p.cv = person_cv(user)
@@ -67,7 +68,7 @@ class Vdc::UserToPersonSyncService
     p.email = user.email
     p.organization = person_organization(user)
     p.department = user.department
-    p.position = user.position
+    p.position = person_position(user)
     p.discipline = person_discipline(user)
     p.website = person_website(user)
     p.cv = person_cv(user)
@@ -101,6 +102,14 @@ class Vdc::UserToPersonSyncService
     #       as one of the values. We'd like to not include that in 
     #       the person.
     return user.discipline.reject!(&:empty?)
+  end
+
+  def person_position(user)
+    if user.position.downcase == "other"
+      return user.position_other
+    else
+      return user.position
+    end
   end
 
   def person_website(user)
