@@ -71,6 +71,10 @@ $ RAILS_ENV=development rails server
 
 ```
 
+#### Additional Steps
+
+[Setting Up Your First Admin User](https://github.com/dibbs-vdc/ccql/wiki/Setting-Up-Your-First-Admin-User)
+
 ## Contributing
 
 We'd love contributors! Please contact us for more information. At this time, we don't have a formal process to contribute, but we're working towards that.
