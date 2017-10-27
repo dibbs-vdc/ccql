@@ -104,5 +104,12 @@ class SolrDocument
     rp
   end
 
+  def preferred_name
+    self[Solrizer.solr_name('preferred_name')]
+  end
+
+  def organization
+    self[Solrizer.solr_name('organization')]
+  end
 
 end

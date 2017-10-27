@@ -23,5 +23,13 @@ module Ccql
     # -- all .rb files in that directory are automatically loaded.
 
     config.admin_mailer = config_for(:admin_mailer)
+
+    # Overrides
+    # TODO: If these work well, we should consider changing the other non-view monkey patching to be this way.
+    config.to_prepare do
+      Hyrax::WorkIndexer.prepend Hyrax::Vdc::WorkIndexerOverride
+      Hyrax::CatalogSearchBuilder.prepend Hyrax::Vdc::CatalogSearchBuilderOverride
+    end
+    
   end
 end
