@@ -101,7 +101,7 @@ class Vdc::UserToPersonSyncService
     #       selecting disciplines is that there's always an empty string
     #       as one of the values. We'd like to not include that in 
     #       the person.
-    return user.discipline.reject!(&:empty?)
+    return user.discipline.reject(&:empty?)
   end
 
   def person_position(user)
