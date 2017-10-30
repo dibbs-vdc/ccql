@@ -28,7 +28,9 @@ module Ccql
     # TODO: If these work well, we should consider changing the other non-view monkey patching to be this way.
     config.to_prepare do
       Hyrax::WorkIndexer.prepend Hyrax::Vdc::WorkIndexerOverride
+      Hyrax::CollectionIndexer.prepend Hyrax::Vdc::CollectionIndexerOverride
       Hyrax::CatalogSearchBuilder.prepend Hyrax::Vdc::CatalogSearchBuilderOverride
+      Hyrax::My::CollectionsController.prepend Hyrax::My::Vdc::CollectionsControllerOverride
     end
     
   end

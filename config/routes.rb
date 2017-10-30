@@ -23,11 +23,11 @@ Rails.application.routes.draw do
     get   "/users/cancel", to: "vdc/registrations#cancel", as: :cancel_user_registration
   end
 
-  scope :dashboard do
-    get '/collections',             controller: 'hyrax/my/vdc/collections', action: :index, as: 'dashboard_collections'
-    get '/collections/page/:page',  controller: 'hyrax/my/vdc/collections', action: :index
-    get '/collections/facet/:id', controller: 'hyrax/my/vdc/collections', action: :facet, as: 'dashboard_collections_facet'
-  end
+  #scope :dashboard do
+  #  get '/collections',             controller: 'hyrax/my/vdc/collections', action: :index, as: 'dashboard_collections'
+  #  get '/collections/page/:page',  controller: 'hyrax/my/vdc/collections', action: :index
+  #  get '/collections/facet/:id', controller: 'hyrax/my/vdc/collections', action: :facet, as: 'dashboard_collections_facet'
+  #end
 
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'

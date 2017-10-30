@@ -4,7 +4,7 @@
 
 module Hyrax
   module Vdc
-    module WorkIndexerOverride
+    module CollectionIndexerOverride
 
       def generate_solr_document
         super.tap do |solr_doc|
