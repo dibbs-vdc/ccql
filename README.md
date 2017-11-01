@@ -85,4 +85,4 @@ This project is licensed under the Apache 2.0. See the [LICENSE](LICENSE) file f
 
 ## Acknowledgments
 
-In building this application, we received a LOT of help from Rutgers, PSU, and the whole Samvera community. Thanks!
+In building this application, we received a LOT of help from Rutgers, PSU, Temple University, and the whole Samvera community. Thanks!
