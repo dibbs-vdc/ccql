@@ -28,6 +28,7 @@ class CatalogController < ApplicationController
     config.view.slideshow.partials = [:index]
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
+    # TODO: What should these default parameters really be?
     config.default_solr_params = {
       qt: "search",
       rows: 10,
@@ -94,11 +95,9 @@ class CatalogController < ApplicationController
     #config.add_index_field solr_name("lease_expiration_date", :stored_sortable, type: :date), label: "Lease expiration date", helper_method: :human_readable_date
 
     # VDC-specific index (search results) view fields:
-    #config.add_index_field solr_name("vdc_type", :stored_searchable), label: "Type (VDC)", link_to_search: solr_name("vdc_type", :facetable)
+    #config.add_index_field solr_name("vdc_type", :stored_searchable), label: "VDC Type", link_to_search: solr_name("vdc_type", :facetable)
     config.add_index_field solr_name("identifier_doi", :stored_searchable), label: "DOI"
-    #config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', helper_method: :link_to_person 
-    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', helper_method: :link_to_person_profile 
-    #config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)", itemprop: 'vdc_creator', link_to_search: solr_name("vdc_creator", :facetable) 
+    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator", itemprop: 'vdc_creator', helper_method: :link_to_person_profile 
     #config.add_index_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     #config.add_index_field solr_name("genre", :facetable), label: "Genre"
     #config.add_index_field solr_name("abstract", :stored_searchable), label: "Abstract"
@@ -133,7 +132,7 @@ class CatalogController < ApplicationController
     # VDC-specific:
     #config.add_show_field solr_name("vdc_type", :stored_searchable), label: "Vdc Type"
     config.add_show_field solr_name("identifier_doi", :stored_searchable), label: "DOI"
-    config.add_show_field solr_name("vdc_creator", :stored_searchable), label: "Creator (VDC)"
+    config.add_show_field solr_name("vdc_creator", :stored_searchable), label: "Creator"
     #config.add_show_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     config.add_show_field solr_name("genre", :facetable), label: "Genre"
     config.add_show_field solr_name("abstract", :stored_searchable), label: "Abstract"

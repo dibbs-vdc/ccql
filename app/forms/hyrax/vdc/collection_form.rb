@@ -1,5 +1,6 @@
 module Hyrax
   class Vdc::CollectionForm < Hyrax::Forms::CollectionForm
+    include ::Vdc::VdcCreatorForSelect
 
     #####
     # Defaults fields to be KEPT in the Collection

@@ -11,25 +11,11 @@
   } ,
   required: f.object.required?(:vdc_creator) %>
 
-  <%# TODO: Not sure how to do select from service not from db or yaml... For now, just generate a select statement... clean up later. %> 
-  <%
-     users = ::User.all
-     # Should return array of hashes with ids, labels, and values(optional)                                                                                                           
-     user_collection = []
-     users.each do |u|
-       preferred_name = "#{u.last_name}, #{u.first_name}"
-       if u.approved and (u.identifier_system != nil)
-          user_collection << [preferred_name, u.identifier_system]
-       end
-     end
-  %>
-
-  <%= f.input :vdc_creator, :label => "Creator (VDC)", required: f.object.required?(:vdc_creator),
+  <%= f.input :vdc_creator, :label => "Creator", required: f.object.required?(:vdc_creator),
     as: :select,
-    collection: user_collection,
+    collection: f.object.vdc_creator_for_select,
     include_blank: true,
     input_html: { class: 'form-control', multiple: false }
   %>
- 
 </div>
 

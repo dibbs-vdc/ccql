@@ -2,6 +2,8 @@
 #  `rails generate hyrax:work Vdc::Resource`
 module Hyrax
   class Vdc::ResourceForm < Hyrax::Forms::WorkForm
+    include ::Vdc::VdcCreatorForSelect
+
     self.model_class = ::Vdc::Resource
 
     #####
@@ -99,5 +101,6 @@ module Hyrax
     def title
       super.first || ""
     end
+
   end
 end
