@@ -44,14 +44,22 @@ module Hyrax
     #  super
     #end
 
-    #def create
-    #  byebug
-    #  super
-    #end
+    def create
+      super
+      curation_concern.reload # Do this to get the extracted_text loaded properly for curation_concern.members
+      curation_concern.members.each{ |member| member.update_index } # Reindex the members to get them into solr properly
+    end
 
     #def edit
     #  super
     #end
+
+    def update
+      super
+      curation_concern.reload # Do this to get the extracted_text loaded properly for curation_concern.members
+      curation_concern.members.each{ |member| member.update_index } # Reindex the members to get them into solr properly
+    end
+
   end
 end
 
