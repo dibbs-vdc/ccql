@@ -755,7 +755,6 @@ en:
         based_near: "A place name related to the project, such as its site of publication, or the city, state, or country the project contents are about. Calls upon the <a href='http://www.geonames.org'>GeoNames web service</a>."
         contributor: "A person or group you want to recognize for playing a role in the creation of the project, but not the primary role."
         creator: "The person or group responsible for the project. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot;."
-        date_created: "The date on which the project was created."
         description: "Free-text notes about the project. Examples include abstracts of a paper or citation information for a journal article."
         identifier: "A unique handle identifying the project. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
         keyword: "Words or phrases you select to describe what the project is about. These are used to search for content."
@@ -763,14 +762,18 @@ en:
         publisher: "The person or group making the project available. Generally this is the institution."
         related_url: "A link to a website or other specific content (audio, video, PDF document) related to the project. An example is the URL of a research project from which the project was derived."
         resource_type: "Pre-defined categories to describe the type of content being uploaded, such as &quot;article&quot; or &quot;dataset.&quot;  More than one type may be selected."
-        rights: "Licensing and distribution information governing access to the project. Select from the provided drop-down list."
+        rights: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
         subject: "Headings or index terms describing what the project is about; these do need to conform to an existing vocabulary."
-        title: "A name to aid in identifying a project."
+        # VDC Collection hints:
+        title: "A descriptive name for the collection."
+        abstract: "A brief description of the collection including the area of research and keywords."
+        collection_size: "Estimated size (in MB, TB or PB) anticipated for resources deposited to the collection over the life of the project."
+        note: "A place for the collection creator to share any additional information."
+        date_created: "Date the Collection was created. YYYY-MM-DD or YY-MM-DD/YY-MM-DD. An open collection (to which data is still being added) will have one date.  If the collection is complete, the researcher is encouraged to add an end date."
       defaults:
         based_near: "A place name related to the work, such as its site of publication, or the city, state, or country the work contents are about. Calls upon the <a href='http://www.geonames.org'>GeoNames web service</a>."
         contributor: "A person or group you want to recognize for playing a role in the creation of the work, but not the primary role."
         creator: "The person or group responsible for the work. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot;."
-        date_created: "The date on which the work was created."
         description: "Free-text notes about the work. Examples include abstracts of a paper or citation information for a journal article."
         identifier: "A unique handle identifying the work. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
         keyword: "Words or phrases you select to describe what the work is about. These are used to search for content."
@@ -778,9 +781,21 @@ en:
         publisher: "The person or group making the work available. Generally this is the institution."
         related_url: "A link to a website or other specific content (audio, video, PDF document) related to the work. An example is the URL of a research project from which the work was derived."
         resource_type: "Pre-defined categories to describe the type of content being uploaded, such as &quot;article&quot; or &quot;dataset.&quot;  More than one type may be selected."
-        rights: "Licensing and distribution information governing access to the work. Select from the provided drop-down list."
         subject: "Headings or index terms describing what the work is about; these do need to conform to an existing vocabulary."
-        title: "A name to aid in identifying a work."
+        # VDC Hint Defaults:
+        title: "A descriptive name for the resource to be ingested."
+        identifier_doi: "Unique string assigned by a DOI registry to a resource in the VDC that is published and citable in the scholarly record. For now, this field must be manually entered."
+        genre: "The broad genre of resources included in the resource. Select data, data analysis, or supplementary file from the provided drop-down list."
+        vdc_creator: "The name of the Creator."
+        abstract: "A brief description including the area of research and keywords."
+        funder: "Name of the grant or funding source.  Consistent naming with sufficient information to identify the funder must be provided.  Begin by typing the first few letters, and a drop down list of matching funders should appear for you to select from.  If your funder does not exist, please enter your own."
+        research_problem: "A specific note for researcher to identify the problem to be addressed , hypothesis to be tested or purpose of data creation."
+        note: "A place for researchers to share any additional information, such as creators or contributors who are not members of VDC."
+        date_created: "Date that the resource was created (YYYY-MM-DD or YY-MM-DD/YY-MM-DD)."
+        discipline: "Discipline or disciplines in which the work is related."
+        coverage_spatial: "Geographic location or coordinates. Free text examples include: 40 47 48N; 95°48′26,533&quotW; Paris, France." 
+        coverage_temporal: "Time frame or period in history (including geologic time period) when data occurred. This can include the date and time of capture, in which case UTC code is preferred, although not required. This could be a range of dates (1900-1930) or time period (World War II, 1939-1945, or Paleozoic era)."
+        rights: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
     labels:
       collection:
         size:                      "Size"
@@ -803,5 +818,13 @@ en:
         visibility_after_lease:    'then restrict it to'
         visibility_during_embargo: 'Restricted to'
         visibility_during_lease:   'Is available for'
+        # VDC label Defaults:
+        identifier_doi: "DOI"
+        vdc_creator: "Creator"
+        research_problem: "Research problem or hypothesis"
+        date_created: "Creation Date"
+        coverage_spatial: "Spatial Coverage"
+        coverage_temporal: "Temporal Coverage"
+        rights: "License"
     required:
       html: '<span class="label label-info required-tag">required</span>'
