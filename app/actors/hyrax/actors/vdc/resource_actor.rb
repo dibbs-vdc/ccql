@@ -16,28 +16,20 @@ module Hyrax
       private
    
         def post_processing(attributes)
+          # NOTE: This actor seems to do post-processing BEFORE the uploaded files have
+          #       been processed. So, I'm adding processing that doesn't depend on
+          #       information on its members (like, getting the number of files and mime 
+          #       infomration.
+          # TODO: Consider putting this in the controller post-processing?
           curation_concern.vdc_type = curation_concern.human_readable_type
           curation_concern.vdc_title = curation_concern.title[0]
           curation_concern.identifier_system = curation_concern.id # TODO: Redundant?
-
-          # It looks like curation_concern.members 
-          # is a FileSet of uploaded files attached to the work.          
-          curation_concern.extent = curation_concern.members.size
-          # curation_concern.members[0].mime_type # TODO: what to do with mimetype? set format?
           curation_concern.save!
 
           # TODO: Assign these eventually --
           # curation_concern.identifier_doi = ?
           # curation_concern.authoritative_name = ?
           # curation_concern.authoritative_name_uri = ?
-          # curation_concern.format = ?
-
-          # TODO: REMOVE DEBUGGING          
-          #puts "attributes.inspect -- " + attributes.inspect
-          #puts "user.inspect -- " + user.inspect
-          #puts "curation_concern.inspect -- " + curation_concern.inspect
-          #puts "resource dump -- " + curation_concern.resource.dump(:ttl)          
-          #byebug
 
           true
         end

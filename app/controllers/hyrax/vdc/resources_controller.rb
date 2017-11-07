@@ -11,6 +11,8 @@ module Hyrax
     self.show_presenter = Hyrax::Vdc::ResourcePresenter
 
     def attributes_for_actor
+      #TODO: consider using super.tap to avoid duplication
+
       attributes = super
       # If they selected a BrowseEverything file, but then clicked the                                                                                                
       # remove button, it will still show up in `selected_files`, but                                                                                                 
@@ -46,8 +48,7 @@ module Hyrax
 
     def create
       super
-      curation_concern.reload # Do this to get the extracted_text loaded properly for curation_concern.members
-      curation_concern.members.each{ |member| member.update_index } # Reindex the members to get them into solr properly
+      perform_cu_post_processing
     end
 
     #def edit
@@ -56,10 +57,25 @@ module Hyrax
 
     def update
       super
-      curation_concern.reload # Do this to get the extracted_text loaded properly for curation_concern.members
-      curation_concern.members.each{ |member| member.update_index } # Reindex the members to get them into solr properly
+      perform_cu_post_processing
     end
 
+    # Post-processing for Create and Update
+    def perform_cu_post_processing
+      # Reload to get all fields (including member extracted_text and mime_type) loaded properly
+      curation_concern.reload 
+
+      # Set the extent and format fields
+      curation_concern.extent = curation_concern.members.size
+      curation_concern.members.each do |member|
+        (curation_concern.format ||= []) << member.mime_type
+      end
+      # TODO: Why doesn't the save cause the solr index to get updated?
+      curation_concern.save!
+      
+      # Reindex the members to get them into solr properly
+      curation_concern.members.each{ |member| member.update_index } 
+    end
   end
 end
 
