@@ -11,7 +11,7 @@ class Vdc::DoiGenerationService
 
     # TODO: This is a fake generated for demo purposes.
     #       Eventually, this should be replaced with code using the EZID API.
-    "http://dx.doi.org/doi:999.0000/#{@work.id}"
+    "http://dx.doi.org/doi:99.0000/#{@work.id}"
   end
 
   def doi_exists?
