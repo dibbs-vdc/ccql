@@ -70,12 +70,18 @@ module Hyrax
       curation_concern.members.each do |member|
         (curation_concern.format ||= []) << member.mime_type
       end
-      # TODO: Why doesn't the save cause the solr index to get updated?
+
+      # Generate DOI if the work is public  
+      if curation_concern.visibility == Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
+        curation_concern.identifier_doi = ::Vdc::DoiGenerationService.new({work: curation_concern}).generate_doi
+      end
+
       curation_concern.save!
       
       # Reindex the members to get them into solr properly
       curation_concern.members.each{ |member| member.update_index } 
     end
+
   end
 end
 

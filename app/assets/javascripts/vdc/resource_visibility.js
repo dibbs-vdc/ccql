@@ -75,13 +75,11 @@ function addVisibilityListeners() {
 }
 
 function usePrivateRequirements() {
-  makeResourceElementOptionalFromRequired('string', 'vdc_resource_identifier_doi');
   makeResourceElementOptionalFromRequired('text', 'vdc_resource_abstract');
 }
 
 function usePublicRequirements() {
   makeResourceElementRequiredFromOptional('text', 'vdc_resource_abstract');
-  makeResourceElementRequiredFromOptional('string', 'vdc_resource_identifier_doi');
   makeReadmeElementRequiredFromOptional();
 }
 

@@ -40,7 +40,6 @@ module Hyrax
     # We want these to come first so that when they change position
     # from required
     self.terms += [:abstract]
-    self.terms += [:identifier_doi]
 
     # OPTIONAL
     self.terms += [:rights]
