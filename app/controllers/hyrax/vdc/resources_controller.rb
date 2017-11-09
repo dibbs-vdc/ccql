@@ -62,19 +62,14 @@ module Hyrax
 
     # Post-processing for Create and Update
     def perform_cu_post_processing
-      # Reload to get all fields (including member extracted_text and mime_type) loaded properly
+      # Reload to get all fields (including member extracted_text and mime_type) 
+      # loaded properly
       curation_concern.reload 
+      byebug
 
-      # Set the extent and format fields
-      curation_concern.extent = curation_concern.members.size
-      curation_concern.members.each do |member|
-        (curation_concern.format ||= []) << member.mime_type
-      end
-
-      # Generate DOI if the work is public  
-      if curation_concern.visibility == Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
-        curation_concern.identifier_doi = ::Vdc::DoiGenerationService.new({work: curation_concern}).generate_doi
-      end
+      set_extent
+      set_format
+      set_doi
 
       curation_concern.save!
       
@@ -82,6 +77,24 @@ module Hyrax
       curation_concern.members.each{ |member| member.update_index } 
     end
 
+    def set_extent
+      curation_concern.extent = curation_concern.members.size
+    end
+
+    def set_format
+      unique_formats = Set.new
+      curation_concern.members.each do |member|
+        unique_formats.add(member.mime_type)
+      end
+      curation_concern.format = unique_formats.to_a
+    end
+
+    def set_doi
+      # Generate DOI if the work is public  
+      if curation_concern.visibility == Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
+        curation_concern.identifier_doi = ::Vdc::DoiGenerationService.new({work: curation_concern}).generate_doi
+      end
+    end
   end
 end
 

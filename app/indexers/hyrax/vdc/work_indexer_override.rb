@@ -12,10 +12,7 @@ module Hyrax
           solr_doc[Solrizer.solr_name('vdc_title', :stored_sortable)] = object.vdc_title.downcase if !object.vdc_title.nil?
           
           solr_doc[Solrizer.solr_name('extent')] = object.members.size
-          object.members.each do |member|
-            (solr_doc[Solrizer.solr_name('format')] ||= []) << member.to_solr["mime_type_ssi"]
-          end
-          
+          solr_doc[Solrizer.solr_name('format')] = object.format          
           solr_doc[Solrizer.solr_name('identifier_doi')] = object.identifier_doi
         end
       end
