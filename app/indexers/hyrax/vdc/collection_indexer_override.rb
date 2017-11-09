@@ -9,6 +9,7 @@ module Hyrax
       def generate_solr_document
         super.tap do |solr_doc|
           (solr_doc[Solrizer.solr_name('person_ids', :symbol)] ||= []) << object.vdc_creator
+          solr_doc[Solrizer.solr_name('vdc_title', :stored_sortable)] = object.vdc_title.downcase if !object.vdc_title.nil?
         end
       end
 
