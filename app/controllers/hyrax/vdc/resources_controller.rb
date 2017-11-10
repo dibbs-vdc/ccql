@@ -65,7 +65,6 @@ module Hyrax
       # Reload to get all fields (including member extracted_text and mime_type) 
       # loaded properly
       curation_concern.reload 
-      byebug
 
       set_extent
       set_format

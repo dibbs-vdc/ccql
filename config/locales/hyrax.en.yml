@@ -796,6 +796,8 @@ en:
         coverage_spatial: "Geographic location or coordinates. Free text examples include: 40 47 48N; 95°48′26,533&quotW; Paris, France." 
         coverage_temporal: "Time frame or period in history (including geologic time period) when data occurred. This can include the date and time of capture, in which case UTC code is preferred, although not required. This could be a range of dates (1900-1930) or time period (World War II, 1939-1945, or Paleozoic era)."
         rights: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
+        relation_uri: "A URL to a related resource.  Could be a version or an article that cites the data"
+        relation_type: "Type of relationship identified in the Relation URI to another resource."
     labels:
       collection:
         size:                      "Size"
@@ -826,5 +828,7 @@ en:
         coverage_spatial: "Spatial Coverage"
         coverage_temporal: "Temporal Coverage"
         rights: "License"
+        relation_uri: "Relation URI"
+        relation_type: "Type of Relationship"
     required:
       html: '<span class="label label-info required-tag">required</span>'

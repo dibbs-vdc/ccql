@@ -201,3 +201,4 @@ Qa::Authorities::Local.register_subauthority('genres', 'Qa::Authorities::Local::
 Qa::Authorities::Local.register_subauthority('vdc_funding_sources', 'Qa::Authorities::Local::FileBasedAuthority')
 Qa::Authorities::Local.register_subauthority('vdc_genres', 'Qa::Authorities::Local::FileBasedAuthority')
 Qa::Authorities::Local.register_subauthority('vdc_disciplines', 'Qa::Authorities::Local::FileBasedAuthority')
+Qa::Authorities::Local.register_subauthority('vdc_resource_relation_types', 'Qa::Authorities::Local::FileBasedAuthority')

@@ -1,0 +1,6 @@
+<%# app/views/records/edit_fields/_relation_type.html.erb %>
+<%= f.input :relation_type, as: :multi_value_select, required: false,
+    collection: Vdc::RelationTypesService.select_all_options,
+    include_blank: true,
+    input_html: { class: 'form-control' }
+%>

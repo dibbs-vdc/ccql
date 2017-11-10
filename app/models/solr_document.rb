@@ -90,6 +90,14 @@ class SolrDocument
     self[Solrizer.solr_name('organization')]
   end
 
+  def relation_uri
+    self[Solrizer.solr_name('relation_uri')]
+  end
+
+  def relation_type
+    self[Solrizer.solr_name('relation_type')]
+  end
+
   # NOTE: If I don't return nil on empty single-valued fields, they'll be displayed.
   #       It's more desirable to not display empty fields.
   # TODO: There's got to be a better way to do this. I haven't figured it out yet.

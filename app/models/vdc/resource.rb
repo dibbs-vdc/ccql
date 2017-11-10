@@ -103,6 +103,18 @@ class Vdc::Resource < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
+  #property :is_referenced_by_uri, predicate: ::RDF::Vocab::DC.isReferencedBy, multiple: true do |index|
+  #  index.as :stored_searchable
+  #end
+
+  property :relation_uri, predicate: ::RDF::URI("https://datacollaboratory.org/resource#relationUri"), multiple: true do |index|
+    index.as :stored_searchable
+  end
+
+  property :relation_type, predicate: ::RDF::URI("https://datacollaboratory.org/resource#relationType"), multiple: true do |index|
+    index.as :stored_searchable
+  end
+
   # NOTE: :license already exists as basic metadata (default is multiple, which needs to be turned off in the form)
   #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
 

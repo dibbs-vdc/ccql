@@ -149,6 +149,8 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("discipline", :stored_searchable), label: "Discipline"
     config.add_show_field solr_name("coverage_spatial", :stored_searchable), label: "Coverage Spatial"
     config.add_show_field solr_name("coverage_temporal", :stored_searchable), label: "Coverage Temporal"
+    config.add_show_field solr_name("relation_uri", :stored_searchable), label: "Relation URI"
+    config.add_show_field solr_name("relation_type", :stored_searchable), label: "Type of Relationship"
     config.add_show_field solr_name("preferred_name", :stored_searchable)
     config.add_show_field solr_name("organization", :stored_searchable)
 

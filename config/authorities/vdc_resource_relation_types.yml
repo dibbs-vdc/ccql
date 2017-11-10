@@ -1,0 +1,7 @@
+terms:
+    - id: isReferencedBy
+      term: isReferencedBy
+      active: true
+    - id: isAnalysisOf
+      term: isAnalysisOf
+      active: true
