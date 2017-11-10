@@ -32,6 +32,7 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
     buffer << department(person_doc) << br
     buffer << position(person_doc) << br
     buffer << discipline(person_doc) << br
+    buffer << br
   
     buffer
   end

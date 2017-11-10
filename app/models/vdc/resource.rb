@@ -26,7 +26,7 @@ class Vdc::Resource < ActiveFedora::Base
     index.as :stored_searchable, :facetable # TODO: Should this be searchable?
   end  
 
-  property :vdc_creator, predicate: ::RDF::URI("https://datacollaboratory.org/resource#creator"), multiple: false do |index|
+  property :vdc_creator, predicate: ::RDF::URI("https://datacollaboratory.org/resource#creator"), multiple: true do |index|
     index.as :stored_searchable, :facetable # TODO: Should this be searchable?
   end
 

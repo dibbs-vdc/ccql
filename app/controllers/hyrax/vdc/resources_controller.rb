@@ -42,9 +42,11 @@ module Hyrax
       attributes
     end
 
-    #def new
-    #  super
-    #end
+    def new
+      # Set the default vdc creator to be the current user when creating a new resource
+      curation_concern.vdc_creator << current_user.identifier_system
+      super
+    end
 
     def create
       super
