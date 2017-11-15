@@ -10,7 +10,7 @@ class Collection < ActiveFedora::Base
     index.as :stored_searchable
   end
 
-  property :vdc_creator, predicate: ::RDF::URI("https://datacollaboratory.org/collection#creator"), multiple: false do |index|
+  property :vdc_creator, predicate: ::RDF::URI("https://datacollaboratory.org/collection#creator"), multiple: true do |index|
     index.as :stored_searchable, :facetable
   end
 
