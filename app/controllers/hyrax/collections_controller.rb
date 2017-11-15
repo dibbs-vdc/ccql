@@ -8,6 +8,12 @@ module Hyrax
     self.form_class = Hyrax::Vdc::CollectionForm
     self.presenter_class = Hyrax::Vdc::CollectionPresenter
 
+    def new
+      super.tap do |form|
+        form.vdc_creator << current_user.identifier_system
+      end
+    end
+
     def after_create
       @collection.apply_vdc_metadata
       if @collection.save
