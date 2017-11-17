@@ -1,0 +1,43 @@
+  <%# f.error_notification %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger" id="error_explanation">
+    <p><%= pluralize(@user.errors.count, "error") %> prohibited this registration from being saved:</p>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+
+    <%= render partial: "referral_method", :locals => { f: f } %>
+
+    <%= f.input :first_name, required: true %>
+    <%= f.input :last_name, required: true %>
+
+    <%= render partial: "organization", :locals => { f: f } %>
+
+    <%= f.input :department, required: false %>
+
+    <%= render partial: "position", :locals => { f: f } %>
+
+    <%= render partial: "discipline", :locals => { f: f } %>
+    <%= render partial: "orcid", :locals => { f: f } %>
+
+    <%= f.input :address, required: false %>
+    <%= f.input :email, required: true %>
+    <%= f.input :website, required: false %>
+    
+    <%= render partial: "cv", :locals => { f: f } %>
+    <%= render partial: "sites", :locals => { f: f } %>
+    <%= render partial: "usage", :locals => { f: f } %>
+
+    <%# TODO: Is there another option beside hidden field to get the eppn? %>
+    <%= f.hidden_field :edu_person_principal_name, value: request.env["HTTP_EPPN"] %>
+
+  </div>
+
+  <%= render partial: "registration_disclaimer" %>
+

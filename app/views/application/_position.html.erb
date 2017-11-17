@@ -1,0 +1,34 @@
+<%# TODO: Find a way to remove bold from radio labels %>
+<div class="form-group">
+  <%= f.label "Position", required: true, hint: ("If you selected other for organization or institution, please describe it below.") %><br />
+  <%= f.hint "Select the one that best applies." %>
+
+  <%= f.radio_button :position, "professor" %>
+  <%= f.label :position, "Professor" %><br />
+
+  <%= f.radio_button :position, "associate professor" %>
+  <%= f.label :position, "Associate Professor" %><br />
+
+  <%= f.radio_button :position, "assistant professor" %>
+  <%= f.label :position, "Assistant Professor" %><br />
+
+  <%= f.radio_button :position, "postdoctoral position" %>
+  <%= f.label :position, "Postdoctoral Position" %><br />
+
+  <%= f.radio_button :position, "graduate student" %>
+  <%= f.label :position, "Graduate Student" %><br />
+
+  <%= f.radio_button :position, "undergraduate student" %>
+  <%= f.label :position, "Undergraduate Student" %><br />
+      
+  <%= f.radio_button :position, "researcher" %>
+  <%= f.label :position, "Researcher" %><br />
+
+  <%= f.radio_button :position, "staff" %>
+  <%= f.label :position, "Staff" %><br />
+
+  <%= f.radio_button :position, "other" %>
+  <%= f.label :position, "Other: " %>
+  <%= f.text_field :position_other %>
+</div>
+

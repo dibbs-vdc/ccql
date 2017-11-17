@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.validate
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
@@ -20,6 +21,9 @@
 // Required by Blacklight
 //= require blacklight/blacklight
 
-//= require_tree .
+//= require vdc/resource_visibility
 //= require hyrax
-
+//= require almond
+//= require vdc/save_work/save_work_control
+//= require vdc/editor
+//= require app

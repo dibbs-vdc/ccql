@@ -1,0 +1,30 @@
+<%# TODO: Find a way to remove bold from radio labels %>
+<div class="form-group">
+  <%= f.label "How did you learn about us?", required: false %><br />
+  <%= f.radio_button :vdc_referral_method, "talk" %>
+  <%= f.label :vdc_referral_method, "Talk or presentation" %><br />
+  <%= f.radio_button :vdc_referral_method, "publication" %>
+  <%= f.label :vdc_referral_method, "Article or other publication" %><br />
+  <%= f.radio_button :vdc_referral_method, "google" %>
+  <%= f.label :vdc_referral_method, "Google search" %><br />
+  <%= f.radio_button :vdc_referral_method, "personal" %>
+  <%= f.label :vdc_referral_method, "Personal referral" %><br />
+  <%= f.radio_button :vdc_referral_method, value: "Other" %>
+  <%= f.label :vdc_referral_method, "Other: " %>
+  <%= f.text_field :vdc_referral_method_other %>
+</div>
+
+<%# TODO: make :vdc_referral_method customizable via config %>
+
+<%# NOTE: Below is No good because of the need to input text for the other option %>
+<%# f.input :vdc_referral_method, 
+            label: "How did you learn about us?", 
+            required: false, 
+            as: :radio_buttons, 
+            collection: [['Talk or presentation', 'talk'], 
+                         ['Article or other publication', 'publication'], 
+                         ['Google search', 'google'], 
+                         ['Personal referral', 'personal'], 
+                         ['Other' , 'other']],
+            input_html: {class: "form-basic" } ,
+            item_wrapper_class: 'inline' %>

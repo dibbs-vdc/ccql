@@ -1,0 +1,43 @@
+<% content_for :page_header do %>
+  <h1><span class="fa fa-user"></span> <%= t('hyrax.admin.pending_registrations.index.title') %></h1>
+<% end %>
+
+<div class="panel panel-default users-listing">
+  <div class="panel-heading">
+      <%= t('hyrax.admin.pending_registrations.index.describe_pending_registrations_html', count: @presenter.pending_user_count) %>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-striped datatable">
+        <thead>
+          <tr>
+            <th></th>
+            <th><%= t('.id_label') %></th>
+            <th><%= t('.access_label') %></th>
+            <th><%= t('.approval_label') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @presenter.pending_users.each do |user| %>
+            <tr>
+              <td><%= link_to hyrax.profile_path(user) do %>
+                    <%= image_tag(user.avatar.url(:thumb), width: 30) if user.avatar.file %>
+                  <% end %>
+              </td>
+              <br>
+              <td><%= link_to user.email, edit_admin_user_path(id: user.id) %></td>
+              <td>
+                <%# in the case that a user is created who never signs in, this is necessary %>
+                <relative-time datetime="<%= @presenter.last_accessed(user).getutc.iso8601 %>" title="<%= @presenter.last_accessed(user).to_formatted_s(:standard) %>">
+                  <%= @presenter.last_accessed(user).to_formatted_s(:long_ordinal) %>
+                </relative-time>
+              </td>
+              <td><%= button_to 'Approve', {controller: "vdc/pending_registrations",  action: "approve_user", user_id: user.id}, method: :post %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

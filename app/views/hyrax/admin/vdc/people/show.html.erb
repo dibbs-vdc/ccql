@@ -1,0 +1,12 @@
+<h1>[DEV ONLY] <%= @person.preferred_name %> </h1>
+
+ttl
+<pre>
+<%= @person.resource.dump(:ttl) %>
+</pre>
+
+jsonld
+<pre>
+<%= @person.resource.dump(:jsonld) %>
+</pre>
+<hr />

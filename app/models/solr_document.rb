@@ -25,4 +25,104 @@ class SolrDocument
   # Do content negotiation for AF models. 
 
   use_extension( Hydra::ContentNegotiation )
+
+  def vdc_type
+    self[Solrizer.solr_name('vdc_type')]
+  end
+
+  def vdc_creator
+    self[Solrizer.solr_name('vdc_creator')]
+  end
+
+  def vdc_title
+    self[Solrizer.solr_name('vdc_title')]
+  end
+
+  def authoritative_name
+    self[Solrizer.solr_name('authoritative_name')]    
+  end
+
+  def authoritative_name_uri
+    self[Solrizer.solr_name('authoritative_name_uri')]
+  end
+
+  def genre
+    self[Solrizer.solr_name('genre')]
+  end
+
+  def funder
+    self[Solrizer.solr_name('funder')]
+  end
+
+  def note
+    self[Solrizer.solr_name('note')]
+  end
+
+  def extent
+    self[Solrizer.solr_name('extent')]
+  end
+
+  def format
+    self[Solrizer.solr_name('format')]
+  end
+
+  def coverage_spatial
+    self[Solrizer.solr_name('coverage_spatial')]
+  end
+
+  def coverage_temporal
+    self[Solrizer.solr_name('coverage_temporal')]
+  end
+
+  def collection_size
+    self[Solrizer.solr_name('collection_size')]
+  end
+
+  def discipline
+    self[Solrizer.solr_name('discipline')]
+  end
+
+  def preferred_name
+    self[Solrizer.solr_name('preferred_name')]
+  end
+
+  def organization
+    self[Solrizer.solr_name('organization')]
+  end
+
+  def relation_uri
+    self[Solrizer.solr_name('relation_uri')]
+  end
+
+  def relation_type
+    self[Solrizer.solr_name('relation_type')]
+  end
+
+  # NOTE: If I don't return nil on empty single-valued fields, they'll be displayed.
+  #       It's more desirable to not display empty fields.
+  # TODO: There's got to be a better way to do this. I haven't figured it out yet.
+  def identifier_doi
+    doi = self[Solrizer.solr_name('identifier_doi')]
+    return nil if doi.nil? || doi.first.empty?
+    doi
+  end
+
+  def readme_abstract
+    ra = self[Solrizer.solr_name('readme_abstract')]
+    return nil if ra.nil? || ra.first.empty?
+    ra
+  end
+
+  def abstract
+    a = self[Solrizer.solr_name('abstract')]
+    return nil if a.nil? || a.first.empty?
+    a
+  end
+
+  def research_problem
+    rp = self[Solrizer.solr_name('research_problem')]
+    return nil if rp.nil? || rp.first.empty?
+    rp
+  end
+
 end

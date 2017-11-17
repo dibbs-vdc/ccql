@@ -1,0 +1,26 @@
+  <h1>[DEV ONLY] Fedora Person Objects</h1>
+
+<table class="table table-striped datatable">
+  <tr>
+    <th>Id</th>
+    <th>EPPN</th>
+    <th>Preferred Name</th>
+    <th>Email</th>
+    <th>Show</th>
+    <th>Delete</th>
+  </tr>
+ 
+  <% @people.each do |person| %>
+    <tr>
+      <td><%= person.id %></td>
+      <td><%= person.edu_person_principal_name %></td>
+      <td><%= person.preferred_name %></td>
+      <td><%= person.email %></td>
+      <td><%= link_to 'Show', admin_vdc_person_path(person) %></td>
+      <td><%= link_to 'Destroy', admin_vdc_person_path(person),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>

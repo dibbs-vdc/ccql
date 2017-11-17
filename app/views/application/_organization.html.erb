@@ -1,0 +1,9 @@
+<%# TODO: Find a way to remove the blank option %>
+<%= f.input :organization, 
+            label: "Organization or Institution", 
+            collection: [["Penn State University", "Penn State University"],
+                         ["Rutgers, The State University of New Jersey", "Rutgers, The State University of New Jersey"],
+                         ["Temple University", "Temple University"],
+                         ["Other", "Other"]],
+                :required => true %>
+    <%= f.input :organization_other, required: false, label: "Other organization or institution", hint: ("If you selected other for organization or institution, please describe it below.") %>

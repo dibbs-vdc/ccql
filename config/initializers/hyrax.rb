@@ -14,7 +14,7 @@ Hyrax.config do |config|
   # config.default_active_workflow_name = 'default'
 
   # Email recipient of messages sent via the contact form
-  # config.contact_email = "repo-admin@example.org"
+  config.contact_email = ENV.fetch('HYRAX_CONTACT_EMAIL', 'please-change-me-at-config-initializers-hyrax@example.com')
 
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
@@ -53,7 +53,7 @@ Hyrax.config do |config|
 
   # Hyrax uses NOIDs for files and collections instead of Fedora UUIDs
   # where NOID = 10-character string and UUID = 32-character string w/ hyphens
-  # config.enable_noids = true
+  config.enable_noids = false
 
   # Template for your repository's NOID IDs
   # config.noid_template = ".reeddeeddk"
@@ -92,7 +92,7 @@ Hyrax.config do |config|
   # Should work creation require file upload, or can a work be created first
   # and a file added at a later time?
   # The default is true.
-  # config.work_requires_files = true
+  config.work_requires_files = false
 
   # Should a button with "Share my work" show on the front page to all users (even those not logged in)?
   # config.always_display_share_button = true
@@ -103,8 +103,9 @@ Hyrax.config do |config|
   # The user who runs audit jobs. Update this if you aren't using emails
   # config.audit_user_key = 'audituser@example.com'
   #
-  # The banner image. Should be 5000px wide by 1000px tall
-  # config.banner_image = 'https://cloud.githubusercontent.com/assets/92044/18370978/88ecac20-75f6-11e6-8399-6536640ef695.jpg'
+
+  # The banner image. 
+  config.banner_image = 'assets/VDC-Logo.png'
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
   # These must be lambdas that return a Pathname. Can be configured separately
@@ -195,3 +196,9 @@ Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
 Qa::Authorities::Local.register_subauthority('subjects', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('languages', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('genres', 'Qa::Authorities::Local::TableBasedAuthority')
+
+# VDC-related authorities
+Qa::Authorities::Local.register_subauthority('vdc_funding_sources', 'Qa::Authorities::Local::FileBasedAuthority')
+Qa::Authorities::Local.register_subauthority('vdc_genres', 'Qa::Authorities::Local::FileBasedAuthority')
+Qa::Authorities::Local.register_subauthority('vdc_disciplines', 'Qa::Authorities::Local::FileBasedAuthority')
+Qa::Authorities::Local.register_subauthority('vdc_resource_relation_types', 'Qa::Authorities::Local::FileBasedAuthority')

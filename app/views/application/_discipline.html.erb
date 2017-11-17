@@ -1,0 +1,5 @@
+<%= f.input :discipline, 
+    collection: VdcDisciplinesService.select_all_options, 
+    input_html: {multiple: true},
+    hint: "Please identify the discipline(s) in which you work." %>
+

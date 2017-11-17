@@ -1,0 +1,65 @@
+    <%# TODO: Find a way to remove bold from radio labels %>
+    <div class="form-group">
+      <%= f.label "Additional sites", required: false %>
+      <table>
+      <tr>
+        <td>
+          <%= f.check_box :sites_open_science_framework %>
+          <%= f.label :sites_open_science_framework, "Open Science Framework" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_open_science_framework_url, class: "user-defined" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.check_box :sites_researchgate %>
+          <%= f.label :sites_linkedin, "ResearchGate" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_researchgate_url, class: "user-defined" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.check_box :sites_linkedin %>
+          <%= f.label :sites_linkedin, "LinkedIn" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_linkedin_url, class: "user-defined" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.check_box :sites_vivo %>
+          <%= f.label :sites_vivo, "VIVO" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_vivo_url, class: "user-defined" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.check_box :sites_institutional_repo %>
+          <%= f.label :sites_institutional_repo, "Institutional Repository" %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_institutional_repo_url, class: "user-defined" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.check_box :sites_other %>
+          <%= f.label :sites_other, "Other: " %>
+        </td>
+        <td>&nbsp;
+          <%= f.text_field :sites_other_url, class: "user-defined" %>
+        </td>
+      </tr>
+      </table>
+    </div>

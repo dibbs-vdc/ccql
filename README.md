@@ -25,7 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Shibboleth requires registration of application
 * sqlite3
 
-Please note that development of this application is currently on CentOS 7.
+Please note that development of this application is currently on CentOS 7. We are currently using Hyrax Gem 1.0.4.
 
 ### Running your dev environment
 
@@ -34,7 +34,7 @@ Eventually, we'll have a step by step series of examples that describe how to ge
 #### Solr
 
 ```
-$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development
+$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development --version 6.6.1
 ```
 
 Note: I don't understand Solr that well yet. With this wrapper, I sometimes need to stop Solr prior to running. Until I understand things better, here's what I usually do for that:
@@ -42,7 +42,7 @@ Note: I don't understand Solr that well yet. With this wrapper, I sometimes need
 ```
 $ sudo service solr status
 $ sudo service solr stop
-$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development
+$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development --version 6.6.1
 ```
 
 #### Redis
@@ -59,7 +59,7 @@ $ fcrepo_wrapper -p 8984 --no-jms -d tmp/fcrepo4-development-data
 
 #### Running this application
 
-Run the following commands to get the Rails application running on localhost:3000.
+Run the following commands to get the Rails application running on localhost:3000. Before running it for the first time, look up the setup notes: https://github.com/dibbs-vdc/ccql/wiki/Setup--Notes
 
 ```
 
@@ -71,6 +71,10 @@ $ RAILS_ENV=development rails server
 
 ```
 
+#### Additional Steps
+
+[Setting Up Your First Admin User](https://github.com/dibbs-vdc/ccql/wiki/Setting-Up-Your-First-Admin-User)
+
 ## Contributing
 
 We'd love contributors! Please contact us for more information. At this time, we don't have a formal process to contribute, but we're working towards that.
@@ -81,4 +85,4 @@ This project is licensed under the Apache 2.0. See the [LICENSE](LICENSE) file f
 
 ## Acknowledgments
 
-In building this application, we received a LOT of help from Rutgers, PSU, and the whole Samvera community. Thanks!
+In building this application, we received a LOT of help from Rutgers, PSU, Temple University, and the whole Samvera community. Thanks!

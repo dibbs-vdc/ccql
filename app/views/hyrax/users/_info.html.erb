@@ -1,0 +1,43 @@
+<% 
+  # TODO: Clean this up to and use a presenter.
+  # NOTE: Person lookups are slow, so I'm using some of the sync service helper functions for now.
+  #       Change eventually to solr lookups once you learn how.
+  sync_service = Vdc::UserToPersonSyncService.new({user: user})
+%>
+<div id="info" class="tab-pane active">
+  <div class="panel panel-body">
+    <dl id="user_info">
+      <% unless user.department.blank? %>
+        <dt><i class="fa fa-building-o"></i> Department </dt>
+        <dd><%= user.department %></dd>
+      <% end %>
+
+      <dt><i class="fa fa-building-o"></i> Position</dt>
+      <dd><%= sync_service.person_position(user).capitalize %></dd>
+
+      <%# TODO: What's the best way to avoid all these nil and blank checks? %>
+      <% if !user.website.nil? && !user.website.blank? %>
+        <dt><i class="fa fa-laptop"></i> Website</dt> 
+        <dd><%= link_to user.website, user.website, { target: '_blank' } %></dd>
+      <% end %>
+
+      <% cv = sync_service.person_cv(user) %>
+      <% if !cv.nil? %>
+        <dt><i class="fa fa-file-text"></i> CV</dt>
+        <dd><%= link_to URI(cv.to_s).path.split('/').last, cv.to_s, { target: '_blank' } %></dd>
+      <% end %>
+
+      <% desc = sync_service.person_related_description(user) %>
+      <% if desc.count > 0 %>
+        <dt><i class="fa fa-connectdevelop"></i> Related Descriptions</dt>
+        <dd>
+          <ul>
+            <% desc.each do |d| %>
+              <li><%= link_to d, d, { target: '_blank' } %></li>
+            <% end %>
+          </ul>
+        </dd>
+      <% end %>
+    </dl>
+  </div>
+</div>

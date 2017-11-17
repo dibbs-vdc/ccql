@@ -1,0 +1,73 @@
+terms:
+    - id: Agriculture
+      term: Agriculture
+      active: true
+    - id: Biology
+      term: Biology
+      active: true
+    - id: Business
+      term: Business
+      active: true
+    - id: Chemistry
+      term: Chemistry
+      active: true
+    - id: Computer and Information Sciences
+      term: Computer and Information Sciences
+      active: true
+    - id: Earth and space sciences
+      term: Earth and space sciences
+      active: true
+    - id: Economics
+      term: Economics
+      active: true
+    - id: Education
+      term: Education
+      active: true
+    - id: Engineering and technology
+      term: Engineering and technology
+      active: true
+    - id: Geography
+      term: Geography
+      active: true
+    - id: History
+      term: History
+      active: true
+    - id: Interdisciplinary programs
+      term: Interdisciplinary programs
+      active: true
+    - id: Languages and literature
+      term: Languages and literature
+      active: true
+    - id: Law
+      term: Law
+      active: true
+    - id: Library and archival studies
+      term: Library and archival studies
+      active: true
+    - id: Mathematics
+      term: Mathematics
+      active: true
+    - id: Medicine and health sciences
+      term: Medicine and health sciences
+      active: true
+    - id: Music and performing arts
+      term: Music and performing arts
+      active: true
+    - id: Philosophy and theology
+      term: Philosophy and theology
+      active: true
+    - id: Physics
+      term: Physics
+      active: true
+    - id: Political science
+      term: Political science
+      active: true
+    - id: Psychology
+      term: Psychology
+      active: true
+    - id: Sociology
+      term: Sociology
+      active: true
+    - id: Visual arts
+      term: Visual arts
+      active: true

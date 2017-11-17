@@ -1,0 +1,27 @@
+<%# Modified from Hyrax Gem 1.0.4 %>
+
+<%# TODO: Update this to also display microdata like the work. 
+          Also, make it so that ttl and json formats are 
+          accessible via content resolution, again like the work. %>
+
+<dl id="user_info">
+
+<% if user.orcid.present? %>
+  <dt><%= orcid_label('profile') %></dt>
+  <dd><%= link_to user.orcid, user.orcid, { target: '_blank' } %></dd>
+<% end %>
+
+  <dt><i class="fa fa-envelope"></i> Email</dt>
+  <dd><%= mail_to user.email %></dd>
+
+  <dt><i class="fa fa-building"></i> Organization</dt>
+  <dd><%= user.organization %></dd>
+
+  <dt><i class="fa fa-circle"></i> Discipline</dt>
+  <dd>
+    <%# TODO: Put display logic for discipline array into a presenter.  
+              Otherwise, "gotcha" multiselect empty values will appear. 
+              Also, it'll be nice to have a place to change up commas, etc.%>
+    <%= user.discipline.reject(&:empty?).join(', ') %>
+  </dd>
+</dl>
