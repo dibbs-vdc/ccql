@@ -5,3 +5,6 @@ terms:
     - id: isAnalysisOf
       term: isAnalysisOf
       active: true
+    - id: isAccessedBy
+      term: isAccessedBy
+      active: true
