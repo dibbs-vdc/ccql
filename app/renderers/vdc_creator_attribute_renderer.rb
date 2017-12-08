@@ -40,7 +40,7 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
   def profile(person_doc)
     name = person_doc[Solrizer.solr_name('preferred_name')].first
     user = User.find_by(identifier_system: person_doc['id'])
-    link_to name, Hyrax::Engine.routes.url_helpers.profile_path(user)
+    link_to name, Hyrax::Engine.routes.url_helpers.user_path(user)
   end
 
   def orcid(person_doc)

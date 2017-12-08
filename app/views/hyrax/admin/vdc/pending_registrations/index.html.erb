@@ -20,7 +20,7 @@
         <tbody>
           <% @presenter.pending_users.each do |user| %>
             <tr>
-              <td><%= link_to hyrax.profile_path(user) do %>
+              <td><%= link_to hyrax.dashboard_profile_path(user) do %>
                     <%= image_tag(user.avatar.url(:thumb), width: 30) if user.avatar.file %>
                   <% end %>
               </td>

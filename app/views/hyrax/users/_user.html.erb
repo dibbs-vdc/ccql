@@ -17,10 +17,19 @@
 
 
   <div class="panel-footer clearfix">
-    <% unless current_page? hyrax.profile_path(user) %>
-      <%= link_to t("hyrax.view_profile"), hyrax.profile_path(user), class: "btn btn-default" %>
+    <%# TODO: Find out if we need to uncomment and fix code below: %>
+    <%# unless current_page? hyrax.dashboard_profile_path(user) %>
+      <%# link_to t("hyrax.view_profile"), hyrax.dashboard_profile_path(user), class: "btn btn-default" %>
+    <%# end %>
+
+    <%# TODO: Remove or Switch allow_edit to true once we figure out a process 
+              for allowing users to edit their profile %>
+    <% allow_edit = false %>
+    <% if (can? :edit, current_user) && allow_edit %>
+      <%= link_to hyrax.edit_dashboard_profile_path(user), class: "btn btn-default pull-right" do %>
+        <i class="glyphicon glyphicon-edit"></i> <%= t("hyrax.edit_profile") %>
+      <% end %>
     <% end %>
 
-    <%# TODO: put the edit button back eventually %>
   </div>
 </div>

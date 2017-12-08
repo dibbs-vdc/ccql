@@ -2,7 +2,6 @@
 #  `rails generate hyrax:work Vdc::Resource`
 class Vdc::Resource < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
-  include ::Hyrax::BasicMetadata
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
 
@@ -118,4 +117,7 @@ class Vdc::Resource < ActiveFedora::Base
   # NOTE: :license already exists as basic metadata (default is multiple, which needs to be turned off in the form)
   #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
 
+  # The include (include ::Hyrax::BasicMetadata) must appear
+  # below custom predicate definitions as of Hyrax 2.0.0
+  include ::Hyrax::BasicMetadata
 end

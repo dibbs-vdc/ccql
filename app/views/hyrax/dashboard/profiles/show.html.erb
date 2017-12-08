@@ -1,0 +1,30 @@
+<%# Modified from Hyrax Gem 2.0.0 
+    - Removing edit profile button %>
+
+<% provide :page_header do %>
+  <h1><span class="fa fa-id-card"></span> <%= t("hyrax.admin.sidebar.profile") %></h1>
+  <%# TODO: Remove or Switch allow_edit to true once we figure out a process 
+            for allowing users to edit their profile %>
+  <% allow_edit = false %>
+  <% if (can? :edit, current_user) && allow_edit %>
+    <div class="pull-right">
+      <%= link_to hyrax.edit_dashboard_profile_path(@user), class: "btn btn-primary" do %>
+        <%= t("hyrax.edit_profile") %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="list-group col-md-5 col-sm-8">
+        <%= render "hyrax/users/vitals", user: @user %>
+
+        <div class="list-group-item">
+          <%= render 'hyrax/users/user_info', user: @user %>
+          <hr />
+          <%= render 'hyrax/users/info', user: @user %>
+        </div>
+      </div>
+    </div>
+  </div>

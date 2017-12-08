@@ -1,32 +1,32 @@
-# TODO: Should extend from AttachFilesToWorkJob somehow... Not DRY
 # TODO: Should be renamed to AttachReadmeFileToWorkJob (singular file)
 
 # Converts UploadedFiles into FileSets and attaches them to works.
-# Job specific for readme files
-class AttachReadmeFilesToWorkJob < ActiveJob::Base
-  queue_as Hyrax.config.ingest_queue_name
+# Job specific for readme files and deletes old one.
+class AttachReadmeFilesToWorkJob < AttachFilesToWorkJob
 
   # @param [ActiveFedora::Base] work - the work object
-  # @param [UploadedFile] readme_file - a readme file to attach
-  def perform(work, readme_file)
-    file_set = FileSet.new
-    user = User.find_by_user_key(work.depositor)
-    actor = Hyrax::Actors::FileSetActor.new(file_set, user)
-    actor.create_metadata(visibility: work.visibility)
-    attach_content(actor, readme_file.file)
-    actor.attach_file_to_work(work)
-    actor.file_set.permissions_attributes = work.permissions.map(&:to_hash)
+  # @param [Array<Hyrax::UploadedFile>] readme_file - file to attach
+  def perform(work, readme_file, **work_attributes)
+    validate_files!([readme_file])
+    user = User.find_by_user_key(work.depositor) # BUG? file depositor ignored                                                                                                 
+    work_permissions = work.permissions.map(&:to_hash)
+    metadata = visibility_attributes(work_attributes)
+    actor = Hyrax::Actors::FileSetActor.new(FileSet.create, user)
+    actor.create_metadata(metadata)
+    actor.create_content(readme_file)
+    actor.attach_to_work(work)
+    actor.file_set.permissions_attributes = work_permissions
     delete_old_readme(work, user)
-    readme_file.update(file_set_uri: file_set.uri)
-    work.readme_file = file_set.uri
+    readme_file.update(file_set_uri: actor.file_set.uri)
+    work.readme_file = actor.file_set.uri
     work.save
   end
 
   private
 
-    # TODO: Not sure if this is the best way to delete old work.
-    #       Should I be trying to preserve versions instead? 
-    #       If so, that will take a lot more work and undestanding.
+    # TODO: This is not the best way to delete an old work.
+    #       I should be trying to preserve versions,
+    #       which will take a lot more work and undestanding.
     def delete_old_readme(work, user)
        rfat = work.readme_file
        if rfat

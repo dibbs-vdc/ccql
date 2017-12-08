@@ -1,9 +1,10 @@
+---
 es:
   blacklight:
     search:
       fields:
         facet:
-          based_near_sim: Ubicación
+          based_near_label_sim: Ubicación
           creator_sim: Creador
           file_format_sim: Formato
           generic_type_sim: Tipo
@@ -23,8 +24,9 @@ es:
           identifier_tesim: Identificador
           keyword_tesim: Palabra clave
           language_tesim: Idioma
+          license_tesim: Licencia
           publisher_tesim: Editor
-          rights_tesim: Derechos
+          rights_statement_tesim: Derechos
           subject_tesim: Tema
         show:
           based_near_tesim: Ubicación
@@ -38,18 +40,19 @@ es:
           identifier_tesim: Identificador
           keyword_tesim: Palabra clave
           language_tesim: Idioma
+          license_tesim: Licencia
           publisher_tesim: Editor
-          rights_tesim: Derechos
+          rights_statement_tesim: Derechos
           subject_tesim: Tema
           title_tesim: Título
   hyrax:
-    product_name:           "Hyrax"
-    product_twitter_handle: "@HydraSphere"
-    institution_name:       "institución"
-    institution_name_full:  "El nombre de la institución"
-    account_name:           "Mi identificador de cuenta institucional"
+    account_name: Mi identificador de cuenta institucional
     directory:
-      suffix:               "@example.org"
+      suffix: "@example.org"
     footer:
-      copyright_html: "<strong>Copyright &copy; 2017 Proyecto Hydra</strong> bajo licencia de Apache, Version 2.0"
-      service_html: Un servicio de <a href="http://projecthydra.org/" class="navbar-link" target="_blank">Proyecto Hydra</a>.
+      copyright_html: "<strong>Copyright &copy; 2017 Samvera</strong> bajo licencia de Apache, Version 2.0"
+      service_html: Un servicio de <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera/a>.
+    institution_name: institución
+    institution_name_full: El nombre de la institución
+    product_name: Hyrax
+    product_twitter_handle: "@SamveraRepo"

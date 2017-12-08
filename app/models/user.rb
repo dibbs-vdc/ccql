@@ -30,6 +30,9 @@ class User < ApplicationRecord
 
   serialize :discipline
 
+  scope :registered, ->() { where(guest: false).where(approved: true) }
+  scope :not_approved, ->() {  where(approved: false) }
+
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
   # the account.
@@ -96,6 +99,11 @@ class User < ApplicationRecord
       !password.nil? || !password_confirmation.nil?
     end
   end
+
+  def recent_users(start_date, end_date = nil)
+    end_date ||= DateTime.current # doing or eq here so that if the user passes nil we still get now   
+    User.where(created_at: start_date..end_date).where(approved: true)
+  end 
 
   # NOTE: discipline is set via a multi-select form input field.
   #       These multi-selects always send a hidden blank field

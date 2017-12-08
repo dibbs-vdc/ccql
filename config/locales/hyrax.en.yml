@@ -543,7 +543,7 @@ en:
         tab_label:          'Recently Uploaded'
         title:              'Recently Uploaded'
     icons:
-      collection:       'fa fa-sitemap'
+      collection:       'fa fa-connectdevelop'
       default:          'fa fa-cube'
     mailbox:
       date:     'Date'
