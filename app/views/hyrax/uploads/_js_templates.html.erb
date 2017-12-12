@@ -151,7 +151,7 @@
                 {% } else { %}
                     <span>{%=file.name%}</span>
                 {% } %}
-                <input type="hidden" name="readme_file" value="{%=file.id%}">
+                <input type="hidden" name="readme_file_ids_from_form" value="{%=file.id%}">
             </p>
             {% if (file.error) { %}
                 <div><span class="label label-danger">Error</span> {%=file.error%}</div>

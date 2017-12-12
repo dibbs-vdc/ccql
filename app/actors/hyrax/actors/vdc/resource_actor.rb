@@ -4,19 +4,13 @@ module Hyrax
   module Actors
     class Vdc::ResourceActor < Hyrax::Actors::BaseActor
       def create(env)
-        byebug
-        apply_update_data_to_curation_concern(env)
-        apply_save_data_to_curation_concern(env)
+        super
         post_processing(env)
-        #save(env) && next_actor.create(env) && run_callbacks(:after_create_concern, env) # TODO: Why doesn't this work?
-        save(env) && next_actor.create(env) && run_callbacks(:after_update_metadata, env)
       end
 
       def update(env)
-        apply_update_data_to_curation_concern(env)
-        apply_save_data_to_curation_concern(env)
+        super
         post_processing(env)
-        next_actor.update(env) && save(env) && run_callbacks(:after_update_metadata, env)
       end
 
       private

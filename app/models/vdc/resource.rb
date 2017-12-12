@@ -75,6 +75,13 @@ class Vdc::Resource < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  # TODO: Find out if there's a better way to get readme_file_ids_from_form,
+  #       other than using a property from the resource model. Seems like there
+  #       should be. It's used in the resources form and vdc/resources_controller.rb
+  property :readme_file_ids_from_form, predicate: ::RDF::URI("https://datacollaboratory.org/resource#readmeFileIdsFromForm"), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
   property :readme_abstract, predicate: ::RDF::URI("https://datacollaboratory.org/resource#readmeAbstract"), multiple: false do |index|
     index.as :stored_searchable
   end

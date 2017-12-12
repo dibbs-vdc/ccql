@@ -12,8 +12,11 @@ module Hyrax
 
     def attributes_for_actor
       super.tap do |attributes|
-        readme_file = params.fetch(:readme_file, nil)
-        attributes[:readme_file] = readme_file  
+        # TODO: Find out if there's a better way to get readme_file_ids_from_form,
+        #       other than using a property from the resource model. Seems like there
+        #       should be
+        readme_file_ids_from_form = params.fetch(:readme_file_ids_from_form, nil)
+        attributes[:readme_file_ids_from_form] = readme_file_ids_from_form
         attributes        
       end
     end
@@ -40,7 +43,6 @@ module Hyrax
 
     # Post-processing for Create and Update
     def perform_cu_post_processing
-      byebug
       # Reload to get all fields (including member extracted_text and mime_type) 
       # loaded properly
       curation_concern.reload 
@@ -53,7 +55,6 @@ module Hyrax
       
       # Reindex the members to get them into solr properly
       curation_concern.members.each{ |member| member.update_index } 
-      byebug
     end
 
     def set_extent
