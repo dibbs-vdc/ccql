@@ -38,9 +38,9 @@ class Collection < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  # NOTE: :date_created (for creationDate) already exists as basic metadata
-  #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
-  # TODO: add property :creation_date with vdc prediate
+  property :creation_date, predicate: ::RDF::URI("https://datacollaboratory.org/collection#creationDate"), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
 
   # TODO: I don't know if this is the best way to apply vdc metadata.
   #       For the resource work, I'm using the generated actor for post-processing metadata changes. 
@@ -51,7 +51,6 @@ class Collection < ActiveFedora::Base
     self.vdc_type = "collection"
     self.vdc_title = self.title[0]
     self.identifier_system = self.id # TODO: Redundant?
-    #TODO: set self.creation_date to self.date_created, make a copy
   end  
 
   # The include (include ::Hyrax::BasicMetadata) must appear

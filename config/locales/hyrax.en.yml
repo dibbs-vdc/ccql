@@ -769,7 +769,6 @@ en:
         abstract: "A brief description of the collection including the area of research and keywords."
         collection_size: "Estimated size (in MB, TB or PB) anticipated for resources deposited to the collection over the life of the project."
         note: "A place for the collection creator to share any additional information."
-        date_created: "Date the Collection was created. YYYY-MM-DD or YY-MM-DD/YY-MM-DD. An open collection (to which data is still being added) will have one date.  If the collection is complete, the researcher is encouraged to add an end date."
       defaults:
         based_near: "A place name related to the work, such as its site of publication, or the city, state, or country the work contents are about. Calls upon the <a href='http://www.geonames.org'>GeoNames web service</a>."
         contributor: "A person or group you want to recognize for playing a role in the creation of the work, but not the primary role."
@@ -798,6 +797,7 @@ en:
         rights: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
         relation_uri: "A URL to a related resource.  Could be a version or an article that cites the data"
         relation_type: "Type of relationship identified in the Relation URI to another resource."
+        creation_date: "Date the Collection was created. YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD. An open collection (to which data is still being added) will have one date.  If the collection is complete, the researcher is encouraged to add an end date."
     labels:
       collection:
         size:                      "Size"
@@ -830,5 +830,6 @@ en:
         rights: "License"
         relation_uri: "Relation URI"
         relation_type: "Type of Relationship"
+        creation_date: "Creation Date"
     required:
       html: '<span class="label label-info required-tag">required</span>'

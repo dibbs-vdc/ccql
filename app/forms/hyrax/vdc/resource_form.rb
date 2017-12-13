@@ -10,7 +10,6 @@ module Hyrax
     # Defaults fields to be KEPT in the VDC Resource
     #   creator
     #   title (assigned to vdc_title by the vdc resource actor)
-    #   date_created # TODO: Should be replace with creation_date with different predicate
     #   license # TODO: Should be replaced with vdc_license with different predicate
 
     # Removing default term for ordering fields on the form.
@@ -21,7 +20,6 @@ module Hyrax
     #       Maybe in the toggle javascript, make sure that
     #       I don't move whole form groups? Instead, just move
     #       children elements between option and required form groups?
-    self.required_fields -= [:date_created]
     self.terms -= [:date_created]
     self.required_fields -= [:license]
     self.terms -= [:license]
@@ -35,8 +33,8 @@ module Hyrax
     self.terms += [:genre]
     self.terms += [:research_problem]
     self.required_fields += [:research_problem]
-    self.required_fields += [:date_created]
-    self.terms += [:date_created]
+    self.required_fields += [:creation_date]
+    self.terms += [:creation_date]
 
     # OPTIONAL/REQUIRED (depending on visibility)
     # We want these to come first so that when they change position
