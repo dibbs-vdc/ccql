@@ -70,9 +70,15 @@ en:
     action:
       admin_set:
         new: "Create new administrative set"
+      batch:
+        new: "Create batch of works"
       cancel: "Cancel"
+      collection:
+        new: "New Project"
       delete: "Delete"
       edit: "Edit"
+      work:
+        new: "Add new work"
     submit:
       admin_set:
         create: 'Save'
@@ -214,6 +220,7 @@ en:
           title:            User Activity
       sidebar:
         admin_sets:      "Administrative Sets"
+        collections:        "Projects"
         registration_approval: "Approve Pending Users"
         settings:        "Settings"
         statistics:      "Statistics"
@@ -385,6 +392,8 @@ en:
         title: "Add to project"
         update: "Update Project"
     collections:
+      new: 
+        header: Create New Project
       remove_from_collections: "Remove from Project"
       search_form:
         label: "Search Project %{title}"
@@ -414,7 +423,16 @@ en:
       terms:            "Terms of Use"
     dashboard:
       additional_notifications: "See all notifications"
+      all:
+        collections:            "All Projects"
       authorize_proxies:        "Authorize Proxies"
+      collections:
+        edit:
+          header: "Edit Project: %{title}"
+        new:
+          header: Create New Project
+        show:
+          works_in_collection: "Works in this Project"
       create_collection:        "Create Project"
       create_work:              "Create Work"
       current_proxies:          "Current Proxies"
@@ -629,7 +647,10 @@ en:
         shares: "Shares"
         transfers: "Transfers"
       language_switch: "Switch language"
-      notifications: "Notifications"
+      notifications:
+        zero: "You have no unread notifications"
+        one: "You have one unread notification"
+        many: "You have %{count} unread notifications"
       profile:
         edit: "Edit Profile"
         login: "Login"
@@ -765,10 +786,10 @@ en:
         rights: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
         subject: "Headings or index terms describing what the project is about; these do need to conform to an existing vocabulary."
         # VDC Collection hints:
-        title: "A descriptive name for the collection."
-        abstract: "A brief description of the collection including the area of research and keywords."
+        title: "A descriptive name for the project."
+        abstract: "A brief description of the project including the area of research and keywords."
         collection_size: "Estimated size (in MB, TB or PB) anticipated for resources deposited to the collection over the life of the project."
-        note: "A place for the collection creator to share any additional information."
+        note: "A place for the project creator to share any additional information."
       defaults:
         based_near: "A place name related to the work, such as its site of publication, or the city, state, or country the work contents are about. Calls upon the <a href='http://www.geonames.org'>GeoNames web service</a>."
         contributor: "A person or group you want to recognize for playing a role in the creation of the work, but not the primary role."
