@@ -1,7 +1,7 @@
 class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
 
   def label
-    "Creator"
+    "Depositor"
   end
 
   def attribute_value_to_html(value) 
