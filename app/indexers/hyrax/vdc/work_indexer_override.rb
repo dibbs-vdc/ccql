@@ -2,6 +2,11 @@
 #  app/indexers/hyrax/work_indexer.rb
 # See config/application.rb for prepend statement
 
+# TODO: Some of these shouldn't be in the generate solr document for 
+#       a generic work.
+#       Things like doi, extent and format should probably be part of an
+#       indexer specific to a Vdc::Resource Indexer, since Vdc::Tools may
+#       not have fields like those.
 module Hyrax
   module Vdc
     module WorkIndexerOverride

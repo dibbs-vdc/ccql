@@ -1,3 +1,7 @@
+<%# Modified from Hyrax Gem 2.0.0
+    - Shows admin set relationship based on Flipflop settings
+%>
+
 <%# Render presenters which aren't specified in the 'presenter_types' %>
 <% presenter.grouped_presenters(except: presenter.presenter_types).each_pair do |model_name, items| %>
   <%= render 'relationships_parent_row', type: model_name, items: items, presenter: presenter %>

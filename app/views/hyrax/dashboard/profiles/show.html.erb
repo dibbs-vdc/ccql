@@ -1,5 +1,6 @@
 <%# Modified from Hyrax Gem 2.0.0 
-    - Removing edit profile button %>
+    - Removing edit profile button 
+    - Adding additional section for additional user info %>
 
 <% provide :page_header do %>
   <h1><span class="fa fa-id-card"></span> <%= t("hyrax.admin.sidebar.profile") %></h1>
@@ -15,16 +16,14 @@
   <% end %>
 <% end %>
 
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div class="list-group col-md-5 col-sm-8">
-        <%= render "hyrax/users/vitals", user: @user %>
-
-        <div class="list-group-item">
-          <%= render 'hyrax/users/user_info', user: @user %>
-          <hr />
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="list-group col-md-5 col-sm-8">
+          <%= render "hyrax/users/vitals", user: @user %>
+          <div class="list-group-item">
+            <%= render 'hyrax/users/user_info', user: @user %>
+          </div>
           <%= render 'hyrax/users/info', user: @user %>
         </div>
       </div>
     </div>
-  </div>
