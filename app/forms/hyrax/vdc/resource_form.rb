@@ -10,7 +10,6 @@ module Hyrax
     # Defaults fields to be KEPT in the VDC Resource
     #   creator
     #   title (assigned to vdc_title by the vdc resource actor)
-    #   license # TODO: Should be replaced with vdc_license with different predicate
 
     # Removing default term for ordering fields on the form.
     # Default ones appear first.
@@ -21,8 +20,6 @@ module Hyrax
     #       I don't move whole form groups? Instead, just move
     #       children elements between option and required form groups?
     self.terms -= [:date_created]
-    self.required_fields -= [:license]
-    self.terms -= [:license]
 
     #####
     # New fields to be ADDED to the VDC Resource
@@ -42,7 +39,7 @@ module Hyrax
     self.terms += [:abstract]
 
     # OPTIONAL
-    self.terms += [:license]
+    self.terms += [:vdc_license]
     self.terms += [:funder]
     self.terms += [:note]
     self.terms += [:discipline]

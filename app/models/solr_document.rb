@@ -78,6 +78,10 @@ class SolrDocument
     self[Solrizer.solr_name('coverage_temporal')]
   end
 
+  def vdc_license
+    self[Solrizer.solr_name('vdc_license')]
+  end
+
   def collection_size
     self[Solrizer.solr_name('collection_size')]
   end
