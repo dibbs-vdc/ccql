@@ -5,7 +5,7 @@ Mailboxer.setup do |config|
 
   #Configures the default from for emails sent for Messages and Notifications
   #TODO: Find out where this is being used?
-  config.default_from = ENV.fetch('MAILBOXER_DEFAULT_FROM', 'no-reply@localhost')
+  config.default_from = ENV.fetch('MAILBOXER_DEFAULT_FROM', 'no-reply@mailboxer.com')
 
   #Configures the methods needed by mailboxer
   config.email_method = :mailboxer_email

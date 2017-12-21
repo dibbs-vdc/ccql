@@ -1,3 +1,5 @@
+# Modified from Hyrax Gem 2.0.0
+
 module Hyrax
   module Admin
     class UsersPresenter
@@ -31,6 +33,12 @@ module Hyrax
       end
 
       protected
+
+        # Returns a list of users excluding the system users and guest_users
+        # and other non-approved users
+        def search
+          search_approved
+        end
 
         # Returns a list of users excluding the system users and guest_users
         # and other non-approved users

@@ -10,8 +10,6 @@ module Hyrax
     # Defaults fields to be KEPT in the VDC Resource
     #   creator
     #   title (assigned to vdc_title by the vdc resource actor)
-    #   date_created # TODO: Can this be used instead of date?
-    #   license # TODO: Can this be used for VDC purposes?
 
     # Removing default term for ordering fields on the form.
     # Default ones appear first.
@@ -21,8 +19,7 @@ module Hyrax
     #       Maybe in the toggle javascript, make sure that
     #       I don't move whole form groups? Instead, just move
     #       children elements between option and required form groups?
-    self.required_fields -= [:date_created]
-    self.terms -= [:rights]
+    self.terms -= [:date_created]
 
     #####
     # New fields to be ADDED to the VDC Resource
@@ -33,8 +30,8 @@ module Hyrax
     self.terms += [:genre]
     self.terms += [:research_problem]
     self.required_fields += [:research_problem]
-    self.terms += [:date_created]
-    self.required_fields += [:date_created]
+    self.required_fields += [:creation_date]
+    self.terms += [:creation_date]
 
     # OPTIONAL/REQUIRED (depending on visibility)
     # We want these to come first so that when they change position
@@ -42,7 +39,7 @@ module Hyrax
     self.terms += [:abstract]
 
     # OPTIONAL
-    self.terms += [:rights]
+    self.terms += [:vdc_license]
     self.terms += [:funder]
     self.terms += [:note]
     self.terms += [:discipline]
@@ -52,17 +49,13 @@ module Hyrax
     self.terms += [:relation_uri]
     self.terms += [:readme_abstract]
 
-    # TODO: Relationships and their UI need to be discussed more before potentially adding this back in.
-    #self.terms += [:relation] # TODO
-    #self.terms += [:relation_url] # TODO
-    #self.terms += [:relation_type] # TODO
-
     #####
     # Default fields to be REMOVED from the VDC Resource
     self.required_fields -= [:keyword]
-    self.required_fields -= [:rights]
+    self.required_fields -= [:rights_statement]
     self.required_fields -= [:creator]
     self.terms -= [:keyword]
+    self.terms -= [:rights_statement]
     self.terms -= [:creator]
     self.terms -= [:contributor]
     self.terms -= [:publisher]

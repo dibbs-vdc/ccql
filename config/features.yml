@@ -1,0 +1,4 @@
+assign_admin_set:
+  enabled: false
+batch_upload:
+  enabled: false

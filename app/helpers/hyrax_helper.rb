@@ -14,7 +14,7 @@ module HyraxHelper
       person_doc = person_doc(person_id)
       text = preferred_name(person_doc)
       user = User.find_by(identifier_system: person_doc['id'])
-      link_to text, Hyrax::Engine.routes.url_helpers.profile_path(user)
+      link_to text, Hyrax::Engine.routes.url_helpers.user_path(user)
     rescue URI::InvalidURIError
       # TODO: Should I log something here?
       person_id
@@ -27,6 +27,7 @@ module HyraxHelper
       #image_tag("project_logo.jpg")
       #byebug
       content_tag(:span, "project", class: ["collection-icon-search"])
+      image_tag("project_logo.jpg")
     end
 
     def person_doc(person_id)

@@ -1,11 +1,10 @@
 <% # app/views/records/edit_fields/_discipline.html.erb %>
 
-<%# auto-complete field below %>
-<%=
-  f.input :discipline,
-  as: :multi_value,
-  input_html: {
-    class: 'form-control',
-    data: { 'autocomplete-url' => "/authorities/search/local/vdc_disciplines", 'autocomplete' => :discipline }
-  } ,
-  required: f.object.required?(:discipline) %>
+<%# drop down field below %>
+<%= 
+  f.input :discipline, 
+    as: :multi_value_select,
+    collection: VdcDisciplinesService.select_all_options,
+    include_blank: true,
+    input_html: { class: 'form-control' } %>
+

@@ -17,5 +17,9 @@ class Ability
     # if user_groups.include? 'special_group'
     #   can [:create], ActiveFedora::Base
     # end
+
+    if admin?
+      can [:manage], User
+    end
   end
 end

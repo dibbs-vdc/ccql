@@ -1,9 +1,10 @@
-<!-- Modified from Hyrax Gem 1.0.4 -->
+<!-- Modified from Hyrax Gem 2.0.0 -->
 
 <!-- The template to display files available for upload -->
+<% fade_class_if_not_test = Rails.env.test? ? '' : 'fade' %>
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade">
+    <tr class="template-upload <%= fade_class_if_not_test %>">
         <td>
             <span class="preview"></span>
         </td>
@@ -55,7 +56,7 @@
 <!-- The template to display files available for download -->
 <script id="batch-template-download" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade">
+    <tr class="template-download <%= fade_class_if_not_test %>">
         <td>
           <div class="row">
             <div class="col-sm-6 name">
@@ -99,7 +100,7 @@
 <!-- TODO: further consolidate with template-download above -->
 <script id="template-download" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade">
+    <tr class="template-download <%= fade_class_if_not_test %>">
         <td>
             <span class="preview">
                 {% if (file.thumbnailUrl) { %}
@@ -136,7 +137,7 @@
 <!-- template for README download -->
 <script id="template-readme-download" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade">
+    <tr class="template-readme-download <%= fade_class_if_not_test %>">
         <td>
             <span class="preview">
                 {% if (file.thumbnailUrl) { %}
@@ -151,7 +152,7 @@
                 {% } else { %}
                     <span>{%=file.name%}</span>
                 {% } %}
-                <input type="hidden" name="readme_file" value="{%=file.id%}">
+                <input type="hidden" name="readme_file_ids_from_form" value="{%=file.id%}">
             </p>
             {% if (file.error) { %}
                 <div><span class="label label-danger">Error</span> {%=file.error%}</div>

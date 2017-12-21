@@ -90,8 +90,8 @@ class CatalogController < ApplicationController
     #config.add_index_field solr_name("language", :stored_searchable), itemprop: 'inLanguage', link_to_search: solr_name("language", :facetable)
     #config.add_index_field solr_name("date_uploaded", :stored_sortable, type: :date), itemprop: 'datePublished', helper_method: :human_readable_date
     #config.add_index_field solr_name("date_modified", :stored_sortable, type: :date), itemprop: 'dateModified', helper_method: :human_readable_date
-    config.add_index_field solr_name("date_created", :stored_searchable), itemprop: 'dateCreated'
-    #config.add_index_field solr_name("rights", :stored_searchable), helper_method: :license_links
+    config.add_index_field solr_name("date_created", :stored_searchable)
+    #config.add_index_field solr_name("license", :stored_searchable), helper_method: :license_links
     #config.add_index_field solr_name("resource_type", :stored_searchable), label: "Resource Type", link_to_search: solr_name("resource_type", :facetable)
     config.add_index_field solr_name("file_format", :stored_searchable), link_to_search: solr_name("file_format", :facetable)
     #config.add_index_field solr_name("identifier", :stored_searchable), helper_method: :index_field_link, field_name: 'identifier'
@@ -114,6 +114,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("discipline", :stored_searchable), label: "Discipline"
     #config.add_index_field solr_name("coverage_spatial", :stored_searchable), label: "Coverage Spatial"
     #config.add_index_field solr_name("coverage_temporal", :stored_searchable), label: "Coverage Temporal"
+    config.add_index_field solr_name("creation_date", :stored_searchable), label: "Creation Date"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -129,7 +130,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("date_uploaded", :stored_searchable)
     config.add_show_field solr_name("date_modified", :stored_searchable)
     config.add_show_field solr_name("date_created", :stored_searchable)
-    config.add_show_field solr_name("rights", :stored_searchable)
+    #config.add_show_field solr_name("license", :stored_searchable)
     config.add_show_field solr_name("resource_type", :stored_searchable), label: "Resource Type"
     config.add_show_field solr_name("format", :stored_searchable)
     config.add_show_field solr_name("identifier", :stored_searchable)
@@ -153,6 +154,8 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("relation_type", :stored_searchable), label: "Type of Relationship"
     config.add_show_field solr_name("preferred_name", :stored_searchable)
     config.add_show_field solr_name("organization", :stored_searchable)
+    config.add_show_field solr_name("creation_date", :stored_searchable)
+    config.add_show_field solr_name("vdc_license", :stored_searchable), label: "License"
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -305,8 +308,8 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('rights') do |field|
-      solr_name = solr_name("rights", :stored_searchable)
+    config.add_search_field('license') do |field|
+      solr_name = solr_name("license", :stored_searchable)
       field.solr_local_parameters = {
         qf: solr_name,
         pf: solr_name
@@ -325,6 +328,22 @@ class CatalogController < ApplicationController
 
     config.add_search_field('vdc_creator') do |field|
       solr_name = solr_name("vdc_creator", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('creation_date') do |field|
+      solr_name = solr_name("creation_date", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('vdc_license') do |field|
+      solr_name = solr_name("vdc_license", :stored_searchable)
       field.solr_local_parameters = {
         qf: solr_name,
         pf: solr_name

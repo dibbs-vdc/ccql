@@ -80,6 +80,9 @@ Hyrax.config do |config|
   # of Zotero-managed research items.
   # config.arkivo_api = false
 
+  # Stream realtime notifications to users in the browser
+  config.realtime_notifications = true 
+
   # Location autocomplete uses geonames to search for named regions
   # Username for connecting to geonames
   # config.geonames_username = ''
@@ -202,3 +205,4 @@ Qa::Authorities::Local.register_subauthority('vdc_funding_sources', 'Qa::Authori
 Qa::Authorities::Local.register_subauthority('vdc_genres', 'Qa::Authorities::Local::FileBasedAuthority')
 Qa::Authorities::Local.register_subauthority('vdc_disciplines', 'Qa::Authorities::Local::FileBasedAuthority')
 Qa::Authorities::Local.register_subauthority('vdc_resource_relation_types', 'Qa::Authorities::Local::FileBasedAuthority')
+Qa::Authorities::Local.register_subauthority('vdc_licenses', 'Qa::Authorities::Local::FileBasedAuthority')

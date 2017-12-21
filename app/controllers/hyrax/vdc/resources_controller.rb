@@ -11,35 +11,14 @@ module Hyrax
     self.show_presenter = Hyrax::Vdc::ResourcePresenter
 
     def attributes_for_actor
-      #TODO: consider using super.tap to avoid duplication
-
-      attributes = super
-      # If they selected a BrowseEverything file, but then clicked the                                                                                                
-      # remove button, it will still show up in `selected_files`, but                                                                                                 
-      # it will no longer be in uploaded_files. By checking the                                                                                                       
-      # intersection, we get the files they added via BrowseEverything                                                                                                
-      # that they have not removed from the upload widget.                                                                                                            
-      uploaded_files = params.fetch(:uploaded_files, [])
-      selected_files = params.fetch(:selected_files, {}).values
-      browse_everything_urls = uploaded_files &
-                               selected_files.map { |f| f[:url] }
-
-      # we need the hash of files with url and file_name                                                                                                              
-      browse_everything_files = selected_files
-                                .select { |v| uploaded_files.include?(v[:url]) }
-
-      readme_file = params.fetch(:readme_file, nil)
-
-      attributes[:remote_files] = browse_everything_files
-      # Strip out any BrowseEverthing files from the regular uploads.                                                                                                 
-      attributes[:uploaded_files] = uploaded_files -
-                                    browse_everything_urls
-
-      # TODO: I don't understand this browse everything functionality. 
-      # Do I need to subtract from the readme files before setting the readme_files attributes?
-      attributes[:readme_file] = readme_file
-  
-      attributes
+      super.tap do |attributes|
+        # TODO: Find out if there's a better way to get readme_file_ids_from_form,
+        #       other than using a property from the resource model. Seems like there
+        #       should be
+        readme_file_ids_from_form = params.fetch(:readme_file_ids_from_form, nil)
+        attributes[:readme_file_ids_from_form] = readme_file_ids_from_form
+        attributes        
+      end
     end
 
     def new
@@ -85,7 +64,7 @@ module Hyrax
     def set_format
       unique_formats = Set.new
       curation_concern.members.each do |member|
-        unique_formats.add(member.mime_type)
+        unique_formats.add(member.mime_type) if member.respond_to? (:mime_type)
       end
       curation_concern.format = unique_formats.to_a
     end

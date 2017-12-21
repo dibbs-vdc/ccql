@@ -6,17 +6,6 @@ module Hyrax
     # Defaults fields to be KEPT in the Collection
     #   creator
     #   title (assigned to vdc_title by the collection actor)
-    #   date_created # TODO: Can this be used instead of date?
-
-    # Removing default term for ordering fields on the form.
-    # Default ones appear first.
-    # These fields will be put back later in the order
-    # that we want them to appear.
-    # TODO: I'm sure there's a better way to do this?
-    #       Maybe in the toggle javascript, make sure that
-    #       I don't move whole form groups? Instead, just move
-    #       children elements between option and required form groups?
-    self.terms -= [:date_created]
 
     #####
     # New fields to be ADDED to the Collection
@@ -27,10 +16,8 @@ module Hyrax
     self.terms += [:vdc_title]
     self.required_fields += [:collection_size]
     self.terms += [:collection_size]
-
-    # Putting old fields back in a certain order
-    self.required_fields += [:date_created]
-    self.terms += [:date_created]
+    self.required_fields += [:creation_date]
+    self.terms += [:creation_date]
 
     # OPTIONAL/REQUIRED (depending on visibility)
     # We want these to come first so that when they change position
@@ -57,12 +44,13 @@ module Hyrax
     self.terms -= [:related_url]
     self.terms -= [:source]
     self.terms -= [:description] # Removed in favor of :abstract
+    self.terms -= [:date_created] # Removed in favor of :creation_date
 
     def primary_terms
        [:title,
         :vdc_creator,
         :collection_size,
-        :date_created]
+        :creation_date]
     end
 
     def secondary_terms

@@ -1,11 +1,15 @@
-#TODO: I have no idea if this controller even makes sense. Where should I
-#      put the approve_user method? Should it be a service?
-
 module Hyrax
-  class Admin::Vdc::PendingRegistrationsController < AdminController
+  class Admin::Vdc::PendingRegistrationsController < ApplicationController
     include Hyrax::Admin::UsersControllerBehavior
     
     before_action :ensure_admin!
+
+    def index
+      add_breadcrumb t(:'hyrax.controls.home'), root_path
+      add_breadcrumb t(:'hyrax.dashboard.breadcrumbs.admin'), hyrax.dashboard_path
+      add_breadcrumb t(:'hyrax.admin.users.index.title'), hyrax.admin_users_path
+      @presenter = Hyrax::Admin::PendingUsersPresenter.new
+    end
 
     # TODO: should this be some sort of background job?
     def approve_user

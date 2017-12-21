@@ -2,7 +2,6 @@
 #  `rails generate hyrax:work Vdc::Resource`
 class Vdc::Resource < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
-  include ::Hyrax::BasicMetadata
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
 
@@ -76,19 +75,23 @@ class Vdc::Resource < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  # TODO: Find out if there's a better way to get readme_file_ids_from_form,
+  #       other than using a property from the resource model. Seems like there
+  #       should be. It's used in the resources form and vdc/resources_controller.rb
+  property :readme_file_ids_from_form, predicate: ::RDF::URI("https://datacollaboratory.org/resource#readmeFileIdsFromForm"), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
   property :readme_abstract, predicate: ::RDF::URI("https://datacollaboratory.org/resource#readmeAbstract"), multiple: false do |index|
     index.as :stored_searchable
   end
 
-  # NOTE: :date_created (for creationDate) already exists as basic metadata
-  #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
-  
-  property :creation_date, predicate: ::RDF::URI("https://datacollaboratory.org/resource#creationDate"), multiple: true
+  property :creation_date, predicate: ::RDF::URI("https://datacollaboratory.org/resource#creationDate"), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
 
-  # TODO: Is this searchable?
   property :extent, predicate: ::RDF::URI("https://datacollaboratory.org/resource#extent"), multiple: false
 
-  # TODO: Is this searchable?
   property :format, predicate: ::RDF::URI("https://datacollaboratory.org/resource#format"), multiple: true
 
   property :discipline, predicate: ::RDF::URI("https://datacollaboratory.org/resource#discipline"), multiple: true do |index|
@@ -115,7 +118,11 @@ class Vdc::Resource < ActiveFedora::Base
     index.as :stored_searchable
   end
 
-  # NOTE: :license already exists as basic metadata (default is multiple, which needs to be turned off in the form)
-  #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
+  property :vdc_license, predicate: ::RDF::URI("https://datacollaboratory.org/resource#license"), multiple: false do |index|
+    index.as :stored_searchable
+  end
 
+  # The include (include ::Hyrax::BasicMetadata) must appear
+  # below custom predicate definitions as of Hyrax 2.0.0
+  include ::Hyrax::BasicMetadata
 end

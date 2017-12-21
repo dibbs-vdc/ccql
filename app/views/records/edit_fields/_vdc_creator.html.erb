@@ -1,17 +1,7 @@
 <% # app/views/records/edit_fields/_vdc_creator.html.erb %>
 
 <div>
-  <%# Trying out auto-complete with QA.. I can eventually select from a list of names, but it populates eventually with the uuid... i want the label to be displayed... %>
-  <%#
-  f.input :vdc_creator,
-  input_html: {
-    class: 'form-control',
-    data: { 'autocomplete-url' => "/authorities/search/vdc_creator_authority/find",
-      'autocomplete' => :vdc_creator }
-  } ,
-  required: f.object.required?(:vdc_creator) %>
-
-  <%= f.input :vdc_creator, :label => "Creator", required: f.object.required?(:vdc_creator),
+  <%= f.input :vdc_creator, required: f.object.required?(:vdc_creator),
     as: :multi_value_select,
     collection: f.object.vdc_creator_for_select,
     include_blank: true,

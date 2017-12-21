@@ -1,7 +1,8 @@
 # Modified from Hyrax Gem 1.0.2
+# Updated to override from Hyrax Gem 2.0.0
 
 module Hyrax
-  class Admin::UsersController < AdminController
+  class Admin::UsersController < ApplicationController
     include Hyrax::Admin::UsersControllerBehavior
 
     def edit
