@@ -34,16 +34,18 @@ Eventually, we'll have a step by step series of examples that describe how to ge
 #### Solr
 
 ```
-$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development
+$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development --version=7.1.0
 ```
 
-Note: I don't understand Solr that well yet. With this wrapper, I sometimes need to stop Solr prior to running. Until I understand things better, here's what I usually do for that:
+Note: I don't understand Solr that well yet. With this wrapper, I sometimes need to stop Solr prior to running. Until I understand things better, here's what I usually do for that: 
 
 ```
 $ sudo service solr status
 $ sudo service solr stop
-$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development
+$ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development --version=7.1.0
 ```
+
+Also, weird things happen when I attempt to try 7.2.0.
 
 #### Redis
 
