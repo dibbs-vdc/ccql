@@ -25,7 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Shibboleth requires registration of application
 * sqlite3
 
-Please note that development of this application is currently on CentOS 7. We are currently using Hyrax Gem 1.0.4.
+Please note that development of this application is currently on CentOS 7. We are currently using Hyrax Gem 2.0.0.
 
 ### Running your dev environment
 
