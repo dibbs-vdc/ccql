@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Some Prerequisites
 
-* Solr (development with 6.6.1)
+* Solr (development with 7.1.0)
 * Fedora (development with 4.7.1)
 * Apache (for Shibboleth)
 * Redis
