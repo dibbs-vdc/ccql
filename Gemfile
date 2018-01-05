@@ -67,3 +67,4 @@ group :development, :test do
 end
 
 gem 'omniauth-shibboleth'
+gem "factory_bot_rails", "~> 4.0"
