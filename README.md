@@ -15,6 +15,10 @@ More information about Hyrax can be found here:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Until this document is fleshed out better, please see the Samvera Hyrax project documentation to get the prerequisites for a Hyrax-based application set up first.
 
+To clarify a little more, new users attempting to try out this code base are advised to use the Hyrax readme documentation (https://github.com/samvera/hyrax) to install all of the prerequisites for running a Hyrax-based application. Once all of these have been installed, use this code base instead of using Rails to generate a new app with the template provided by the Hyrax project.
+
+Development of this application is currently on CentOS 7. We are using Hyrax Gem 2.0.0.
+
 ### Some Prerequisites
 
 * Solr (development with 7.1.0)
@@ -24,8 +28,6 @@ These instructions will get you a copy of the project up and running on your loc
 * Fits
 * Shibboleth requires registration of application
 * sqlite3
-
-Please note that development of this application is currently on CentOS 7. We are currently using Hyrax Gem 2.0.0.
 
 ### Running your dev environment
 
