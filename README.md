@@ -71,6 +71,9 @@ $ bundle install
 $ bin/rails db:migrate RAILS_ENV=development
 $ RAILS_ENV=development rake hyrax:default_admin_set:create
 $ RAILS_ENV=development rake hyrax:workflow:load
+
+# Make sure your environment variables are set up according to the set up notes
+
 $ RAILS_ENV=development rails server
 
 ```
