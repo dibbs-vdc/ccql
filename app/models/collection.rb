@@ -34,7 +34,7 @@ class Collection < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :note, predicate: ::RDF::URI("https://datacollaboratory.org/collection#note"), multiple: false do |index|
+  property :note, predicate: ::RDF::URI("https://datacollaboratory.org/collection#note"), multiple: true do |index|
     index.as :stored_searchable, :facetable
   end
 

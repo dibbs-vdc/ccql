@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  default from: Rails.configuration.admin_mailer['default_from'] || 'no-reply@example.org'
+  default from: Rails.configuration.admin_mailer['default_from']
  
   def new_user_waiting_for_approval(user)
     @user = user
@@ -10,8 +10,8 @@ class AdminMailer < ApplicationMailer
 
   def new_user_waiting_for_approval_admin_notification(user)
     @user = user
-    admin_email = Rails.configuration.admin_mailer['admin_email'] || 'no-reply@example.org'
-    subject_template = Rails.configuration.admin_mailer['new_user_waiting_for_approval_admin_notification_subject'] || 'Message from %{user_email}'
+    admin_email = Rails.configuration.admin_mailer['admin_email']
+    subject_template = Rails.configuration.admin_mailer['new_user_waiting_for_approval_admin_notification_subject']
     subject = subject_template % { user_email: @user.email }
     mail(to: admin_email, subject: subject)
   end
