@@ -23,4 +23,6 @@
 # Ignore precompiled public assets (TODO: Not sure yet if this should be ignored)
 /public/assets/*
 /public/uploads/*
-/config/secrets.yml
+
+# Ignore dotenv developement file
+/.env.development
