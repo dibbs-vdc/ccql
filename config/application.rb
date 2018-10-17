@@ -8,15 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Ccql
   class Application < Rails::Application
-
-    # The compile method (default in tinymce-rails 4.5.2) doesn't work when also
-    # using tinymce-rails-imageupload, so revert to the :copy method
-    # https://github.com/spohlenz/tinymce-rails/issues/183
-    config.tinymce.install = :copy
-
-    # Turn off async jobs (for development only) 
-    # TODO: turn back on for production env
-    config.active_job.queue_adapter = :inline
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -38,6 +31,5 @@ module Ccql
       Hyrax::Actors::CreateWithFilesActor.prepend Hyrax::Actors::Vdc::CreateWithFilesActorOverride
       Hyrax::UserProfilePresenter.prepend Hyrax::Vdc::UserProfilePresenterOverride
     end
-    
   end
 end
