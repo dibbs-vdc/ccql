@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+AdminSet.find_or_create_default_admin_set_id
+
+if Rails.env.development?
+  users = ['archivist@example.com', 'admin@example.com', 'approved@example.com']
+
+  users.each do |email|
+    User.where(email: email).first_or_create do |user|
+      user.password = 'testing123'
+      user.approved = true
+    end
+  end
+end
