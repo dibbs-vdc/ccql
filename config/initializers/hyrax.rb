@@ -81,7 +81,7 @@ Hyrax.config do |config|
   # config.arkivo_api = false
 
   # Stream realtime notifications to users in the browser
-  config.realtime_notifications = true 
+  config.realtime_notifications = true
 
   # Location autocomplete uses geonames to search for named regions
   # Username for connecting to geonames
@@ -98,7 +98,7 @@ Hyrax.config do |config|
   config.work_requires_files = false
 
   # Should a button with "Share my work" show on the front page to all users (even those not logged in)?
-  # config.always_display_share_button = true
+  config.display_share_button_when_not_logged_in = false
 
   # The user who runs batch jobs. Update this if you aren't using emails
   # config.batch_user_key = 'batchuser@example.com'
@@ -107,7 +107,7 @@ Hyrax.config do |config|
   # config.audit_user_key = 'audituser@example.com'
   #
 
-  # The banner image. 
+  # The banner image.
   config.banner_image = 'assets/VDC-Logo.png'
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
