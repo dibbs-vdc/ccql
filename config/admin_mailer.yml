@@ -3,6 +3,7 @@
 default: &default
   default_from: <%= ENV.fetch("ADMIN_MAILER_DEFAULT_FROM", "no-reply@localhost") %>
   admin_email: <%= ENV.fetch("ADMIN_MAILER_ADMIN_EMAIL", "admin@localhost") %>
+  login_url: <%= ENV.fetch("ADMIN_MAILER_LOGIN_URL", "http://localhost:3000/") %>
   new_user_waiting_for_approval_subject: 'Thank you for registering with the VDC'
   new_user_approval_subject: 'Your registration with the VDC has been approved'
   new_user_waiting_for_approval_admin_notification_subject: 'Pending registration with the VDC - %{user_email}'
@@ -10,7 +11,9 @@ default: &default
 
 development:
   <<: *default
-  login_url: <%= ENV.fetch("ADMIN_MAILER_LOGIN_URL", "http://localhost:3000/") %>
+
+test:
+  <<: *default
 
 production:
   <<: *default
