@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
-  
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount Blacklight::Engine => '/'
-  
-    concern :searchable, Blacklight::Routes::Searchable.new
+
+  concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
   end
 
-  devise_for :users, 
+  devise_for :users,
              skip: [:registrations],
-             controllers: { 
+             controllers: {
                omniauth_callbacks: 'vdc/omniauth_callbacks',
                registrations:      'vdc/registrations' }
 
-  # Update devise routes to only allow new/create/cancel 
+  # Update devise routes to only allow new/create/cancel
   # for new user registrations. The other operations will only
   # be allowed by the admin for now
   as :user do
@@ -41,11 +41,9 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
-Hyrax::Engine.routes.draw do  
+Hyrax::Engine.routes.draw do
   namespace :admin do
     namespace :vdc do
       post 'pending_registrations/approve_user'
@@ -53,7 +51,7 @@ Hyrax::Engine.routes.draw do
       if Rails.env.development?
         resources :people
       else
-        resources :people, except: [:index]  
+        resources :people, except: [:index]
       end
     end
     resources :users, only: [:edit, :update]
