@@ -1,9 +1,14 @@
 image: registry.gitlab.com/notch8/scripts/builder:latest
 services:
-  - docker:dind
+  - name: docker:dind
+  - name: redis:3
+  - name: postgres
+  - name: solr:7.1
+    entrypoint: ["docker-entrypoint.sh", "solr-precreate", "hyrax", "/builds/notch8/rutgers-vdc/solr/config"]
+  - name: botimer/fcrepo:4.5.1
 stages:
   - build
-#  - test
+  - test
 #  - review
 #  - staging
 #  - production
@@ -12,7 +17,9 @@ variables:
   DOCKER_DRIVER: overlay
   REGISTRY_HOST: registry.gitlab.com
   REGISTRY_URI: /notch8/rutgers-vdc
-  SITE_URI_BASE: hykuup.com
+  FEDORA_URL: http://botimer-fcrepo:8080/fcrepo/rest
+  SOLR_URL: http://solr:8983/solr/hyrax
+  REDIS_HOST: redis
 
 before_script:
   - export TAG=${CI_COMMIT_SHA:0:8}
@@ -28,5 +35,14 @@ build:
     - sc push
     - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  tags:
+    - docker
+
+rspec:
+  stage: test
+  image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  script:
+    - cd /data
+    - bundle exec rspec
   tags:
     - docker

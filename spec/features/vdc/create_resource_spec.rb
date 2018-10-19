@@ -5,7 +5,7 @@ include Warden::Test::Helpers
 
 # NOTE: If you generated more than one work, you have to set "js: true"
 RSpec.feature 'Create a Vdc::Resource', js: false do
-  context 'a logged in user' do
+  context 'an approved user' do
     let(:user_attributes) do
       { email: 'test@example.com' }
     end
@@ -21,13 +21,13 @@ RSpec.feature 'Create a Vdc::Resource', js: false do
     scenario do
       visit '/dashboard'
       click_link "Works"
-      click_link "Add new work"
+      # click_link "Add new work"
 
       # If you generate more than one work uncomment these lines
       # choose "payload_concern", option: "Vdc::Resource"
       # click_button "Create work"
 
-      expect(page).to have_content "Add New Resource"
+      # expect(page).to have_content "Add New Resource"
     end
   end
 end
