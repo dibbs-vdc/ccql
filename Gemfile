@@ -66,4 +66,6 @@ group :development, :test do
   gem 'capybara'
 end
 
+gem 'factory_bot_rails', group: %i[development test]
+
 gem 'omniauth-shibboleth'
