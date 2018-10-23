@@ -56,6 +56,11 @@ services:
       - "8983:8983"
     volumes:
       - './solr/config:/opt/config'
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - hyrax
+      - /opt/config
 
   fcrepo:
     image: botimer/fcrepo:4.5.1
