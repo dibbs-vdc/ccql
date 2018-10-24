@@ -1,0 +1,16 @@
+terms:
+- id: 1_gb
+  term: "<1 GB"
+  active: true
+- id: 10_gb
+  term: "1+ GB to 10 GB"
+  active: true
+- id: 100_gb
+  term: "10+ GB to 100 GB"
+  active: true
+- id: 1_tb
+  term: "100+ GB to 1 TB"
+  active: true
+- id: 1_tb_plus
+  term: ">1 TB"
+  active: true
