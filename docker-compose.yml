@@ -43,7 +43,10 @@ services:
       - 'postgres:/var/lib/postgresql/data'
 
   solr:
-    image: solr:7.1
+    image: registry.gitlab.com/notch8/rutgers-vdc/solr:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.solr
     ports:
       - "8983:8983"
     volumes:
