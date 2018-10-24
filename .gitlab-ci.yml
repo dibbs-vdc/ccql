@@ -4,7 +4,7 @@ services:
   - name: redis:3
   - name: postgres
   - name: registry.gitlab.com/notch8/rutgers-vdc/solr:latest
-    entrypoint: ["docker-entrypoint.sh", "solr-precreate", "hyrax", "/builds/notch8/rutgers-vdc/solr/config"]
+    entrypoint: ["docker-entrypoint.sh", "solr-precreate", "hyrax", "/opt/config"]
   - name: botimer/fcrepo:4.5.1
 stages:
   - build
