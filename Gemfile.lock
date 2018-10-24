@@ -349,6 +349,8 @@ GEM
       signet
       simple_form (~> 3.2, <= 3.5.0)
       tinymce-rails (~> 4.1)
+    hyrax-spec (0.3.2)
+      rspec (~> 3.6)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -612,6 +614,10 @@ GEM
     rsolr (2.2.1)
       builder (>= 2.1.2)
       faraday (>= 0.9.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.0)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -755,6 +761,7 @@ DEPENDENCIES
   factory_bot_rails
   fcrepo_wrapper
   hyrax (~> 2.1)
+  hyrax-spec (~> 0.3)
   jbuilder (~> 2.5)
   jquery-rails
   launchy
