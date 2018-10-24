@@ -16,8 +16,6 @@ module Hyrax
     self.terms += [:vdc_title]
     self.required_fields += [:collection_size]
     self.terms += [:collection_size]
-    self.required_fields += [:creation_date]
-    self.terms += [:creation_date]
 
     # OPTIONAL/REQUIRED (depending on visibility)
     # We want these to come first so that when they change position
@@ -49,8 +47,7 @@ module Hyrax
     def primary_terms
        [:title,
         :vdc_creator,
-        :collection_size,
-        :creation_date]
+        :collection_size]
     end
 
     def secondary_terms
@@ -60,7 +57,7 @@ module Hyrax
     end
 
     # Make title non-repeatable (single-value)
-    # TODO: I'm not sure why both the self.multiple? and multiple? 
+    # TODO: I'm not sure why both the self.multiple? and multiple?
     #       I need to investigate to see if this is a Hyrax bug.
     def self.multiple?(field)
       if [:title].include? field.to_sym
