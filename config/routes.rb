@@ -12,7 +12,8 @@ Rails.application.routes.draw do
              skip: [:registrations],
              controllers: {
                omniauth_callbacks: 'vdc/omniauth_callbacks',
-               registrations:      'vdc/registrations' }
+               registrations:      'vdc/registrations',
+               sessions: 'users/sessions'}
 
   # Update devise routes to only allow new/create/cancel
   # for new user registrations. The other operations will only
