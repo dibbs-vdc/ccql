@@ -136,6 +136,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.22)
+      capybara (>= 1.0, < 4)
+      launchy
     carrierwave (1.2.3)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -391,6 +394,8 @@ GEM
     kaminari-core (1.1.1)
     kaminari_route_prefix (0.1.1)
       kaminari (~> 1.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     ld-patch (0.3.3)
       ebnf (~> 1.1)
       rdf (>= 2.2, < 4.0)
@@ -743,6 +748,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
+  capybara-screenshot
   coffee-rails (~> 4.2)
   devise
   devise-guests (~> 0.6)
@@ -751,6 +757,7 @@ DEPENDENCIES
   hyrax (~> 2.1)
   jbuilder (~> 2.5)
   jquery-rails
+  launchy
   listen (~> 3.0.5)
   omniauth-shibboleth
   puma (~> 3.0)
