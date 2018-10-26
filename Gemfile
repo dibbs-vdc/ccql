@@ -39,6 +39,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'fcrepo_wrapper'
+  gem 'hyrax-spec', '~> 0.3'
   gem 'rspec-rails'
   gem 'solr_wrapper', '>= 0.3'
 end
@@ -52,7 +53,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-group :test do 
+group :test do
   gem 'capybara-screenshot'
   gem "launchy"
 end
