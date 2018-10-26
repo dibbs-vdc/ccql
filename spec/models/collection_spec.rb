@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Collection do
-  subject(:collection) { described_class.new(title: ['Comet in Moominland']) }
+  subject(:collection) { FactoryBot.build(:collection) }
 
   describe '#collection_size' do
     it 'handles expected values' do
