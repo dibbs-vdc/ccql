@@ -19,6 +19,10 @@ Hyrax.config do |config|
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
 
+  # Option to enable/disable full text extraction from PDFs
+  # Default is true, set to false to disable full text extraction
+  config.extract_full_text = true
+
   # How many notifications should be displayed on the dashboard
   # config.max_notifications_for_dashboard = 5
 
