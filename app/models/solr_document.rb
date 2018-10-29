@@ -22,9 +22,13 @@ class SolrDocument
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
 
-  # Do content negotiation for AF models. 
+  # Do content negotiation for AF models.
 
   use_extension( Hydra::ContentNegotiation )
+
+  def usage_count
+    fetch(Solrizer.solr_name('usage_count', :displayable, type: :integer), 0)
+  end
 
   def vdc_type
     self[Solrizer.solr_name('vdc_type')]
@@ -43,7 +47,7 @@ class SolrDocument
   end
 
   def authoritative_name
-    self[Solrizer.solr_name('authoritative_name')]    
+    self[Solrizer.solr_name('authoritative_name')]
   end
 
   def authoritative_name_uri

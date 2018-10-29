@@ -4,6 +4,8 @@ module Vdc
   ##
   # A specialized `Hyrax::WorkIndexer` handling `Vdc::Resource` metadata.
   class ResourceIndexer < Hyrax::WorkIndexer
+    USAGE_QUERY_CLASS = Vdc::ResourceUsage
+
     ##
     # Custom indexing behavior for Resources
     def generate_solr_document
@@ -19,7 +21,20 @@ module Vdc
         solr_doc[Solrizer.solr_name('extent')] = object.members.size
         solr_doc[Solrizer.solr_name('format')] = object.format
         solr_doc[Solrizer.solr_name('identifier_doi')] = object.identifier_doi
+
+        add_usage_data(solr_doc)
       end
     end
+
+    private
+
+      def add_usage_data(solr_doc)
+        return :no_op if object.new_record?
+
+        usage = USAGE_QUERY_CLASS.new(resource: object)
+        key   = Solrizer.solr_name('usage_count', :displayable, type: :integer)
+
+        solr_doc[key] = usage.count
+      end
   end
 end
