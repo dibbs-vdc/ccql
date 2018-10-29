@@ -5,16 +5,18 @@ class Vdc::Resource < ActiveFedora::Base
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
 
-  # The following are validations for the resource work, regardless of what 
+  self.indexer = ResourceIndexer
+
+  # The following are validations for the resource work, regardless of what
   # visibility is selected. Form-level validations will also exist for those
   # that do change based on visibility.
   validates :title, presence: { message: 'Your resource must have a title.' }
-  
+
   #self.human_readable_type = 'Vdc/Resource'
   self.human_readable_type = 'Resource'
 
   property :vdc_type, predicate: ::RDF::URI("https://datacollaboratory.org/resource#vdcType"), multiple: false do |index|
-    index.as :stored_searchable, :facetable 
+    index.as :stored_searchable, :facetable
   end
 
   property :identifier_system, predicate: ::RDF::URI("https://datacollaboratory.org/resource#identifierSystem"), multiple: false do |index|
@@ -23,7 +25,7 @@ class Vdc::Resource < ActiveFedora::Base
 
   property :identifier_doi, predicate: ::RDF::URI("https://datacollaboratory.org/resource#identifierDoi"), multiple: false do |index|
     index.as :stored_searchable, :facetable # TODO: Should this be searchable?
-  end  
+  end
 
   property :vdc_creator, predicate: ::RDF::URI("https://datacollaboratory.org/resource#creator"), multiple: true do |index|
     index.as :stored_searchable, :facetable # TODO: Should this be searchable?
@@ -54,7 +56,7 @@ class Vdc::Resource < ActiveFedora::Base
   # NOTE: :description (for abstract) already exists as basic metadata (default is multiple)
   #       However, I'm deleting it in favor of :abstract with our own predicate
   #       http://samvera.github.io/customize-metadata-model.html#basic-metadata
-  
+
   property :abstract, predicate: ::RDF::URI("https://datacollaboratory.org/resource#abstract"), multiple: false do |index|
     index.as :stored_searchable, :facetable
   end
