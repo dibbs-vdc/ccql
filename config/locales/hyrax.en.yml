@@ -7,6 +7,56 @@ en:
         new: "New Project"
   hyrax:
     admin:
+      admin_sets:
+        index:
+          header: Current Project Types
+      collection_types:
+        create:
+          notification: The project type %{name} has been created.
+        delete:
+          notification: The project type %{name} has been deleted.
+        edit:
+          header: Edit Project Type
+        errors:
+          no_settings_change_for_admin_sets: Project type settings cannot be altered for the Administrative Set type
+          no_settings_change_for_user_collections: Project type settings cannot be altered for the User Project type
+          no_settings_change_if_not_empty: Project type settings cannot be altered for a type that has projects
+          not_empty: Project type cannot be altered as it has projects
+        form_participant_table:
+          creators:
+            agent_name: Project Creators
+            empty: No creators have been added to this project type.
+            help: Creators of projects of this type can create and manage their own projects.
+          managers:
+            agent_name: Project Managers
+            empty: No managers have been added to this project type.
+            help: Managers of projects of this type can edit projects other users have created, including adding to and removing works from a project, modifying project metadata, and deleting projects.
+        form_participants:
+          header: Project Participants
+          instructions: You can designate both groups and users as creators and managers of projects of this type
+        form_settings:
+          instructions: These settings determine how projects of this type can be managed and discovered.
+          warning: 'Warning: These settings cannot be changed after a project of this type has been created.'
+        index:
+          breadcrumb: Project Types
+          create_new_button: Create new project type
+          description: Project types enable you to define settings that govern projects that serve different purposes in your repository.  You can define as many project types as you need.
+          header: Project Types
+          modal:
+            can_delete_body_html: "<p>Deleting this project type will permanently remove the type and its settings from the repository.  Are you sure you want to delete this project type?</p>"
+            cannot_delete_body_html: "<p>You cannot delete this project type because one or more projects of this type have already been created.</p> <p>To delete this project type, first ensure that all projects of this type have been deleted.</p>"
+            header_can_delete: Delete Project Type?
+            header_cannot_delete: Cannot Delete Project Type
+            view_collections: View projects of this type
+          more_toggle_content_html: "<p>Typical scenarios for project types include:</p> <ul> <li><strong>User Projects</strong> that any registered user can create to organize items they deposit.</li> <li><strong>Exhibits</strong> that staff create and curate for public display, where items can be included in any number of exhibits.</li> <li><strong>Controlled Projects</strong> created and managed by staff and not intended for public display, such as projects associated with organizational units or departments.</li> <li><strong>Community Projects</strong> that are intended for public display, similar to how DSpace communities and collections are sometimes used.</li> </ul>"
+          more_toggle_header_html: "<span>More</span> about project types"
+        multiple_membership_checker:
+          error_preamble: 'Error: You have specified more than one of the same single-membership project type '
+        new:
+          header: Create New Project Type
+          submit: Save
+        update:
+          notification: The project type %{name} has been updated.
       collections:
         collection:         "Project"
         files:              "Files"
@@ -23,6 +73,7 @@ en:
             one: "There is <b>%{count} user</b> pending approval in this repository."
             other: "There are <b>%{count} users</b> pending approval in this repository."
       sidebar:
+        collection_types:   Project Types
         collections:        "Projects"
         registration_approval: "Approve Pending Users"
         users:           "Manage Registered Users"
@@ -37,8 +88,30 @@ en:
     base:
       form_files:
         local_readme_upload: "Add Local README Files" 
+      form_member_of_collections: 
+        actions:
+          remove: Remove from project
+        caption: This work is currently in these projects
+        confirm:
+          text: Removing this work will not remove it from the repository, only from this project. Are you sure you want to remove this work from the project?
+        header:
+          title: Project title
+      relationships:
+        empty: This %{type} is not currently in any projects.
+    batch_uploads:
+      new:
+        in_collections: These Works in Projects
     collection:
       actions:
+        add_existing_works:
+          desc: Add existing works to this Project
+          label: Add existing works to this Project
+        add_new_nested_collection:
+          desc: Add new project to this Project
+          label: Create new project as subproject
+        add_new_work:
+          desc: Deposit new work through this project
+          label: Deposit new work through this project
         add_works:
           desc2: "Add to Project"
           desc: "Add works to this Project"
@@ -50,6 +123,17 @@ en:
         edit:
           desc: "Edit this project"
           label: "Edit"
+        nest_collections:
+          button_label: Add a subproject
+          desc: Nest other projects within this Project
+          label: Add existing projects to this project
+          modal_title: Add a Subproject to Project
+          select_label: Select subproject
+        nested_subcollection:
+          button_label: Add to project
+          desc: Add existing projects to this project
+          modal_title: Add this Project Within Another Project
+          select_label: Select project
       document_list:
         no_visible_works: "The project is either empty or does not contain items to which you have access."
       edit:
@@ -61,11 +145,22 @@ en:
         select_heading: "Select the project to add your files to:"
         title: "Add to project"
         update: "Update Project"
+    collection_type:
+      admin_set_title: Admin Set
+      default_title: User Project
+    collection_types:
+      create_service:
+        admin_set_description: An aggregation of works that is intended to help with administrative control. Admin Sets provide a way of defining behaviors and policies around a set of works.
+        default_description: A User Project can be created by any user to organize their works.
     collections:
       search_form:
         label: "Search Project %{title}"
         placeholder: "Search Project"
       show:
+        no_visible_parent_collections: There are no visible parent projects.
+        no_visible_subcollections: There are no visible subproject.
+        parent_collection_header: Parent Projects
+        subcollection_count: Subprojects
         works_in_collection: "Works in this Project"
     dashboard:
       all:
@@ -73,27 +168,89 @@ en:
       collections:
         edit:
           header: "Edit Project: %{title}"
+        form_relationships:
+          add_other_collections_as_sub_collections_description: You can manage the sub-projects of this project.
+          collection_is_subcollection_description: This project is currently a sub-project of these projects
+          headlines:
+            other_collections_in_this_collection: Other Projects in This Project
+            this_collection_in_other_collections: This Project in Other Projects
+          modals:
+            remove_from_collection_description: Removing this project will not remove it from the repository, only as a parent of this project.  Are you sure you want to remove this project?
+            remove_parent_collection_deny: You do not have sufficient privileges for the parent project to be able to remove it.
+            remove_this_sub_collection_description: Removing this sub-project will not remove it from the repository, only from this parent project.  Are you sure you want to remove this sub-project?
+          sub_collections_of_collection_description: These project are currently sub-project of this project
+          table:
+            collection_title: Project Title
+          this_collection_in_other_collections_description: You can add this project to other projects as a sub-project.
+        form_share_table:
+          depositors:
+            help: Depositors of this project can view the project and add works to it, even if the visibility permissions of the project otherwise would not permit them to view it.
+          managers:
+            empty: No managers have been added to this project.
+            help: Managers of this project can add to and remove works from the project, modify project metadata, and delete the project.
+            help_with_works: For projects of type %{type_title}, when works are created directly in this project, the managers are given edit access to the new work.
+          viewers:
+            empty: No viewers have been added to this project.
+            help: Viewers of this project can view it even if the visibility permissions of the project otherwise would not permit them to view it.
+            help_with_works: For project of type %{type_title}, when works are created directly in this project, the viewers are given read access to the new work.
         new:
           header: Create New Project
         show:
+          header: Project
+          parent_collection_header: Parent Project
+          public_view_label: Public view of Project
+          search_results: Search Results within this Project
+          subcollection_count: Subproject
           works_in_collection: "Works in this Project"
       create_collection:        "Create Project"
+      managed:
+        collections: Managed Projects
       my:
         action:
+          add_to_collection: Add to project
           collection_confirmation: "Deleting a project from %{application_name} is permanent. Click OK to delete this project from %{application_name}, or Cancel to cancel this operation"
+          collection_create_success: Project was successfully created.
+          collection_delete_fail: Project could not be deleted
+          collection_delete_success: Project was successfully deleted
+          collection_deny_add_members: You do not have sufficient privileges to add members to the project
+          collection_update_success: Project was successfully updated.
+          collections_confirmation_html: Deleting <span class='pluralized'>this project</span> will permanently remove <span class='pluralized'>this project</span> from the repository.  Items in <span class='pluralized'>this project</span> will remain in the repository.  Are you sure you want to delete <span class='pluralized'>this project</span>?
+          collections_confirmation_no_items_html: Are you sure you want to delete this project? This action cannot be undone.
+          delete_admin_set: Delete project
+          delete_admin_set_deny: This project is defined as Admin Set and is not empty. To delete this Admin Set, you must first remove (delete or move to another Admin Set project) all items from the Admin Set.
           delete_collection:       "Delete Project"
+          delete_collection_deny: You do not have sufficient privileges to delete this project.
+          delete_collections: Delete project
+          delete_collections_deny: You do not have sufficient privileges to delete one or more project.
+          edit_admin_set: Edit project
           edit_collection:         "Edit Project"
+          edit_collection_deny: You do not have sufficient privileges to edit this project.
+          nesting_not_allowed: Projects of this type do not support nesting.
+          nesting_permission_denied: You do not have sufficient privileges to add this project to another project.
+          view_admin_set: View project
+          view_collection: View project
+          work_confirmation: Deleting a work from %{application_name} is permanent. Click OK to delete this work from %{application_name}, or Cancel to cancel this operation
         collections:  "Your Projects"
         facet_label:
           collections:  "Filter projects"
+        heading:
+          collection_type: Project Type
         sr:
           batch_checkbox:   "Check to add to a project or edit list"
           check_all_label:  "Select all files to be added to a project or edited"
+        your_collections: Your Projects
+      repository_growth:
+        collections: Projects
       stats:
         collections:        "Projects created"
       view_collections:         "View Projects"
     directory:
       suffix:           "@example.org"
+    homepage:
+      admin_sets:
+        link: View all projects
+        tab_label: Explore Projects
+        title: Explore Projects
     product_name:           "Virtual Data Collaboratory"
     product_twitter_handle: "@HydraSphere"
     institution_name:       "VDC"
@@ -111,6 +268,16 @@ en:
     icons:
       collection:       'fa fa-folder-open'
       default:          'fa fa-cube'
+    my:
+      count:
+        collections:
+          in_repo: "<strong>%{total_count} projects</strong> in the repository"
+          you_manage: "<strong>%{total_count} projects</strong> you can manage in the repository"
+          you_own: "<strong>%{total_count} projects</strong> you own in the repository"
+        works:
+          in_repo: "<strong>%{total_count} works</strong> in the repository"
+          you_manage: "<strong>%{total_count} works</strong> you can manage in the repository"
+          you_own: "<strong>%{total_count} works</strong> you own in the repository"
     search:
       form:
         option:
@@ -140,15 +307,27 @@ en:
         identifier: "A unique handle identifying the project. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
         keyword: "Words or phrases you select to describe what the project is about. These are used to search for content."
         language: "The language of the project's content."
+        license: Licensing and distribution information governing access to the project. Select from the provided drop-down list.
         publisher: "The person or group making the project available. Generally this is the institution."
         related_url: "A link to a website or other specific content (audio, video, PDF document) related to the project. An example is the URL of a research project from which the project was derived."
-        license: "Licensing and distribution information governing access to the collection. Select from the provided drop-down list."
         subject: "Headings or index terms describing what the project is about; these do need to conform to an existing vocabulary."
         # VDC Collection hints:
         title: "A descriptive name for the project."
         abstract: "A brief description of the project including the area of research and keywords."
-        collection_size: "Estimated size (in MB, TB or PB) anticipated for resources deposited to the collection over the life of the project."
+        collection_size: "Estimated size (in MB, TB or PB) anticipated for resources deposited to the project over the life of the project."
         note: "A place for the project creator to share any additional information."
+      collection_type:
+        allow_multiple_membership: Allow works to belong to multiple projects of this type
+        assigns_visibility: Allow projects of this type to assign initial visibility settings to a new work
+        assigns_workflow: Allow projects of this type to assign workflow to a new work
+        brandable: Allow projects of this type to be branded
+        description: A brief statement of the general purpose of this project type.  Users will see this if they have more than one project type to choose from when creating a new project.
+        discoverable: Allow projects of this type to be discoverable
+        nestable: Allow projects of this type to be nested (a project can contain other projects)
+        require_membership: A work must belong to at least one project of this type
+        sharable: Allow users to assign project managers, depositors, and viewers for projects they manage
+        share_applies_to_new_works: When new works are created directly in the project, grant sharing users and groups permissions for the new work according to their project roles.
+        title: ''
       defaults:
         # VDC Hint Defaults:
         title: "A descriptive name for the resource to be ingested."
@@ -166,7 +345,7 @@ en:
         license: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
         relation_uri: "A URL to a related resource.  Could be a version or an article that cites the data"
         relation_type: "Type of relationship identified in the Relation URI to another resource."
-        creation_date: "Date the Collection was created. YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD. An open collection (to which data is still being added) will have one date.  If the collection is complete, the researcher is encouraged to add an end date."
+        creation_date: "Date the Project was created. YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD. An open project (to which data is still being added) will have one date.  If the project is complete, the researcher is encouraged to add an end date."
         vdc_license: "License providing terms and conditions for reuse and reproduction of resource."
     labels:
       collection:
@@ -182,10 +361,15 @@ en:
         date_created: "Creation Date"
         coverage_spatial: "Spatial Coverage"
         coverage_temporal: "Temporal Coverage"
+        member_of_collection_ids: Add to project
         rights: "License"
         relation_uri: "Relation URI"
         relation_type: "Type of Relationship"
         creation_date: "Creation Date"
         vdc_license: "License"
+    placeholders:
+      defaults:
+        find_child_work: Search for a work…
+        member_of_collection_ids: Select a project…
     required:
       html: '<span class="label label-info required-tag">required</span>'
