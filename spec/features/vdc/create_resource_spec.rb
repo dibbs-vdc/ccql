@@ -3,16 +3,13 @@
 require 'rails_helper'
 
 # NOTE: If you generated more than one work, you have to set "js: true"
-RSpec.feature 'Create a Vdc::Resource', js: false do
+RSpec.feature 'Create a Vdc::Resource', :clean, js: false do
   context 'a logged in user' do
     let!(:user) { create(:admin_user, password: 'testing123') }
 
     before do
+      AdminSet.find_or_create_default_admin_set_id
       login_as user
-      visit '/admin/admin_sets/new'
-      page.fill_in 'Title', with: 'Default Admin Set'
-      page.fill_in 'Abstract or Summary', with: 'WHAT is your quest?'
-      click_button 'Save'
     end
 
     scenario do

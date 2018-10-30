@@ -38,6 +38,7 @@ gem 'redis', '~> 3.0'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'fcrepo_wrapper'
   gem 'hyrax-spec', '~> 0.3'
   gem 'rspec-rails'

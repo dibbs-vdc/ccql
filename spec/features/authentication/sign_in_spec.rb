@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User login' do
+RSpec.feature 'User login', :clean do
   let(:approved_user)     { create(:approved_user, email: 'approved@example.com', password: 'testing123') }
   let(:not_approved_user) { create(:user, email: 'not_approved@example.com', password: 'testing123') }
 
