@@ -20,9 +20,10 @@
 // Required by Blacklight
 //= require blacklight/blacklight
 
-//= require vdc/resource_visibility
 //= require hyrax
 //= require almond
 //= require vdc/save_work/save_work_control
 //= require vdc/editor
+//= require vdc/resource_visibility
 //= require app
+
