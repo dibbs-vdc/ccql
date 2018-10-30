@@ -4,4 +4,8 @@ FactoryBot.define do
     user
     purpose { 'Fake Purpose String' }
   end
+
+  trait :with_resource do
+    work_gid { create(:vdc_resource).to_global_id }
+  end
 end
