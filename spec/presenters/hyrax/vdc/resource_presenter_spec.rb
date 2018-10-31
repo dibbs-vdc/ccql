@@ -12,4 +12,8 @@ RSpec.describe Hyrax::Vdc::ResourcePresenter do
   describe '#usage_count' do
     it { expect(presenter.usage_count).to eq 0 }
   end
+
+  describe '#usage_purposes' do
+    it { expect(presenter.usage_purposes).to be_empty }
+  end
 end

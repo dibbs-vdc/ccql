@@ -26,6 +26,10 @@ RSpec.describe SolrDocument do
       it 'accurately counts usages' do
         expect(solr_document.usage_count).to eq 2
       end
+
+      it 'gives usage purposes' do
+        expect(solr_document.usage_purposes).to contain_exactly('Fake Purpose String')
+      end
     end
   end
 end
