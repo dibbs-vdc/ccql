@@ -19,7 +19,7 @@ if Rails.env.development?
 
   class WorkFactory
     def actor_create(attributes:, work_class: Vdc::Resource)
-      user    = User.find_by(email: 'admin@example.com')
+      user    = FactoryBot.create(:user)
       ability = Ability.new(user)
       work    = work_class.new
       env     = Hyrax::Actors::Environment.new(work, ability, attributes)
@@ -28,6 +28,12 @@ if Rails.env.development?
     end
   end
 
-  factory = WorkFactory.new
-  factory.actor_create(attributes: { title: ['Test'] })
+  factory        = WorkFactory.new
+  dummy_uri      = URI('file:///')
+  dummy_uri.path = Rails.root.join('spec', 'fixtures', 'dummy.pdf').to_s
+  attributes     = { title:        ['Test'],
+                     remote_files: [{ url: dummy_uri.to_s }],
+                     visibility:   'open' }
+
+  factory.actor_create(attributes: attributes)
 end
