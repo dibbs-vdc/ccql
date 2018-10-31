@@ -16,4 +16,18 @@ if Rails.env.development?
       user.approved = true
     end
   end
+
+  class WorkFactory
+    def actor_create(attributes:, work_class: Vdc::Resource)
+      user    = User.find_by(email: 'admin@example.com')
+      ability = Ability.new(user)
+      work    = work_class.new
+      env     = Hyrax::Actors::Environment.new(work, ability, attributes)
+
+      Hyrax::CurationConcern.actor.create(env)
+    end
+  end
+
+  factory = WorkFactory.new
+  factory.actor_create(attributes: { title: ['Test'] })
 end
