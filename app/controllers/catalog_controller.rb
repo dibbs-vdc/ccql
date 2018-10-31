@@ -61,7 +61,7 @@ class CatalogController < ApplicationController
     #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
     config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Projects'
     # TODO: Figure out ramifications of changing Collections to Projects in Solr
-    
+
     # VDC Facets
     #config.add_facet_field solr_name("vdc_creator", :facetable), label: "Creator", limit: 5
     config.add_facet_field solr_name("preferred_name", :facetable), label: "Creator", limit: 5
@@ -101,7 +101,7 @@ class CatalogController < ApplicationController
     # VDC-specific index (search results) view fields:
     #config.add_index_field solr_name("vdc_type", :stored_searchable), label: "VDC Type", link_to_search: solr_name("vdc_type", :facetable)
     config.add_index_field solr_name("identifier_doi", :stored_searchable), label: "DOI", itemprop: 'identifier_doi', helper_method: :iconify_auto_link
-    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator", itemprop: 'vdc_creator', helper_method: :link_to_person_profile 
+    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator", itemprop: 'vdc_creator', helper_method: :link_to_person_profile
     #config.add_index_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     #config.add_index_field solr_name("genre", :facetable), label: "Genre"
     #config.add_index_field solr_name("abstract", :stored_searchable), label: "Abstract"
@@ -115,6 +115,7 @@ class CatalogController < ApplicationController
     #config.add_index_field solr_name("coverage_spatial", :stored_searchable), label: "Coverage Spatial"
     #config.add_index_field solr_name("coverage_temporal", :stored_searchable), label: "Coverage Temporal"
     config.add_index_field solr_name("creation_date", :stored_searchable), label: "Creation Date"
+    config.add_index_field solr_name('usage_count', :displayable)
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display

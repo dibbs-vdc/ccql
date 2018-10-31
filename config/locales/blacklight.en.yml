@@ -1,3 +1,7 @@
 en:
   blacklight:
     application_name: 'Blacklight'
+    search:
+      fields:
+        index:
+          usage_count_ssm: 'Total Downloads'
