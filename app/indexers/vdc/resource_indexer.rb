@@ -32,9 +32,11 @@ module Vdc
         return :no_op if object.new_record?
 
         usage = USAGE_QUERY_CLASS.new(resource: object)
-        key   = Solrizer.solr_name('usage_count', :displayable, type: :integer)
+        count = Solrizer.solr_name('usage_count', :displayable, type: :integer)
+        purposes = Solrizer.solr_name('usage_purposes', :facetable)
 
-        solr_doc[key] = usage.count
+        solr_doc[count]    = usage.count
+        solr_doc[purposes] = usage.purposes
       end
   end
 end

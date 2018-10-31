@@ -30,6 +30,10 @@ class SolrDocument
     fetch(Solrizer.solr_name('usage_count', :displayable, type: :integer), 0)
   end
 
+  def usage_purposes
+    fetch(Solrizer.solr_name('usage_purposes', :facetable), [])
+  end
+
   def vdc_type
     self[Solrizer.solr_name('vdc_type')]
   end

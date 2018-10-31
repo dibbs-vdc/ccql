@@ -23,7 +23,11 @@ RSpec.describe Vdc::ResourceIndexer do
           .to include('usage_count_ssm' => 2)
       end
 
-      it 'indexes usage purposes'
+      it 'indexes usage purposes' do
+        expect(indexer.generate_solr_document)
+          .to include('usage_purposes_sim' =>
+                      contain_exactly('Fake Purpose String'))
+      end
     end
   end
 end
