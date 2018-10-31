@@ -116,6 +116,7 @@ class CatalogController < ApplicationController
     #config.add_index_field solr_name("coverage_temporal", :stored_searchable), label: "Coverage Temporal"
     config.add_index_field solr_name("creation_date", :stored_searchable), label: "Creation Date"
     config.add_index_field solr_name('usage_count', :displayable)
+    config.add_index_field solr_name('usage_purposes', :facetable)
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display

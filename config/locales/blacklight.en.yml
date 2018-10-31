@@ -5,3 +5,4 @@ en:
       fields:
         index:
           usage_count_ssm: 'Total Downloads'
+          usage_purposes_sim: 'Usage'
