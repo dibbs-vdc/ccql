@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'launchy', group: %i[test]
 gem 'listen', '~> 3.0.5', group: %i[development]
 gem 'omniauth-shibboleth'
+gem 'pry-rails', group: %i[development test]
 gem 'puma', '~> 3.0'
 gem 'redis', '~> 3.0'
 gem 'rsolr', '>= 1.0'
