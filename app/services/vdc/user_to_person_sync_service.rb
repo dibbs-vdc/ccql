@@ -4,17 +4,23 @@
 # TODO: Put the admin restrictions in here in addition to the controllers?
 
 class Vdc::UserToPersonSyncService
+  ##
+  # @!attribute [rw] user
+  #   @return [::User]
+  attr_accessor :user
 
-  def initialize(params)
-    @user = params[:user]
+  def initialize(user:)
+    self.user = user
   end
 
-  def create_person_from_user(user)
+  def create_person_from_user(*)
     # TODO: Understand how transactions work in Fedora and
     #       make sure it's being done properly here.
     # TODO: before saving, do some validation on the Person to make sure it's constructed properly
-    p = ::Vdc::Person.new
-    p.vdc_type = "Person"
+
+    p  = ::Vdc::Person.new(id: SecureRandom.uuid)
+    p.identifier_system = p.id
+    p.vdc_type          = p.class::VDC_TYPE
 
     p.orcid = person_orcid(user)
     p.preferred_name = person_preferred_name(user)
@@ -32,13 +38,8 @@ class Vdc::UserToPersonSyncService
     p.discipline = person_discipline(user)
     p.website = person_website(user)
     p.cv = person_cv(user)
-    p.related_description = person_related_description(user)      
+    p.related_description = person_related_description(user)
 
-    p.save
-
-    # Additional post-proessing
-    # TODO: Is there a better way to do this?
-    p.identifier_system = p.id
     p.save
 
     # Now that we have the person id in Fedora, we can save it to user
@@ -72,14 +73,14 @@ class Vdc::UserToPersonSyncService
     p.discipline = person_discipline(user)
     p.website = person_website(user)
     p.cv = person_cv(user)
-    p.related_description = person_related_description(user)      
+    p.related_description = person_related_description(user)
 
     p.save
     p
   end
 
   def person_orcid(user)
-    ::RDF::URI(user.orcid)
+    user.orcid.present? ? ::RDF::URI(user.orcid) : nil
   end
 
   def person_preferred_name(user)
@@ -95,11 +96,11 @@ class Vdc::UserToPersonSyncService
       return user.organization
     end
   end
-  
+
   def person_discipline(user)
     # NOTE: A side-effect of using the multi-select in the form for
     #       selecting disciplines is that there's always an empty string
-    #       as one of the values. We'd like to not include that in 
+    #       as one of the values. We'd like to not include that in
     #       the person.
     return user.discipline.reject(&:empty?)
   end
@@ -120,9 +121,9 @@ class Vdc::UserToPersonSyncService
          return "http://#{user.website}"
       end
     end
-    return user.website    
+    return user.website
   end
-  
+
   def person_cv(user)
     # https://github.com/samvera/hydra/wiki/Lesson---Adding-attached-files
     # TODO: Does not adhere to PCDM standards. Find a way to make this a pcdm object too.
@@ -137,14 +138,14 @@ class Vdc::UserToPersonSyncService
   end
 
   def person_related_description(user)
-    potential_urls = [user.sites_open_science_framework_url, user.sites_researchgate_url, 
-                      user.sites_vivo_url, user.sites_institutional_repo_url, 
+    potential_urls = [user.sites_open_science_framework_url, user.sites_researchgate_url,
+                      user.sites_vivo_url, user.sites_institutional_repo_url,
                       user.sites_linkedin_url, user.sites_other_url]
     descriptions = []
 
     potential_urls.each do |purl|
-      # TODO: Make this a ::RDF::URI(purl) if it's an acutally valid url, 
-      #       instead of a string. For now, I don't know of a good and 
+      # TODO: Make this a ::RDF::URI(purl) if it's an acutally valid url,
+      #       instead of a string. For now, I don't know of a good and
       #       comprehensive way to check for this.
       descriptions << purl if valid_site(purl)
     end

@@ -1,11 +1,12 @@
-# TODO: 
+# TODO:
 #   There is some question on whether or not the current Person approach is too simplistic and/or hackish.
 #   Do do we do a simplistic approach defined below?
 #   Is there a better way? (Perhaps something that more closely compares to how "Works" are implemented)
 
 class Vdc::Person < ActiveFedora::Base
+  VDC_TYPE = 'Person'
 
-  # TODO: How much of this needs to be searchable? 
+  # TODO: How much of this needs to be searchable?
   #       For now, excluding vdc_type, identifier_system
 
   # E.g., "Person", "Resource", "Tool", etc.
@@ -13,7 +14,7 @@ class Vdc::Person < ActiveFedora::Base
 
   # :identifier_system will be the :id
   property :identifier_system, predicate: ::RDF::URI("https://datacollaboratory.org/person#identifierSystem"), multiple: false
-  
+
   property :orcid, predicate: ::RDF::URI("https://datacollaboratory.org/person#orcid"), multiple: false do |index|
     index.as :stored_searchable
   end
@@ -66,9 +67,9 @@ class Vdc::Person < ActiveFedora::Base
   # Optional
   property :website, predicate: ::RDF::URI("https://datacollaboratory.org/person#website"), multiple: false do |index|
     index.as :stored_searchable
-  end 
+  end
 
-  # Link to a document stored in either Fedora or externally 
+  # Link to a document stored in either Fedora or externally
   # If the cv is stored within Fedora, the cv_upload will be set.
   property :cv, predicate: ::RDF::URI("https://datacollaboratory.org/person#CV"), multiple: false # optional
   has_subresource "cv_upload"
