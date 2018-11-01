@@ -114,6 +114,15 @@ Hyrax.config do |config|
   # The banner image.
   config.banner_image = 'assets/VDC-Logo.png'
 
+  ## Whitelist all directories which can be used to ingest from the local file
+  # system.
+  config.whitelisted_ingest_dirs = []
+
+  unless Rails.env == 'production'
+    config.whitelisted_ingest_dirs <<
+      Rails.root.join('spec', 'fixtures').to_s
+  end
+
   # Temporary paths to hold uploads before they are ingested into FCrepo
   # These must be lambdas that return a Pathname. Can be configured separately
   #  config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
