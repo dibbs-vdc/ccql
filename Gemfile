@@ -29,6 +29,7 @@ gem 'redis', '~> 3.0'
 gem 'rsolr', '>= 1.0'
 gem 'rspec-rails', group: %i[development test]
 gem 'sass-rails', '~> 5.0'
+gem 'sidekiq'
 gem 'solr_wrapper', '>= 0.3', group: %i[development test]
 gem 'spring', group: %i[development]
 gem 'spring-watcher-listen', '~> 2.0.0', group: %i[development]
