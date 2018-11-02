@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount Blacklight::Engine => '/'
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
     get   '/users/cancel', to: 'vdc/registrations#cancel', as: :cancel_user_registration
   end
 
+  mount Sidekiq::Web => '/sidekiq'
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'
   resources :welcome, only: 'index'
