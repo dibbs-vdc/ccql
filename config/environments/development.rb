@@ -31,6 +31,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Use a real queuing backend for Active Job
+  config.active_job.queue_adapter  = :sidekiq
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
