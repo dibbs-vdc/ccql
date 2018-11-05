@@ -7,5 +7,11 @@ FactoryBot.define do
     factory :large_collection do
       collection_size '1_tb' # see config/authorities/collection_size.ymlo
     end
+
+    trait :with_creation_date do
+      after(:build) do |collection|
+        collection.assign_creation_date
+      end
+    end
   end
 end

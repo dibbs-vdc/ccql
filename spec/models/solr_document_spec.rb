@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe SolrDocument do
-  subject(:solr_document) { described_class.new(work.to_solr) }
-  let(:work)              { FactoryBot.build(:dataset) }
+  subject(:solr_document) { described_class.new(obj.to_solr) }
+  let(:obj)              { FactoryBot.build(:dataset) }
 
   describe '#usage_count' do
     it 'is 0 by default' do
@@ -12,7 +12,7 @@ RSpec.describe SolrDocument do
     end
 
     context 'when the resource exists' do
-      let(:work) { FactoryBot.create(:dataset) }
+      let(:obj) { FactoryBot.create(:dataset) }
 
       it 'is 0 with no usages' do
         expect(solr_document.usage_count).to eq 0
@@ -20,8 +20,8 @@ RSpec.describe SolrDocument do
     end
 
     context 'with usage data' do
-      let!(:usages) { FactoryBot.create_list(:vdc_usage, 2, work: work) }
-      let(:work)    { FactoryBot.create(:dataset) }
+      let!(:usages) { FactoryBot.create_list(:vdc_usage, 2, obj: obj) }
+      let(:obj)    { FactoryBot.create(:dataset) }
 
       it 'accurately counts usages' do
         expect(solr_document.usage_count).to eq 2
@@ -29,6 +29,25 @@ RSpec.describe SolrDocument do
 
       it 'gives usage purposes' do
         expect(solr_document.usage_purposes).to contain_exactly('Fake Purpose String')
+      end
+    end
+  end
+
+  context 'with a collection' do
+    let(:) { FactoryBot.build(:collection) }
+
+    describe '#creation_date' do
+      it 'is empty' do
+        expect(solr_document.creation_date).to be_empty
+      end
+
+      context 'and a creation_date' do
+        let(:obj) { FactoryBot.build(:collection, :with_creation_date) }
+
+        it 'has a date' do
+          expect(solr_document.creation_date)
+            .to contain_exactly(match(/^[\d]{4}-[\d]{2}-[\d]{2}$/))
+        end
       end
     end
   end
