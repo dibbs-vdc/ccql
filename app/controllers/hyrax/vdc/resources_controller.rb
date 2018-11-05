@@ -64,9 +64,7 @@ module Hyrax
     def set_format
       unique_formats = Set.new
       curation_concern.members.each do |member|
-        if member.respond_to? (:mime_type)
-          unique_formats.add(member.mime_type) unless member.mime_type == nil
-        end
+        unique_formats.add(member.mime_type) if member.respond_to?(:mime_type) &&  member.mime_type != nil
       end
       curation_concern.format = unique_formats.to_a
     end
