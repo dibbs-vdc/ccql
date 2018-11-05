@@ -67,6 +67,11 @@ module Hyrax
     self.terms -= [:source]
     self.terms -= [:description] # Removed in favor of :abstract
 
+    def primary_terms
+      result = super 
+      result + [:member_of_collection_ids]
+    end
+
     # Make title non-repeatable (single-value)
     # TODO: I'm not sure why both the self.multiple? and multiple? 
     #       I need to investigate to see if this is a Hyrax bug.
