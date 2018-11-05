@@ -84,7 +84,7 @@ class Vdc::UserToPersonSyncService
   end
 
   def person_preferred_name(user)
-    user.last_name + ", " + user.first_name
+    user.display_name
   end
 
   def person_organization(user)
