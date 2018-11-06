@@ -20,7 +20,7 @@ RSpec.describe SolrDocument do
     end
 
     context 'with usage data' do
-      let!(:usages) { FactoryBot.create_list(:vdc_usage, 2, obj: obj) }
+      let!(:usages) { FactoryBot.create_list(:vdc_usage, 2, work: obj) }
       let(:obj)    { FactoryBot.create(:dataset) }
 
       it 'accurately counts usages' do
@@ -34,7 +34,7 @@ RSpec.describe SolrDocument do
   end
 
   context 'with a collection' do
-    let(:) { FactoryBot.build(:collection) }
+    let(:obj) { FactoryBot.build(:collection) }
 
     describe '#creation_date' do
       it 'is empty' do
