@@ -9,7 +9,7 @@ module Hyrax
         base.form_class = Hyrax::Vdc::CollectionForm
         base.presenter_class = Hyrax::Vdc::CollectionPresenter
       end
-    
+
       def new
         super.tap do |form|
           form.vdc_creator << current_user.identifier_system
@@ -23,6 +23,10 @@ module Hyrax
         else
           after_create_error
         end
+
+        CollectionSizeNotification
+          .new(collection: @collection)
+          .notify
       end
 
       def after_update
@@ -32,6 +36,10 @@ module Hyrax
         else
           after_update_error
         end
+
+        CollectionSizeNotification
+          .new(collection: @collection)
+          .notify
       end
     end
   end

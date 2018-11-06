@@ -8,12 +8,13 @@
 # notifications.
 #
 class CollectionMetadataMailer < ApplicationMailer
+  default from: Rails.configuration.admin_mailer['default_from'],
+          to:   Rails.configuration.admin_mailer['admin_email']
+
   def size_message
-    @user          = params[:user]
     @collection    = params[:collection]
     @vocab_service = CollectionSizeService.new
 
-    mail(to:      @user.email,
-         subject: t('hyrax.collection_mailer.size_message.subject'))
+    mail(subject: t('hyrax.collection_mailer.size_message.subject'))
   end
 end
