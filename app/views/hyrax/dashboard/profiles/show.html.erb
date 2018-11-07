@@ -6,6 +6,9 @@
 <div class="image-masthead profile-page">
   <%= link_to(image_tag("VDC-Logo.png", class: "profile-page-image"), '/') %>
 </div>
+<div>
+  <%= render '/profile_controls' %> 
+</div>
 
 <% provide :page_header do %>
   <h1><span class="fa fa-id-card"></span> <%= t("hyrax.admin.sidebar.profile") %></h1>
