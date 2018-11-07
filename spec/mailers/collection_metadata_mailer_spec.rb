@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe CollectionMetadataMailer do
-  subject(:mailer) { described_class.with(user: user, collection: collection) }
+  subject(:mailer) { described_class.with(collection: collection) }
   let(:collection) { FactoryBot.build(:large_collection) }
   let(:user)       { FactoryBot.build(:admin_user) }
 
