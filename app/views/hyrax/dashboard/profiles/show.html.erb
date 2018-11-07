@@ -2,6 +2,11 @@
     - Removing edit profile button 
     - Adding additional section for additional user info %>
 
+
+<div class="image-masthead profile-page">
+  <%= link_to(image_tag("VDC-Logo.png", class: "profile-page-image"), '/') %>
+</div>
+
 <% provide :page_header do %>
   <h1><span class="fa fa-id-card"></span> <%= t("hyrax.admin.sidebar.profile") %></h1>
   <%# TODO: Remove or Switch allow_edit to true once we figure out a process 
