@@ -47,7 +47,7 @@ class SolrDocument
   end
 
   def creation_date
-    fetch(Solrizer.solr_name('creation_date', :facetable), [])
+    fetch(Solrizer.solr_name('creation_date', type: :date), [])
   end
 
   def authoritative_name
