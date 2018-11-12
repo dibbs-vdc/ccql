@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'hyrax', '~> 2.1'
+gem 'hyrax', '~> 2.4'
 gem 'rails', '~> 5.1.6'
 
 gem 'byebug', platform: :mri, group: %i[development test]
