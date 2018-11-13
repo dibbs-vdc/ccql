@@ -1,0 +1,44 @@
+<%= simple_form_for @user,
+             url: hyrax.dashboard_profile_path(@user.to_param),
+             html: { multipart: true, class: 'form-horizontal' } do |f| %>
+
+  <%# f.error_notification %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger" id="error_explanation">
+    <p><%= pluralize(@user.errors.count, "error") %> prohibited this registration from being saved:</p>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name, required: true %>
+    <%= f.input :last_name, required: true %>
+
+    <%= render partial: "organization", :locals => { f: f } %>
+
+    <%= f.input :department, required: false %>
+
+    <%= render partial: "position", :locals => { f: f } %>
+
+    <%= render partial: "discipline", :locals => { f: f } %>
+    <%= render partial: "orcid", :locals => { f: f } %>
+
+    <%= f.input :address, required: false %>
+    <%= f.input :email, required: true %>
+    <%= f.input :website, required: false %>
+    
+    <%= render partial: "cv", :locals => { f: f } %>
+    <%= render partial: "sites", :locals => { f: f } %>
+  </div>
+
+  
+  <%= render partial: "registration_disclaimer" %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update" %>
+  </div>
+<% end %>

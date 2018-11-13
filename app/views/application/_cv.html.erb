@@ -1,4 +1,4 @@
-    <div class="form-group">
+    <div>
       <%= f.label "Curriculum vitae", required: false %><br />
       <%= f.hint "You may add a CV either as a URL to a web-based CV or upload a file." %>
       <%= f.input :cv_link, label: "URL", required: false %>
@@ -10,4 +10,5 @@
         <%# @user.cv_file.current_path %>
         <%= link_to 'Download current CV', "/download_cv/#{@user.id}" %>
       <% end %>
+      <br>
    </div>
