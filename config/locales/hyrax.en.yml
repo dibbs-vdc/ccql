@@ -88,8 +88,7 @@ en:
     base:
       form_files:
         local_readme_upload: "Add Local README Files" 
-        local_upload_html: "<p>You can add one or more files to associate with this work.</p>" 
-        local_upload_file_amount: "Only up to 10 files at a time can be loaded."
+        local_upload_file_amount: "However, only up to 10 files at a time can be loaded."
       form_member_of_collections: 
         actions:
           remove: Remove from project
