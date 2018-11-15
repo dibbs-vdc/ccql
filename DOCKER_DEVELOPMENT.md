@@ -3,7 +3,7 @@ Developing with the Docker Environment
 
 ```sh
 sc up
-sc be rake db:schema:load db:migrate db:seed
+sc be rake db:create db:schema:load db:migrate db:seed
 ```
 
 ## Running the test suite

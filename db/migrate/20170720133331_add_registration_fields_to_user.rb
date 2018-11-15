@@ -19,7 +19,7 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     add_column :users, :position_other,  :string
 
     # Discipline (Can be more than one, e.g., ['Agriculture','Biology'])
-    add_column :users, :discipline, :text, array: true, default: [].to_yaml 
+    add_column :users, :discipline, :text, array: true
     add_column :users, :discipline_other,  :string
 
     # Orcid (already exists in User)
@@ -33,7 +33,7 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     # TODO: Should cv_upload be the location of the file on disk?
     add_column :users, :cv_link,  :string
     add_column :users, :cv_file,  :string
-    
+
     # Additional sites
     add_column :users, :sites_open_science_framework, :boolean, null: false, default: false
     add_column :users, :sites_open_science_framework_url, :string
@@ -64,9 +64,9 @@ class AddRegistrationFieldsToUser < ActiveRecord::Migration[5.0]
     add_column :users, :usage_description, :string
 
     # How long is your intended participation in the VDC?
-    add_column :users, :usage_duration, :string, null: false, default: "unsure"    
+    add_column :users, :usage_duration, :string, null: false, default: "unsure"
 
-    # This will be the Fedora 4 UUID for the Vdc::Person object that 
+    # This will be the Fedora 4 UUID for the Vdc::Person object that
     # corresponds to a particular user
     add_column :users, :identifier_system, :string
   end

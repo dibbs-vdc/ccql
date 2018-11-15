@@ -21,7 +21,7 @@ services:
       - redis
       - solr
       - fcrepo
-      - postgres
+      - mysql
 
   redis:
     image: redis:3
@@ -30,16 +30,14 @@ services:
     volumes:
       - 'redis:/data'
 
-  postgres:
-    image: postgres
-    environment:
-      POSTGRES_DB: "${POSTGRES_DB}"
-      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
-      POSTGRES_USER: "${POSTGRES_USER}"
+  mysql:
+    image: mysql:5.7
+    env_file:
+      - .env
     ports:
-      - "5432"
+      - '3306:3306'
     volumes:
-      - 'postgres:/var/lib/postgresql/data'
+      - 'mysql:/var/lib/mysql'
 
   solr:
     image: solr:7.1
@@ -62,5 +60,5 @@ services:
 
 volumes:
   fcrepo:
-  postgres:
+  mysql:
   redis:
