@@ -6,7 +6,7 @@
           <%= link_to t(:'hyrax.share_button'), hyrax.my_works_path, aria: current_page?(hyrax.my_works_path) ? {current: 'page'} : nil %></li>
         <li <%= 'class=active' if current_page?(hyrax.edit_dashboard_profile_path) %>>
           <%= link_to t(:'hyrax.edit_profile'), hyrax.edit_dashboard_profile_path, aria: current_page?(hyrax.edit_dashboard_profile_path) ? {current: 'page'} : nil %></li>
-        <li <%= 'class=active' if current_page?(dashboard_path) %>>
+        <li id='profile-dashboard-link'<%= 'class=active' if current_page?(dashboard_path) %>>
           <%= link_to t(:'hyrax.dashboard.title'), dashboard_path, aria: current_page?(dashboard_path) ? {current: 'page'} : nil %></li>
       </ul><!-- /.nav -->
     </div>
