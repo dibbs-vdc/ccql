@@ -33,7 +33,7 @@ gem 'sidekiq'
 gem 'solr_wrapper', '>= 0.3', group: %i[development test]
 gem 'spring', group: %i[development]
 gem 'spring-watcher-listen', '~> 2.0.0', group: %i[development]
-gem 'sqlite3'
+gem 'mysql2'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'web-console', '>= 3.3.0', group: %i[development]
