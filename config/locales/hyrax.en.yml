@@ -88,9 +88,17 @@ en:
     base:
       form_files:
         local_readme_upload: "Add Local README Files" 
+<<<<<<< HEAD
         local_upload_html: |
           <p>You can add one or more files to associate with this work.</p>
           <p>You can upload up to 10 files that are contained within a single flat directory/folder.  If there are more than 10 files in a directory or if it is a multilevel directory, you should zip the folder/directory.</p>
+||||||| merged common ancestors
+        local_upload_file_amount: "However, only up to 10 files at a time can be loaded."
+=======
+        local_upload_html: |
+          <p>You can add one or more files to associate with this work.</p>
+          <p>You can upload up to 10 files that are contained within a single flat directory/folder.  If more than 10 files in a directory or if it is a multilevel directory, you should zip the folder/directory.</p>
+>>>>>>> Remove save work js files and change upload
       form_member_of_collections: 
         actions:
           remove: Remove from project
