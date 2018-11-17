@@ -82,7 +82,21 @@ module Hyrax
     end
 
     def title
-      super.first || ""
+      TitleWrapper.new(super)
+    end
+
+    class TitleWrapper < SimpleDelegator
+      def first
+        super || ''
+      end
+
+      def to_s
+        first.to_s
+      end
+
+      def to_str
+        first.to_str
+      end
     end
   end
 end
