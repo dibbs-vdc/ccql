@@ -62,4 +62,5 @@ Hyrax::Engine.routes.draw do
   end
 
   match "/download_cv/:id/", controller: "admin/users", action: "download_cv", via: :get
+  get 'download/usage', to: 'downloads#download_usage', as: :download_usage
 end

@@ -20,6 +20,7 @@ class Ability
 
     if admin?
       can [:manage], User
+      can :read, Hyrax::Download
     end
   end
 end
