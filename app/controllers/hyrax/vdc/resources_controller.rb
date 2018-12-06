@@ -50,6 +50,7 @@ module Hyrax
       set_extent
       set_format
       set_doi
+      set_creation_date
 
       curation_concern.save!
       
@@ -73,6 +74,17 @@ module Hyrax
       # Generate DOI if the work is public  
       if curation_concern.visibility == Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
         curation_concern.identifier_doi = ::Vdc::DoiGenerationService.new({work: curation_concern}).generate_doi
+      end
+    end
+
+    def set_creation_date
+      return if curation_concern.nil?
+      public = Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
+      vdc = Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED
+      visibility = params['vdc_resource']['visibility']
+
+      if visibility == public || visibility == vdc
+        curation_concern.creation_date = [Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')]
       end
     end
   end
