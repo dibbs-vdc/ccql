@@ -30,8 +30,6 @@ module Hyrax
     self.terms += [:genre]
     self.terms += [:research_problem]
     self.required_fields += [:research_problem]
-    self.required_fields += [:creation_date]
-    self.terms += [:creation_date]
 
     # OPTIONAL/REQUIRED (depending on visibility)
     # We want these to come first so that when they change position
