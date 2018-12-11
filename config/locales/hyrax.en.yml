@@ -69,7 +69,7 @@ en:
           id_label:       "Email"
           access_label:   "Last Access"
           approval_label: "Approve"
-          describe_pending_registrations_html: 
+          describe_pending_registrations_html:
             one: "There is <b>%{count} user</b> pending approval in this repository."
             other: "There are <b>%{count} users</b> pending approval in this repository."
       sidebar:
@@ -87,11 +87,11 @@ en:
           title: "Manage Registered Users"
     base:
       form_files:
-        local_readme_upload: "Add Local README Files" 
+        local_readme_upload: "Add Local README Files"
         local_upload_html: |
           <p>You can add one or more files to associate with this work.</p>
           <p>You can upload up to 10 files that are contained within a single flat directory/folder.  If there are more than 10 files in a directory or if it is a multilevel directory, you should zip the folder/directory.</p>
-      form_member_of_collections: 
+      form_member_of_collections:
         actions:
           remove: Remove from project
         caption: This work is currently in these projects
@@ -238,6 +238,7 @@ en:
           collections:  "Filter projects"
         heading:
           collection_type: Project Type
+          date_uploaded: Creation Date
         sr:
           batch_checkbox:   "Check to add to a project or edit list"
           check_all_label:  "Select all files to be added to a project or edited"
@@ -348,7 +349,7 @@ en:
         note: "A place for researchers to share any additional information, such as creators or contributors who are not members of VDC."
         date_created: "Date that the resource was created (YYYY-MM-DD or YY-MM-DD/YY-MM-DD)."
         discipline: "Discipline or disciplines in which the work is related."
-        coverage_spatial: "Geographic location or coordinates. Free text examples include: 40 47 48N; 95°48′26,533&quotW; Paris, France." 
+        coverage_spatial: "Geographic location or coordinates. Free text examples include: 40 47 48N; 95°48′26,533&quotW; Paris, France."
         coverage_temporal: "Time frame or period in history (including geologic time period) when data occurred. This can include the date and time of capture, in which case UTC code is preferred, although not required. This could be a range of dates (1900-1930) or time period (World War II, 1939-1945, or Paleozoic era)."
         license: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
         relation_uri: "A URL to a related resource.  Could be a version or an article that cites the data"
