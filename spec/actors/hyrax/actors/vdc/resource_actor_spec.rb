@@ -13,10 +13,11 @@ RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
   let(:attributes) { Hash.new() }
 
   describe '#create' do 
+    before do 
+      actor.create(env)
+    end 
     it 'sets creation date to now' do 
-      expect { actor.create(env) }.to change{ 
-        model.creation_date.to_a 
-      }.from be_empty.to([Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')])
+      expect(model.creation_date).to eq([Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')]) 
     end
   end
 
