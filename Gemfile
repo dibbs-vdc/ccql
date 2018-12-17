@@ -7,6 +7,7 @@ end
 
 gem 'hyrax', '~> 2.4'
 gem 'rails', '~> 5.1.6'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'byebug', platform: :mri, group: %i[development test]
 gem 'capybara', group: %i[development test]

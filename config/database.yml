@@ -21,3 +21,5 @@ production:
   username: <%= ENV['MYSQL_USER'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
   pool:     50
+  timeout: 5000
+
