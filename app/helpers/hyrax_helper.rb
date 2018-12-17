@@ -39,5 +39,9 @@ module HyraxHelper
     def preferred_name(person_doc)
       person_doc[Solrizer.solr_name('preferred_name')].first
     end
-end
 
+    def vdc_person_path(*args)
+      user = User.find_by(identifier_system: args.to_param)
+      link_to user.display_name, Hyrax::Engine.routes.url_helpers.user_path(user)
+    end
+end
