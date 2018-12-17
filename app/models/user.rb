@@ -34,7 +34,7 @@ class User < ApplicationRecord
   scope :not_approved, ->() {  where(approved: false) }
 
   def display_name
-    return to_s unless last_name.blank? || first_name.blank?
+    return to_s if last_name.blank? || first_name.blank?
     "#{last_name}, #{first_name}"
   end
 
