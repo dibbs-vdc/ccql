@@ -26,4 +26,3 @@
 //= require vdc/editor
 //= require vdc/resource_visibility
 //= require app
-
