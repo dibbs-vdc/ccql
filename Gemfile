@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'launchy', group: %i[test]
 gem 'listen', '~> 3.0.5', group: %i[development]
+gem 'mysql2'
 gem 'omniauth-shibboleth'
 gem 'pry-rails', group: %i[development test]
 gem 'puma', '~> 3.0'
@@ -34,7 +35,7 @@ gem 'sidekiq'
 gem 'solr_wrapper', '>= 0.3', group: %i[development test]
 gem 'spring', group: %i[development]
 gem 'spring-watcher-listen', '~> 2.0.0', group: %i[development]
-gem 'mysql2'
 gem 'turbolinks', '~> 5'
+gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
 gem 'web-console', '>= 3.3.0', group: %i[development]
