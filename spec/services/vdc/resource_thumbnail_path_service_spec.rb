@@ -80,6 +80,13 @@ RSpec.describe Vdc::ResourceThumbnailPathService::ThumbnailImageResolver do
     end
   end
 
+  context 'with a .sav fileset' do
+    let(:mime_type) { 'application/octet-stream' }
+    it 'gives the default .sav thumbnail' do
+      expect(subject.image_path_for(fileset)).to match /sav\-.*\.svg$/
+    end
+  end
+
   context 'with a generic text fileset' do
     let(:mime_type) { 'text/plain' }
     it 'gives the default generic text thumbnail' do
@@ -87,8 +94,15 @@ RSpec.describe Vdc::ResourceThumbnailPathService::ThumbnailImageResolver do
     end
   end
 
-  context 'with a video fileset' do
+  context 'with a mp4 fileset' do
     let(:mime_type) { 'video/mp4' }
+    it 'gives the default video thumbnail' do
+      expect(subject.image_path_for(fileset)).to match /video\-.*\.svg$/
+    end
+  end
+
+  context 'with a quicktime video fileset' do
+    let(:mime_type) { 'video/quicktime' }
     it 'gives the default video thumbnail' do
       expect(subject.image_path_for(fileset)).to match /video\-.*\.svg$/
     end
