@@ -27,6 +27,10 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="list-group col-md-5 col-sm-8">
+          <div class="list-group-item">
+            <dt><i class="fa fa-user"></i> Name</dt>
+            <dd><%= @user.first_name %> <%= @user.last_name %></dd>
+          </div>
           <%= render "hyrax/users/vitals", user: @user %>
           <div class="list-group-item">
             <%= render 'hyrax/users/user_info', user: @user %>
