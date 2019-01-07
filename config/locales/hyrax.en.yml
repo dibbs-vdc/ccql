@@ -302,11 +302,6 @@ en:
     works:
       form:
          in_collections: This Work in Projects
-  records:
-    edit_fields:
-      member_of_collection_ids:
-        actions:
-          remove: Remove
   simple_form:
     hints:
       collection:
