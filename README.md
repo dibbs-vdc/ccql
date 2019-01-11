@@ -82,6 +82,15 @@ $ RAILS_ENV=development rails server
 
 [Setting Up Your First Admin User](https://github.com/dibbs-vdc/ccql/wiki/Setting-Up-Your-First-Admin-User)
 
+## VDC Deployment
+
+1) SSH in to server
+2) In /home/vdc/ccql pull the correct code
+3) touch /home/vdc/restart.cmd
+
+
+
+
 ## Contributing
 
 We'd love contributors! Please contact us for more information. At this time, we don't have a formal process to contribute, but we're working towards that.
