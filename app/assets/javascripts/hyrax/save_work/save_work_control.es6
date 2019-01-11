@@ -83,7 +83,7 @@ export default class SaveWorkControl {
       return
     }
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
-    this.requiredProject = new RequiredCollection(this.form, () => this.formStateChanged(), () => this.isValid() )
+    this.requiredProject = new RequiredProject(this.form, () => this.formStateChanged())
 
     this.uploads = new UploadedFiles(this.form, () => this.formStateChanged())
     this.saveButton = this.element.find(':submit')

@@ -1,9 +1,8 @@
 export class RequiredProject {
   // Monitors the form and runs the callback if any of the required fields change
-  constructor(form, callback, validateCallback) {
+  constructor(form, callback) {
     this.form = form
     this.callback = callback
-    this.validateCallback = validateCallback
     this.reload()
   }
 
@@ -20,7 +19,7 @@ export class RequiredProject {
 
     // Watches for changes to the projects table 
     this.observer = new MutationObserver(mutations => {
-      this.validateCallback()
+      this.callback()
     })
     this.observer.observe(document.getElementById('project-table'), { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] })
   }
