@@ -1,4 +1,5 @@
 //= require hyrax/save_work/save_work_control
+//= require hyrax/save_work/checklist_item
 //= require hyrax/save_work/required_fields
 //= require hyrax/save_work/required_project
 //= require hyrax/save_work/uploaded_files
