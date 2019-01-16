@@ -6,8 +6,8 @@ module Hyrax
       before_action :find_user
       authorize_resource class: '::User', instance_name: :user
 
-      USER_ATTRIBUTES = [:first_name, :last_name, :organization, :organization_other, 
-      :department, :position, :position_other, {:discipline => []}, :discipline_other, 
+      USER_ATTRIBUTES = [:avatar, :avatar_cache, :remove_avatar, :first_name, :last_name, :organization,
+      :organization_other, :department, :position, :position_other, {:discipline => []}, :discipline_other,
       :orcid, :address, :email, :cv_link, :cv_file, :website,:sites_open_science_framework,
       :sites_open_science_framework_url, :sites_researchgate, :sites_researchgate_url,
       :sites_linkedin, :sites_linkedin_url,:sites_vivo, :sites_vivo_url, :sites_institutional_repo,
