@@ -11,7 +11,7 @@ stages:
 variables:
   DOCKER_DRIVER: overlay
   FEDORA_URL: http://fcrepo:8080/fcrepo/rest
-  MYSQL_DATABASE: vdc
+  MYSQL_DATABASE: vdc-test
   MYSQL_HOST: mysql
   MYSQL_PASSWORD: vdcPassword
   MYSQL_ROOT_PASSWORD: vdcPassword
