@@ -11,11 +11,11 @@ stages:
 variables:
   DOCKER_DRIVER: overlay
   FEDORA_URL: http://fcrepo:8080/fcrepo/rest
-  MYSQL_DATABASE=vdc
-  MYSQL_HOST=mysql
-  MYSQL_PASSWORD=vdcPassword
-  MYSQL_ROOT_PASSWORD=vdcPassword
-  MYSQL_USER=vdc
+  MYSQL_DATABASE: vdc
+  MYSQL_HOST: mysql
+  MYSQL_PASSWORD: vdcPassword
+  MYSQL_ROOT_PASSWORD: vdcPassword
+  MYSQL_USER: vdc
   REDIS_HOST: redis
   REGISTRY_HOST: registry.gitlab.com
   REGISTRY_URI: /notch8/rutgers-vdc
