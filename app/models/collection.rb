@@ -43,15 +43,24 @@ class Collection < ActiveFedora::Base
   end
 
   # TODO: I don't know if this is the best way to apply vdc metadata.
-  #       For the resource work, I'm using the generated actor for post-processing metadata changes. 
+  #       For the resource work, I'm using the generated actor for post-processing metadata changes.
   #       However, for collections, there doesn't seem to be something like that (or, perhaps I've missed it).
   #       I need some sort of consistent way of doing this... eventually.
-  #       For now, this apply_vdc_metadata is being called after create and update in the collections controller. 
+  #       For now, this apply_vdc_metadata is being called after create and update in the collections controller.
   def apply_vdc_metadata
+    assign_creation_date
     self.vdc_type = "collection"
     self.vdc_title = self.title[0]
     self.identifier_system = self.id # TODO: Redundant?
-  end  
+  end
+
+  ##
+  # @param time_service [#time_in_utc]
+  #
+  # @return [ActiveTriples::Relation<Date>]
+  def assign_creation_date(time_service: Hyrax::TimeService)
+    self.creation_date = [time_service.time_in_utc.to_date]
+  end
 
   # The include (include ::Hyrax::BasicMetadata) must appear
   # below custom predicate definitions as of Hyrax 2.0.0

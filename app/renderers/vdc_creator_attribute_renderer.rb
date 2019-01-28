@@ -4,7 +4,7 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
     "Depositor"
   end
 
-  def attribute_value_to_html(value) 
+  def attribute_value_to_html(value)
     # NOTE: Modified from Hyrax Gem 1.0.4
 
     if microdata_value_attributes(field).present?
@@ -33,7 +33,7 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
     buffer << position(person_doc) << br
     buffer << discipline(person_doc) << br
     buffer << br
-  
+
     buffer
   end
 
@@ -44,30 +44,32 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
   end
 
   def orcid(person_doc)
-    user = User.find_by(identifier_system: person_doc['id'])
     # TODO: Find out why orcid isn't in select_result?
     # orcid = link_to(ERB::Util.h(person.orcid.to_uri.to_s), person.orcid.to_uri.to_s)
-    link_to(user.orcid, user.orcid) 
+    user = User.find_by(identifier_system: person_doc['id'])
+
+    return '' unless user.orcid
+    link_to(user.orcid, user.orcid)
   end
 
   def organization(person_doc)
-    person_doc[Solrizer.solr_name('organization')].first
+    person_doc[Solrizer.solr_name('organization')]&.first || ''
   end
 
   def email(person_doc)
-    person_doc[Solrizer.solr_name('email')].first
+    person_doc[Solrizer.solr_name('email')]&.first || ''
   end
 
   def department(person_doc)
-    "Department: #{person_doc[Solrizer.solr_name('department')].first}"
+    "Department: #{person_doc[Solrizer.solr_name('department')]&.first}"
   end
 
   def position(person_doc)
-    "Position: #{person_doc[Solrizer.solr_name('position')].first.capitalize}"
+    "Position: #{person_doc[Solrizer.solr_name('position')]&.first&.capitalize}"
   end
 
   def discipline(person_doc)
-    "Discipline(s): #{person_doc[Solrizer.solr_name('discipline')].join(', ')}"
+    "Discipline(s): #{person_doc[Solrizer.solr_name('discipline')]&.join(', ')}"
   end
 
 end

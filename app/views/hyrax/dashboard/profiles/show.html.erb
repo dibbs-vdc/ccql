@@ -2,6 +2,14 @@
     - Removing edit profile button 
     - Adding additional section for additional user info %>
 
+
+<div class="image-masthead profile-page">
+  <%= link_to(image_tag("VDC-Logo.png", class: "profile-page-image"), '/') %>
+</div>
+<div>
+  <%= render '/profile_controls' %> 
+</div>
+
 <% provide :page_header do %>
   <h1><span class="fa fa-id-card"></span> <%= t("hyrax.admin.sidebar.profile") %></h1>
   <%# TODO: Remove or Switch allow_edit to true once we figure out a process 
@@ -19,6 +27,10 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="list-group col-md-5 col-sm-8">
+          <div class="list-group-item">
+            <dt><i class="fa fa-user"></i> Name</dt>
+            <dd><%= @user.first_name %> <%= @user.last_name %></dd>
+          </div>
           <%= render "hyrax/users/vitals", user: @user %>
           <div class="list-group-item">
             <%= render 'hyrax/users/user_info', user: @user %>

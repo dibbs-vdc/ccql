@@ -52,6 +52,7 @@ it:
     footer:
       copyright_html: "<strong>Copyright © 2017 Samvera</strong> Licenza sotto la licenza Apache, versione 2.0"
       service_html: Un servizio di <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a> .
+    home: Casa
     institution_name: Istituzione
     institution_name_full: Nome dell'Istituzione
     product_name: Hyrax

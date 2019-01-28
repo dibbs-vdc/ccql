@@ -32,6 +32,16 @@ $vdc-masthead-image-blur: 0px !default;
     -webkit-filter: blur($vdc-masthead-image-blur);
     filter: blur($vdc-masthead-image-blur);
   }
+
+  .background-container-gradient {
+    @include masthead-background-containers();
+    background:
+      linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.3)
+      );
+  }
   
   .navbar {
     background-color: $navbar-transparent-bg;
@@ -53,14 +63,15 @@ $vdc-masthead-image-blur: 0px !default;
       }
     }
   }
+}
 
-  .background-container-gradient {
-    @include masthead-background-containers();
-    background:
-      linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.15),
-        rgba(0, 0, 0, 0.3)
-      );
-  }
+.profile-page {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  margin-bottom: 0;
+}
+
+.profile-page-image {
+  height: 150px;
 }

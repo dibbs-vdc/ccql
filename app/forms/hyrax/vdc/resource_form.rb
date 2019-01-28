@@ -30,8 +30,6 @@ module Hyrax
     self.terms += [:genre]
     self.terms += [:research_problem]
     self.required_fields += [:research_problem]
-    self.required_fields += [:creation_date]
-    self.terms += [:creation_date]
 
     # OPTIONAL/REQUIRED (depending on visibility)
     # We want these to come first so that when they change position
@@ -39,6 +37,7 @@ module Hyrax
     self.terms += [:abstract]
 
     # OPTIONAL
+    self.terms -= [:license]
     self.terms += [:vdc_license]
     self.terms += [:funder]
     self.terms += [:note]
@@ -67,8 +66,13 @@ module Hyrax
     self.terms -= [:source]
     self.terms -= [:description] # Removed in favor of :abstract
 
+    def primary_terms
+      result = super
+      result + [:member_of_collection_ids]
+    end
+
     # Make title non-repeatable (single-value)
-    # TODO: I'm not sure why both the self.multiple? and multiple? 
+    # TODO: I'm not sure why both the self.multiple? and multiple?
     #       I need to investigate to see if this is a Hyrax bug.
     def self.multiple?(field)
       if [:title].include? field.to_sym

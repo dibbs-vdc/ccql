@@ -2,8 +2,7 @@
   <div class="panel-heading">
     <%= image_tag user.avatar.url(:thumb), width: 100 if user.avatar.present? %>
     <h3>
-      <%# TODO: Find out why the presenter isn't accessible here? %>
-      <%= Hyrax::UserProfilePresenter.new(@user, current_ability).full_name %><br />
+      <%= @user.display_name %><br />
     </h3>
   </div>
 
@@ -22,7 +21,7 @@
       <%# link_to t("hyrax.view_profile"), hyrax.dashboard_profile_path(user), class: "btn btn-default" %>
     <%# end %>
 
-    <%# TODO: Remove or Switch allow_edit to true once we figure out a process 
+    <%# TODO: Remove or Switch allow_edit to true once we figure out a process
               for allowing users to edit their profile %>
     <% allow_edit = false %>
     <% if (can? :edit, current_user) && allow_edit %>

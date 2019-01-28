@@ -16,4 +16,24 @@ if Rails.env.development?
       user.approved = true
     end
   end
+
+  class WorkFactory
+    def actor_create(attributes:, work_class: Vdc::Resource)
+      user    = FactoryBot.create(:user)
+      ability = Ability.new(user)
+      work    = work_class.new
+      env     = Hyrax::Actors::Environment.new(work, ability, attributes)
+
+      Hyrax::CurationConcern.actor.create(env)
+    end
+  end
+
+  factory        = WorkFactory.new
+  dummy_uri      = URI('file:///')
+  dummy_uri.path = Rails.root.join('spec', 'fixtures', 'dummy.pdf').to_s
+  attributes     = { title:        ['Test'],
+                     remote_files: [{ url: dummy_uri.to_s }],
+                     visibility:   'open' }
+
+  factory.actor_create(attributes: attributes)
 end

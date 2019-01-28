@@ -5,7 +5,11 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'active_fedora/cleaner'
+require 'database_cleaner'
+require 'hyrax/spec/matchers'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -35,6 +39,21 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  config.before(:suite) do 
+    ActiveFedora::Cleaner.clean!
+    DatabaseCleaner.clean_with(:truncation)
+  end 
+
+  config.before(clean: true) do 
+    DatabaseCleaner.clean
+    ActiveFedora::Cleaner.clean!
+  end
+
+  config.after(clean: true) do 
+    DatabaseCleaner.clean
+    ActiveFedora::Cleaner.clean!
+  end
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -54,4 +73,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include FactoryBot::Syntax::Methods
+  config.include Warden::Test::Helpers
 end

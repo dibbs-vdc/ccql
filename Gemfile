@@ -5,67 +5,37 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'hyrax', '~> 2.4'
 gem 'rails', '~> 5.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use Puma as the app server
-gem 'puma', '~> 3.0'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
+gem 'byebug', platform: :mri, group: %i[development test]
+gem 'capybara', group: %i[development test]
+gem 'capybara-screenshot', group: %i[test]
 gem 'coffee-rails', '~> 4.2'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-end
-
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'hyrax', '~> 2.1'
-group :development, :test do
-  gem 'solr_wrapper', '>= 0.3'
-end
-
-gem 'rsolr', '>= 1.0'
+gem 'database_cleaner', group: %i[development test]
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
-group :development, :test do
-  gem 'fcrepo_wrapper'
-  gem 'rspec-rails'
-  gem 'capybara'
-end
-
 gem 'factory_bot_rails', group: %i[development test]
-
+gem 'fcrepo_wrapper', group: %i[development test]
+gem 'hyrax-spec', '~> 0.3', group: %i[development test]
+gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'launchy', group: %i[test]
+gem 'listen', '~> 3.0.5', group: %i[development]
+gem 'mysql2'
 gem 'omniauth-shibboleth'
+gem 'pry-rails', group: %i[development test]
+gem 'puma', '~> 3.0'
+gem 'redis', '~> 3.0'
+gem 'rsolr', '>= 1.0'
+gem 'rspec-rails', group: %i[development test]
+gem 'sass-rails', '~> 5.0'
+gem 'sidekiq'
+gem 'solr_wrapper', '>= 0.3', group: %i[development test]
+gem 'spring', group: %i[development]
+gem 'spring-watcher-listen', '~> 2.0.0', group: %i[development]
+gem 'turbolinks', '~> 5'
+gem 'tzinfo-data'
+gem 'uglifier', '>= 1.3.0'
+gem 'web-console', '>= 3.3.0', group: %i[development]

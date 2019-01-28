@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <div class="row">
+      <ul class="nav navbar-nav col-sm-5">
+        <li <% id='class=active' if current_page?(hyrax.root_path) %>>
+          <%= link_to t(:'hyrax.home'), hyrax.root_path, aria: current_page?(hyrax.root_path) ? {current: 'page'} : nil %></li>
+        <li id='profile-dashboard-link'<%= 'class=active' if current_page?(dashboard_path) %>>
+          <%= link_to t(:'hyrax.dashboard.title'), dashboard_path, aria: current_page?(dashboard_path) ? {current: 'page'} : nil %></li>
+        <li <%= 'class=active' if current_page?(hyrax.my_works_path) %>>
+          <%= link_to t(:'hyrax.share_button'), hyrax.my_works_path, aria: current_page?(hyrax.my_works_path) ? {current: 'page'} : nil %></li>
+        <li <%= 'class=active' if current_page?(hyrax.edit_dashboard_profile_path) %>>
+          <%= link_to t(:'hyrax.edit_profile'), hyrax.edit_dashboard_profile_path, aria: current_page?(hyrax.edit_dashboard_profile_path) ? {current: 'page'} : nil %></li>
+      </ul><!-- /.nav -->
+    </div>
+  </div>
+</nav><!-- /.navbar -->

@@ -25,7 +25,7 @@ class CatalogController < ApplicationController
 
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
     config.show.partials.insert(1, :openseadragon)
-    config.search_builder_class = Hyrax::CatalogSearchBuilder
+    config.search_builder_class = Vdc::CatalogSearchBuilder
 
     # Show gallery view
     config.view.gallery.partials = [:index_header, :index]
@@ -61,7 +61,7 @@ class CatalogController < ApplicationController
     #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
     config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Projects'
     # TODO: Figure out ramifications of changing Collections to Projects in Solr
-    
+
     # VDC Facets
     #config.add_facet_field solr_name("vdc_creator", :facetable), label: "Creator", limit: 5
     config.add_facet_field solr_name("preferred_name", :facetable), label: "Creator", limit: 5
@@ -101,8 +101,9 @@ class CatalogController < ApplicationController
     # VDC-specific index (search results) view fields:
     #config.add_index_field solr_name("vdc_type", :stored_searchable), label: "VDC Type", link_to_search: solr_name("vdc_type", :facetable)
     config.add_index_field solr_name("identifier_doi", :stored_searchable), label: "DOI", itemprop: 'identifier_doi', helper_method: :iconify_auto_link
-    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator", itemprop: 'vdc_creator', helper_method: :link_to_person_profile 
-    #config.add_index_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
+    config.add_index_field solr_name("vdc_creator", :stored_searchable), label: "Creator", itemprop: 'vdc_creator', helper_method: :link_to_person_profile
+    config.add_index_field solr_name("vdc_preferred_name", :stored_searchable), label: "Creator", itemprop: 'vdc_creator', helper_method: :link_to_person_profile
+    config.add_index_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     #config.add_index_field solr_name("genre", :facetable), label: "Genre"
     #config.add_index_field solr_name("abstract", :stored_searchable), label: "Abstract"
     #config.add_index_field solr_name("funder", :stored_searchable), label: "Funder"
@@ -112,9 +113,14 @@ class CatalogController < ApplicationController
     #config.add_index_field solr_name("extent", :stored_searchable), label: "Extent"
     #config.add_index_field solr_name("format", :stored_searchable), label: "Format"
     config.add_index_field solr_name("discipline", :stored_searchable), label: "Discipline"
+    config.add_index_field solr_name("organization", :stored_searchable), label: "Organization"
+    config.add_index_field solr_name("orcid", :stored_searchable), label: "ORCID"
     #config.add_index_field solr_name("coverage_spatial", :stored_searchable), label: "Coverage Spatial"
     #config.add_index_field solr_name("coverage_temporal", :stored_searchable), label: "Coverage Temporal"
     config.add_index_field solr_name("creation_date", :stored_searchable), label: "Creation Date"
+    config.add_index_field solr_name('usage_count', :displayable)
+    config.add_index_field solr_name('usage_purposes', :facetable)
+    config.add_index_field solr_name("position", :stored_searchable), label: "Position"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -138,7 +144,7 @@ class CatalogController < ApplicationController
     #config.add_show_field solr_name("vdc_type", :stored_searchable), label: "Vdc Type"
     config.add_show_field solr_name("identifier_doi", :stored_searchable), label: "DOI"
     config.add_show_field solr_name("vdc_creator", :stored_searchable), label: "Creator"
-    #config.add_show_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
+    config.add_show_field solr_name("authoritative_name", :stored_searchable), label: "Authoritative Name"
     config.add_show_field solr_name("genre", :facetable), label: "Genre"
     config.add_show_field solr_name("abstract", :stored_searchable), label: "Abstract"
     config.add_show_field solr_name("funder", :stored_searchable), label: "Funder"
@@ -156,6 +162,8 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("organization", :stored_searchable)
     config.add_show_field solr_name("creation_date", :stored_searchable)
     config.add_show_field solr_name("vdc_license", :stored_searchable), label: "License"
+    config.add_show_field solr_name("orcid", :stored_searchable), label: "ORCID"
+    config.add_show_field solr_name("position", :stored_searchable), label: "Position"
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -349,6 +357,31 @@ class CatalogController < ApplicationController
         pf: solr_name
       }
     end
+
+    config.add_search_field('orcid') do |field|
+      solr_name = solr_name("orcid", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('organization') do |field|
+      solr_name = solr_name("organization", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('discipline') do |field|
+      solr_name = solr_name("discipline", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
 
     # Add VDC Search Fields: end
 

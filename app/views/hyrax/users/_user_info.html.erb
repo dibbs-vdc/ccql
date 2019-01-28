@@ -1,7 +1,7 @@
 <%# Modified from Hyrax Gem 1.0.4 %>
 
-<%# TODO: Update this to also display microdata like the work. 
-          Also, make it so that ttl and json formats are 
+<%# TODO: Update this to also display microdata like the work.
+          Also, make it so that ttl and json formats are
           accessible via content resolution, again like the work. %>
 
 <dl id="user_info">
@@ -19,9 +19,9 @@
 
   <dt><i class="fa fa-circle"></i> Discipline</dt>
   <dd>
-    <%# TODO: Put display logic for discipline array into a presenter.  
-              Otherwise, "gotcha" multiselect empty values will appear. 
+    <%# TODO: Put display logic for discipline array into a presenter.
+              Otherwise, "gotcha" multiselect empty values will appear.
               Also, it'll be nice to have a place to change up commas, etc.%>
-    <%= user.discipline.reject(&:empty?).join(', ') %>
+    <%= user.discipline&.reject(&:empty?)&.join(', ') || '' %>
   </dd>
 </dl>

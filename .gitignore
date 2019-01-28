@@ -26,3 +26,4 @@
 
 # Ignore dotenv developement file
 /.env.development
+.env.production

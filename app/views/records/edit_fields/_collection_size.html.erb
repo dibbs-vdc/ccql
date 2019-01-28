@@ -1,0 +1,4 @@
+  <%= f.input :collection_size, required: f.object.required?(:collection_size),
+      as: :select,
+      collection: CollectionSizeService.new.select_active_options,
+      input_html: { class: 'form-control' } %>

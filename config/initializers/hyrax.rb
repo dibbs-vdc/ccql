@@ -19,6 +19,10 @@ Hyrax.config do |config|
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
 
+  # Option to enable/disable full text extraction from PDFs
+  # Default is true, set to false to disable full text extraction
+  config.extract_full_text = true
+
   # How many notifications should be displayed on the dashboard
   # config.max_notifications_for_dashboard = 5
 
@@ -68,7 +72,7 @@ Hyrax.config do |config|
   # config.redis_namespace = "hyrax"
 
   # Path to the file characterization tool
-  # config.fits_path = "fits.sh"
+  config.fits_path = ENV['FITS_PATH']
 
   # Path to the file derivatives creation tool
   # config.libreoffice_path = "soffice"
@@ -81,7 +85,7 @@ Hyrax.config do |config|
   # config.arkivo_api = false
 
   # Stream realtime notifications to users in the browser
-  config.realtime_notifications = true
+  config.realtime_notifications = false #true
 
   # Location autocomplete uses geonames to search for named regions
   # Username for connecting to geonames
@@ -108,7 +112,18 @@ Hyrax.config do |config|
   #
 
   # The banner image.
-  config.banner_image = 'assets/VDC-Logo.png'
+  #config.banner_image = 'assets/VDC-Logo.png'
+  ActiveSupport.on_load(:after_initialize) do
+    config.banner_image = ActionController::Base.helpers.asset_path('VDC-Logo.png')
+  end
+  ## Whitelist all directories which can be used to ingest from the local file
+  # system.
+  config.whitelisted_ingest_dirs = []
+
+  unless Rails.env == 'production'
+    config.whitelisted_ingest_dirs <<
+      Rails.root.join('spec', 'fixtures').to_s
+  end
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
   # These must be lambdas that return a Pathname. Can be configured separately
