@@ -4,8 +4,10 @@ services:
   - name: redis:3
   - name: postgres
   - name: registry.gitlab.com/notch8/rutgers-vdc/solr:latest
+    alias: solr
     entrypoint: ["docker-entrypoint.sh", "solr-precreate", "hyrax", "/builds/notch8/rutgers-vdc/solr/config"]
   - name: botimer/fcrepo:4.5.1
+    alias: fcrepo
 stages:
   - build
   - test
@@ -17,7 +19,7 @@ variables:
   DOCKER_DRIVER: overlay
   REGISTRY_HOST: registry.gitlab.com
   REGISTRY_URI: /notch8/rutgers-vdc
-  FEDORA_URL: http://botimer-fcrepo:8080/fcrepo/rest
+  FEDORA_URL: http://fcrepo:8080/fcrepo/rest
   SOLR_URL: http://solr:8983/solr/hyrax
   REDIS_HOST: redis
 
