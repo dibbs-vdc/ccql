@@ -10,11 +10,16 @@ stages:
 
 variables:
   DOCKER_DRIVER: overlay
+  FEDORA_URL: http://fcrepo:8080/fcrepo/rest
+  MYSQL_DATABASE=vdc
+  MYSQL_HOST=mysql
+  MYSQL_PASSWORD=vdcPassword
+  MYSQL_ROOT_PASSWORD=vdcPassword
+  MYSQL_USER=vdc
+  REDIS_HOST: redis
   REGISTRY_HOST: registry.gitlab.com
   REGISTRY_URI: /notch8/rutgers-vdc
-  FEDORA_URL: http://fcrepo:8080/fcrepo/rest
   SOLR_URL: http://solr:8983/solr/hyrax
-  REDIS_HOST: redis
 
 before_script:
   - export TAG=${CI_COMMIT_SHA:0:8}
