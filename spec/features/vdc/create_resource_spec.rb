@@ -1,6 +1,7 @@
 # Generated via
 #  `rails generate hyrax:work Vdc::Resource`
 require 'rails_helper'
+include Warden::Test::Helpers
 
 # NOTE: If you generated more than one work, you have to set "js: true"
 RSpec.feature 'Create a Vdc::Resource', js: false do

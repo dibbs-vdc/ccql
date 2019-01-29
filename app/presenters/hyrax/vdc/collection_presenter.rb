@@ -15,6 +15,8 @@ module Hyrax
         solr_document.creation_date.map do |datetime_str|
           datetime_str.split('T').first
         end
+      else
+        []
       end
     end
 

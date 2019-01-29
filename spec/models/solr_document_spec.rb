@@ -38,7 +38,7 @@ RSpec.describe SolrDocument do
 
     describe '#creation_date' do
       it 'is empty' do
-        expect(solr_document.creation_date).to be_empty
+        expect(solr_document.creation_date).to be_nil
       end
 
       context 'and a creation_date' do

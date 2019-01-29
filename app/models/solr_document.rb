@@ -47,7 +47,7 @@ class SolrDocument
   end
 
   def creation_date
-    self[Solrizer.solr_name('creation_date')]
+    self[Solrizer.solr_name('creation_date')] || self["creation_date_sim"]
   end
 
   def authoritative_name

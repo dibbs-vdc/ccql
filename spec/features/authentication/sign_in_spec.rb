@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature 'User login', :clean do
-  let(:approved_user)     { create(:approved_user, email: 'approved@example.com', password: 'testing123') }
-  let(:not_approved_user) { create(:user, email: 'not_approved@example.com', password: 'testing123') }
+  let(:approved_user)     { create(:approved_user, password: 'testing123') }
+  let(:not_approved_user) { create(:user, password: 'testing123') }
 
   scenario 'with approved user' do
     visit new_user_session_path
@@ -12,7 +12,7 @@ RSpec.feature 'User login', :clean do
 
     click_button 'Log in'
 
-    expect(page.current_path).to eq '/dashboard/profiles/approved@example-dot-com'
+    expect(page.current_path).to eq "/dashboard/profiles/#{approved_user.email.gsub('.com', '-dot-com')}"
   end 
 
   scenario 'with unapproved user' do
