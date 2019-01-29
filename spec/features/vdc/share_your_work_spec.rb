@@ -11,7 +11,7 @@ RSpec.feature "Share your work button", :clean, :type => :feature do
 
   context 'A logged in user' do
 
-    let!(:user) { create(:approved_user, email: 'approved@example.com', password: 'testing123') }
+    let!(:user) { create(:approved_user, password: 'testing123') }
 
     before do
       AdminSet.find_or_create_default_admin_set_id

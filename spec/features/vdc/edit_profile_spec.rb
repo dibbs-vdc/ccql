@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.feature "Edit Profile page", :type => :feature do
 
   context 'Logged in user' do
-    let(:user) { create(:approved_user, email: 'approved@example.com', password: 'testing123') }
+    let!(:user) { create(:approved_user) }
     before do
       AdminSet.find_or_create_default_admin_set_id
       login_as user
-      visit '/dashboard/profiles/approved@example-dot-com/edit'
+      visit "/dashboard/profiles/#{user.email.gsub('.com', '-dot-com')}/edit"
     end
 
     scenario 'Cannot view or edit' do

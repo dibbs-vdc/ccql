@@ -2,9 +2,8 @@ image: registry.gitlab.com/notch8/scripts/builder:latest
 services:
   - name: docker:dind
 stages:
-#  - build
+  - build
   - test
-#  - review
 #  - staging
 #  - production
 
@@ -27,29 +26,28 @@ before_script:
   - export REGISTRY_HOST=${CI_REGISTRY}
   - export REGISTRY_URI="/${CI_PROJECT_PATH}"
 
-# solr_build:
-#   stage: build
-#   script:
-#     - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
-#     - sc build -s solr
-#     - sc push -s solr
-#   when: manual
+solr_build:
+  stage: build
+  script:
+    - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
+    - sc build -s solr
+    - sc push -s solr
+  when: manual
 
-# build:
-#   stage: build
-#   script:
-#     - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
-#     - sc build
-#     - sc push
-#     - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-#     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-#   tags:
-#     - docker
+build:
+  stage: build
+  script:
+    - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
+    - sc build
+    - sc push
+    - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  tags:
+    - docker
 
 rspec:
   stage: test
-#  image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-  image: $CI_REGISTRY_IMAGE:latest
+  image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
   services:
     - name: redis:3
     - name: mysql:5.7 

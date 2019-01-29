@@ -4,7 +4,7 @@ RSpec.feature "Profile buttons and routes", :type => :feature do
 
   context 'Logged in user on Profile page' do
 
-    let!(:user) { create(:approved_user, email: 'approved@example.com', password: 'testing123') }
+    let!(:user) { create(:approved_user) }
 
     before do
       AdminSet.find_or_create_default_admin_set_id
