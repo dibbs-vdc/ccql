@@ -237,6 +237,7 @@ en:
         facet_label:
           collections:  "Filter projects"
         heading:
+          visibility: Visibility
           collection_type: Project Type
           date_uploaded: Creation Date
         sr:
