@@ -1,3 +1,16 @@
+GIT
+  remote: https://github.com/notch8/questioning_authority.git
+  revision: 331b053290141739fe54763a39b073b1b6117584
+  branch: 2_1_2_all_terms
+  specs:
+    qa (2.1.2)
+      activerecord-import
+      deprecation
+      faraday
+      nokogiri (~> 1.6)
+      rails (~> 5.0)
+      rdf
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,7 +64,7 @@ GEM
       activemodel (= 5.1.6)
       activesupport (= 5.1.6)
       arel (~> 8.0)
-    activerecord-import (0.27.0)
+    activerecord-import (0.28.1)
       activerecord (>= 3.2)
     activesupport (5.1.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -532,13 +545,6 @@ GEM
     public_suffix (3.0.3)
     pul_uv_rails (2.0.1)
     puma (3.12.0)
-    qa (2.1.2)
-      activerecord-import
-      deprecation
-      faraday
-      nokogiri (~> 1.6)
-      rails (~> 5.0)
-      rdf
     rack (2.0.6)
     rack-protection (2.0.4)
       rack
@@ -808,6 +814,7 @@ DEPENDENCIES
   omniauth-shibboleth
   pry-rails
   puma (~> 3.0)
+  qa!
   rails (~> 5.1.6)
   redis (~> 3.0)
   rsolr (>= 1.0)
