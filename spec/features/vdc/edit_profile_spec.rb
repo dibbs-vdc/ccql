@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Edit Profile page", :type => :feature do
 
   context 'Logged in user' do
-    let!(:user) { create(:approved_user, email: 'approved@example.com', password: 'testing123') }
+    let(:user) { create(:approved_user, email: 'approved@example.com', password: 'testing123') }
     before do
       AdminSet.find_or_create_default_admin_set_id
       login_as user
