@@ -1,5 +1,4 @@
 export class RequiredProject {
-  // Monitors the form and runs the callback if any of the required fields change
   constructor(form, callback) {
     this.form = form
     this.callback = callback
@@ -10,7 +9,6 @@ export class RequiredProject {
     return this.form.find('#project-body tr:not(.hidden)').length > 0
   }
 
-  // Reassign requiredFields because fields may have been added or removed.
   reload() {
     // ":input" matches all input, select or textarea fields.
     this.requiredCollection = this.form.find('[data-behavior="collection-relationships"]')

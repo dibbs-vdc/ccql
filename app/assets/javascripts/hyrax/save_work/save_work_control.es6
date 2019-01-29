@@ -1,5 +1,5 @@
 import { RequiredFields } from './required_fields'
-import { RequiredProject } from './required_project'
+import { RequiredProject } from 'vdc/save_work/required_project' 
 import { ChecklistItem } from './checklist_item'
 import { UploadedFiles } from './uploaded_files'
 import { DepositAgreement } from './deposit_agreement'
