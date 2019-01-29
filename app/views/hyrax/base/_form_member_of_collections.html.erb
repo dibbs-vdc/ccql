@@ -14,17 +14,17 @@ HTML Properties:
 <div class="form-group" data-behavior="collection-relationships" data-param-key="<%= f.object.model_name.param_key %>" data-members="<%= f.object.member_of_collections_json %>">
 
   <div class="form-inline">
-      <%= f.label :member_of_collection_ids %>
+      <%= f.label :member_of_collection_ids %> <span class="label label-info required-tag">required</span>  
       <%= f.input_field :member_of_collection_ids,
                   prompt: :translate,
                   data: {
                     autocomplete: 'collection',
                     'autocomplete-url' => Rails.application.routes.url_helpers.qa_path + '/search/collections?access=deposit'
-                  } %>
+                  } %>          
       <a class="btn btn-primary" data-behavior="add-relationship">Add</a>
   </div>
 
-  <table class="table table-striped">
+  <table id="project-table" class="table table-striped">
     <caption><%= t('.caption') %></caption>
     <thead>
     <tr>
@@ -32,7 +32,7 @@ HTML Properties:
       <th><%= t('.header.actions') %></th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="project-body">
     </tbody>
   </table>
 </div>
@@ -40,6 +40,6 @@ HTML Properties:
 <script type="text/x-tmpl" id="tmpl-collection">
 <tr>
   <td>{%= o.title %}</td>
-  <td><button class="btn btn-danger" data-behavior="remove-relationship"><%= t('.actions.remove') %></button></td>
+  <td><button id="remove-project" class="btn btn-danger" data-behavior="remove-relationship" data-confirm-text="<%= t('.confirm.text') %>" data-confirm-cancel="<%= t('.confirm.cancel') %>" data-confirm-remove="<%= t('.confirm.remove') %>"><%= t('.actions.remove') %></button></td>
 </tr>
 </script>
