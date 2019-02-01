@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/notch8/questioning_authority.git
-  revision: 331b053290141739fe54763a39b073b1b6117584
+  revision: fd1ecae81005cf0e8349de144c6bc4abec55543b 
   branch: 2_1_2_all_terms
   specs:
     qa (2.1.2)
