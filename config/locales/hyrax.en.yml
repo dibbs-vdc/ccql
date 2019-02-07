@@ -165,6 +165,9 @@ en:
         parent_collection_header: Parent Projects
         subcollection_count: Subprojects
         works_in_collection: "Works in this Project"
+    collection_mailer:
+      size_message:
+        subject: Large Project Created
     dashboard:
       all:
         collections:            "All Projects"
