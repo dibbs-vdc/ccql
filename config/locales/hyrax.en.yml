@@ -355,7 +355,7 @@ en:
         relation_uri: "A URL to a related resource.  Could be a version or an article that cites the data"
         relation_type: "Type of relationship identified in the Relation URI to another resource."
         creation_date: "Date the Project was created. YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD. An open project (to which data is still being added) will have one date.  If the project is complete, the researcher is encouraged to add an end date."
-        vdc_license: "License providing terms and conditions for reuse and reproduction of resource."
+        vdc_license: "All deposited data is made available by the license below:"
     labels:
       collection:
         size:                      "Size (Used)"
