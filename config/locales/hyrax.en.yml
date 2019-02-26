@@ -1,6 +1,11 @@
 # Modified from Hyrax Gem 2.0.0
 
 en:
+  blacklight:
+    search:
+      fields:
+        facet:
+          member_of_collections_ssim: Project
   helpers:
     action:
       collection:
@@ -171,6 +176,8 @@ en:
     dashboard:
       all:
         collections:            "All Projects"
+      collection_type_actions:
+        select_type_of_collection: Select type of project 
       collections:
         edit:
           header: "Edit Project: %{title}"
