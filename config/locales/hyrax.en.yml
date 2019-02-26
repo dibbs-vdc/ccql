@@ -99,6 +99,8 @@ en:
           text: Removing this work will not remove it from the repository, only from this project. Are you sure you want to remove this work from the project?
         header:
           title: Project title
+      form_progress:
+        project_required: Add Project under Relationships tab
       relationships:
         empty: This %{type} is not currently in any projects.
     batch_uploads:
