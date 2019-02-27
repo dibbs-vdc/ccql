@@ -3,19 +3,38 @@
 <%= f.input :funder,
             label: "Funder",
             required: f.object.required?(key),
-            input_html: { class: 'form-control',
+            input_html: {
+              class: 'form-control',
               multiple: false,
-              data: { 'autocomplete-url' => "/authorities/search/local/vdc_funding_sources", 'autocomplete' => :funder }
+              data: { 'autocomplete-url': '/authorities/search/local/vdc_funding_sources', 'autocomplete': :funder }
             }
 %>
 
 
 <script>
- $(document).on('turbolinks:load', function() {
-   // this code causes the dropdown to appear with all items when a user selects the field
-   // that way they dont have to type to see the initial list
-   $( "#vdc_resource_funder" ).focus(function() {
-     $( "#vdc_resource_funder" ).autocomplete( "search", "`" );
-   })
- })
+  $(document).on('turbolinks:load', function() {
+    // this code causes the dropdown to appear with all items when a user selects the field
+    // that way they dont have to type to see the initial list
+    
+    $("#vdc_resource_funder").focus(function() {
+      $("#vdc_resource_funder").autocomplete("search", "`")
+    })
+
+    setTimeout(function() {
+      $("#collection_funder").focus(function() {
+        try {
+          $.get('/authorities/search/local/vdc_funding_sources', function(results) {
+              console.log(results)
+              $("#collection_funder").autocomplete({
+                source: results,
+              })
+            }
+          )
+        } catch(err) {
+          console.log('::: ERR :::')
+          console.log(err)
+        }
+      })
+    }, 1000)
+  })
 </script>
