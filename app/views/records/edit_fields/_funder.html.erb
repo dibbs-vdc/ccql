@@ -16,25 +16,8 @@
     // this code causes the dropdown to appear with all items when a user selects the field
     // that way they dont have to type to see the initial list
     
-    $("#vdc_resource_funder").focus(function() {
-      $("#vdc_resource_funder").autocomplete("search", "`")
+    $("#vdc_resource_funder, #collection_funder").focus(function() {
+      $("#vdc_resource_funder, #collection_funder").autocomplete("search", "`")
     })
-
-    setTimeout(function() {
-      $("#collection_funder").focus(function() {
-        try {
-          $.get('/authorities/search/local/vdc_funding_sources', function(results) {
-              console.log(results)
-              $("#collection_funder").autocomplete({
-                source: results,
-              })
-            }
-          )
-        } catch(err) {
-          console.log('::: ERR :::')
-          console.log(err)
-        }
-      })
-    }, 1000)
   })
 </script>
