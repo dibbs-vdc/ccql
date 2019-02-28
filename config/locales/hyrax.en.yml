@@ -179,6 +179,7 @@ en:
       all:
         collections:            "All Projects"
       collection_type_actions:
+        create_collection: Create project
         select_type_of_collection: Select type of project 
       collections:
         edit:
