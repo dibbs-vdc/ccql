@@ -47,6 +47,11 @@ de:
           title_tesim: Titel
   hyrax:
     account_name: Meine Institution Konto-ID
+    base:
+      form_progress: 
+        add_file: Dateien hinzufügen
+        optional: Wahlweise
+        project_required: Projekt unter der Registerkarte Beziehungen hinzufügen
     directory:
       suffix: "@ Example.org"
     footer:
@@ -55,5 +60,10 @@ de:
     home: Zuhause
     institution_name: Institution
     institution_name_full: Name des Instituts
+    works:
+      create:
+        helper:
+          question: Neu beim Hinzufügen von Ressourcen? Dies ist ein
+          guide: Reiseführer
     product_name: Hyrax
     product_twitter_handle: "@SamveraRepo"
