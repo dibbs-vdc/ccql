@@ -1,6 +1,3 @@
-image: registry.gitlab.com/notch8/scripts/builder:latest
-services:
-  - name: docker:dind
 stages:
   - build
   - test
@@ -8,7 +5,7 @@ stages:
 #  - production
 
 variables:
-  DOCKER_DRIVER: overlay
+  DOCKER_DRIVER: overlay2
   FEDORA_URL: http://fcrepo:8080/fcrepo/rest
   MYSQL_DATABASE: vdc-test
   MYSQL_HOST: mysql
@@ -33,6 +30,8 @@ solr_build:
     - sc build -s solr
     - sc push -s solr
   when: manual
+  tags:
+    - local
 
 build:
   stage: build
@@ -43,7 +42,7 @@ build:
     - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
   tags:
-    - docker
+    - local
 
 rspec:
   stage: test
