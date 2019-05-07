@@ -1,6 +1,3 @@
-image: registry.gitlab.com/notch8/scripts/builder:latest
-services:
-  - name: docker:dind
 stages:
   - build
   - test
