@@ -47,6 +47,9 @@ de:
           title_tesim: Titel
   hyrax:
     account_name: Meine Institution Konto-ID
+    base:
+      form_progress:
+        help: Hilfe
     directory:
       suffix: "@ Example.org"
     footer:

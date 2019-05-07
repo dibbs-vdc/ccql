@@ -7,7 +7,11 @@
       <fieldset>
         <legend class="legend-save-work"><%= t('.requirements') %></legend>
         <ul class="requirements">
-          <li class="incomplete" id="required-metadata"><%= t('.required_descriptions') %></li>
+          <li class="incomplete" id="required-metadata"><%= t('.required_descriptions') %>
+            <%=link_to t('.help'),
+              "https://data-services-pre.datacollaboratory.org/dashboard/collections/5b91d787-c187-4472-90da-c2ecf5613ae7?locale=en",
+              class: 'padding-10'%>
+          </li>
           <li class="incomplete" id="required-project"><%= t('.project_required') %></li>
           <% if Hyrax.config.work_requires_files? %>
             <li class="incomplete" id="required-files"><%= t('.required_files') %></li>

@@ -105,7 +105,9 @@ en:
         header:
           title: Project title
       form_progress:
+        help: Help
         project_required: Add Project under Relationships tab
+
       relationships:
         empty: This %{type} is not currently in any projects.
     batch_uploads:
