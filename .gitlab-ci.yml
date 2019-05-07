@@ -8,7 +8,7 @@ stages:
 #  - production
 
 variables:
-  DOCKER_DRIVER: overlay
+  DOCKER_DRIVER: overlay2
   FEDORA_URL: http://fcrepo:8080/fcrepo/rest
   MYSQL_DATABASE: vdc-test
   MYSQL_HOST: mysql
@@ -42,8 +42,6 @@ build:
     - sc push
     - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-  tags:
-    - docker
 
 rspec:
   stage: test
@@ -59,5 +57,3 @@ rspec:
   script:
     - cd /data
     - bundle exec rspec
-  tags:
-    - docker
