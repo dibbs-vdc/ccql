@@ -92,7 +92,7 @@ en:
           title: "Manage Registered Users"
     base:
       form_files:
-        local_readme_directions: "  "
+        local_readme_directions: "Add README file(s) via the Files link (above), after you have uploaded the data file(s) or create a README file in the text box below."
         local_readme_upload: "README"
         local_upload_html: |
           <p>You can add one or more files to associate with this work.</p>
