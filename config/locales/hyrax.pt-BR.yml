@@ -47,6 +47,9 @@ pt-BR:
           title_tesim: Título
   hyrax:
     account_name: ID da conta da minha instituição
+    base:
+      form_files:
+        local_readme_directions: Adicione o (s) arquivo (s) LEIA-ME através do link Arquivos (acima), depois de carregar o (s) arquivo (s) de dados ou criar um arquivo README na caixa de texto abaixo.
     directory:
       suffix: "@ Example.org"
     footer:

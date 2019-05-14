@@ -92,7 +92,8 @@ en:
           title: "Manage Registered Users"
     base:
       form_files:
-        local_readme_upload: "Add Local README Files"
+        local_readme_directions: "  "
+        local_readme_upload: "README"
         local_upload_html: |
           <p>You can add one or more files to associate with this work.</p>
           <p>You can upload up to 10 files that are contained within a single flat directory/folder.  If there are more than 10 files in a directory or if it is a multilevel directory, you should zip the folder/directory.</p>

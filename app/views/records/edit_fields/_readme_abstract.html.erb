@@ -7,9 +7,8 @@
   <%# TODO: Put this placeholder text some place configurable. %>
   <% placeholder_text = "Provide text if you are not uploading a README file.  Provide each type of information, as needed: brief description of data; file structure; Special tools or software needed; Any special licensing or fees to use software or tools; Methodology for data capture or creation.  Units of measurement.  Operating system requirements;  Variable names and definitions; Citation or attribution preferences." %>
   <%= f.input :readme_abstract,
-               label: "Or, create a new README with text entered below.",
+               label: t('hyrax.base.form_files.local_readme_directions'),
                as: :text,
                input_html: {rows: 10, cols: 85, placeholder: placeholder_text} %>
  
 </div>
-
