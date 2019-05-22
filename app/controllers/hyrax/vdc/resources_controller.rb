@@ -16,6 +16,7 @@ module Hyrax
         #       other than using a property from the resource model. Seems like there
         #       should be
         readme_file_ids_from_form = params.fetch(:readme_file_ids_from_form, nil)
+        attributes[:funder] = [params["vdc_resource"]["funder"]]
         attributes[:readme_file_ids_from_form] = readme_file_ids_from_form
         attributes        
       end
