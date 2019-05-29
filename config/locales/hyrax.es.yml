@@ -47,6 +47,11 @@ es:
           title_tesim: Título
   hyrax:
     account_name: Mi identificador de cuenta institucional
+    base:
+      form_progress: 
+        add_file: Agregar archivo
+        optional: Opcional
+        project_required: Añadir proyecto en la pestaña de relaciones
     directory:
       suffix: "@example.org"
     footer:
@@ -55,5 +60,10 @@ es:
     home: Casa
     institution_name: institución
     institution_name_full: El nombre de la institución
+    works:
+      create:
+        helper:
+          question: ¿Nuevo en agregar recursos? Esto es un
+          guide: guía
     product_name: Hyrax
     product_twitter_handle: "@SamveraRepo"

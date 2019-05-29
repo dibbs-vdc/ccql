@@ -47,6 +47,11 @@ zh:
           title_tesim: 标题
   hyrax:
     account_name: 我的机构帐户标识符
+    base:
+      form_progress: 
+        add_file: 添加文件
+        optional: 可選的
+        project_required: 在關係選項卡下添加項目
     directory:
       suffix: "@example.org"
     footer:
@@ -55,5 +60,10 @@ zh:
     home: 家
     institution_name: 机构
     institution_name_full: 机构名称
+    works:
+      create:
+        helper:
+          question: 添加資源的新手？這是一個
+          guide: 指南
     product_name: 蹄兔
     product_twitter_handle: "@SamveraRepo"
