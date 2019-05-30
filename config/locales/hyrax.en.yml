@@ -105,9 +105,10 @@ en:
         header:
           title: Project title
       form_progress:
+        add_file: Add file
         help: Help
-        project_required: Add Project under Relationships tab
-
+        optional: Optional
+        project_required: Add project under relationships tab
       relationships:
         empty: This %{type} is not currently in any projects.
     batch_uploads:
@@ -316,6 +317,10 @@ en:
         my: "My Projects"
         new: "New Project"
     works:
+      create: 
+        helper:
+          question: New to adding resources? Here's a handy
+          guide: guide
       form:
          in_collections: This Work in Projects
   simple_form:

@@ -50,6 +50,11 @@ pt-BR:
       form_progress:
         help: Socorro
     account_name: ID da conta da minha instituição
+    base:
+      form_progress: 
+        add_file: Adicionar ficheiro
+        optional: Opcional
+        project_required: Adicionar projeto na guia relacionamentos
     directory:
       suffix: "@ Example.org"
     footer:
@@ -58,5 +63,10 @@ pt-BR:
     home: Casa
     institution_name: Instituição
     institution_name_full: O Nome da Instituição
+    works:
+      create:
+        helper:
+          question: Novo para adicionar recursos? Isto é um
+          guide: guia
     product_name: Hyrax
     product_twitter_handle: "@SamveraRepo"
