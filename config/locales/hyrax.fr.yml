@@ -54,6 +54,11 @@ fr:
     base:
       form_files:
         local_readme_directions: Ajoutez le ou les fichiers README via le lien Fichiers (ci-dessus), après avoir téléchargé le ou les fichiers de données ou créez un fichier README dans la zone de texte ci-dessous.
+      form_progress: 
+        add_file: Ajouter le fichier
+        optional: Optionnel
+        project_required: Ajouter un projet sous l'onglet relations
+
     directory:
       suffix: "@ Example.org"
     footer:
@@ -62,5 +67,10 @@ fr:
     home: Accueil
     institution_name: Institution
     institution_name_full: Nom de l'établissement
+    works:
+      create:
+        helper:
+          question: Nouveau pour ajouter des ressources? C'est un
+          guide: guide
     product_name: Hyrax
     product_twitter_handle: "@SamveraRepo"
