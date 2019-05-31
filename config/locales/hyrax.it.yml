@@ -48,6 +48,8 @@ it:
   hyrax:
     account_name: ID del mio istituto dell'istituto
     base:
+      form_files:
+        local_readme_directions: Aggiungi file README tramite il collegamento File (sopra), dopo aver caricato i file di dati o creato un file README nella casella di testo sottostante.
       form_progress: 
         add_file: Aggiungi file
         optional: Opzionale

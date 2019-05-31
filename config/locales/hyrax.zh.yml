@@ -47,7 +47,9 @@ zh:
           title_tesim: 标题
   hyrax:
     account_name: 我的机构帐户标识符
-    base:
+    base: 
+      form_file: 
+        local_readme_directions: 在上傳數據文件或在下面的文本框中創建README文件後，通過Files鏈接（上面）添加README文件。
       form_progress: 
         add_file: 添加文件
         optional: 可選的

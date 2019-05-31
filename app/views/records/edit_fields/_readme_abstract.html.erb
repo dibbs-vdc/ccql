@@ -1,15 +1,16 @@
 <% # app/views/records/edit_fields/_readme_abstract.html.erb %>
 
 <div>
-  <%# TODO: Ideally, the readme upload wouldn't be here, but I'm not sure how to do this better. If you can find a better way of doing this, please change this. %>
-  <%= render "form_files_readme", f: f %> 
+  <hr />
+     <div id="readme-fileupload">
+        <h3><%= t('hyrax.base.form_files.local_readme_upload') %></h3>
+     </div>
 
   <%# TODO: Put this placeholder text some place configurable. %>
   <% placeholder_text = "Provide text if you are not uploading a README file.  Provide each type of information, as needed: brief description of data; file structure; Special tools or software needed; Any special licensing or fees to use software or tools; Methodology for data capture or creation.  Units of measurement.  Operating system requirements;  Variable names and definitions; Citation or attribution preferences." %>
   <%= f.input :readme_abstract,
-               label: "Or, create a new README with text entered below.",
+               label: t('hyrax.base.form_files.local_readme_directions'),
                as: :text,
                input_html: {rows: 10, cols: 85, placeholder: placeholder_text} %>
  
 </div>
-

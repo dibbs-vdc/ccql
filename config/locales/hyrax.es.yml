@@ -47,7 +47,9 @@ es:
           title_tesim: Título
   hyrax:
     account_name: Mi identificador de cuenta institucional
-    base:
+    base: 
+      form_files:
+        local_readme_directions: Agregue los archivos README a través del enlace de Archivos (arriba), después de haber cargado los archivos de datos o cree un archivo README en el cuadro de texto a continuación.
       form_progress: 
         add_file: Agregar archivo
         optional: Opcional
