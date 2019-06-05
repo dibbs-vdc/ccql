@@ -13,8 +13,14 @@
 // Setting blur to 0px from 1px
 $vdc-masthead-image-blur: 0px !default;
 
-.padding-10 {
-  padding: 10px;
+.help-links {
+  padding-left: 10px;
+  color: red;
+}
+
+.help-links a, #savewidget a.help-links {
+  color: red;
+  text-decoration: underline;
 }
 
 .image-masthead {
