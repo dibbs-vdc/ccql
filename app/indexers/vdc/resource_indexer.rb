@@ -6,6 +6,8 @@ module Vdc
   class ResourceIndexer < Hyrax::WorkIndexer
     USAGE_QUERY_CLASS = Vdc::ResourceUsage
 
+    self.thumbnail_path_service = Vdc::ResourceThumbnailPathService
+
     ##
     # Custom indexing behavior for Resources
     def generate_solr_document

@@ -6,6 +6,13 @@ RSpec.describe Vdc::ResourceIndexer do
   subject(:indexer) { described_class.new(resource) }
   let(:resource)    { FactoryBot.build(:dataset) }
 
+  describe '.thumbnail_path_service' do
+    it 'uses custom thumbnail paths' do
+      expect(described_class.thumbnail_path_service)
+        .to eq(Vdc::ResourceThumbnailPathService)
+    end
+  end
+
   describe '#generate_solr_document' do
     it 'downcases sortable :vdc_title' do
       expect(indexer.generate_solr_document)

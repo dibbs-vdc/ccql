@@ -3,6 +3,8 @@ development:
     - archivist1@example.com
   admin:
     - admin@example.com
+    - rjantz@libraries.rutgers.edu
+    - gagnew@rutgers.edu
 
 test:
   archivist:
@@ -15,3 +17,5 @@ production:
     - archivist1@example.com
   admin:
     - rob@notch8.com
+    - rjantz@libraries.rutgers.edu
+    - gagnew@rutgers.edu

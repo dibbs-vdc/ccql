@@ -65,6 +65,10 @@ $vdc-masthead-image-blur: 0px !default;
   }
 }
 
+.padding-10 {
+  padding: 10px;
+}
+
 .profile-page {
   display: flex;
   justify-content: center;
@@ -75,3 +79,17 @@ $vdc-masthead-image-blur: 0px !default;
 .profile-page-image {
   height: 150px;
 }
+
+.inline-text {
+  display: flex;
+  align-items: baseline;
+}
+
+.optional-warning::before {
+  content: "\e086";
+  color: $brand-success;
+  font-family: 'Glyphicons Halflings';
+  padding-right: 5px;
+}
+
+

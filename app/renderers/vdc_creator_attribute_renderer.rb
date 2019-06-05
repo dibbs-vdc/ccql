@@ -16,7 +16,6 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
 
   # value - Person id
   def li_value_for_vdc_creator(value)
-    # TODO: error handling if person can't be found or there's more than 1 key
     # TODO: general error handling
 
     select_result = Blacklight.default_index.connection.select(params: { q: "*:*", fq: "id:#{value}" })
@@ -25,22 +24,27 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
     buffer = ""
     br = "<br />".html_safe
 
-    buffer << profile(person_doc) << br
-    buffer << orcid(person_doc) << br
-    buffer << organization(person_doc) << br
-    buffer << email(person_doc) << br
-    buffer << department(person_doc) << br
-    buffer << position(person_doc) << br
-    buffer << discipline(person_doc) << br
-    buffer << br
-
+    if person_doc.present?
+      buffer << profile(person_doc) << br
+      buffer << orcid(person_doc) << br
+      buffer << organization(person_doc) << br
+      buffer << email(person_doc) << br
+      buffer << department(person_doc) << br
+      buffer << position(person_doc) << br
+      buffer << discipline(person_doc) << br
+      buffer << br
+    end
     buffer
   end
 
   def profile(person_doc)
     name = person_doc[Solrizer.solr_name('preferred_name')].first
     user = User.find_by(identifier_system: person_doc['id'])
-    link_to name, Hyrax::Engine.routes.url_helpers.user_path(user)
+    if user.present?
+      link_to name, Hyrax::Engine.routes.url_helpers.user_path(user)
+    else
+      "User not present"
+    end
   end
 
   def orcid(person_doc)
@@ -48,7 +52,7 @@ class VdcCreatorAttributeRenderer < Hyrax::Renderers::AttributeRenderer
     # orcid = link_to(ERB::Util.h(person.orcid.to_uri.to_s), person.orcid.to_uri.to_s)
     user = User.find_by(identifier_system: person_doc['id'])
 
-    return '' unless user.orcid
+    return '' unless user && user.orcid
     link_to(user.orcid, user.orcid)
   end
 

@@ -47,12 +47,25 @@ it:
           title_tesim: Titolo
   hyrax:
     account_name: ID del mio istituto dell'istituto
+    base:
+      form_files:
+        local_readme_directions: Aggiungi file README tramite il collegamento File (sopra), dopo aver caricato i file di dati o creato un file README nella casella di testo sottostante.
+      form_progress: 
+        add_file: Aggiungi file
+        optional: Opzionale
+        project_required: Aggiungi progetto nella scheda delle relazioni
     directory:
       suffix: "@ example.org"
     footer:
       copyright_html: "<strong>Copyright © 2017 Samvera</strong> Licenza sotto la licenza Apache, versione 2.0"
       service_html: Un servizio di <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a> .
+    home: Casa
     institution_name: Istituzione
     institution_name_full: Nome dell'Istituzione
+    works:
+      create:
+        helper:
+          question: Nuovo per aggiungere risorse? Questo è un
+          guide: guida
     product_name: Hyrax
     product_twitter_handle: "@SamveraRepo"

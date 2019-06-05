@@ -1,6 +1,11 @@
 # Modified from Hyrax Gem 2.0.0
 
 en:
+  blacklight:
+    search:
+      fields:
+        facet:
+          member_of_collections_ssim: Project
   helpers:
     action:
       collection:
@@ -69,7 +74,7 @@ en:
           id_label:       "Email"
           access_label:   "Last Access"
           approval_label: "Approve"
-          describe_pending_registrations_html: 
+          describe_pending_registrations_html:
             one: "There is <b>%{count} user</b> pending approval in this repository."
             other: "There are <b>%{count} users</b> pending approval in this repository."
       sidebar:
@@ -87,8 +92,12 @@ en:
           title: "Manage Registered Users"
     base:
       form_files:
-        local_readme_upload: "Add Local README Files" 
-      form_member_of_collections: 
+        local_readme_directions: "Add README file(s) via the Files link (above), after you have uploaded the data file(s) or create a README file in the text box below."
+        local_readme_upload: "README"
+        local_upload_html: |
+          <p>You can add one or more files to associate with this work.</p>
+          <p>You can upload up to 10 files that are contained within a single flat directory/folder.  If there are more than 10 files in a directory or if it is a multilevel directory, you should zip the folder/directory.</p>
+      form_member_of_collections:
         actions:
           remove: Remove from project
         caption: This work is currently in these projects
@@ -96,6 +105,10 @@ en:
           text: Removing this work will not remove it from the repository, only from this project. Are you sure you want to remove this work from the project?
         header:
           title: Project title
+      form_progress:
+        add_file: Add file
+        optional: Optional
+        project_required: Add project under relationships tab
       relationships:
         empty: This %{type} is not currently in any projects.
     batch_uploads:
@@ -162,9 +175,15 @@ en:
         parent_collection_header: Parent Projects
         subcollection_count: Subprojects
         works_in_collection: "Works in this Project"
+    collection_mailer:
+      size_message:
+        subject: Large Project Created
     dashboard:
       all:
         collections:            "All Projects"
+      collection_type_actions:
+        create_collection: Create project
+        select_type_of_collection: Select type of project 
       collections:
         edit:
           header: "Edit Project: %{title}"
@@ -234,7 +253,9 @@ en:
         facet_label:
           collections:  "Filter projects"
         heading:
+          visibility: Visibility
           collection_type: Project Type
+          date_uploaded: Creation Date
         sr:
           batch_checkbox:   "Check to add to a project or edit list"
           check_all_label:  "Select all files to be added to a project or edited"
@@ -260,6 +281,7 @@ en:
       copyright_html: "<strong>Copyright &copy; 2017 Project Hydra</strong> Licensed under the Apache License, Version 2.0"
       service_html: A service of <a href="http://projecthydra.org/" class="navbar-link" target="_blank">Project Hydra</a>.
     document_language:  "en"
+    home: Home
     homepage:
       admin_sets:
         link:               'View all projects'
@@ -295,13 +317,12 @@ en:
         my: "My Projects"
         new: "New Project"
     works:
+      create: 
+        helper:
+          question: New to adding resources? Here's a handy
+          guide: guide
       form:
          in_collections: This Work in Projects
-  records:
-    edit_fields:
-      member_of_collection_ids:
-        actions:
-          remove: Remove
   simple_form:
     hints:
       collection:
@@ -345,13 +366,13 @@ en:
         note: "A place for researchers to share any additional information, such as creators or contributors who are not members of VDC."
         date_created: "Date that the resource was created (YYYY-MM-DD or YY-MM-DD/YY-MM-DD)."
         discipline: "Discipline or disciplines in which the work is related."
-        coverage_spatial: "Geographic location or coordinates. Free text examples include: 40 47 48N; 95°48′26,533&quotW; Paris, France." 
+        coverage_spatial: "Geographic location or coordinates. Free text examples include: 40 47 48N; 95°48′26,533&quotW; Paris, France."
         coverage_temporal: "Time frame or period in history (including geologic time period) when data occurred. This can include the date and time of capture, in which case UTC code is preferred, although not required. This could be a range of dates (1900-1930) or time period (World War II, 1939-1945, or Paleozoic era)."
         license: "License providing terms and conditions for reuse and reproduction of resource. Select from the provided drop-down list."
         relation_uri: "A URL to a related resource.  Could be a version or an article that cites the data"
         relation_type: "Type of relationship identified in the Relation URI to another resource."
         creation_date: "Date the Project was created. YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD. An open project (to which data is still being added) will have one date.  If the project is complete, the researcher is encouraged to add an end date."
-        vdc_license: "License providing terms and conditions for reuse and reproduction of resource."
+        vdc_license: "All deposited data is made available by the license below:"
     labels:
       collection:
         size:                      "Size (Used)"

@@ -85,7 +85,9 @@ Hyrax.config do |config|
   # config.arkivo_api = false
 
   # Stream realtime notifications to users in the browser
-  config.realtime_notifications = true
+  # THIS MUST BE SET TO FALSE OR THE APP WILL NOT START
+  # OR COMPILE ASSETS DUE TO A BUG IN HYRAX
+  config.realtime_notifications = false
 
   # Location autocomplete uses geonames to search for named regions
   # Username for connecting to geonames
@@ -112,8 +114,10 @@ Hyrax.config do |config|
   #
 
   # The banner image.
-  config.banner_image = 'assets/VDC-Logo.png'
-
+  #config.banner_image = 'assets/VDC-Logo.png'
+  ActiveSupport.on_load(:after_initialize) do
+    config.banner_image = ActionController::Base.helpers.asset_path('VDC-Logo.png')
+  end
   ## Whitelist all directories which can be used to ingest from the local file
   # system.
   config.whitelisted_ingest_dirs = []

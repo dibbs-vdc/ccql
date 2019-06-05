@@ -11,8 +11,12 @@ module Hyrax
     ##
     # Display only date, not time
     def creation_date
-      solr_document.creation_date.map do |datetime_str|
-        datetime_str.split('T').first
+      if solr_document && solr_document.creation_date
+        solr_document.creation_date.map do |datetime_str|
+          datetime_str.split('T').first
+        end
+      else
+        []
       end
     end
 

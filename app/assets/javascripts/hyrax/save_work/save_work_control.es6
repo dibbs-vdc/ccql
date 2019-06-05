@@ -1,4 +1,5 @@
 import { RequiredFields } from './required_fields'
+import { RequiredProject } from 'vdc/save_work/required_project' 
 import { ChecklistItem } from './checklist_item'
 import { UploadedFiles } from './uploaded_files'
 import { DepositAgreement } from './deposit_agreement'
@@ -82,10 +83,13 @@ export default class SaveWorkControl {
       return
     }
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
+    this.requiredProject = new RequiredProject(this.form, () => this.formStateChanged())
+
     this.uploads = new UploadedFiles(this.form, () => this.formStateChanged())
     this.saveButton = this.element.find(':submit')
     this.depositAgreement = new DepositAgreement(this.form, () => this.formStateChanged())
     this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'))
+    this.requiredCollection = new ChecklistItem(this.element.find('#required-project'))
     this.requiredFiles = new ChecklistItem(this.element.find('#required-files'))
     this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'))
     new VisibilityComponent(this.element.find('.visibility'), this.adminSetWidget)
@@ -128,6 +132,7 @@ export default class SaveWorkControl {
   // called when a new field has been added to the form.
   formChanged() {
     this.requiredFields.reload();
+    this.requiredProject.reload();
     this.formStateChanged();
   }
 
@@ -139,9 +144,10 @@ export default class SaveWorkControl {
   isValid() {
     // avoid short circuit evaluation. The checkboxes should be independent.
     let metadataValid = this.validateMetadata()
+    let collectionValid = this.validateCollection()
     let filesValid = this.validateFiles()
     let agreementValid = this.validateAgreement(filesValid)
-    return metadataValid && filesValid && agreementValid
+    return metadataValid && filesValid && agreementValid && collectionValid
   }
 
   // sets the metadata indicator to complete/incomplete
@@ -153,6 +159,17 @@ export default class SaveWorkControl {
     this.requiredMetadata.uncheck()
     return false
   }
+
+  // sets the collection indicator to complete/incomplete
+  validateCollection() {
+    if (this.requiredProject.areComplete) {
+      this.requiredCollection.check()
+      return true
+    }
+    this.requiredCollection.uncheck()
+    return false
+  }
+
 
   // sets the files indicator to complete/incomplete
   validateFiles() {

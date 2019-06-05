@@ -73,13 +73,4 @@ class Vdc::Person < ActiveFedora::Base
   # If the cv is stored within Fedora, the cv_upload will be set.
   property :cv, predicate: ::RDF::URI("https://datacollaboratory.org/person#CV"), multiple: false # optional
   has_subresource "cv_upload"
-
-  # TODO: Does a Vdc::Person belong to a Vdc::Resource? Or, is it the opposite?
-  #belongs_to :vdc_resource, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isPartOf
-  #belongs_to :vdc_resource, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isReplacedBy
-  # TODO: Flesh out more belongs_to relationships? Determine better how these area already being fleshed out in fedora
-  #       For example, Fedora has versioning for each individual file. How is that done?
-
-  # TODO: Get Person objects indexed in Solr
-
 end

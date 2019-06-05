@@ -14,7 +14,11 @@ module HyraxHelper
       person_doc = person_doc(person_id)
       text = preferred_name(person_doc)
       user = User.find_by(identifier_system: person_doc['id'])
-      link_to text, Hyrax::Engine.routes.url_helpers.user_path(user)
+      if user.present?
+        link_to text, Hyrax::Engine.routes.url_helpers.user_path(user)
+      else
+        text
+      end
     rescue URI::InvalidURIError
       # TODO: Should I log something here?
       person_id
@@ -39,5 +43,13 @@ module HyraxHelper
     def preferred_name(person_doc)
       person_doc[Solrizer.solr_name('preferred_name')].first
     end
-end
 
+    def vdc_person_path(*args)
+      user = User.find_by(identifier_system: args.to_param)
+      if user.present?
+        link_to user.display_name, Hyrax::Engine.routes.url_helpers.user_path(user)
+      else
+        ''
+      end
+    end
+end

@@ -21,9 +21,9 @@
 //= require blacklight/blacklight
 
 //= require hyrax
+//= require app
 //= require almond
-//= require vdc/save_work/save_work_control
 //= require vdc/editor
 //= require vdc/resource_visibility
-//= require app
-
+//= require vdc/save_work/required_project
+//= require vdc/save_work/save_work_control

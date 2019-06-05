@@ -20,7 +20,6 @@ module Ccql
     # Overrides
     config.to_prepare do
       Hyrax::CollectionIndexer.prepend Hyrax::Vdc::CollectionIndexerOverride
-      Hyrax::CatalogSearchBuilder.prepend Hyrax::Vdc::CatalogSearchBuilderOverride
       Hyrax::CollectionsController.prepend Hyrax::Vdc::CollectionsControllerOverride
       Hyrax::Dashboard::CollectionsController.prepend Hyrax::Vdc::CollectionsControllerOverride
       Hyrax::My::CollectionsController.prepend Hyrax::My::Vdc::CollectionsControllerOverride

@@ -5,8 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'qa', github: 'notch8/questioning_authority', branch: '2_1_2_all_terms'
 gem 'hyrax', '~> 2.4'
 gem 'rails', '~> 5.1.6'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'byebug', platform: :mri, group: %i[development test]
 gem 'capybara', group: %i[development test]
@@ -22,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'launchy', group: %i[test]
 gem 'listen', '~> 3.0.5', group: %i[development]
+gem 'mysql2'
 gem 'omniauth-shibboleth'
 gem 'pry-rails', group: %i[development test]
 gem 'puma', '~> 3.0'
@@ -29,11 +32,12 @@ gem 'redis', '~> 3.0'
 gem 'rsolr', '>= 1.0'
 gem 'rspec-rails', group: %i[development test]
 gem 'sass-rails', '~> 5.0'
+gem 'sentry-raven'
 gem 'sidekiq'
 gem 'solr_wrapper', '>= 0.3', group: %i[development test]
 gem 'spring', group: %i[development]
 gem 'spring-watcher-listen', '~> 2.0.0', group: %i[development]
-gem 'mysql2'
 gem 'turbolinks', '~> 5'
+gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
 gem 'web-console', '>= 3.3.0', group: %i[development]
