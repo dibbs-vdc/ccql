@@ -3,6 +3,9 @@ en:
     application_name: 'Blacklight'
     search:
       fields:
+        facet:
+          depositor_ssim: Depositor
+          generic_type_sim: Type
         index:
           usage_count_ssm: 'Total Downloads'
           usage_purposes_sim: 'Usage'
