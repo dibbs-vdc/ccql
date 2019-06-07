@@ -1,0 +1,87 @@
+@import 'bootstrap/variables';
+@import 'hyrax/variables';
+
+@mixin masthead-background-containers() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+// Setting blur to 0px from 1px
+$vdc-masthead-image-blur: 0px !default;
+
+.help-links {
+  padding-left: 10px;
+  color: red;
+}
+
+.help-links a, #savewidget a.help-links {
+  color: red;
+  text-decoration: underline;
+}
+
+.image-masthead {
+  border-bottom: 1px solid $navbar-default-border;
+  margin-bottom: $padding-large-vertical * 2.5;
+  position: relative;
+  height: 365px;
+  
+  .background-container {
+    @include masthead-background-containers();
+    background-repeat: no-repeat;
+    //background-size: cover;
+    background-size: auto;
+    //background-size: 200px;
+    //background-size: 600px 275px;
+    background-position: center top;
+
+    // Add small amount of blur to help text stand out
+    -webkit-filter: blur($vdc-masthead-image-blur);
+    filter: blur($vdc-masthead-image-blur);
+  }
+
+  .background-container-gradient {
+    @include masthead-background-containers();
+    background:
+      linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.3)
+      );
+  }
+  
+  .navbar {
+    background-color: $navbar-transparent-bg;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .navbar-nav {
+      a {
+        color: $navbar-transparent-link-color;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+          background-color: $navbar-transparent-link-hover-bg;
+          color: $navbar-transparent-link-hover-color;
+        }
+      }
+    }
+  }
+}
+
+.profile-page {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  margin-bottom: 0;
+}
+
+.profile-page-image {
+  height: 150px;
+}

@@ -107,6 +107,7 @@ en:
           title: Project title
       form_progress:
         add_file: Add file
+        help: Help
         optional: Optional
         project_required: Add project under relationships tab
       relationships:
