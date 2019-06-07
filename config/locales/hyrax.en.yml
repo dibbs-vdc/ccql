@@ -384,6 +384,7 @@ en:
         # VDC label Defaults:
         identifier_doi: "DOI"
         vdc_creator: "Depositor"
+        funder: "Funder"
         research_problem: "Research problem or hypothesis"
         date_created: "Creation Date"
         coverage_spatial: "Spatial Coverage"

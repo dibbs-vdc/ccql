@@ -10,6 +10,10 @@ module VdcFundingSourcesService
   #
   # Do I add this to the hyrax.rb config??
 
+  def self.reveal_funder_value(*args)
+    args[0][0]
+  end 
+
   def self.select_all_options
     authority.all.map do |element|
       [element[:label], element[:id]]
