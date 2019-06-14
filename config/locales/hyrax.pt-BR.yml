@@ -46,8 +46,13 @@ pt-BR:
           subject_tesim: Sujeito
           title_tesim: Título
   hyrax:
+    base:
+      form_progress:
+        help: Socorro
     account_name: ID da conta da minha instituição
     base:
+      form_files:
+        local_readme_directions: Adicione o (s) arquivo (s) LEIA-ME através do link Arquivos (acima), depois de carregar o (s) arquivo (s) de dados ou criar um arquivo README na caixa de texto abaixo.
       form_progress: 
         add_file: Adicionar ficheiro
         optional: Opcional

@@ -40,6 +40,7 @@ module Hyrax
           #       information on its members (like, getting the number of files and mime 
           #       infomration.
           # TODO: Consider putting this in the controller post-processing?
+          env.curation_concern.funder = env.attributes[:funder]
           env.curation_concern.vdc_type = env.curation_concern.human_readable_type
           env.curation_concern.vdc_title = env.curation_concern.title[0]
           env.curation_concern.identifier_system = env.curation_concern.id # TODO: Redundant?

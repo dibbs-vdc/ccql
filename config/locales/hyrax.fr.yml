@@ -50,8 +50,13 @@ fr:
           subject_tesim: Assujettir
           title_tesim: Titre
   hyrax:
+    base:
+      form_progress:
+        help: Aidez-moi
     account_name: L'ID de compte de mon établissement
     base:
+      form_files:
+        local_readme_directions: Ajoutez le ou les fichiers README via le lien Fichiers (ci-dessus), après avoir téléchargé le ou les fichiers de données ou créez un fichier README dans la zone de texte ci-dessous.
       form_progress: 
         add_file: Ajouter le fichier
         optional: Optionnel

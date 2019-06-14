@@ -48,8 +48,11 @@ de:
   hyrax:
     account_name: Meine Institution Konto-ID
     base:
+      form_files:
+        local_readme_directions: Fügen Sie die README-Datei (en) über den Link "Dateien" (oben) hinzu, nachdem Sie die Datendatei (en) hochgeladen oder eine README-Datei im Textfeld unten erstellt haben.
       form_progress: 
         add_file: Dateien hinzufügen
+        help: Hilfe
         optional: Wahlweise
         project_required: Projekt unter der Registerkarte Beziehungen hinzufügen
     directory:
