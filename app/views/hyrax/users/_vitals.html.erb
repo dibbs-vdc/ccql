@@ -4,14 +4,14 @@
 
 <div class="list-group-item">
   <span class="badge"><%= number_of_collections(user) %></span>
-  <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> 
+  <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
    <%= link_to 'Projects Created', main_app.search_catalog_path(f: {generic_type_sim: ['Collection'], depositor_ssim: [user.to_s]}) %>
 </div>
 
 <div class="list-group-item">
   <span class="badge"><%= number_of_works(user) %></span>
-  <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> 
-  <%= link_to 'Resources Created', main_app.search_catalog_path(f: {generic_type_sim: ['Work'], depositor_ssim: [user.to_s]}) %>
+  <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+  <%= link_to 'Works Created', main_app.search_catalog_path(f: {generic_type_sim: ['Work'], depositor_ssim: [user.to_s]}) %>
 
   <ul class="views-downloads-dashboard list-unstyled">
       <li><span class="badge badge-optional"><%= user.total_file_views %></span> <%= t("hyrax.dashboard.stats.file_views").pluralize(user.total_file_views) %></li>
