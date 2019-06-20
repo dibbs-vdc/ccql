@@ -4,12 +4,12 @@
             label: "Funder",
             required: f.object.required?(key),
             input_html: {
+              value: VdcFundingSourcesService.reveal_funder_value(f.object[:funder]),
               class: 'form-control',
               multiple: false,
               data: { 'autocomplete-url': '/authorities/search/local/vdc_funding_sources', 'autocomplete': :funder }
             }
 %>
-
 
 <script>
   $(document).on('turbolinks:load', function() {

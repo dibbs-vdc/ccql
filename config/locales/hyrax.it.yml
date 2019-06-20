@@ -46,6 +46,9 @@ it:
           subject_tesim: Soggetto
           title_tesim: Titolo
   hyrax:
+    base:
+      form_progress:
+        help: Aiuto
     account_name: ID del mio istituto dell'istituto
     base:
       form_files:

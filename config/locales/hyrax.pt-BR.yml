@@ -46,6 +46,9 @@ pt-BR:
           subject_tesim: Sujeito
           title_tesim: Título
   hyrax:
+    base:
+      form_progress:
+        help: Socorro
     account_name: ID da conta da minha instituição
     base:
       form_files:
