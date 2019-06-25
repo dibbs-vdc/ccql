@@ -1,12 +1,17 @@
 <% if Hyrax.config.display_media_download_link? %>
-    <div>
-      <h2 class="sr-only"><%= t('hyrax.file_set.show.downloadable_content.heading') %></h2>
-      <%= image_tag thumbnail_url(file_set),
-                    class: "representative-media",
-                    alt: "",
-                    role: "presentation" %>
-      <%= link_to 'Hello World', download_usage_path %>
-    </div>
+  <div>
+    <h2 class="sr-only"><%= t('hyrax.file_set.show.downloadable_content.heading') %></h2>
+    <%= image_tag thumbnail_url(file_set),
+                  class: "representative-media",
+                  alt: "",
+                  role: "presentation" %>
+    <%= link_to t('hyrax.file_set.show.downloadable_content.pdf_link'),
+                  hyrax.download_path(file_set),
+                  target: "_blank",
+                  id: "file_download",
+                  class: 'file_download_usage',
+                  data: { label: file_set.id, work_id: file_set.parent.id, user_id: current_user.id } %>
+  </div>
 <% else %>
     <div>
       <%= image_tag thumbnail_url(file_set),
