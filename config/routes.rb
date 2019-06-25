@@ -45,6 +45,9 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
+  namespace :vdc do
+    resources :usages, only: [:new, :create]
+  end
 end
 
 Hyrax::Engine.routes.draw do
@@ -62,5 +65,9 @@ Hyrax::Engine.routes.draw do
   end
 
   match "/download_cv/:id/", controller: "admin/users", action: "download_cv", via: :get
-  get 'download/usage', to: 'downloads#download_usage', as: :download_usage
+  get 'download/usage/:id', to: 'downloads#download_usage', as: :download_usage
+  
+  namespace :vdc do
+    resources :usages, only: [:new, :create]
+  end
 end
