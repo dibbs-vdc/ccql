@@ -66,5 +66,15 @@ class Collection < ActiveFedora::Base
   # below custom predicate definitions as of Hyrax 2.0.0
   include ::Hyrax::BasicMetadata
 
+  def vdc_creator(*args)
+    value = get_values(:vdc_creator, *args)
+    value.sort.map { |v| v.split.last }
+  end
+
+  def vdc_creator=(value)
+    value = value.map.with_index { |v, i| "#{i} #{v}"}
+    set_value(:vdc_creator, value)
+  end
+
   self.indexer = Hyrax::CollectionWithBasicMetadataIndexer
 end
