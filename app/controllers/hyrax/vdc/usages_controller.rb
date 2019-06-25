@@ -17,7 +17,7 @@ module Hyrax
     private
 
       def usage_params
-        params.require(:vdc_usage).permit(:purpose, :user_id, :work_id, :href)
+        params.require(:vdc_usage).permit(:user_id, :work_id, :href, :purpose => [])
       end
   end
 end
