@@ -1,0 +1,27 @@
+<div class="modal fade" id="downloadUsageModal" tabindex="-1" role="dialog" aria-labelledby="downloadUsageModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="downloadUsageModalLabel">What is your intended use of this data?</h2>
+      </div>
+      <%= simple_form_for(Vdc::Usage.new, remote: true) do |f| %>
+        <div class="modal-body">
+          <%= f.input :purpose, 
+            label: false, 
+            collection: ["Data will be used unchanged", "Data will be modified for use", "Data will be used to teach a course", "Data will be used for gov’t or institutional policy recommendation", "Data will be cited in a scholarly publication", "Prefer not to repsond"], 
+            include_blank: true, 
+            class: 'form-control' 
+          %>
+          <%= f.hidden_field :user_id %>
+          <%= f.hidden_field :work_id %>
+          <%= f.hidden_field :href %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <%= f.submit class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
