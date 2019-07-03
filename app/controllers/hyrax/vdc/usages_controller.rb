@@ -1,5 +1,11 @@
 module Hyrax
   class Vdc::UsagesController < ApplicationController
+
+    def index
+      # @users = User.order(:name).page params[:page]
+      @resource = ::Vdc::Resource.find(params[:work_id])
+      @vdc_usages = @resource.vdc_usages.order("created_at DESC").page params[:page]
+    end
     
     def create
       @vdc_usage = ::Vdc::Usage.new(usage_params)

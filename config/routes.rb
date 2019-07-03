@@ -46,7 +46,7 @@ Rails.application.routes.draw do
     end
   end
   namespace :vdc do
-    resources :usages, only: [:new, :create]
+    resources :usages, only: [:index, :new, :create]
   end
 end
 
@@ -68,6 +68,6 @@ Hyrax::Engine.routes.draw do
   get 'download/usage/:id', to: 'downloads#download_usage', as: :download_usage
   
   namespace :vdc do
-    resources :usages, only: [:new, :create]
+    resources :usages, only: [:index, :new, :create]
   end
 end

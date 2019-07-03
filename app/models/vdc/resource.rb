@@ -138,4 +138,8 @@ class Vdc::Resource < ActiveFedora::Base
     value = value.map.with_index { |v, i| "#{i} #{v}"}
     set_value(:vdc_creator, value)
   end
+
+  def vdc_usages
+    @vdc_usages ||= Vdc::Usage.where(work_gid: self.to_global_id.to_s)
+  end
 end

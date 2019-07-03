@@ -13,6 +13,7 @@ module Vdc
 
     validates :work_gid, format: { with: /\Agid\:\/\// }
     after_save :reindex_work
+
     ##
     # @return [#to_global_id] the object referenced by `#work_gid`
     #
@@ -46,6 +47,12 @@ module Vdc
 
     def reindex_work
       ReindexWorkJob.perform_later(work)
+    end
+
+    def purpose_array
+      @purpose_array ||= purpose.gsub(/[\[\]\"]/, '').split(/\s*,\s*/)
+      @purpose_array.delete("")
+      @purpose_array
     end
   end
 end
