@@ -22,7 +22,7 @@
 <%= presenter.attribute_to_html(:usage_count) %>
 <%= presenter.attribute_to_html(:usage_purposes) %>
 <%# partial to render for usage_purposes %>
-<%= link_to "Download Usage", vdc_usages_path(work_id: @presenter.id) %>
+<%= link_to t('.download_usage'), vdc_usages_path(work_id: @presenter.id) %>
 
 <%# download usage modal / form here for Hyrax::Vdc::ResourcesController#show %>
 <%= render 'hyrax/download_usage'%>
