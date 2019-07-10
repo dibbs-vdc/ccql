@@ -9,7 +9,7 @@
   <tbody>
     <% @vdc_usages.each do |usage| %>
       <tr>
-        <td><%= link_to_profile usage.user&.display_name%></td>
+        <td><%= link_to_profile usage.user %></td>
         <td><%= usage.purpose_array.join(", ") %></td>
         <td><%= usage.created_at %></td>
       </tr>
