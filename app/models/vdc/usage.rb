@@ -8,7 +8,7 @@
 #
 module Vdc
   class Usage < ApplicationRecord
-    belongs_to :user
+    belongs_to :user, optional: true
     attr_accessor :href
 
     validates :work_gid, format: { with: /\Agid\:\/\// }
