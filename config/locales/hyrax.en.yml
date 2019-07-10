@@ -286,7 +286,7 @@ en:
       use_user: Person
       use_purpose: Use Purpose
       use_date: Usage Date
-    download_usage: Download Usage
+    download_usage: Display Usage
     home: Home
     homepage:
       admin_sets:

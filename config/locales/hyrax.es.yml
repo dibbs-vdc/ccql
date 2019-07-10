@@ -63,7 +63,7 @@ es:
       use_user: Persona
       use_purpose: Uso Propósito
       use_date: Fecha de uso
-    download_usage: Descargar uso
+    download_usage: Uso de la pantalla
     footer:
       copyright_html: "<strong>Copyright &copy; 2017 Samvera</strong> bajo licencia de Apache, Version 2.0"
       service_html: Un servicio de <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera/a>.

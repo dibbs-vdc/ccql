@@ -63,7 +63,7 @@ zh:
       use_user: 人
       use_purpose: "使用目的"
       use_date: 使用日期
-    download_usage: 下载用法
+    download_usage: 显示用法
     footer:
       copyright_html: "<strong>版权所有 &copy; 2017 Samvera</strong> 根据Apache许可证2.0版许可"
       service_html: 的服务<a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a>.
