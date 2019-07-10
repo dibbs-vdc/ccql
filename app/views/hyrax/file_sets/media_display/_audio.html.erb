@@ -12,7 +12,7 @@
                   target: :_blank,
                   id: "file_download",
                   class: 'file_download_usage',
-                  data: { label: file_set.id, work_id: file_set.parent.id, user_id: current_user.id } %>
+                  data: { label: file_set.id, work_id: file_set.parent.id, user_id: current_user ? current_user.id : nil } %>
     </div>
 <% else %>
     <div>
