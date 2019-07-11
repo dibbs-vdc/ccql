@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Vdc::ResourceUsage do
+RSpec.describe Vdc::Usage do
   subject(:service) { described_class.new(resource: resource) }
   let(:resource)    { FactoryBot.create(:vdc_resource) }
 
