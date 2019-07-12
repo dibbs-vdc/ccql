@@ -21,6 +21,8 @@
 <%= presenter.attribute_to_html(:readme_abstract) %>
 <%= presenter.attribute_to_html(:usage_count) %>
 <%= presenter.attribute_to_html(:usage_purposes) %>
+<%# partial to render for usage_purposes %>
+<%= link_to t('.download_usage'), vdc_usages_path(work_id: @presenter.id) %>
 
-<%# put the modal here as it is the only part of hyrax/show we are currently overriding%>
+<%# download usage modal / form here for Hyrax::Vdc::ResourcesController#show %>
 <%= render 'hyrax/download_usage'%>

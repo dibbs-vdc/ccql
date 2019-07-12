@@ -282,6 +282,11 @@ en:
       copyright_html: "<strong>Copyright &copy; 2017 Project Hydra</strong> Licensed under the Apache License, Version 2.0"
       service_html: A service of <a href="http://projecthydra.org/" class="navbar-link" target="_blank">Project Hydra</a>.
     document_language:  "en"
+    downloads:
+      use_user: Person
+      use_purpose: Use Purpose
+      use_date: Usage Date
+    download_usage: Display Usage
     home: Home
     homepage:
       admin_sets:

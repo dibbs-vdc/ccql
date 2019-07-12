@@ -57,6 +57,11 @@ de:
         project_required: Projekt unter der Registerkarte Beziehungen hinzufügen
     directory:
       suffix: "@ Example.org"
+    downloads:
+      use_user: Person
+      use_purpose: Verwenden Sie Zweck
+      use_date: Verwendungsdatum
+    download_usage: Verwendung anzeigen
     footer:
       copyright_html: "<strong>Copyright © 2017 Samvera lizenziert</strong> unter der Apache Lizenz, Version 2.0"
       service_html: Ein Dienst von <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a> .

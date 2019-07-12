@@ -8,10 +8,11 @@
 #
 module Vdc
   class Usage < ApplicationRecord
-    belongs_to :user
+    belongs_to :user, optional: true
     attr_accessor :href
 
     validates :work_gid, format: { with: /\Agid\:\/\// }
+    after_save :reindex_work unless Rails.env.test?
 
     ##
     # @return [#to_global_id] the object referenced by `#work_gid`
@@ -42,6 +43,16 @@ module Vdc
       if self.work_gid
         Vdc::Resource.find(self.work_gid)
       end
+    end
+
+    def reindex_work
+      ReindexWorkJob.perform_later(work)
+    end
+
+    def purpose_array
+      @purpose_array ||= purpose.gsub(/[\[\]\"]/, '').split(/\s*,\s*/)
+      @purpose_array.delete("")
+      @purpose_array
     end
   end
 end

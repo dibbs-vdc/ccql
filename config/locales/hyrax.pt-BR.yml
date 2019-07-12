@@ -59,6 +59,11 @@ pt-BR:
         project_required: Adicionar projeto na guia relacionamentos
     directory:
       suffix: "@ Example.org"
+    downloads:
+      use_user: Pessoa
+      use_purpose: Use o Propósito
+      use_date: Data de uso
+    download_usage: Uso de exibição
     footer:
       copyright_html: "<strong>Copyright © 2017 Samvera Licenciado</strong> sob a Licença Apache, Versão 2.0"
       service_html: Um serviço de <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a> .

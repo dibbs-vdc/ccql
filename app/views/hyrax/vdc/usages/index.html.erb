@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('hyrax.downloads.use_user') %></th>
+      <th><%= t('hyrax.downloads.use_purpose') %></th>
+      <th><%= t('hyrax.downloads.use_date') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vdc_usages.each do |usage| %>
+      <tr>
+        <td><%= link_to_profile usage.user %></td>
+        <td><%= usage.purpose_array.join(", ") %></td>
+        <td><%= usage.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Back to #{@resource.vdc_title}", [main_app, @resource] %><br />
+
+<%= paginate @vdc_usages %>

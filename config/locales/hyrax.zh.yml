@@ -59,6 +59,11 @@ zh:
         project_required: 在關係選項卡下添加項目
     directory:
       suffix: "@example.org"
+    downloads:
+      use_user: 人
+      use_purpose: "使用目的"
+      use_date: 使用日期
+    download_usage: 显示用法
     footer:
       copyright_html: "<strong>版权所有 &copy; 2017 Samvera</strong> 根据Apache许可证2.0版许可"
       service_html: 的服务<a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a>.

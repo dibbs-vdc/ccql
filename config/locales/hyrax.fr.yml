@@ -64,6 +64,11 @@ fr:
 
     directory:
       suffix: "@ Example.org"
+    downloads:
+      use_user: La personne
+      use_purpose: Utiliser but
+      use_date: Date d'utilisation
+    download_usage: Utilisation de l'affichage
     footer:
       copyright_html: "<strong>Copyright © 2017 Samvera</strong> Licence sous Licence Apache, Version 2.0"
       service_html: Un service de <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a> .
