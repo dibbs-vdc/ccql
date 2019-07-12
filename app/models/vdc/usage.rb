@@ -12,7 +12,7 @@ module Vdc
     attr_accessor :href
 
     validates :work_gid, format: { with: /\Agid\:\/\// }
-    after_save :reindex_work
+    after_save :reindex_work unless Rails.env.test?
 
     ##
     # @return [#to_global_id] the object referenced by `#work_gid`
