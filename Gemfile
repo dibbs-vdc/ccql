@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'database_cleaner', group: %i[development test]
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
+gem 'dry-validation', '0.12.3' # locked because of Ruby version 2.3 on server
 gem 'factory_bot_rails', group: %i[development test]
 gem 'fcrepo_wrapper', group: %i[development test]
 gem 'hyrax-spec', '~> 0.3', group: %i[development test]
