@@ -17,6 +17,9 @@ module Ccql
 
     config.admin_mailer = config_for(:admin_mailer)
 
+    # set default language to english
+    config.i18n.default_locale = :en
+
     # Overrides
     config.to_prepare do
       Hyrax::CollectionIndexer.prepend Hyrax::Vdc::CollectionIndexerOverride
