@@ -1,3 +1,7 @@
+## Override file from Hyrax 2.5.1
+# Modified #configure_facets method to set label directly rather than with I18n translations
+# pending investigation into why this class is loaded before the I18n translations
+
 module Hyrax
   class MyController < ApplicationController
     include Hydra::Catalog
