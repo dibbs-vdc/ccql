@@ -1,20 +1,27 @@
 version: '2.2'
 services:
-  main:
-    build: .
-    image: registry.gitlab.com/notch8/rutgers-vdc
+  base:
+    image: "${REGISTRY_HOST}${REGISTRY_URI}/base:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    env_file:
+      - .env.development
+      - .env
+
+  web:
+    image: "${REGISTRY_HOST}${REGISTRY_URI}:${TAG}"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      VIRTUAL_HOST: vdc.docker
+      VIRTUAL_PORT: 80
     env_file:
       - .env.development
       - .env
     volumes:
       - .:/data
-
-  web:
-    extends: main
-    command: bin/rails server --port 3000 --binding 0.0.0.0
-    environment:
-      VIRTUAL_HOST: vdc.docker
-      VIRTUAL_PORT: 3000
     ports:
       - "${DEV_PORT}"
     depends_on:

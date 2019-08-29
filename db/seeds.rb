@@ -8,7 +8,7 @@
 AdminSet.find_or_create_default_admin_set_id
 
 if Rails.env.development?
-  users = ['archivist@example.com', 'admin@example.com', 'approved@example.com']
+  users = ['archivist@example.com', 'admin@example.com', 'approved@example.com', 'rob@notch8.com']
 
   users.each do |email|
     User.where(email: email).first_or_create do |user|

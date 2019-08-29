@@ -1,0 +1,7 @@
+Host *
+    StrictHostKeyChecking no
+
+Host rutgers-new
+    Hostname vdc.rdi2.rutgers.edu
+    User vdc
+    ProxyCommand ssh rob@old.notch8.com -W %h:%p
