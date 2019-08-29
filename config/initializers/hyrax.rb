@@ -114,10 +114,7 @@ Hyrax.config do |config|
   #
 
   # The banner image.
-  #config.banner_image = 'assets/VDC-Logo.png'
-  ActiveSupport.on_load(:after_initialize) do
-    config.banner_image = ActionController::Base.helpers.asset_path('VDC-Logo.png')
-  end
+  config.banner_image = 'vdc-logo.png'
   ## Whitelist all directories which can be used to ingest from the local file
   # system.
   config.whitelisted_ingest_dirs = []

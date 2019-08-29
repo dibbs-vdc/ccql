@@ -1,7 +1,7 @@
 stages:
   - build
   - test
-#  - staging
+  - staging
 #  - production
 
 variables:
@@ -18,8 +18,7 @@ variables:
   SOLR_URL: http://solr:8983/solr/hyrax-test
 
 before_script:
-  - export TAG=${CI_COMMIT_SHA:0:8}
-  - export BRANCH=${CI_COMMIT_REF_NAME}
+  - export TAG=${CI_COMMIT_SHORT_SHA}
   - export REGISTRY_HOST=${CI_REGISTRY}
   - export REGISTRY_URI="/${CI_PROJECT_PATH}"
 
@@ -33,20 +32,28 @@ solr_build:
   tags:
     - local
 
+base:
+  stage: build
+  script:
+    - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
+    - sc build -s base
+    - sc push -s base
+  when: manual
+  tags:
+    - local
+
 build:
   stage: build
   script:
     - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
     - sc build
     - sc push
-    - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
   tags:
     - local
 
 rspec:
   stage: test
-  image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   services:
     - name: redis:3
     - name: mysql:5.7 
@@ -56,7 +63,29 @@ rspec:
     - name: botimer/fcrepo:4.5.1
       alias: fcrepo
   script:
-    - cd /data
+    - cd /home/app/webapp
     - bundle exec rspec
   tags:
     - docker
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    GIT_STRATEGY: none
+    RAILS_ENV: test
+    PASSENGER_APP_ENV: test
+    DISABLE_DATABASE_ENVIRONMENT_CHECK: 1
+
+staging:
+  stage: staging
+  type: deploy
+  script:
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "${DEPLOY_KEY}" | base64 -d > ~/.ssh/id_rsa
+    - echo "${SSH_CONFIG}" | base64 -d > ~/.ssh/config
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh rutgers-new "export TAG=${CI_COMMIT_SHORT_SHA} && echo ${PRODUCTION_ENV} | base64 -d > ~/rutgers-vdc/.env.production && cd ~/rutgers-vdc && docker-compose -f docker-compose.production.yml pull web && docker-compose -f docker-compose.production.yml up -d web && docker-compose -f docker-compose.production.yml exec -T web rake db:migrate db:seed"
+  only:
+    - master
+  tags:
+    - local

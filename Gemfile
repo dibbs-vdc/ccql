@@ -42,3 +42,5 @@ gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
 gem 'web-console', '>= 3.3.0', group: %i[development]
+
+gem 'activerecord-nulldb-adapter'
