@@ -66,6 +66,8 @@ GEM
       arel (~> 8.0)
     activerecord-import (0.28.1)
       activerecord (>= 3.2)
+    activerecord-nulldb-adapter (0.4.0)
+      activerecord (>= 2.0.0)
     activesupport (5.1.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -167,7 +169,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.3)
+    concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     crass (1.0.4)
     database_cleaner (1.7.0)
@@ -197,7 +199,7 @@ GEM
     dry-container (0.7.2)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
-    dry-core (0.4.8)
+    dry-core (0.4.9)
       concurrent-ruby (~> 1.0)
     dry-equalizer (0.2.2)
     dry-events (0.1.1)
@@ -205,8 +207,8 @@ GEM
       dry-core (~> 0.4)
       dry-equalizer (~> 0.2)
     dry-inflector (0.1.2)
-    dry-logic (0.6.1)
-      concurrent-ruby (~> 1.0)
+    dry-logic (0.4.2)
+      dry-container (~> 0.2, >= 0.2.6)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
     dry-matcher (0.7.0)
@@ -224,20 +226,20 @@ GEM
       dry-events (>= 0.1.0)
       dry-matcher (>= 0.7.0)
       dry-monads (>= 0.4.0)
-    dry-types (0.14.1)
+    dry-types (0.13.4)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.3)
       dry-core (~> 0.4, >= 0.4.4)
       dry-equalizer (~> 0.2)
       dry-inflector (~> 0.1, >= 0.1.2)
-      dry-logic (~> 0.5, >= 0.5)
-    dry-validation (0.13.3)
+      dry-logic (~> 0.4, >= 0.4.2)
+    dry-validation (0.12.3)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
       dry-core (~> 0.2, >= 0.2.1)
       dry-equalizer (~> 0.2)
-      dry-logic (~> 0.5, >= 0.5.0)
-      dry-types (~> 0.14.0)
+      dry-logic (~> 0.4.2)
+      dry-types (~> 0.13.1)
     ebnf (1.1.3)
       rdf (~> 3.0)
       sxp (~> 1.0)
@@ -793,6 +795,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-nulldb-adapter
   byebug
   capybara
   capybara-screenshot
@@ -801,6 +804,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.6)
   dotenv-rails
+  dry-validation (= 0.12.3)
   factory_bot_rails
   fcrepo_wrapper
   hyrax (~> 2.5.1)
