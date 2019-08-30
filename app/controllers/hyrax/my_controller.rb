@@ -8,10 +8,7 @@ module Hyrax
     include Hyrax::Collections::AcceptsBatches
 
     # Define filter facets that apply to all repository objects.
-		def self.configure_facets
-			Rails.logger.info('HELLO I AM CALLED')
-			Rails.logger.info(I18n.load_path)
-			Rails.logger.info(I18n.t('hyrax.dashboard.my.heading.visibility'))
+    def self.configure_facets
       # clear facet's copied from the CatalogController
       blacklight_config.facet_fields = {}
       configure_blacklight do |config|
@@ -21,7 +18,7 @@ module Hyrax
                                helper_method: :visibility_badge,
                                limit: 5, label: 'Visibility'
         config.add_facet_field IndexesWorkflow.suppressed_field, helper_method: :suppressed_to_status
-        config.add_facet_field "resource_type_sim", limit: 5
+        config.add_facet_field "resource_type_sim", limit: 5, label: 'Project Types'
       end
     end
 
