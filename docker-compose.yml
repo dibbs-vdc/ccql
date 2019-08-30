@@ -21,7 +21,7 @@ services:
       - .env.development
       - .env
     volumes:
-      - .:/data
+      - .:/home/app/webapp:delegated
     ports:
       - "${DEV_PORT}"
     depends_on:
