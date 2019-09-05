@@ -41,8 +41,6 @@ RUN /sbin/setuser app bundle install
 
 COPY  --chown=app . $APP_HOME
 
-RUN  /sbin/setuser app /bin/bash -l -c 'cd /home/app/webapp && DB_ADAPTER=nulldb bundle exec rake assets:precompile'
-
 COPY ops/nginx.sh /etc/service/nginx/run
 RUN chmod +x /etc/service/nginx/run
 RUN rm -f /etc/service/nginx/down
