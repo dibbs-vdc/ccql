@@ -75,8 +75,9 @@ module Hyrax
     end
 
     # Cast back to multi-value when saving
-    def self.model_attributes(_)
-      attrs = super
+    def self.model_attributes(values)
+      values['funder'] = [values['funder']] unless values['funder'].is_a?(Array)
+      attrs = super(values)
       attrs[:title] = Array(attrs[:title]) if attrs[:title]
       attrs
     end
