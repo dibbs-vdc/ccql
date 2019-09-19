@@ -69,12 +69,8 @@ Rails.application.configure do
   config.action_mailer.default_options = { from: ENV.fetch('ACTION_MAILER_DEFAULT_FROM', 'no- reply@localhost') }
 
   config.action_mailer.smtp_settings = {
-    :user_name => '8a11a7ca0ee8d1',
-    :password => 'b2ec3d49567f01',
-    :address => 'smtp.mailtrap.io',
-    :domain => 'smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    :address => 'localhost',
+    :port => '25',
   }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
