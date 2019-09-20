@@ -69,9 +69,9 @@ module Hyrax
       end
 
       def force_localizations
-        blacklight_config.facet_fields['collection_type_gid_ssim'].label = 'Project Types'
-        blacklight_config.facet_fields['resource_type_sim'].label = 'Project Types'
-        blacklight_config.facet_fields['visibility_ssi'].label = 'Visibility'
+        blacklight_config.facet_fields['collection_type_gid_ssim'].label = 'Project Types' if blacklight_config.facet_fields['collection_type_gid_ssim']
+        blacklight_config.facet_fields['resource_type_sim'].label = 'Project Types' if blacklight_config.facet_fields['resource_type_sim']
+        blacklight_config.facet_fields['visibility_ssi'].label = 'Visibility' if blacklight_config.facet_fields['visibility_ssi']
       end
   end
 end
