@@ -31,7 +31,7 @@ module Hyrax
 
     before_action :authenticate_user!
     load_and_authorize_resource only: :show, instance_name: :collection
-
+    before_action :force_localizations
     # include the render_check_all view helper method
     helper Hyrax::BatchEditsHelper
     # include the display_trophy_link view helper method
@@ -66,6 +66,12 @@ module Hyrax
 
       def query_solr
         search_results(params)
+      end
+
+      def force_localizations
+        blacklight_config.facet_fields['collection_type_gid_ssim'].label = 'Project Types'
+        blacklight_config.facet_fields['resource_type_sim'].label = 'Project Types'
+        blacklight_config.facet_fields['visibility_ssi'].label = 'Visibility'
       end
   end
 end
