@@ -69,7 +69,7 @@ Rails.application.configure do
   config.action_mailer.default_options = { from: ENV.fetch('ACTION_MAILER_DEFAULT_FROM', 'no- reply@localhost') }
 
   config.action_mailer.smtp_settings = {
-    :address => 'localhost',
+    :address => '172.18.0.1',
     :port => '25',
   }
   # Ignore bad email addresses and do not raise email delivery errors.
