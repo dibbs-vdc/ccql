@@ -24,12 +24,11 @@ export class RequiredFields {
      label = label.split(' ').slice(0,-1).join(' ')
      //console.log(label+": "+$(this).val())
      //console.log(label);
-     console.log(isValuePresent($('select#vdc_resource_vdc_creator')))
    })
 
 
-    var fieldNames = elem.label
-    // console.log(fieldNames);
+    var fieldNames = elem.name
+    // console.log(fieldNames) returns field labels ex vdc_resource_title;
     // create second method to get value present of field
     return ($(elem).val() === null) || ($(elem).val().length < 1) // add into array
   }
