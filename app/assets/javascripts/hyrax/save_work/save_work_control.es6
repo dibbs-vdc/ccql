@@ -1,5 +1,5 @@
 import { RequiredFields } from './required_fields'
-import { RequiredProject } from 'vdc/save_work/required_project' 
+import { RequiredProject } from 'vdc/save_work/required_project'
 import { ChecklistItem } from './checklist_item'
 import { UploadedFiles } from './uploaded_files'
 import { DepositAgreement } from './deposit_agreement'
@@ -84,14 +84,13 @@ export default class SaveWorkControl {
     }
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
     this.requiredProject = new RequiredProject(this.form, () => this.formStateChanged())
-
     this.uploads = new UploadedFiles(this.form, () => this.formStateChanged())
     this.saveButton = this.element.find(':submit')
     this.depositAgreement = new DepositAgreement(this.form, () => this.formStateChanged())
-    this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'))
-    this.requiredCollection = new ChecklistItem(this.element.find('#required-project'))
-    this.requiredFiles = new ChecklistItem(this.element.find('#required-files'))
-    this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'))
+    this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'), 'test')
+    this.requiredCollection = new ChecklistItem(this.element.find('#required-project'), [])
+    this.requiredFiles = new ChecklistItem(this.element.find('#required-files'), [])
+    this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'), [])
     new VisibilityComponent(this.element.find('.visibility'), this.adminSetWidget)
     this.preventSubmit()
     this.watchMultivaluedFields()
