@@ -87,10 +87,10 @@ export default class SaveWorkControl {
     this.uploads = new UploadedFiles(this.form, () => this.formStateChanged())
     this.saveButton = this.element.find(':submit')
     this.depositAgreement = new DepositAgreement(this.form, () => this.formStateChanged())
-    this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'), 'test')
-    this.requiredCollection = new ChecklistItem(this.element.find('#required-project'), [])
-    this.requiredFiles = new ChecklistItem(this.element.find('#required-files'), [])
-    this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'), [])
+    this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'))
+    this.requiredCollection = new ChecklistItem(this.element.find('#required-project'))
+    this.requiredFiles = new ChecklistItem(this.element.find('#required-files'))
+    this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'))
     new VisibilityComponent(this.element.find('.visibility'), this.adminSetWidget)
     this.preventSubmit()
     this.watchMultivaluedFields()
@@ -155,7 +155,11 @@ export default class SaveWorkControl {
       this.requiredMetadata.check()
       return true
     }
-    this.requiredMetadata.uncheck()
+
+    this.emptyRequiredFields = this.requiredFields.getEmptyRequiredFields()
+  //  console.log(this.emptyRequiredFields);
+    this.requiredMetadata.uncheck(this.emptyRequiredFields)
+
     return false
   }
 

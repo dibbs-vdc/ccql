@@ -15,30 +15,30 @@ export class RequiredFields {
     return this.requiredFields.filter((n, elem) => { return this.isValuePresent(elem) } ).length === 0
   }
 
-// if theres a value. try to return name
-  isValuePresent(elem) {
+  getEmptyRequiredFields() {
     // get the name and return names of the elem
 
     $("*.required").filter(":input").each(function(index){
-     let label = $(this).siblings().filter("label").text() //select the text from the label for this form element
-     label = label.split(' ').slice(0,-1).join(' ')
-     //console.log(label+": "+$(this).val())
-     //console.log(label);
-   })
+      var arrayOfFields = []
+      var label = $(this).siblings().filter("label").text()
 
+      label = label.split(' ').slice(0,-1).join(' ')
+      arrayOfFields.push(label)
 
-    var fieldNames = elem.name
-    // console.log(fieldNames) returns field labels ex vdc_resource_title;
-    // create second method to get value present of field
-    return ($(elem).val() === null) || ($(elem).val().length < 1) // add into array
+      console.log(arrayOfFields);
+
+      return arrayOfFields.first()
+    // return arrayOfFields.flat()
+    })
   }
 
-  // Reassign requiredFields because fields may have been added or removed.
+  isValuePresent(elem) {
+    return ($(elem).val() === null) || ($(elem).val().length < 1)
+  }
+
+
   reload() {
-    // ":input" matches all input, select or textarea fields.
     this.requiredFields = this.form.find(':input[required]')
-    // get the element and extract the name vdc_resource['field']
-    // TODO what is the find return
     this.requiredFields.change(this.callback)
   }
 }
