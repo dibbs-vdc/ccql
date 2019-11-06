@@ -12,7 +12,7 @@ export class RequiredFields {
 
   // @todo - this is returning all of the required fields
   //   it should return only those that are empty
-  getEmptyRequiredFields() {
+  getEmptyRequiredFields() { // get the actual empty fields, not just required fields. 
     var arrayOfFields = [];
     $("*.required").filter(":input").each(function(index){
       var label = $(this).siblings().filter("label").text()
