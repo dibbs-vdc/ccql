@@ -1,7 +1,6 @@
 export class ChecklistItem {
-  constructor(element, emptyRequiredFields) {
+  constructor(element) {
     this.element = element
-    this.emptyRequiredFields = emptyRequiredFields
   }
 
   check() {
@@ -12,7 +11,7 @@ export class ChecklistItem {
   uncheck(emptyRequiredFields) {
     this.element.removeClass('complete')
     this.element.addClass('incomplete')
-    this.element.append(this.emptyRequiredFields)
+    this.element.append(emptyRequiredFields)
     // loop emptyRequiredFields
   }
 }

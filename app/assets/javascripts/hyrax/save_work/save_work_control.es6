@@ -157,7 +157,6 @@ export default class SaveWorkControl {
     }
 
     this.emptyRequiredFields = this.requiredFields.getEmptyRequiredFields()
-  //  console.log(this.emptyRequiredFields);
     this.requiredMetadata.uncheck(this.emptyRequiredFields)
 
     return false

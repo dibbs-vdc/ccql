@@ -6,30 +6,20 @@ export class RequiredFields {
     this.reload()
   }
 
-// what fields havent been filled in that are required. put in array and return back to save_work, and then pass that to the checklist
   get areComplete() {
-      // console.log(Object.values(this.requiredFields)); vdc_resource[title]
-    Object.values(this.requiredFields).forEach( ele => {
-      // console.log(ele)
-    })
     return this.requiredFields.filter((n, elem) => { return this.isValuePresent(elem) } ).length === 0
   }
 
+  // @todo - this is returning all of the required fields
+  //   it should return only those that are empty
   getEmptyRequiredFields() {
-    // get the name and return names of the elem
-
+    var arrayOfFields = [];
     $("*.required").filter(":input").each(function(index){
-      var arrayOfFields = []
       var label = $(this).siblings().filter("label").text()
-
       label = label.split(' ').slice(0,-1).join(' ')
       arrayOfFields.push(label)
-
-      console.log(arrayOfFields);
-
-      return arrayOfFields.first()
-    // return arrayOfFields.flat()
     })
+    return arrayOfFields;
   }
 
   isValuePresent(elem) {
