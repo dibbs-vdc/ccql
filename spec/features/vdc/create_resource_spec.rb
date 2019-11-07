@@ -22,6 +22,8 @@ RSpec.feature 'Create a Vdc::Resource', js: false do
       # click_button "Create work"
 
       expect(page).to have_content "Add New Resource"
+      expect(page).not_to have_content "Embargo"
+      expect(page).not_to have_content "Lease"
     end
 
     scenario "Can view and create a Work in Projects relationship" do
