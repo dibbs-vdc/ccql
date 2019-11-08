@@ -12,15 +12,28 @@ export class RequiredFields {
 
   // @todo - this is returning all of the required fields
   //   it should return only those that are empty
-  getEmptyRequiredFields() { // get the actual empty fields, not just required fields. 
+  getEmptyRequiredField() { // get the actual empty fields, not just required fields.
     var arrayOfFields = [];
+    const that = this
+    //console.log(elem.name);
+   // console.log("!!!"+this.isValuePresent($('input#vdc_resource_title')))
     $("*.required").filter(":input").each(function(index){
+      let value = $(this).val()
+      console.log(that.isValuePresent(this));
       var label = $(this).siblings().filter("label").text()
       label = label.split(' ').slice(0,-1).join(' ')
-      arrayOfFields.push(label)
+      arrayOfFields.push([label, value])
     })
     return arrayOfFields;
   }
+
+  getEmptyRequiredFields(fieldIDs) {
+    var arrayOfFields = [];
+    arrayOfFields.forEach(id => {
+      let query = $(`#${id}`).filter(vdc_resource_)
+    })
+  }
+
 
   isValuePresent(elem) {
     return ($(elem).val() === null) || ($(elem).val().length < 1)

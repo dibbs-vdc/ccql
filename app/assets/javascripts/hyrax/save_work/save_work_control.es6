@@ -82,12 +82,19 @@ export default class SaveWorkControl {
     if (!this.form) {
       return
     }
+    let getVdcFields = this.getVdcFields()
+
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
     this.requiredProject = new RequiredProject(this.form, () => this.formStateChanged())
     this.uploads = new UploadedFiles(this.form, () => this.formStateChanged())
     this.saveButton = this.element.find(':submit')
     this.depositAgreement = new DepositAgreement(this.form, () => this.formStateChanged())
     this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'))
+    getVdcFields.forEach(field => {
+      name = `required ${field.title}`.join(' ')
+      $('#metadata-data').append("<li class='incomplete'>" + field.element + '</li>')
+      this.name = new ChecklistItem(field.element)
+    })
     this.requiredCollection = new ChecklistItem(this.element.find('#required-project'))
     this.requiredFiles = new ChecklistItem(this.element.find('#required-files'))
     this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'))
@@ -155,12 +162,34 @@ export default class SaveWorkControl {
       this.requiredMetadata.check()
       return true
     }
-
     this.emptyRequiredFields = this.requiredFields.getEmptyRequiredFields()
     // filled in fields check method
     this.requiredMetadata.uncheck(this.emptyRequiredFields)
 
     return false
+  }
+
+  validateVdc() {
+
+  }
+
+  getVdcFields() {
+    let arr = []
+      $("*.required").filter(":input").each(function(index){
+        let normalLabel = $(this).siblings().filter("label").text() //select the text from the label for this form element
+        let depositorLabel = $(this).parent().parent().siblings().filter('label').text() //gets the label if it's a depositor
+        let label = (normalLabel || depositorLabel).match(/.+(?=required)/)[0].trim()
+        let value = $(this).val()
+        let isValuePresent = ($(this).val() === null) || ($(this).val().length < 1)
+        let elem = {
+          element: $(this),
+          label: label,
+          value: value,
+          isValuePresent: isValuePresent
+        }
+        arr.push(elem)
+      })
+    return arr;
   }
 
   // sets the collection indicator to complete/incomplete
