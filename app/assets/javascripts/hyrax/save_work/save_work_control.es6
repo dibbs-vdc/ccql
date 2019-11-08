@@ -82,7 +82,7 @@ export default class SaveWorkControl {
     if (!this.form) {
       return
     }
-    let getVdcFields = this.getVdcFields()
+    this.initializeVDCFields()
 
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
     this.requiredProject = new RequiredProject(this.form, () => this.formStateChanged())
@@ -90,11 +90,11 @@ export default class SaveWorkControl {
     this.saveButton = this.element.find(':submit')
     this.depositAgreement = new DepositAgreement(this.form, () => this.formStateChanged())
     this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'))
-    getVdcFields.forEach(field => {
-      name = `required ${field.title}`.join(' ')
-      $('#metadata-data').append("<li class='incomplete'>" + field.element + '</li>')
-      this.name = new ChecklistItem(field.element)
-    })
+    // getVDCFields.forEach(field => {
+    //   name = `required ${field.title}`.join(' ')
+    //   $('#metadata-data').append("<li class='incomplete'>" + field.element + '</li>')
+    //   this.name = new ChecklistItem(field.element)
+    // })
     this.requiredCollection = new ChecklistItem(this.element.find('#required-project'))
     this.requiredFiles = new ChecklistItem(this.element.find('#required-files'))
     this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'))
@@ -150,10 +150,11 @@ export default class SaveWorkControl {
   isValid() {
     // avoid short circuit evaluation. The checkboxes should be independent.
     let metadataValid = this.validateMetadata()
+    let VDCFieldsValid = this.validateVDCFields()
     let collectionValid = this.validateCollection()
     let filesValid = this.validateFiles()
     let agreementValid = this.validateAgreement(filesValid)
-    return metadataValid && filesValid && agreementValid && collectionValid
+    return metadataValid && VDCFieldsValid && filesValid && agreementValid && collectionValid
   }
 
   // sets the metadata indicator to complete/incomplete
@@ -169,27 +170,52 @@ export default class SaveWorkControl {
     return false
   }
 
-  validateVdc() {
-
+  getVDCFields() {
+    let arr = []
+    $("*.required").filter(":input").each(function(index){
+      let normalLabel = $(this).siblings().filter("label").text() //select the text from the label for this form element
+      let depositorLabel = $(this).parent().parent().siblings().filter('label').text() //gets the label if it's a depositor
+      let label = (normalLabel || depositorLabel).match(/.+(?=required)/)[0].trim() //strips out the 'required' and white space
+      let value = $(this).val()
+      let isValuePresent = ($(this).val() === null) || ($(this).val().length < 1)
+      let id = $(this)[0].id.split('_').slice(1).join('_')
+      let elem = {
+        element: $(this),
+        label: label,
+        value: value,
+        isValuePresent: isValuePresent,
+        id: id
+      }
+      arr.push(elem)
+      // debugger
+    })
+    console.table(arr)
+    return arr;
+  }
+  initializeVDCFields() {
+    const that = this
+    $('#metadata-data').html('') //clears previous items
+    let fields = this.getVDCFields()
+    fields.forEach(field=>{
+      $(`<li class='incomplete' id=${field.id}>${field.label}</li>`).appendTo($('#metadata-data'))
+      field.id = new ChecklistItem(that.element.find(`#${field.id}`))
+    })
   }
 
-  getVdcFields() {
-    let arr = []
-      $("*.required").filter(":input").each(function(index){
-        let normalLabel = $(this).siblings().filter("label").text() //select the text from the label for this form element
-        let depositorLabel = $(this).parent().parent().siblings().filter('label').text() //gets the label if it's a depositor
-        let label = (normalLabel || depositorLabel).match(/.+(?=required)/)[0].trim()
-        let value = $(this).val()
-        let isValuePresent = ($(this).val() === null) || ($(this).val().length < 1)
-        let elem = {
-          element: $(this),
-          label: label,
-          value: value,
-          isValuePresent: isValuePresent
-        }
-        arr.push(elem)
-      })
-    return arr;
+  validateVDCFields() {
+    let allFilled = true
+    const fields = this.getVDCFields()
+    fields.forEach(field=>{
+      let ele = $(`#${field.id}`)
+      if(!ele.areComplete) {
+        field.id.check()
+      }
+      else {
+        field.id.uncheck()
+        allFilled = false
+      }
+    })
+    return allFilled
   }
 
   // sets the collection indicator to complete/incomplete
