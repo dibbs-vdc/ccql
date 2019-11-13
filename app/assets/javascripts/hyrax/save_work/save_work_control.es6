@@ -166,7 +166,7 @@ export default class SaveWorkControl {
 
   getVDCFields() { // return fields as objects. returns unique ID's
     let arr = []
-    $("*.required").filter(":input").each(function(index){
+    $("*.required").filter(":input").each(function(index) {
       let normalLabel = $(this).siblings().filter("label").text() //select the text from the label for this form element
       let depositorLabel = $(this).parent().parent().siblings().filter('label').text() // gets the label if it's a depositor
       let label = (normalLabel || depositorLabel).match(/.+(?=required)/)[0].trim() // strips out the 'required' and white space
@@ -198,10 +198,8 @@ export default class SaveWorkControl {
   validateVDCFields() { // find the element and check/uncheck based on t/f
     let allFilled = true
     const fields = this.getVDCFields()
-    console.log("validateVdcFields() intital fields: ", fields);
     fields.forEach(field => {
       let checklistItem = $(`#${field.id}`)
-      console.log("validateVdcFields() element field id: ", field.id, checklistItem);
       if(field.isValuePresent) {
         checklistItem.removeClass('complete')
         checklistItem.addClass('incomplete')
@@ -224,7 +222,6 @@ export default class SaveWorkControl {
     this.requiredCollection.uncheck()
     return false
   }
-
 
   // sets the files indicator to complete/incomplete
   validateFiles() {
