@@ -1,4 +1,4 @@
-// Hyrax override to add front end validations for individual metadata fields
+// Hyrax 2.5 override to add front end validations for individual metadata fields. Added methods: getEmptyRequiredField, getEmptyRequiredFields
 export class RequiredFields {
   // Monitors the form and runs the callback if any of the required fields change
   constructor(form, callback) {

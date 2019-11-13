@@ -1,4 +1,4 @@
-// Hyrax override to add front end validations for individual metadata fields
+// Hyrax 2.5 override to add front end validations for individual metadata fields. Added methods: getVDCFields, initializeVDCFields, validateVDCFields.
 import { RequiredFields } from './required_fields'
 import { RequiredProject } from 'vdc/save_work/required_project'
 import { ChecklistItem } from './checklist_item'
@@ -83,7 +83,6 @@ export default class SaveWorkControl {
     if (!this.form) {
       return
     }
-    this.initializeVDCFields()
 
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
     this.requiredProject = new RequiredProject(this.form, () => this.formStateChanged())
@@ -160,7 +159,7 @@ export default class SaveWorkControl {
       this.requiredMetadata.check()
       return true
     }
-    this.emptyRequiredFields = this.requiredFields.getEmptyRequiredFields()
+    this.requiredMetadata.uncheck()
     return false
   }
 
