@@ -1,3 +1,4 @@
+// Hyrax override to add front end validations for individual metadata fields
 import { RequiredFields } from './required_fields'
 import { RequiredProject } from 'vdc/save_work/required_project'
 import { ChecklistItem } from './checklist_item'
@@ -90,11 +91,6 @@ export default class SaveWorkControl {
     this.saveButton = this.element.find(':submit')
     this.depositAgreement = new DepositAgreement(this.form, () => this.formStateChanged())
     this.requiredMetadata = new ChecklistItem(this.element.find('#required-metadata'))
-    // getVDCFields.forEach(field => {
-    //   name = `required ${field.title}`.join(' ')
-    //   $('#metadata-data').append("<li class='incomplete'>" + field.element + '</li>')
-    //   this.name = new ChecklistItem(field.element)
-    // })
     this.requiredCollection = new ChecklistItem(this.element.find('#required-project'))
     this.requiredFiles = new ChecklistItem(this.element.find('#required-files'))
     this.requiredAgreement = new ChecklistItem(this.element.find('#required-agreement'))
@@ -149,6 +145,7 @@ export default class SaveWorkControl {
 
   isValid() {
     // avoid short circuit evaluation. The checkboxes should be independent.
+    this.initializeVDCFields()
     let metadataValid = this.validateMetadata()
     let VDCFieldsValid = this.validateVDCFields()
     let collectionValid = this.validateCollection()
@@ -164,55 +161,55 @@ export default class SaveWorkControl {
       return true
     }
     this.emptyRequiredFields = this.requiredFields.getEmptyRequiredFields()
-    // filled in fields check method
-    this.requiredMetadata.uncheck(this.emptyRequiredFields)
-
     return false
   }
 
-  getVDCFields() {
+  getVDCFields() { // return fields as objects. returns unique ID's
     let arr = []
     $("*.required").filter(":input").each(function(index){
       let normalLabel = $(this).siblings().filter("label").text() //select the text from the label for this form element
-      let depositorLabel = $(this).parent().parent().siblings().filter('label').text() //gets the label if it's a depositor
-      let label = (normalLabel || depositorLabel).match(/.+(?=required)/)[0].trim() //strips out the 'required' and white space
+      let depositorLabel = $(this).parent().parent().siblings().filter('label').text() // gets the label if it's a depositor
+      let label = (normalLabel || depositorLabel).match(/.+(?=required)/)[0].trim() // strips out the 'required' and white space
       let value = $(this).val()
       let isValuePresent = ($(this).val() === null) || ($(this).val().length < 1)
       let id = $(this)[0].id.split('_').slice(1).join('_')
-      let elem = {
+      let formItem = {
         element: $(this),
         label: label,
         value: value,
         isValuePresent: isValuePresent,
         id: id
       }
-      arr.push(elem)
-      // debugger
+      arr.push(formItem)
     })
-    console.table(arr)
-    return arr;
+    return arr; // return array as objects
   }
-  initializeVDCFields() {
+
+  initializeVDCFields() { // creates the li's
     const that = this
-    $('#metadata-data').html('') //clears previous items
+    $('#metadata-data').html('') // clears previous items
     let fields = this.getVDCFields()
-    fields.forEach(field=>{
-      $(`<li class='incomplete' id=${field.id}>${field.label}</li>`).appendTo($('#metadata-data'))
-      field.id = new ChecklistItem(that.element.find(`#${field.id}`))
+    fields.forEach(field => {
+      $(`<li class='incomplete' style="list-style: none;" id=${field.id}>${field.label}</li>`).appendTo($('#metadata-data'))
+      field.checklistItem = new ChecklistItem(that.element.find(`#${field.id}`))
     })
   }
 
-  validateVDCFields() {
+  validateVDCFields() { // find the element and check/uncheck based on t/f
     let allFilled = true
     const fields = this.getVDCFields()
-    fields.forEach(field=>{
-      let ele = $(`#${field.id}`)
-      if(!ele.areComplete) {
-        field.id.check()
+    console.log("validateVdcFields() intital fields: ", fields);
+    fields.forEach(field => {
+      let checklistItem = $(`#${field.id}`)
+      console.log("validateVdcFields() element field id: ", field.id, checklistItem);
+      if(field.isValuePresent) {
+        checklistItem.removeClass('complete')
+        checklistItem.addClass('incomplete')
+        allFilled = false
       }
       else {
-        field.id.uncheck()
-        allFilled = false
+        checklistItem.removeClass('incomplete')
+        checklistItem.addClass('complete')
       }
     })
     return allFilled
