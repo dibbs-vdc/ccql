@@ -9,6 +9,7 @@
         <ul class="requirements">
           <li class="incomplete" id="required-metadata"><%= t('.required_descriptions') %>
             <%=link_to t('.help'), ENV['HELP_LINK'], class: 'help-links'%>
+            <ul id='metadata-data'></ul>          
           </li>
           <li class="incomplete" id="required-project"><%= t('.project_required') %></li>
           <% if Hyrax.config.work_requires_files? %>

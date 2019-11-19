@@ -1,5 +1,6 @@
+// Hyrax 2.5 override to add front end validations for individual metadata fields. Added methods: getVDCFields, initializeVDCFields, validateVDCFields.
 import { RequiredFields } from './required_fields'
-import { RequiredProject } from 'vdc/save_work/required_project' 
+import { RequiredProject } from 'vdc/save_work/required_project'
 import { ChecklistItem } from './checklist_item'
 import { UploadedFiles } from './uploaded_files'
 import { DepositAgreement } from './deposit_agreement'
@@ -82,9 +83,9 @@ export default class SaveWorkControl {
     if (!this.form) {
       return
     }
+
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
     this.requiredProject = new RequiredProject(this.form, () => this.formStateChanged())
-
     this.uploads = new UploadedFiles(this.form, () => this.formStateChanged())
     this.saveButton = this.element.find(':submit')
     this.depositAgreement = new DepositAgreement(this.form, () => this.formStateChanged())
@@ -143,11 +144,13 @@ export default class SaveWorkControl {
 
   isValid() {
     // avoid short circuit evaluation. The checkboxes should be independent.
+    this.initializeVDCFields()
     let metadataValid = this.validateMetadata()
+    let VDCFieldsValid = this.validateVDCFields()
     let collectionValid = this.validateCollection()
     let filesValid = this.validateFiles()
     let agreementValid = this.validateAgreement(filesValid)
-    return metadataValid && filesValid && agreementValid && collectionValid
+    return metadataValid && VDCFieldsValid && filesValid && agreementValid && collectionValid
   }
 
   // sets the metadata indicator to complete/incomplete
@@ -160,6 +163,55 @@ export default class SaveWorkControl {
     return false
   }
 
+  getVDCFields() { // return fields as objects. returns unique ID's
+    let arr = []
+    $("*.required").filter(":input").each(function(index) {
+      let normalLabel = $(this).siblings().filter("label").text() //select the text from the label for this form element
+      let depositorLabel = $(this).parent().parent().siblings().filter('label').text() // gets the label if it's a depositor
+      let label = (normalLabel || depositorLabel).match(/.+(?=required)/)[0].trim() // strips out the 'required' and white space
+      let value = $(this).val()
+      let isValuePresent = ($(this).val() === null) || ($(this).val().length < 1)
+      let id = $(this)[0].id.split('_').slice(1).join('_')
+      let formItem = {
+        element: $(this),
+        label: label,
+        value: value,
+        isValuePresent: isValuePresent,
+        id: id
+      }
+      arr.push(formItem)
+    })
+    return arr; // return array as objects
+  }
+
+  initializeVDCFields() { // creates the li's
+    const that = this
+    $('#metadata-data').html('') // clears previous items
+    let fields = this.getVDCFields()
+    fields.forEach(field => {
+      $(`<li class='incomplete' style="list-style: none;" id=${field.id}>${field.label}</li>`).appendTo($('#metadata-data'))
+      field.checklistItem = new ChecklistItem(that.element.find(`#${field.id}`))
+    })
+  }
+
+  validateVDCFields() { // find the element and check/uncheck based on t/f
+    let allFilled = true
+    const fields = this.getVDCFields()
+    fields.forEach(field => {
+      let checklistItem = $(`#${field.id}`)
+      if(field.isValuePresent) {
+        checklistItem.removeClass('complete')
+        checklistItem.addClass('incomplete')
+        allFilled = false
+      }
+      else {
+        checklistItem.removeClass('incomplete')
+        checklistItem.addClass('complete')
+      }
+    })
+    return allFilled
+  }
+
   // sets the collection indicator to complete/incomplete
   validateCollection() {
     if (this.requiredProject.areComplete) {
@@ -169,7 +221,6 @@ export default class SaveWorkControl {
     this.requiredCollection.uncheck()
     return false
   }
-
 
   // sets the files indicator to complete/incomplete
   validateFiles() {
