@@ -10,6 +10,4 @@ export default class VdcSaveWorkControl extends SaveWorkControl {
   watchForFormChanged() {
     $( document ).on('formChanged', () => this.formChanged())
   }
-  
-  
 }

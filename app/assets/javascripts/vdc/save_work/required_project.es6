@@ -15,7 +15,7 @@ export class RequiredProject {
     this.collectionTable = this.form.find('[data-behavior="collection-relationships"] tbody')
     this.collectionTable.change(this.callback)
 
-    // Watches for changes to the projects table 
+    // Watches for changes to the projects table
     this.observer = new MutationObserver(mutations => {
       this.callback()
     })

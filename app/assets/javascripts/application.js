@@ -27,4 +27,5 @@
 //= require vdc/resource_visibility
 //= require vdc/save_work/required_project
 //= require vdc/save_work/save_work_control
+//= require vdc/save_collection/save_collection_control
 //= require vdc/download_usage
