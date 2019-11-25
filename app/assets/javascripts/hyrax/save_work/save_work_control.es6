@@ -165,6 +165,7 @@ export default class SaveWorkControl {
 
   getVDCFields() { // return fields as objects. returns unique ID's
     let arr = []
+    let labels = []
     $("*.required").filter(":input").each(function(index) {
       let normalLabel = $(this).siblings().filter("label").text() //select the text from the label for this form element
       let depositorLabel = $(this).parent().parent().siblings().filter('label').text() // gets the label if it's a depositor
@@ -172,14 +173,17 @@ export default class SaveWorkControl {
       let value = $(this).val()
       let isValuePresent = ($(this).val() === null) || ($(this).val().length < 1)
       let id = $(this)[0].id.split('_').slice(1).join('_')
-      let formItem = {
-        element: $(this),
-        label: label,
-        value: value,
-        isValuePresent: isValuePresent,
-        id: id
+      if(!labels.includes(label)){
+        labels.push(label)
+        let formItem = {
+          element: $(this),
+          label: label,
+          value: value,
+          isValuePresent: isValuePresent,
+          id: id
+        }
+        arr.push(formItem)
       }
-      arr.push(formItem)
     })
     return arr; // return array as objects
   }

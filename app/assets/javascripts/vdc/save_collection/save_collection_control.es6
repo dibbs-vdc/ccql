@@ -8,8 +8,7 @@ export default class SaveCollectionControl {
       return
     }
     this.element = element
-    console.log(element);
-    this.form = element.closest('form')
+    this.form = $('form.editor') // sharing form is form inside form which breaks closest()
     element.data('save_collection_control', this)
     this.activate();
   }
@@ -71,6 +70,7 @@ export default class SaveCollectionControl {
   }
 
   formChanged() {
+    this.requiredFields.reload();
     this.formStateChanged();
   }
 

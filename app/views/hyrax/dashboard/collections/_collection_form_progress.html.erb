@@ -1,0 +1,19 @@
+<aside id="form-progress" class="form-progress panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t("hyrax.collections.progress.header") %></h3>
+  </div>
+  <div class="list-group-item">
+    <fieldset>
+      <legend class="legend-save-work"><%= t('.requirements') %></legend>
+      <ul class="requirements">
+          <ul id='project-metadata-data' style='margin-left: -40px;'>
+            <li class="incomplete" id="collection_title" style="list-style: none;">Title</li>
+          <!-- Translations are in hyrax.en.yaml -> labels.defaults.vdc_creator -->
+            <li class="incomplete" id="collection_depositor" style="list-style: none;">Depositor</li>
+          <!-- Translations are in hyrax.en.yaml -> labels.collection.collection_size -->
+            <li class="incomplete" id="collection_size" style="list-style: none;">Project Size</li>
+          </ul>
+      </ul>
+    </fieldset>
+  </div>
+</aside>
