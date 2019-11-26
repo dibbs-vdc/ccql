@@ -1,3 +1,4 @@
+// Added SaveCollectionControl and new SaveCollectionControl($("#form-progress"))
 import ThumbnailSelect from 'hyrax/thumbnail_select'
 import Participants from 'hyrax/admin/admin_set/participants'
 import tabifyForm from 'hyrax/tabbed_form'
