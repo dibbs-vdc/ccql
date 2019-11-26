@@ -167,6 +167,8 @@ en:
         admin_set_description: An aggregation of works that is intended to help with administrative control. Admin Sets provide a way of defining behaviors and policies around a set of works.
         default_description: A User Project can be created by any user to organize their works.
     collections:
+      progress:
+        header: "Save Project"
       search_form:
         label: "Search Project %{title}"
         placeholder: "Search Project"
@@ -184,7 +186,7 @@ en:
         collections:            "All Projects"
       collection_type_actions:
         create_collection: Create project
-        select_type_of_collection: Select type of project 
+        select_type_of_collection: Select type of project
       collections:
         edit:
           header: "Edit Project: %{title}"
@@ -323,7 +325,7 @@ en:
         my: "My Projects"
         new: "New Project"
     works:
-      create: 
+      create:
         helper:
           question: New to adding resources? Here's a handy
           guide: guide

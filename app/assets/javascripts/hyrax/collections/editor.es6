@@ -1,7 +1,9 @@
+// Added SaveCollectionControl and new SaveCollectionControl($("#form-progress"))
 import ThumbnailSelect from 'hyrax/thumbnail_select'
 import Participants from 'hyrax/admin/admin_set/participants'
 import tabifyForm from 'hyrax/tabbed_form'
 import Autocomplete from 'hyrax/autocomplete'
+import SaveCollectionControl from 'vdc/save_collection/save_collection_control'
 
 // Controls the behavior of the Collections edit form
 // Add search for thumbnail to the edit descriptions
@@ -15,6 +17,7 @@ export default class {
     let participants = new Participants(elem.find('#participants'))
     participants.setup()
     this.autocomplete()
+    new SaveCollectionControl($("#form-progress"))
   }
 
   autocomplete() {
@@ -34,5 +37,5 @@ export default class {
         autocomplete.setup(elem, elem.data('autocomplete'), elem.data('autocompleteUrl'))
       }
     })
-  } 
+  }
 }
