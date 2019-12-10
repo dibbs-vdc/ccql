@@ -33,6 +33,10 @@ Development of this application is currently on CentOS 7. We are using Hyrax Gem
 
 Eventually, we'll have a step by step series of examples that describe how to get a development env running. For now, here are some useful steps.
 
+#### Docker
+
+If working in **Docker**, follow the steps in [DOCKER_DEVELOPMENT.md](DOCKER_DEVELOPMENT.md). Otherwise, continue below.
+
 #### Solr
 
 ```

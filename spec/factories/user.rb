@@ -6,6 +6,11 @@ FactoryBot.define do
       approved { true }
     end
 
+    trait :full_name do
+      first_name { 'John' }
+      last_name  { 'Doe' }
+    end
+
     factory :admin_user, traits: [:approved] do
       email { 'admin@example.com' }
     end
