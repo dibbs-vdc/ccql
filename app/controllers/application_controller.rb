@@ -13,6 +13,14 @@ class ApplicationController < ActionController::Base
 
   before_action :set_raven_context
 
+  rescue_from ActiveRecord::RecordNotFound, with: :redirect_record_not_found
+  rescue_from Blacklight::Exceptions::RecordNotFound, with: :redirect_record_not_found
+
+  def redirect_record_not_found
+    flash[:alert] = 'This resource cannot be found in the repository.'
+    redirect_back fallback_location: root_url
+  end
+
   private
 
   def set_raven_context

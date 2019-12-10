@@ -50,10 +50,9 @@ module Hyrax
 
       set_extent
       set_format
-      set_doi
 
       curation_concern.save!
-      
+
       # Reindex the members to get them into solr properly
       curation_concern.members.each{ |member| member.update_index } 
     end
@@ -68,13 +67,6 @@ module Hyrax
         unique_formats.add(member.mime_type) if member.respond_to?(:mime_type)
       end
       curation_concern.format = unique_formats.to_a
-    end
-
-    def set_doi
-      # Generate DOI if the work is public  
-      if curation_concern.visibility == Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
-        curation_concern.identifier_doi = ::Vdc::DoiGenerationService.new({work: curation_concern}).generate_doi
-      end
     end
   end
 end

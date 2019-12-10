@@ -33,7 +33,7 @@ module Hyrax
             env.curation_concern.creation_date = [Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')]
           end
         end
-   
+
         def post_processing(env)
           # NOTE: This actor seems to do post-processing BEFORE the uploaded files have
           #       been processed. So, I'm adding processing that doesn't depend on
@@ -44,7 +44,31 @@ module Hyrax
           env.curation_concern.vdc_type = env.curation_concern.human_readable_type
           env.curation_concern.vdc_title = env.curation_concern.title[0]
           env.curation_concern.identifier_system = env.curation_concern.id # TODO: Redundant?
+          # Changes are lost on #save, capture them before that happens
+          all_changes = env.curation_concern.changes.merge(env.curation_concern.previous_changes)
           env.curation_concern.save!
+
+          invoke_doi_job(env, all_changes)
+        end
+
+        def invoke_doi_job(env, changes)
+          return unless needs_doi?(env)
+
+          # Pass changes made to env.curation_concern to GenerateDoiJob
+          # for the purpose of updating the DataCite doi. If :vdc_type was nil,
+          # assume env.curation_concern is a new record, meaning a DataCite doi
+          # shouldn't exist and thus doesn't need to be updated, so we don't
+          # pass any changes.
+          if changes.dig('vdc_type')&.include?(nil)
+            GenerateDoiJob.perform_later(env.curation_concern, nil)
+          else
+            GenerateDoiJob.perform_later(env.curation_concern, changes.to_json)
+          end
+        end
+
+        def needs_doi?(env)
+          visibility = env.attributes[:visibility]
+          [PUBLIC, VDC].include? visibility
         end
     end
   end

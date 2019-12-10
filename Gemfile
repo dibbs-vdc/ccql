@@ -40,6 +40,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: %i[development]
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
+gem 'webmock', group: %i[development test]
 gem 'web-console', '>= 3.3.0', group: %i[development]
 
 gem 'activerecord-nulldb-adapter'
