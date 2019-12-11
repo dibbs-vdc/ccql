@@ -28,7 +28,7 @@ RSpec.describe Vdc::DoiGenerationService do
             'description': resource.abstract,
             'descriptionType': described_class::DESCRIPTION_TYPE
           }],
-          'url': "https://#{ENV['HYRAX_HOSTNAME']}/concern/vdc/resources/#{resource.id}",
+          'url': "https://#{ENV['HYRAX_BASE_HOSTNAME']}/concern/vdc/resources/#{resource.id}",
           'schemaVersion': described_class::SCHEMA_VERSION
         }
       }
@@ -283,7 +283,7 @@ RSpec.describe Vdc::DoiGenerationService do
   describe '#get_work_url' do
     it 'returns the full path to the Resource' do
       expect(service.get_work_url)
-        .to eq("https://#{ENV['HYRAX_HOSTNAME']}/concern/vdc/resources/#{resource.id}")
+        .to eq("https://#{ENV['HYRAX_BASE_HOSTNAME']}/concern/vdc/resources/#{resource.id}")
     end
   end
 end

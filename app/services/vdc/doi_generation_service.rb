@@ -126,7 +126,7 @@ module Vdc
         Rails.application.routes.url_helpers.send(
           "#{Hyrax::Name.new(Vdc::Resource).singular_route_key}_url",
           @resource.id,
-          host: ENV['HYRAX_HOSTNAME']
+          host: ENV['HYRAX_BASE_HOSTNAME']
         )
 
       work_url.sub('http', 'https')
