@@ -39,8 +39,7 @@ class SolrDocument
   end
 
   def vdc_creator
-    value = self[Solrizer.solr_name('vdc_creator')]
-    value.sort.map { |v| v.split.last }
+    self[Solrizer.solr_name('vdc_creator')]
   end
 
   def vdc_title
