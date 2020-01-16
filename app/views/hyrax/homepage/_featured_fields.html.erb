@@ -1,0 +1,30 @@
+<div>
+  <div class="featured-item-title">
+    <span class="sr-only"><%= t('hyrax.homepage.featured_works.document.title_label') %></span>
+    <h3>
+      <%= link_to [main_app, featured] do %>
+        <%= render_thumbnail_tag(featured, {width: 90, alt: "#{featured.title.first.to_s} #{ t('hyrax.homepage.admin_sets.thumbnail')}" }, {suppress_link: true}) + featured.title.first %>
+      <% end %>
+    </h3>
+  </div>
+  <div class="featured-field featured-item-depositor">
+    <span class="featured-label"><%= t('hyrax.homepage.featured_works.document.depositor_label') %>:</span> 
+		<%
+      if featured.depositor
+    %>
+      <%= link_to_profile(featured.depositor) %>
+    <%
+      else
+    %>
+    	<%= t('hyrax.homepage.featured_works.document.depositor_missing') %>
+    <%
+      end
+    %>
+  </div>
+	<p class="featured-field featured-item-creation_date">
+    <span class="featured-label"><%= t('hyrax.homepage.featured_works.document.date_created_label') %>:</span> <%= featured.solr_document.creation_date.join('; ') %>
+  </p>
+  <p class="featured-field featured-item-usage_count">
+    <span class="featured-label"><%= t('hyrax.homepage.featured_works.document.downloads_label') %>:</span> <%= featured.solr_document.usage_count.first %>
+  </p> 
+</div>

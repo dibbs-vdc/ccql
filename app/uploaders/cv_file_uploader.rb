@@ -50,7 +50,8 @@ class CvFileUploader < CarrierWave::Uploader::Base
   # end
 
   # TODO: make this configurable
-  def asset_host
-    return "http://localhost:3000"
-  end
+  # Removing this method serves the asset from the correct local path
+  # def asset_host
+  #   return "http://localhost:3000"
+  # end
 end

@@ -1,0 +1,34 @@
+<li class="recent-item">
+    <div class="row">
+      <div class="col-sm-12">
+        <span class="sr-only"><%= t('hyrax.homepage.recently_uploaded.document.title_label') %></span>
+        <h3>
+          <%= link_to [main_app, recent_document] do %>
+            <%= render_thumbnail_tag(recent_document, {width: 90, alt: "#{recent_document.to_s} #{ t('hyrax.homepage.admin_sets.thumbnail')}" }, {suppress_link: true}) + recent_document.to_s %>
+          <% end %>
+        </h3>
+        
+        <p class="recent-field">
+          <span class="recent-label"><%= t('hyrax.homepage.recently_uploaded.document.depositor_label') %>:</span>
+          <%
+           if recent_document.depositor
+           %>
+              <%= link_to_profile(recent_document.depositor) %>
+          <%
+           else
+          %>
+            <%= t('hyrax.homepage.recently_uploaded.document.depositor_missing') %>
+          <%
+           end
+          %>
+        </p>
+
+        <p class="recent-field">
+          <span class="recent-label"><%= t('hyrax.homepage.recently_uploaded.document.date_created_label') %>:</span> <%= recent_document.creation_date.join('; ') %>
+        </p>
+        <p class="recent-field">
+          <span class="recent-label"><%= t('hyrax.homepage.recently_uploaded.document.downloads_label') %>:</span> <%= recent_document.usage_count.first %>
+        </p> 
+      </div>
+    </div>
+</li>

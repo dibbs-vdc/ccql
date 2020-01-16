@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminSet.find_or_create_default_admin_set_id
+Rake::Task['hyrax:default_collection_types:create'].invoke
 
 if Rails.env.development?
   users = ['archivist@example.com', 'admin@example.com', 'approved@example.com', 'rob@notch8.com']

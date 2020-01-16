@@ -11,6 +11,8 @@ en:
       collection:
         new: "New Project"
   hyrax:
+    user_profile:
+      tab_info: User Profile
     admin:
       admin_sets:
         index:
@@ -295,6 +297,27 @@ en:
         link:               'View all projects'
         tab_label:          'Explore Projects'
         title:              'Explore Projects'
+      featured_works:
+        document:
+          creator_label: Creator
+          creator_missing: no creator value
+          date_created_label: Creation Date
+          date_created_missing: no date
+          downloads_label: Total downloads
+          downloads_missing: no downloads
+      recently_uploaded:
+        depositor: Depositor
+        details: Details
+        document:
+          depositor_label: Creator
+          depositor_missing: no creator value
+          date_created_label: Creation Date
+          date_created_missing: no date
+          downloads_label: Total Downloads
+          downloads_missing: no downloads
+        no_public: No public work has been contributed.
+        tab_label: Recently Uploaded
+        title: Recently Uploaded
     icons:
       collection:       'fa fa-folder-open'
       default:          'fa fa-cube'
