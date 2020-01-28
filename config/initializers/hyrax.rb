@@ -206,6 +206,15 @@ Hyrax.config do |config|
   rescue Errno::ENOENT
     config.browse_everything = nil
   end
+
+  # File upload config
+  unless Rails.env.development?
+    config.uploader = {
+      limitConcurrentUploads: 6,
+      maxNumberOfFiles: 100,
+      maxFileSize: 1.gigabytes
+    }
+  end
 end
 
 Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
