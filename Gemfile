@@ -27,7 +27,7 @@ gem 'listen', '~> 3.0.5', group: %i[development]
 gem 'mysql2'
 gem 'omniauth-shibboleth'
 gem 'pry-rails', group: %i[development test]
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 gem 'redis', '~> 3.0'
 gem 'rsolr', '>= 1.0'
 gem 'rspec-rails', group: %i[development test]
