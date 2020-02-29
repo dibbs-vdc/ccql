@@ -52,7 +52,7 @@ module Hyrax
         end
 
         def invoke_doi_job(env, changes)
-          return unless needs_doi?(env)
+          return true unless needs_doi?(env)
 
           # Pass changes made to env.curation_concern to GenerateDoiJob
           # for the purpose of updating the DataCite doi. If :vdc_type was nil,
@@ -64,6 +64,7 @@ module Hyrax
           else
             GenerateDoiJob.perform_later(env.curation_concern, changes.to_json)
           end
+          return true
         end
 
         def needs_doi?(env)
