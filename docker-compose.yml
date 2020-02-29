@@ -9,21 +9,34 @@ services:
       - .env
       - .env.development
 
-  web:
+  main:
     image: "${REGISTRY_HOST}${REGISTRY_URI}:${TAG}"
     build:
       context: ./
       dockerfile: Dockerfile
-    environment:
-      VIRTUAL_HOST: vdc.docker
-      VIRTUAL_PORT: 80
     env_file:
       - .env
       - .env.development
     volumes:
       - .:/home/app/webapp:delegated
+
+  web:
+    extends: main
+    environment:
+      VIRTUAL_HOST: vdc.docker
+      VIRTUAL_PORT: 80
     ports:
       - "${DEV_PORT}"
+    depends_on:
+      - redis
+      - solr
+      - fcrepo
+      - mysql
+      - worker
+
+  worker:
+    extends: main
+    command: bundle exec sidekiq
     depends_on:
       - redis
       - solr
