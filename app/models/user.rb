@@ -31,7 +31,7 @@ class User < ApplicationRecord
   serialize :discipline
 
   scope :registered, ->() { where(guest: false).where(approved: true) }
-  scope :not_approved, ->() {  where(approved: false) }
+  scope :not_approved, ->() {  where(guest: false).where(approved: false) }
 
   def display_name
     return to_s if last_name.blank? || first_name.blank?
