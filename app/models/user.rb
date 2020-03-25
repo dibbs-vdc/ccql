@@ -31,7 +31,7 @@ class User < ApplicationRecord
   serialize :discipline
 
   scope :registered, ->() { where(guest: false).where(approved: true) }
-  scope :not_approved, ->() {  where(approved: false) }
+  scope :not_approved, ->() {  where(guest: false).where(approved: false) }
 
   def display_name
     return to_s if last_name.blank? || first_name.blank?
@@ -93,8 +93,18 @@ class User < ApplicationRecord
   #TODO: Should this be in a controller instead?
   after_create :send_admin_mail_after_registration
   def send_admin_mail_after_registration
-    AdminMailer.new_user_waiting_for_approval(self).deliver
-    AdminMailer.new_user_waiting_for_approval_admin_notification(self).deliver
+    if !self.guest
+      AdminMailer.new_user_waiting_for_approval(self).deliver
+      AdminMailer.new_user_waiting_for_approval_admin_notification(self).deliver
+    end
+  end
+
+  def guest=(value)
+    if !value
+      AdminMailer.new_user_waiting_for_approval(self).deliver
+      AdminMailer.new_user_waiting_for_approval_admin_notification(self).deliver
+    end
+    super(value)
   end
 
   def password_required?
