@@ -208,13 +208,11 @@ Hyrax.config do |config|
   end
 
   # File upload config
-  unless Rails.env.development?
-    config.uploader = {
-      limitConcurrentUploads: 6,
-      maxNumberOfFiles: 100,
-      maxFileSize: 1.gigabytes
-    }
-  end
+  config.uploader = {
+    limitConcurrentUploads: 6,
+    maxNumberOfFiles: 100,
+    maxFileSize: 1e+9.to_i # 1.gigabytes
+  }
 end
 
 Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
