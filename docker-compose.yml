@@ -1,18 +1,18 @@
 version: '2.2'
 services:
-  base:
-    image: "${REGISTRY_HOST}${REGISTRY_URI}/base:latest"
-    build:
-      context: .
-      dockerfile: Dockerfile.base
-    env_file:
-      - .env
-      - .env.development
+  # base:
+  # image: "${REGISTRY_HOST}${REGISTRY_URI}/base:latest"
+  # build:
+  #   context: .
+  #   dockerfile: Dockerfile.base
+  # env_file:
+  #   - .env
+  #   - .env.development
 
   main:
     image: "${REGISTRY_HOST}${REGISTRY_URI}:${TAG}"
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
     env_file:
       - .env

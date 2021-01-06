@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "app.solr.name" . }}
+  labels:
+    app: {{ template "app.name" . }}
+    chart: {{ template "app.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: solr 
+spec:
+  replicas: {{ .Values.solr.replicas }}
+  selector:
+    matchLabels:
+      app: {{ template "app.name" . }}
+      release: {{ .Release.Name }}
+      component: solr
+  template:
+    metadata:
+      labels:
+        app: {{ template "app.name" . }}
+        release: {{ .Release.Name }}
+        component: solr
+      annotations:
+        checksum/rails-env-cm: {{ include (print $.Template.BasePath "/rails-env-cm.yaml") . | sha256sum }}
+        checksum/rails-env-secret: {{ include (print $.Template.BasePath "/rails-env-secret.yaml") . | sha256sum }}
+    spec:
+      restartPolicy: Always
+      {{- if .Values.solr.imagePullSecrets }}
+      imagePullSecrets:
+        {{ toYaml .Values.solr.imagePullSecrets }}
+      {{- end }}
+      volumes:
+        - name: shared
+          persistentVolumeClaim:
+            claimName: {{ template "app.rails-env.name" . }}-shared
+      containers:
+        - name: solr
+          image: {{ .Values.solr.image.repository }}:{{ .Values.solr.image.tag }}
+          imagePullPolicy: IfNotPresent
+          # Use sub-path for individual folders
+          volumeMounts:
+            - mountPath: /solr_home 
+              name: shared
+              subPath: solr
+          readinessProbe:
+            tcpSocket:
+              port: 8983
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 8983
+            initialDelaySeconds: 60
+            periodSeconds: 120
+          envFrom:
+            - configMapRef:
+                name: {{ template "app.rails-env.name" . }}
+            - secretRef:
+                name: {{ template "app.rails-env.name" . }}
