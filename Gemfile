@@ -5,11 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'qa', github: 'notch8/questioning_authority', branch: '2_1_2_all_terms'
-gem 'hyrax', '~> 2.5.1'
-gem 'rails', '~> 5.1.6'
-gem 'dotenv-rails', require: 'dotenv/rails-now'
-
+gem 'activerecord-nulldb-adapter'
+gem 'browse-everything'
 gem 'byebug', platform: :mri, group: %i[development test]
 gem 'capybara', group: %i[development test]
 gem 'capybara-screenshot', group: %i[test]
@@ -17,8 +14,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'database_cleaner', group: %i[development test]
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'factory_bot_rails', group: %i[development test]
 gem 'fcrepo_wrapper', group: %i[development test]
+gem 'hyrax', '~> 2.9'
 gem 'hyrax-spec', '~> 0.3', group: %i[development test]
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -28,6 +27,8 @@ gem 'mysql2'
 gem 'omniauth-shibboleth'
 gem 'pry-rails', group: %i[development test]
 gem 'puma', '~> 3.0'
+gem 'qa'
+gem 'rails', '~> 5'
 gem 'redis', '~> 3.0'
 gem 'rsolr', '>= 1.0'
 gem 'rspec-rails', group: %i[development test]
@@ -42,5 +43,3 @@ gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
 gem 'webmock', group: %i[development test]
 gem 'web-console', '>= 3.3.0', group: %i[development]
-
-gem 'activerecord-nulldb-adapter'

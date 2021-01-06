@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+        mount BrowseEverything::Engine => '/browse'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount Blacklight::Engine => '/'
 
@@ -51,6 +52,7 @@ Rails.application.routes.draw do
 end
 
 Hyrax::Engine.routes.draw do
+        mount BrowseEverything::Engine => '/browse'
   namespace :admin do
     namespace :vdc do
       post 'pending_registrations/approve_user'
