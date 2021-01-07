@@ -92,7 +92,15 @@ $ RAILS_ENV=development rails server
 2) In /home/vdc/ccql pull the correct code
 3) touch /home/vdc/restart.cmd
 
+## Versioning
 
+For delivery to Rutgers, we create a new release.  Create a new release by navigating to Project Overview -> Releases -> New Release.  
+Tag name : vX.Y.Z  Start with v 
+Increment X by one when their are breaking changes that are not backwards compatible or on first formal release of the software to the public.
+Increment Y for new features.
+Increment Z for  any bug fixes, edits, patches, etc. 
+
+After releasing a new version inform Rutgers IT contact - currently JJ - with the new release number so he can pull it down and deploy.  
 
 
 ## Contributing
