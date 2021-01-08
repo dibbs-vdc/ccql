@@ -1,14 +1,6 @@
 version: '2.2'
-services:
-  # base:
-  # image: "${REGISTRY_HOST}${REGISTRY_URI}/base:latest"
-  # build:
-  #   context: .
-  #   dockerfile: Dockerfile.base
-  # env_file:
-  #   - .env
-  #   - .env.development
 
+services:
   main:
     image: "${REGISTRY_HOST}${REGISTRY_URI}:${TAG}"
     build:
@@ -25,6 +17,8 @@ services:
     environment:
       VIRTUAL_HOST: vdc.docker
       VIRTUAL_PORT: 80
+      IN_DOCKER: 'true'
+      HUB_URL: "http://chrome:4444/wd/hub"
     ports:
       - "${DEV_PORT}"
       - "4000:4000"
@@ -34,6 +28,7 @@ services:
       - fcrepo
       - mysql
       - worker
+      - chrome
 
   worker:
     extends: main
