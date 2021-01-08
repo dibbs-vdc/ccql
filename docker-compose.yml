@@ -27,6 +27,7 @@ services:
       VIRTUAL_PORT: 80
     ports:
       - "${DEV_PORT}"
+      - "4000:4000"
     depends_on:
       - redis
       - solr
@@ -80,6 +81,17 @@ services:
       - 'fcrepo:/opt/data'
     ports:
       - "8984:8080"
+
+  chrome:
+    image: selenium/standalone-chrome-debug:3.141.59-20201010
+    logging:
+      driver: none
+    volumes:
+      - /dev/shm:/dev/shm
+    shm_size: 2G
+    ports:
+      - "4444:4444"
+      - "5959:5900"
 
 volumes:
   fcrepo:

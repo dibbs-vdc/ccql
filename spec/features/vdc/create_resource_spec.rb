@@ -4,7 +4,7 @@ require 'rails_helper'
 include Warden::Test::Helpers
 
 # NOTE: If you generated more than one work, you have to set "js: true"
-RSpec.feature 'Create a Vdc::Resource', js: false do
+RSpec.describe 'Create a Vdc::Resource', js: false, type: feature do
   context 'a logged in user' do
     let!(:user) { create(:admin_user, password: 'testing123') }
 

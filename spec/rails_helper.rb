@@ -5,6 +5,8 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'capybara/rails'
+require 'capybara/rspec'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'active_fedora/cleaner'
@@ -26,7 +28,7 @@ WebMock.disable_net_connect!(allow_localhost: true, allow: ['fcrepo', 'solr'])
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -35,23 +37,24 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.include Rails.application.routes.url_helpers
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
 
-  config.before(:suite) do 
+  config.before(:suite) do
     ActiveFedora::Cleaner.clean!
     DatabaseCleaner.clean_with(:truncation)
-  end 
+  end
 
-  config.before(clean: true) do 
+  config.before(clean: true) do
     DatabaseCleaner.clean
     ActiveFedora::Cleaner.clean!
   end
 
-  config.after(clean: true) do 
+  config.after(clean: true) do
     DatabaseCleaner.clean
     ActiveFedora::Cleaner.clean!
   end
@@ -77,4 +80,17 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
   config.include Warden::Test::Helpers
+
+  config.include Capybara::DSL
+
+  config.before(:each, type: :feature) do
+    driven_by :rack_test
+  end
+
+  config.before(:each, type: :feature, js: true) do
+    driven_by :selenium_chrome_in_container
+    Capybara.server_host = "0.0.0.0"
+    Capybara.server_port = 4000
+    Capybara.app_host = 'http://web:4000'
+  end
 end

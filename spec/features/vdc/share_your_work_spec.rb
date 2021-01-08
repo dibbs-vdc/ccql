@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Share your work button", :clean, :type => :feature do
+RSpec.describe "Share your work button", :clean, type: feature do
 
   context 'a user that is not logged in' do
     scenario "cannot view share your work button" do
