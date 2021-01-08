@@ -8,6 +8,12 @@ metadata:
     chart: {{ template "app.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  annotations:
+    # This is what defines this resource as a hook. Without this line, the
+    # job is considered part of the release.
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   backoffLimit: 4
   template:
@@ -25,17 +31,17 @@ spec:
         - name: shared
           persistentVolumeClaim:
             claimName: {{ template "app.rails-env.name" . }}-shared
-      initContainers:
-        - name: check-solr-ready
-          image: {{ .Values.rails.image.repository }}:{{ .Values.rails.image.tag }}
-          command: ["/bin/bash"]
-          args:
-            - "-l"
-            - "-c"
-            - "response=0 && until [ $response == 200 ]; do response=$(curl --write-out %{http_code} --silent --output /dev/null $(echo $SETTINGS__SOLR__URL)admin/collections?action=LIST); echo Response is $response; sleep 5; done;"
-          envFrom:
-            - configMapRef:
-                name: {{ template "app.rails-env.name" . }}
+      # initContainers:
+      #   - name: check-solr-ready
+      #     image: {{ .Values.rails.image.repository }}:{{ .Values.rails.image.tag }}
+      #     command: ["/bin/bash"]
+      #     args:
+      #       - "-l"
+      #       - "-c"
+      #       - "response=0 && until [ $response == 200 ]; do response=$(curl --write-out %{http_code} --silent --output /dev/null $(echo $SETTINGS__SOLR__URL)admin/collections?action=LIST); echo Response is $response; sleep 5; done;"
+      #     envFrom:
+      #       - configMapRef:
+      #           name: {{ template "app.rails-env.name" . }}
       containers:
         - name: setup
           image: {{ .Values.rails.image.repository }}:{{ .Values.rails.image.tag }}
