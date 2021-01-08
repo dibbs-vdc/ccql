@@ -62,6 +62,8 @@ rspec:
   stage: test
   image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   services:
+    - name: selenium/standalone-chrome:3.141.59-20201010
+      alias: chrome
     - name: redis:3
     - name: mysql:5.7
     - name: registry.gitlab.com/notch8/rutgers-vdc/solr:latest
