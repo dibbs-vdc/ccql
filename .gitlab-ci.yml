@@ -74,7 +74,7 @@ rspec:
     - docker
   variables:
     FF_NETWORK_PER_BUILD: 1
-    CAPYBARA_SERVER: http://build:3010
+    CAPYBARA_SERVER: build
     CHROME_HOSTNAME: chrome
     DATACITE_PREFIX: "10.33586"
     DATACITE_URL: https://api.test.datacite.org/dois
