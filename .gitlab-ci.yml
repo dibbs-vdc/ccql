@@ -4,15 +4,11 @@ stages:
   - deploy
 
 variables:
-  CAPYBARA_SERVER: http://build:3010
-  CHROME_HOSTNAME: chrome
   DOCKER_DRIVER: overlay2
   DB_ADAPTER: mysql2
   FEDORA_URL: http://fcrepo:8080/fcrepo/rest
   GUIDE_LINK: /concern/vdc/resources/ae5bd0bd-d5f1-447f-a81c-2ec439578a06?locale=en
   HELP_LINK: /collections/303153fb-d5ac-425c-9b0b-84d8f358c09b?local=en
-  HUB_URL: http://chrome:4444/wd/hub
-  IN_DOCKER: 'true'
   HYRAX_BASE_HOSTNAME: vdc.rdi2.rutgers.edu
   MYSQL_DATABASE: vdc-test
   MYSQL_HOST: mysql
@@ -77,12 +73,16 @@ rspec:
   tags:
     - docker
   variables:
+    CAPYBARA_SERVER: http://build:3010
+    CHROME_HOSTNAME: chrome
     DATACITE_PREFIX: "10.33586"
     DATACITE_URL: https://api.test.datacite.org/dois
     DISABLE_DATABASE_ENVIRONMENT_CHECK: 1
     DOCKER_DRIVER: overlay2
     DOCKER_HOST: tcp://docker:2375
     GIT_STRATEGY: none
+    HUB_URL: http://chrome:4444/wd/hub
+    IN_DOCKER: 'true'
     PASSENGER_APP_ENV: test
     RAILS_ENV: test
     TEST_DB: vdc-test
