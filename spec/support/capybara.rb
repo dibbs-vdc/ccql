@@ -1,6 +1,7 @@
 # without lines 1-12, screenshots and html captured from failing specs are blank
 # source: https://github.com/mattheworiordan/capybara-screenshot/issues/225
 require "action_dispatch/system_testing/test_helpers/setup_and_teardown"
+
 ::ActionDispatch::SystemTesting::TestHelpers::SetupAndTeardown.module_eval do
   def before_setup
     super
@@ -19,9 +20,9 @@ if ENV['IN_DOCKER'].present?
 
   Capybara.register_driver :selenium_chrome_headless_sandboxless do |app|
     driver = Capybara::Selenium::Driver.new(app,
-                                       browser: :remote,
-                                       desired_capabilities: capabilities,
-                                       url: ENV['HUB_URL'])
+                                            browser: :remote,
+                                            desired_capabilities: capabilities,
+                                            url: ENV['HUB_URL'])
 
     # Fix for capybara vs remote files. Selenium handles this for us
     driver.browser.file_detector = lambda do |args|
@@ -33,10 +34,10 @@ if ENV['IN_DOCKER'].present?
   end
 
   Capybara.always_include_port = true
+  Capybara.asset_host = "http://#{ENV['DOMAIN_NAME']}"
   Capybara.server_host = '0.0.0.0'
-  Capybara.server_port = 3010
-  ENV['WEB_HOST'] ||= ENV['CAPYBARA_SERVER'] || '127.0.0.1'
-  Capybara.app_host = "http://#{ENV['WEB_HOST']}:#{Capybara.server_port}"
+  Capybara.server_port = 4000
+  Capybara.app_host = ENV['CAPYBARA_SERVER'] || 'http://web:4000'
 else
   TEST_HOST = 'localhost:3000'.freeze
   # @note In January 2018, TravisCI disabled Chrome sandboxing in its Linux
@@ -61,7 +62,7 @@ Capybara::Screenshot.register_driver(:selenium_chrome_headless_sandboxless) do |
   driver.browser.save_screenshot(path)
 end
 
-Capybara::Screenshot.autosave_on_failure = false
+Capybara::Screenshot.autosave_on_failure = true
 
 # Save CircleCI artifacts
 

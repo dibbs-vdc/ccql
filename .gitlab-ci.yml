@@ -73,14 +73,14 @@ rspec:
   tags:
     - docker
   variables:
-    FF_NETWORK_PER_BUILD: 1
-    CAPYBARA_SERVER: build
+    CAPYBARA_SERVER: http://build:4000
     CHROME_HOSTNAME: chrome
     DATACITE_PREFIX: "10.33586"
     DATACITE_URL: https://api.test.datacite.org/dois
     DISABLE_DATABASE_ENVIRONMENT_CHECK: 1
     DOCKER_DRIVER: overlay2
     DOCKER_HOST: tcp://docker:2375
+    FF_NETWORK_PER_BUILD: 1
     GIT_STRATEGY: none
     HUB_URL: http://chrome:4444/wd/hub
     IN_DOCKER: 'true'
