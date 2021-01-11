@@ -34,10 +34,10 @@ if ENV['IN_DOCKER'].present?
   end
 
   Capybara.always_include_port = true
-  Capybara.asset_host = "http://#{ENV['DOMAIN_NAME']}"
   Capybara.server_host = '0.0.0.0'
   Capybara.server_port = 4000
   Capybara.app_host = ENV['CAPYBARA_SERVER'] || 'http://web:4000'
+  STDERR.puts("======== Capy server #{Capybara.app_host}")
 else
   TEST_HOST = 'localhost:3000'.freeze
   # @note In January 2018, TravisCI disabled Chrome sandboxing in its Linux
