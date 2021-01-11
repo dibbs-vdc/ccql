@@ -5,6 +5,7 @@ development:
     - admin@example.com
     - rjantz@libraries.rutgers.edu
     - gagnew@rutgers.edu
+    - rob@notch8.com
 
 test:
   archivist:
