@@ -68,11 +68,11 @@ services:
       - "8983"
     volumes:
       - './solr/config:/opt/config'
-    entrypoint:
-      - docker-entrypoint.sh
-      - solr-precreate
-      - hyrax
-      - /opt/config
+    command:
+      - sh
+      - -c
+      - "precreate-core hyrax_test /opt/config; solr-precreate hyrax /opt/config"
+
 
   fcrepo:
     image: botimer/fcrepo:4.5.1

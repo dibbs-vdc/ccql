@@ -1,0 +1,20 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "app.solr.name" . }}-home
+  labels:
+    app: {{ template "app.name" . }}
+    chart: {{ template "app.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: solr
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.solr.volumeClaimTemplates.storageSize }}
+  {{- if .Values.solr.volumeClaimTemplates.className }}
+  storageClassName: "{{ .Values.solr.volumeClaimTemplates.ClassName }}"
+  {{- end }}
