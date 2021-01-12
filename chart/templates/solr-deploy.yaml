@@ -22,9 +22,6 @@ spec:
         app: {{ template "app.name" . }}
         release: {{ .Release.Name }}
         component: solr
-      annotations:
-        checksum/rails-env-cm: {{ include (print $.Template.BasePath "/rails-env-cm.yaml") . | sha256sum }}
-        checksum/rails-env-secret: {{ include (print $.Template.BasePath "/rails-env-secret.yaml") . | sha256sum }}
     spec:
       restartPolicy: Always
       {{- if .Values.solr.imagePullSecrets }}
@@ -35,15 +32,34 @@ spec:
         - name: shared
           persistentVolumeClaim:
             claimName: {{ template "app.rails-env.name" . }}-shared
+        - name: solr-home
+          persistentVolumeClaim:
+            claimName: {{ template "app.solr.name" . }}-home
+      initContainers:
+        - name: volume-mount-hack
+          image: busybox
+          command: ["sh", "-c", "chown -R 8983:8983 /opt/solr/server/solr/mycores"]
+          volumeMounts:
+            - mountPath: /solr_home 
+              name: shared
+              subPath: solr
+            - mountPath: /opt/solr/server/solr/mycores
+              name: solr-home
       containers:
         - name: solr
           image: {{ .Values.solr.image.repository }}:{{ .Values.solr.image.tag }}
           imagePullPolicy: IfNotPresent
+          command: 
+            - sh
+            - -c
+            - "precreate-core hyrax_test /opt/config; solr-precreate hyrax /opt/config"
           # Use sub-path for individual folders
           volumeMounts:
             - mountPath: /solr_home 
               name: shared
               subPath: solr
+            - mountPath: /opt/solr/server/solr/mycores
+              name: solr-home
           readinessProbe:
             tcpSocket:
               port: 8983
@@ -54,8 +70,3 @@ spec:
               port: 8983
             initialDelaySeconds: 60
             periodSeconds: 120
-          envFrom:
-            - configMapRef:
-                name: {{ template "app.rails-env.name" . }}
-            - secretRef:
-                name: {{ template "app.rails-env.name" . }}
