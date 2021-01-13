@@ -33,6 +33,7 @@ gem 'redis', '~> 3.0'
 gem 'rsolr', '>= 1.0'
 gem 'rspec-rails', group: %i[development test]
 gem 'sass-rails', '~> 5.0'
+gem 'selenium-webdriver'
 gem 'sentry-raven'
 gem 'sidekiq'
 gem 'solr_wrapper', '>= 0.3', group: %i[development test]
@@ -43,3 +44,4 @@ gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
 gem 'webmock', group: %i[development test]
 gem 'web-console', '>= 3.3.0', group: %i[development]
+gem 'webdrivers', group: %i[test]

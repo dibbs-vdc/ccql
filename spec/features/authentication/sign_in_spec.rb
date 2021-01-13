@@ -1,6 +1,8 @@
 require 'rails_helper'
+include Warden::Test::Helpers
 
-RSpec.feature 'User login', :clean do
+
+RSpec.describe 'User login', :clean, type: feature do
   let(:approved_user)     { create(:approved_user, password: 'testing123') }
   let(:not_approved_user) { create(:user, password: 'testing123') }
 
@@ -13,7 +15,7 @@ RSpec.feature 'User login', :clean do
     click_button 'Log in'
 
     expect(page.current_path).to eq "/dashboard/profiles/#{approved_user.email.gsub('.com', '-dot-com')}"
-  end 
+  end
 
   scenario 'with unapproved user' do
     visit new_user_session_path
@@ -26,4 +28,4 @@ RSpec.feature 'User login', :clean do
     expect(page.current_path).to eq '/users/sign_in'
     expect(page).to have_content(I18n.t('devise.failure.not_approved'))
   end
-end 
+end
