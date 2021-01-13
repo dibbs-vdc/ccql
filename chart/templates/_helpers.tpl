@@ -50,7 +50,9 @@ Shorthand for component names
 {{- define "app.setup.name" -}}
 {{- include "app.fullname" . -}}-setup
 {{- end -}}
-
+{{- define "app.sidekiq.name" -}}
+{{- include "app.fullname" . -}}-sidekiq
+{{- end -}}
 {{- define "app.solr.name" -}}
 {{- include "app.fullname" . -}}-solr
 {{- end -}}
