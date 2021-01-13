@@ -4,7 +4,7 @@ require 'rails_helper'
 include Warden::Test::Helpers
 
 # NOTE: If you generated more than one work, you have to set "js: true"
-RSpec.describe 'Create a Vdc::Resource', js: false, type: feature do
+RSpec.describe 'Create a Vdc::Resource', js: true, type: feature, chrome: true do
   context 'a logged in user' do
     let!(:user) { create(:admin_user, password: 'testing123') }
 
@@ -14,9 +14,7 @@ RSpec.describe 'Create a Vdc::Resource', js: false, type: feature do
     end
 
     scenario do
-      visit '/dashboard/my/works'
-      page.click_link('Add new work')
-
+      visit '/concern/vdc/resources/new'
       # If you generate more than one work uncomment these lines
       # choose "payload_concern", option: "Vdc::Resource"
       # click_button "Create work"
@@ -24,11 +22,6 @@ RSpec.describe 'Create a Vdc::Resource', js: false, type: feature do
       expect(page).to have_content "Add New Resource"
       expect(page).not_to have_content "Embargo"
       expect(page).not_to have_content "Lease"
-    end
-
-    scenario "Can view and create a Work in Projects relationship" do
-      visit '/concern/vdc/resources/new'
-      expect(page).to have_content('This Work in Projects')
     end
   end
 end

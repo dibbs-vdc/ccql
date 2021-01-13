@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Edit Profile page", :type => :feature do
+RSpec.describe "Edit Profile page", type: feature do
 
   context 'Logged in user' do
     let!(:user) { create(:approved_user) }
