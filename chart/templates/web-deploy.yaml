@@ -50,6 +50,9 @@ spec:
             - mountPath: /home/app/webapp/public/system
               name: shared
               subPath: system
+            - mountPath: /home/app/webapp/tmp/uploads
+              name: shared
+              subPath: upload_path
           readinessProbe:
             tcpSocket:
               port: 80
