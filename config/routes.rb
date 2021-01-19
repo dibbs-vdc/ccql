@@ -52,7 +52,6 @@ Rails.application.routes.draw do
 end
 
 Hyrax::Engine.routes.draw do
-        mount BrowseEverything::Engine => '/browse'
   namespace :admin do
     namespace :vdc do
       post 'pending_registrations/approve_user'
@@ -68,7 +67,7 @@ Hyrax::Engine.routes.draw do
 
   match "/download_cv/:id/", controller: "admin/users", action: "download_cv", via: :get
   get 'download/usage/:id', to: 'downloads#download_usage', as: :download_usage
-  
+
   namespace :vdc do
     resources :usages, only: [:index, :new, :create]
   end

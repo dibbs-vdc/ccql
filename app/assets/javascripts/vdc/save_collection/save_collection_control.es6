@@ -93,7 +93,7 @@ export default class SaveCollectionControl {
 
   checkStatus(id) {
     let element = this.form.find(id)
-    return ($(element).val() === null) || ($(element).val().length < 1)
+    return ($(element).val() === null) || ($((element).val()).length < 1)
   }
 
   validateTitle() {
