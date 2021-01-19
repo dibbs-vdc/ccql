@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :user do
     sequence(:email) { |n| "user#{n}@example.com" }
+    display_name { "Jane Doe" }
 
     trait :approved do
       approved { true }

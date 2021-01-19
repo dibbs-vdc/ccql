@@ -18,7 +18,7 @@ variables:
   REDIS_HOST: redis
   REGISTRY_HOST: registry.gitlab.com
   REGISTRY_URI: /notch8/rutgers-vdc
-  SOLR_URL: http://solr:8983/solr/hyrax-test
+  SOLR_TEST_URL: http://solr:8983/solr/hyrax-test
 
 before_script:
   - export TAG=${CI_COMMIT_SHORT_SHA}

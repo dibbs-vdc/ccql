@@ -853,6 +853,8 @@ GEM
     xml-simple (1.1.8)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    xray-rails (0.3.2)
+      rails (>= 3.1.0)
 
 PLATFORMS
   ruby
@@ -898,6 +900,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webmock
+  xray-rails
 
 BUNDLED WITH
    1.17.3

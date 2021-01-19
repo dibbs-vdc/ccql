@@ -14,5 +14,3 @@ module Vdc::VdcCreatorForSelect
     select_collection
   end
 end
-  
- 
