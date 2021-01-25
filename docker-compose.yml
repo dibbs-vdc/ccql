@@ -29,6 +29,11 @@ services:
       - mysql
       - worker
       - chrome
+    volumes:
+      - .:/home/app/webapp:cached
+      - app:/home/app/webapp/tmp/uploads
+      - assets:/home/app/webapp/public/assets
+      - rails_cache:/home/app/webapp/tmp/cache
 
   worker:
     extends: main
@@ -63,6 +68,7 @@ services:
     ports:
       - "8983"
     volumes:
+      - .:/app
       - './solr/config:/opt/config'
     command:
       - sh
@@ -89,6 +95,9 @@ services:
       - "5959:5900"
 
 volumes:
+  app:
+  assets:
   fcrepo:
   mysql:
+  rails_cache:
   redis:

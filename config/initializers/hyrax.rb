@@ -125,13 +125,19 @@ Hyrax.config do |config|
   end
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
-  # These must be lambdas that return a Pathname. Can be configured separately
-  config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
+  # # These must be lambdas that return a Pathname. Can be configured separately
+  # config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
   #  config.cache_path = ->() { Rails.root + 'tmp' + 'uploads' + 'cache' }
+  
+  # Configure upload_path via environment variables
+  config.upload_path = ->() { ENV['UPLOAD_PATH'] }
 
   # Location on local file system where derivatives will be stored
   # If you use a multi-server architecture, this MUST be a shared volume
   # config.derivatives_path = Rails.root.join('tmp', 'derivatives')
+
+  # Configure derivatives_path via environment variables
+  config.derivatives_path = ENV['DERIVATIVES_PATH']
 
   # Should schema.org microdata be displayed?
   # config.display_microdata = true
