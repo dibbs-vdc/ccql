@@ -68,7 +68,6 @@ services:
     ports:
       - "8983"
     volumes:
-      - .:/app
       - './solr/config:/opt/config'
     command:
       - sh
