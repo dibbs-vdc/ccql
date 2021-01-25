@@ -41,18 +41,27 @@ spec:
           imagePullPolicy: IfNotPresent
           # Use sub-path for individual folders
           volumeMounts:
-            - mountPath: /home/app/webapp/public/assets
+            - mountPath: /home/app/webapp/tmp/imports
               name: shared
-              subPath: assets
-            - mountPath: /home/app/webapp/public/packs
+              subPath: import_path
+            - mountPath: /home/app/webapp/tmp/exports
               name: shared
-              subPath: packs
-            - mountPath: /home/app/webapp/public/system
+              subPath: export_path
+            - mountPath: /home/app/webapp/tmp/derivatives_path
               name: shared
-              subPath: system
+              subPath: derivatives_path
             - mountPath: /home/app/webapp/tmp/uploads
               name: shared
               subPath: upload_path
+            - mountPath: /home/app/webapp/public/uploads
+              name: shared
+              subPath: uploads
+            - mountPath: /home/app/webapp/public/assets
+              name: shared
+              subPath: assets
+            - mountPath: /home/app/webapp/public/branding
+              name: shared
+              subPath: branding
           readinessProbe:
             tcpSocket:
               port: 80
