@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_063333) do
+ActiveRecord::Schema.define(version: 2021_01_29_185410) do
 
   create_table "bookmarks", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -117,6 +117,13 @@ ActiveRecord::Schema.define(version: 2019_04_12_063333) do
     t.integer "user_id"
     t.index ["file_id"], name: "index_file_view_stats_on_file_id"
     t.index ["user_id"], name: "index_file_view_stats_on_user_id"
+  end
+
+  create_table "globus_exports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "dataset_id", null: false
+    t.string "workflow_state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "hyrax_collection_types", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

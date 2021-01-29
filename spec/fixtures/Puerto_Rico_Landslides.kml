@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides" id="Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+	<SimpleField name="OBJECTID" type="int"></SimpleField>
+	<SimpleField name="Author" type="string"></SimpleField>
+	<SimpleField name="Post_Image" type="string"></SimpleField>
+	<SimpleField name="Pre_Image" type="string"></SimpleField>
+	<SimpleField name="Confidence" type="string"></SimpleField>
+	<SimpleField name="Date" type="string"></SimpleField>
+	<SimpleField name="Comment" type="string"></SimpleField>
+	<SimpleField name="Shape_Length" type="float"></SimpleField>
+	<SimpleField name="Shape_Area" type="float"></SimpleField>
+</Schema>
+<Folder><name>Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">1</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:21:55.093+00</SimpleData>
+		<SimpleData name="Shape_Length">69.7162054778357</SimpleData>
+		<SimpleData name="Shape_Area">311.896252459367</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9199697004692,17.9741126389214,0 -66.9199643459443,17.974091223756,0 -66.9199307659011,17.9740879194615,0 -66.9199134846705,17.9740769468303,0 -66.9198827594132,17.9740735448682,0 -66.9198367460076,17.974052854425,0 -66.9197912390504,17.9740626702547,0 -66.9197689308947,17.9740894393402,0 -66.9197600084456,17.9741144232915,0 -66.9197564385894,17.9741358393912,0 -66.9197582236534,17.974173315422,0 -66.9197644698673,17.9742116848715,0 -66.919779639087,17.9742429157626,0 -66.9198037313812,17.9742536236023,0 -66.9198403155185,17.9742366693058,0 -66.9199697004692,17.9741126389214,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">2</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">76.0944030256561</SimpleData>
+		<SimpleData name="Shape_Area">314.986432052776</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.91995185344,17.9740269777169,0 -66.919938469148,17.9739591627911,0 -66.9199215158226,17.9738770704923,0 -66.9199464998038,17.9738288856258,0 -66.9199366848635,17.9737967627228,0 -66.9198983155584,17.9737914087802,0 -66.9198599466105,17.9738190706988,0 -66.9198233616311,17.9738485169506,0 -66.919780531312,17.9738654701981,0 -66.9197823156318,17.973925255214,0 -66.9198019470118,17.9739689780387,0 -66.9198563770222,17.9740011007152,0 -66.9199103775023,17.9740157365421,0 -66.9199322236223,17.9740376854324,0 -66.9199425382582,17.9740320586936,0 -66.91995185344,17.9740269777169,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">3</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">36.4123938453406</SimpleData>
+		<SimpleData name="Shape_Area">46.4862750887548</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9199393613991,17.9737664242777,0 -66.9199563156754,17.9737467940752,0 -66.9199134846907,17.9737351932814,0 -66.9198893920344,17.9737173478435,0 -66.9198581619497,17.9737003933671,0 -66.9198429929062,17.9737048550683,0 -66.9198429929078,17.9737173479239,0 -66.9198611458011,17.9737265927061,0 -66.9198902880326,17.9737414334611,0 -66.9198947462926,17.9737548242178,0 -66.9198956389059,17.9737726701465,0 -66.9198983155584,17.9737914087802,0 -66.9199366848635,17.9737967627228,0 -66.9199393613991,17.9737664242777,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">4</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacted road</SimpleData>
+		<SimpleData name="Shape_Length">66.6384441814229</SimpleData>
+		<SimpleData name="Shape_Area">242.936285328234</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9202427459473,17.9737682091746,0 -66.9202534535362,17.9737539322392,0 -66.9202275762884,17.9737423317468,0 -66.9202302528976,17.9737102091159,0 -66.9202507761021,17.9736673785807,0 -66.9202766531464,17.9736165174848,0 -66.9202659459365,17.9735736862814,0 -66.9202275765942,17.9735692249476,0 -66.9201909921503,17.9735799324504,0 -66.9201668995217,17.9736004554504,0 -66.920142807502,17.9736254402528,0 -66.9201294227331,17.9736664863677,0 -66.9201329916279,17.9736959324087,0 -66.9201356684064,17.9737262704563,0 -66.9201329923612,17.9737503629356,0 -66.9201383458567,17.9737601786733,0 -66.9201741006409,17.9737629289892,0 -66.9202135411577,17.9737659627386,0 -66.9202427459473,17.9737682091746,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">5</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">36.8174603702761</SimpleData>
+		<SimpleData name="Shape_Area">48.2954078492898</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9203382224554,17.9737923008996,0 -66.9203846223082,17.9737824863764,0 -66.9204319144835,17.9737691013103,0 -66.9204444063563,17.9737521478066,0 -66.9204220988757,17.9737450094761,0 -66.920390868576,17.973743224656,0 -66.9203632067336,17.9737512553925,0 -66.9203346532009,17.9737673166552,0 -66.9203007451356,17.9737744556122,0 -66.9202846840864,17.9737914087714,0 -66.9203123673312,17.9737918700599,0 -66.9203382224554,17.9737923008996,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">6</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">13.1199335263891</SimpleData>
+		<SimpleData name="Shape_Area">10.6827942350843</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9200607154588,17.9737459010716,0 -66.9200874840039,17.9737548244891,0 -66.9200946229875,17.973745901572,0 -66.920085699848,17.9737298395141,0 -66.9200740999482,17.9737218087137,0 -66.9200526843714,17.973729839546,0 -66.920047330233,17.9737414402547,0 -66.9200607154588,17.9737459010716,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">7</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">59.0022427288945</SimpleData>
+		<SimpleData name="Shape_Area">230.620154100599</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9151628492848,17.9745159609168,0 -66.9151922955124,17.9745730683899,0 -66.915240480243,17.9745873457646,0 -66.9153029410923,17.9745980537747,0 -66.915364510036,17.9745980534621,0 -66.9153734332163,17.9745721763398,0 -66.9153564796304,17.9745418384039,0 -66.9153314952585,17.9745061456316,0 -66.9153074032986,17.9744856229533,0 -66.9152806335998,17.9744713463555,0 -66.9152431572956,17.9744668845942,0 -66.915211033555,17.9744695610515,0 -66.9151991333285,17.9744810207566,0 -66.9151726643511,17.9744918694369,0 -66.9151628492848,17.9745159609168,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">8</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">90.3844111713938</SimpleData>
+		<SimpleData name="Shape_Area">444.737992174116</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9157921483967,17.9747105676778,0 -66.9158281781983,17.9747177185093,0 -66.9158696486818,17.9747259495285,0 -66.9160180116173,17.9747553951458,0 -66.9160775285869,17.9747672077299,0 -66.9161341696891,17.9747497804341,0 -66.9161341691318,17.9747105674485,0 -66.9161189200119,17.974658284025,0 -66.9160753502977,17.974616892747,0 -66.9160012818284,17.9745711446372,0 -66.9159511772767,17.9746038216243,0 -66.9158749306254,17.9746517485369,0 -66.9157921483967,17.9747105676778,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">9</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">169.54232053507</SimpleData>
+		<SimpleData name="Shape_Area">1543.35188579641</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9161929887871,17.9745275750388,0 -66.9161189200119,17.974658284025,0 -66.9161341691318,17.9747105674485,0 -66.9161341696891,17.9747497804341,0 -66.91617773917,17.9747715647583,0 -66.9162518071108,17.9747802787749,0 -66.9163345900744,17.9747824574091,0 -66.9164130146332,17.9747868142024,0 -66.9165284748809,17.9747715653467,0 -66.9165655086776,17.9747519587975,0 -66.9165698654885,17.9747105675939,0 -66.916556794598,17.9746691761523,0 -66.9165262959443,17.9746299634207,0 -66.9164827261952,17.9745863941782,0 -66.9164456921113,17.9745275747383,0 -66.9164239071602,17.9744643995278,0 -66.9163890520197,17.9743990449578,0 -66.9163541963071,17.974322798333,0 -66.9163215189005,17.9742596217132,0 -66.9162757710707,17.9742879425399,0 -66.9162735924784,17.9743424046447,0 -66.9162496289792,17.9744208296818,0 -66.9161929887871,17.9745275750388,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">10</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">77.5723390980266</SimpleData>
+		<SimpleData name="Shape_Area">380.94453720931</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8842909873812,17.9736779982295,0 -66.8842132039469,17.9737198823601,0 -66.8841832872417,17.9738066411744,0 -66.8841683282319,17.9738784417635,0 -66.8841713202617,17.9739233165023,0 -66.8842161956958,17.9739442591773,0 -66.8842550879228,17.9739352839921,0 -66.8842939790199,17.9738874162459,0 -66.8843238965965,17.9738365580198,0 -66.884344838331,17.9737647576384,0 -66.8843478300205,17.9736959484982,0 -66.8842909873812,17.9736779982295,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">11</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">32.6430327774295</SimpleData>
+		<SimpleData name="Shape_Area">68.5776900171946</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8739551846838,17.9772631178695,0 -66.8739705022048,17.9772382266445,0 -66.8739743314641,17.9772075923647,0 -66.8739456115985,17.9771846157894,0 -66.8739168911994,17.9771788716817,0 -66.873890085704,17.9771827015889,0 -66.8738996278134,17.9771944884591,0 -66.8738843415192,17.9772305681219,0 -66.8738843420582,17.977253544161,0 -66.873912953735,17.9772574108058,0 -66.8739551846838,17.9772631178695,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">12</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">162.484378373525</SimpleData>
+		<SimpleData name="Shape_Area">707.240926769476</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8459405409542,17.971476116549,0 -66.8461230337714,17.9714132911915,0 -66.8462756098748,17.9713773910055,0 -66.8463922861982,17.9713444823213,0 -66.8464760532,17.9712786651009,0 -66.8465598206736,17.9711380561826,0 -66.8464948407434,17.9711227384227,0 -66.8464403687872,17.9711574661747,0 -66.8463703869365,17.9712337906122,0 -66.8462497618392,17.9712471928453,0 -66.8461521133976,17.9712874013157,0 -66.8460946726339,17.9713008041205,0 -66.8460812701971,17.9713831352975,0 -66.8459948258468,17.9714402504702,0 -66.8459405409542,17.971476116549,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">13</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">91.295265387196</SimpleData>
+		<SimpleData name="Shape_Area">404.259035380126</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8465714283046,17.9711016772217,0 -66.8466040686684,17.9710804613898,0 -66.8466480157005,17.9710518958936,0 -66.8466823851776,17.9709887207344,0 -66.8467117868484,17.9709587886674,0 -66.8467440776235,17.9709259166598,0 -66.846783957724,17.9708853185671,0 -66.8467839573712,17.9708278783714,0 -66.8467648103165,17.9708297922818,0 -66.8467092850037,17.9708527685389,0 -66.8466729061877,17.9708757450646,0 -66.8466346123186,17.970894891812,0 -66.8465714279457,17.9709082942395,0 -66.8465293052907,17.9709216974344,0 -66.8465082434238,17.9709351004973,0 -66.8465216464019,17.9709829667797,0 -66.8465714283046,17.9711016772217,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">14</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">very high confidence</SimpleData>
+		<SimpleData name="Shape_Length">290.449752023618</SimpleData>
+		<SimpleData name="Shape_Area">2667.11057735161</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8390529271279,17.977806902651,0 -66.8388799703958,17.9779377887768,0 -66.8386368961591,17.978138792786,0 -66.8384873117503,17.9783584945564,0 -66.8384078450473,17.9784660087155,0 -66.8382863071918,17.9786015695424,0 -66.8382769586663,17.9786903848528,0 -66.8383470766136,17.978727780898,0 -66.8384732879287,17.9786436397745,0 -66.8385362558821,17.9785527438185,0 -66.8386929897398,17.9784426356805,0 -66.8387409429472,17.9783579408216,0 -66.8388986688202,17.9782369573691,0 -66.8390061828733,17.9780780238846,0 -66.8391090213749,17.9779705106509,0 -66.8391604412618,17.9778863691952,0 -66.8391651159881,17.9777928792986,0 -66.8390529271279,17.977806902651,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">15</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">landslide hidden in shadow</SimpleData>
+		<SimpleData name="Shape_Length">52.4487857715371</SimpleData>
+		<SimpleData name="Shape_Area">194.83259766929</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8481334482966,17.9790540623392,0 -66.8481506515556,17.9790821450081,0 -66.8481655804906,17.9791065149725,0 -66.848183818622,17.9791362884467,0 -66.8482381571079,17.9791468048662,0 -66.848283032645,17.9791079124938,0 -66.8482979912373,17.9790600457654,0 -66.8482979907587,17.9790271368436,0 -66.8482770495084,17.9790002114411,0 -66.8482381577169,17.9790032034829,0 -66.8481813154243,17.9790211535378,0 -66.8481334482966,17.9790540623392,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">16</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">63.3230484216582</SimpleData>
+		<SimpleData name="Shape_Area">162.555105117965</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.851384934002,17.98599214475,0 -66.8513294088922,17.986015121008,0 -66.851283456694,17.9860802207817,0 -66.8512241015022,17.9861108555795,0 -66.851201124694,17.9861510635724,0 -66.8512049541867,17.986179783698,0 -66.8512317600686,17.9861836129851,0 -66.8512616474311,17.986146253978,0 -66.8513160055741,17.9861300019723,0 -66.851358128672,17.9860897939388,0 -66.8513945078996,17.9860515005483,0 -66.851384934002,17.98599214475,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">17</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">80.5418160510518</SimpleData>
+		<SimpleData name="Shape_Area">232.234727893734</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8515687433122,17.9860017181184,0 -66.8515189616548,17.9860380978338,0 -66.8514615219122,17.9860859645211,0 -66.8514366306201,17.9861644668099,0 -66.8513830195983,17.9862161627451,0 -66.8513925928753,17.9862467975058,0 -66.8514251424264,17.9862563706921,0 -66.8514596069312,17.9862467978739,0 -66.8514830932007,17.98619405703,0 -66.8515075352979,17.9861391686801,0 -66.8515534266442,17.9861165995845,0 -66.8515859757687,17.9860515002168,0 -66.8516204400778,17.9860112921345,0 -66.8515981567624,17.9860071652468,0 -66.8515687433122,17.9860017181184,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">18</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">90.8279702843853</SimpleData>
+		<SimpleData name="Shape_Area">267.845518494312</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8466545255618,17.9905974107165,0 -66.8466557507775,17.9905618740978,0 -66.8466361445556,17.9905483951107,0 -66.8466018336922,17.9905422676322,0 -66.8465557127319,17.9905519565467,0 -66.8465032224233,17.9905278112468,0 -66.84647071605,17.9905128582482,0 -66.8464094827343,17.990512312296,0 -66.8463802458081,17.9905021589573,0 -66.8463616560489,17.9904957030042,0 -66.8463003866249,17.9904944773015,0 -66.8462734272464,17.9905153095949,0 -66.8462758780763,17.9905361408642,0 -66.8463334723303,17.9905569725725,0 -66.8463849382707,17.9905643250964,0 -66.846463364124,17.9905937342997,0 -66.8465356621622,17.9906023119908,0 -66.8465969321133,17.9906010868539,0 -66.8466545255618,17.9905974107165,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">19</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">70.6995600642359</SimpleData>
+		<SimpleData name="Shape_Area">187.718566668209</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8461263801346,17.9957808325407,0 -66.8461545640234,17.9957967629159,0 -66.8461913264457,17.9957967633384,0 -66.8462121578506,17.9957550996445,0 -66.846168043629,17.9957269153519,0 -66.8461239292315,17.9957183381348,0 -66.8461165769948,17.9956877025777,0 -66.846114125958,17.9956399128072,0 -66.846103097353,17.9956080520901,0 -66.8460908435447,17.995582318684,0 -66.8460638852938,17.9955676142184,0 -66.8460442791062,17.9955774170192,0 -66.8460320242851,17.995608052276,0 -66.8460344753835,17.9956460398586,0 -66.8460564597929,17.9956782834607,0 -66.8460822814177,17.995716155103,0 -66.8460883930035,17.9957587759874,0 -66.8461063966305,17.9957692291197,0 -66.8461263801346,17.9957808325407,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">20</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">35.4190548765136</SimpleData>
+		<SimpleData name="Shape_Area">52.216174025541</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8477686554834,17.9964419578814,0 -66.8478023777765,17.9964756813313,0 -66.8478227685073,17.996495287335,0 -66.8478666871175,17.9965046985122,0 -66.8478933516909,17.9965086198742,0 -66.8479074674076,17.9964874451066,0 -66.8478941358168,17.9964733285728,0 -66.8478659025313,17.9964662696296,0 -66.8478214306463,17.9964551522109,0 -66.8477992404497,17.9964388216174,0 -66.8477796348524,17.9964325468665,0 -66.8477686554834,17.9964419578814,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">21</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">127.190276753826</SimpleData>
+		<SimpleData name="Shape_Area">1044.11795379355</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8118562407786,17.9659684198711,0 -66.8119020759414,17.9659822573619,0 -66.8119676205964,17.9660020442557,0 -66.8120148005333,17.9660162871275,0 -66.8120716420505,17.965992354023,0 -66.8121245964627,17.9659513429672,0 -66.8121853269154,17.965947478706,0 -66.8121943018325,17.9658846530463,0 -66.812188318288,17.9658068693701,0 -66.8121793435341,17.9657380599675,0 -66.8121554100633,17.9656872017634,0 -66.8121105347236,17.9656483095603,0 -66.812068650471,17.9656183922431,0 -66.8120357422201,17.9656183923658,0 -66.8119878751429,17.9656483091753,0 -66.8119669330731,17.9656782261326,0 -66.8119429995615,17.9657380601553,0 -66.8119280412786,17.9658068688144,0 -66.8119041076694,17.9658726864849,0 -66.8118562407786,17.9659684198711,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">22</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">57.6835163722785</SimpleData>
+		<SimpleData name="Shape_Area">208.66581183551</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8138572017384,17.9678696976957,0 -66.8139299590245,17.967842892003,0 -66.8139471911724,17.9677739633325,0 -66.8139491056715,17.9677414135101,0 -66.8139069835363,17.9677337555212,0 -66.8138418838503,17.9677490722318,0 -66.8137921021467,17.9677452429291,0 -66.8137652967555,17.9677509877161,0 -66.8137576378293,17.9677892812068,0 -66.8137767569444,17.9678047232315,0 -66.813821903739,17.9678411882285,0 -66.8138572017384,17.9678696976957,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">23</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">129.475784471084</SimpleData>
+		<SimpleData name="Shape_Area">1141.32153167062</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8141538576666,17.9701807167314,0 -66.8141838421783,17.970297196781,0 -66.8142097224961,17.9703977319554,0 -66.8142316409237,17.9704828766974,0 -66.8143243832221,17.9705038186061,0 -66.8144051587267,17.9705217692904,0 -66.8145188432748,17.9704290262416,0 -66.814521834395,17.9703721844285,0 -66.8144979015614,17.9702764507469,0 -66.8144859346767,17.9702255920686,0 -66.814459009807,17.9701896920185,0 -66.8143692588824,17.9701777250652,0 -66.8142346330072,17.9701747328187,0 -66.8141538576666,17.9701807167314,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">24</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">98.9104359883754</SimpleData>
+		<SimpleData name="Shape_Area">706.58829398052</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8144051587267,17.9705217692904,0 -66.8143908374368,17.9706524481435,0 -66.8143812253057,17.9707401625455,0 -66.8144590097095,17.9707670875259,0 -66.8145577346118,17.9707611043257,0 -66.8146205608602,17.9707281956902,0 -66.8146594523834,17.9706504117724,0 -66.8146564609392,17.9705666447116,0 -66.8146115857692,17.9705247602,0 -66.814515851228,17.9705038190342,0 -66.8144051587267,17.9705217692904,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">25</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">70.4195527747169</SimpleData>
+		<SimpleData name="Shape_Area">349.832112118966</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8145738328304,17.9707526715577,0 -66.8145433694021,17.9708121170522,0 -66.8145158518313,17.9708658126107,0 -66.8145577349278,17.9709346215363,0 -66.8146085936249,17.9709854803318,0 -66.8146594521465,17.9709465886754,0 -66.8147133028125,17.9709017136297,0 -66.814713302705,17.9708598297876,0 -66.8146863776413,17.970797004171,0 -66.8146325268169,17.9707611042665,0 -66.8145738328304,17.9707526715577,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">26</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">43.1314106536846</SimpleData>
+		<SimpleData name="Shape_Area">121.218647334495</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8155038266056,17.9716320438527,0 -66.8154997349122,17.971659661381,0 -66.8154961681326,17.9716837401497,0 -66.8155325467427,17.971695228359,0 -66.8155727548735,17.971674167503,0 -66.8156282806313,17.9716473614377,0 -66.8156416833822,17.9716186410207,0 -66.8156263657688,17.9715899214232,0 -66.8155938167678,17.9715841772902,0 -66.8155440343214,17.9715956652086,0 -66.8155038266056,17.9716320438527,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">27</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">93.9667641002013</SimpleData>
+		<SimpleData name="Shape_Area">407.886859812744</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8064875975768,17.9664490045805,0 -66.8065297199047,17.9665447385324,0 -66.8065833313303,17.9665868616409,0 -66.8066484300191,17.9666174969273,0 -66.8067039556523,17.9666615341209,0 -66.8067479938407,17.9666806812205,0 -66.8067843728332,17.9666806815094,0 -66.8067882022941,17.9666251557196,0 -66.8067570455694,17.9666068986108,0 -66.806727414457,17.9665895349739,0 -66.806684808771,17.96653516527,0 -66.8066733214353,17.9665045309295,0 -66.8066484305299,17.9664528339173,0 -66.8065871601031,17.9664298578742,0 -66.8065258905598,17.9664107110273,0 -66.8064875975768,17.9664490045805,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">28</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">360.82955230577</SimpleData>
+		<SimpleData name="Shape_Area">3932.9887114611</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8031024429449,17.9682526336377,0 -66.8030847774998,17.9682303192522,0 -66.8030660637224,17.9682066813635,0 -66.8029530973782,17.9682124252309,0 -66.8028956571858,17.9682354019993,0 -66.8028294725748,17.9682927433652,0 -66.8027607923906,17.9683028351083,0 -66.8026333457139,17.968321562652,0 -66.8025931376599,17.9683732588311,0 -66.8025720759804,17.968453675424,0 -66.8025663324594,17.9685589823303,0 -66.8025376121183,17.9686164227965,0 -66.8024476216702,17.9687044982307,0 -66.8024054990651,17.9687810854654,0 -66.8023806079692,17.968859586946,0 -66.8023145149436,17.9689572562682,0 -66.8022331778111,17.9690299936009,0 -66.8020857469722,17.9691295568554,0 -66.8019727813357,17.9691869973754,0 -66.8019689522036,17.9692406087648,0 -66.8020091604606,17.9692712435867,0 -66.8021163818711,17.969248267552,0 -66.8022465804253,17.9691640218285,0 -66.802344229325,17.9690893492088,0 -66.8024342194565,17.9690759463054,0 -66.8025242095018,17.9690433964798,0 -66.8025759057427,17.9689725535265,0 -66.8026831274788,17.9688729905399,0 -66.8027463117858,17.9688212935674,0 -66.8027980087793,17.9687293895195,0 -66.8028803396416,17.9686145085908,0 -66.8029511827653,17.9685340921471,0 -66.8030315989298,17.9684038934382,0 -66.8031024429449,17.9682526336377,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">29</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">landslide in shadow</SimpleData>
+		<SimpleData name="Shape_Length">58.2324142789539</SimpleData>
+		<SimpleData name="Shape_Area">222.401260794649</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8357285941987,17.995127085062,0 -66.8357343383215,17.9951692078058,0 -66.8357849581606,17.9951908644817,0 -66.8358013517417,17.9952094161242,0 -66.8358358162589,17.9952036719856,0 -66.8358568778921,17.9951883544789,0 -66.8358855975812,17.99515771968,0 -66.8359104884381,17.9951213402264,0 -66.8359104892495,17.9950753882675,0 -66.8359028306051,17.9950485828397,0 -66.8358549630328,17.9950504970617,0 -66.8357956076639,17.9950849621377,0 -66.8357285941987,17.995127085062,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">30</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">landslide is shadow</SimpleData>
+		<SimpleData name="Shape_Length">64.5308053111578</SimpleData>
+		<SimpleData name="Shape_Area">272.389337505047</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8365921148098,17.9942635639428,0 -66.836580713563,17.994319533118,0 -66.8365710535041,17.9943669562687,0 -66.8365997737285,17.9944148233707,0 -66.8366495554069,17.9944109944643,0 -66.8367012514422,17.9943554689135,0 -66.8367203982041,17.9943171751456,0 -66.8367395458496,17.9942425020847,0 -66.8367165692065,17.9942022944171,0 -66.8366706169214,17.9942156972453,0 -66.8365921148098,17.9942635639428,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">31</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">31.1599387003587</SimpleData>
+		<SimpleData name="Shape_Area">54.054256495988</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8313566092695,18.003031374697,0 -66.8313842711423,18.0030215589733,0 -66.8313985475055,18.003001036055,0 -66.8313976555501,18.0029831896873,0 -66.831371778515,18.0029778357981,0 -66.8313155637766,18.0029796208823,0 -66.8312923632986,18.0029805128154,0 -66.8312780863805,18.0029876509827,0 -66.8312807637084,18.0030037124781,0 -66.8312951619156,18.0030089640251,0 -66.8313342614465,18.0030232238484,0 -66.8313566092695,18.003031374697,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">32</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">33.5697663209838</SimpleData>
+		<SimpleData name="Shape_Area">68.5472512088628</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8373055800669,18.006225892333,0 -66.8373126864226,18.0061913738204,0 -66.8373187777533,18.006157870163,0 -66.8373177628291,18.0061324894509,0 -66.8373015185535,18.0061324895801,0 -66.8372791835536,18.006143657408,0 -66.8372517717242,18.0061497486701,0 -66.8372314669681,18.0061487332519,0 -66.8372263903536,18.0061670080059,0 -66.8372314667677,18.0061842669956,0 -66.837242634433,18.0062025416272,0 -66.837261447446,18.006209520487,0 -66.8372834991898,18.0062177008284,0 -66.8373055800669,18.006225892333,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">33</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">61.0346304542618</SimpleData>
+		<SimpleData name="Shape_Area">232.027771723916</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8647590800587,17.9983266927768,0 -66.864813610514,17.9982795986576,0 -66.8647739520694,17.9982374618116,0 -66.8647243794314,17.9982176323722,0 -66.8646748067427,17.9982101969227,0 -66.8646401059952,17.9982275471986,0 -66.8646054058214,17.9982424186735,0 -66.864588055182,17.9982845558002,0 -66.8645855762245,17.9983242136667,0 -66.8646724881332,17.9983254554566,0 -66.8647590800587,17.9983266927768,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">34</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possible retrogressive landslide</SimpleData>
+		<SimpleData name="Shape_Length">86.0222932056948</SimpleData>
+		<SimpleData name="Shape_Area">475.233821577273</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8705213688077,18.0052746061519,0 -66.8705651267988,18.0052554249443,0 -66.8705954813968,18.0052421180944,0 -66.8706032364474,18.0052125588725,0 -66.8706178170034,18.005201508576,0 -66.8706457697591,18.0051414338977,0 -66.8706797473471,18.005105059949,0 -66.870679747097,18.0050776485345,0 -66.870676701206,18.0050512524238,0 -66.8706706096064,18.005037038894,0 -66.8706492894937,18.0050360239462,0 -66.8706036030159,18.005039069018,0 -66.8705792378137,18.0050461760667,0 -66.8705284748086,18.0050492222049,0 -66.870462484475,18.0050563285678,0 -66.8704371030704,18.0050837399757,0 -66.870415783308,18.005124349803,0 -66.8704249198825,18.005153792164,0 -66.8704482710813,18.0051832345741,0 -66.870466545082,18.0052035388121,0 -66.8705041095784,18.0052400879444,0 -66.8705213688077,18.0052746061519,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">35</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">81.2719781689481</SimpleData>
+		<SimpleData name="Shape_Area">367.239778713053</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8649424993297,17.9987319479323,0 -66.8649747215514,17.998655110689,0 -66.8649424987251,17.9984939993172,0 -66.8649152336917,17.9984493838948,0 -66.8648631833002,17.9984394694756,0 -66.8648235252039,17.9984444271411,0 -66.8648136099518,17.9984915207454,0 -66.864827027958,17.9985165497078,0 -66.864816089196,17.998568358372,0 -66.864845633584,17.9986065923539,0 -66.8648507894027,17.9986675035616,0 -66.8648759028068,17.9986851509664,0 -66.8648996709546,17.9987018530861,0 -66.8649424993297,17.9987319479323,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">36</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">74.4743961788376</SimpleData>
+		<SimpleData name="Shape_Area">346.076080849224</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8752239982275,17.9952192684888,0 -66.8752825092667,17.9951953325525,0 -66.875347805508,17.9951686200129,0 -66.8753944035168,17.9951495570885,0 -66.8754060218538,17.9950721004808,0 -66.875324691704,17.9950682274474,0 -66.8752356162955,17.9950411172645,0 -66.8751736512416,17.9950527359594,0 -66.8751581590328,17.9951379388091,0 -66.8752239982275,17.9952192684888,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">37</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possible retrogressive landslide</SimpleData>
+		<SimpleData name="Shape_Length">63.3055867319815</SimpleData>
+		<SimpleData name="Shape_Area">101.405511912437</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8518323227619,18.0238737935747,0 -66.8518625503764,18.0238593360451,0 -66.8518743790681,18.0238093940858,0 -66.8518822652653,18.0237541942432,0 -66.8518914652298,18.0237265944257,0 -66.8518993507714,18.0237095093993,0 -66.8519348356626,18.0236832231152,0 -66.8519427213777,18.023656938425,0 -66.8519124934601,18.0236556235684,0 -66.8519019069104,18.0236844320238,0 -66.8518664936328,18.0237016233184,0 -66.8518480937178,18.0237226521287,0 -66.8518452303921,18.0237500901449,0 -66.851842474908,18.0237764995453,0 -66.8518377771165,18.0238215170566,0 -66.8518073513546,18.0238396218952,0 -66.8517981514517,18.0238567076783,0 -66.8518112944085,18.0238632791097,0 -66.8518323227619,18.0238737935747,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">38</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">73.8932430893819</SimpleData>
+		<SimpleData name="Shape_Area">324.904254224978</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8957709767751,18.0169798232844,0 -66.895825123046,18.0169960673476,0 -66.895877465299,18.0169960673244,0 -66.8959117580621,18.0169635793177,0 -66.8959009285691,18.0169112379722,0 -66.89586302547,18.0168841639223,0 -66.8957962450415,18.0168498714616,0 -66.895713220664,18.0168209932897,0 -66.8956753183694,18.0168173841521,0 -66.8956482451188,18.0168390424718,0 -66.8956482448308,18.0168679203745,0 -66.8956814353349,18.0168981817888,0 -66.8957349167736,18.0169469443449,0 -66.8957709767751,18.0169798232844,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">39</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">144.223495086571</SimpleData>
+		<SimpleData name="Shape_Area">588.579181885059</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8060297827226,18.0032664673692,0 -66.8060667470101,18.003241824338,0 -66.8060729078099,18.0032110212292,0 -66.8060236221505,18.0031781644892,0 -66.8059373732858,18.0031473613408,0 -66.8058572845399,18.003116557495,0 -66.8057504994767,18.0030898611498,0 -66.80571969654,18.0030713796951,0 -66.8056745186574,18.0030385224489,0 -66.8055923764282,18.0030015589542,0 -66.8055205021737,18.0029974518564,0 -66.805493805698,18.0029974519374,0 -66.8054794310787,18.0030467369844,0 -66.805520148789,18.003062993933,0 -66.805602644445,18.0031165582341,0 -66.8056825811837,18.0031446125472,0 -66.805765050275,18.0031735563917,0 -66.8058550261667,18.0032051344406,0 -66.8059409939731,18.0032353057289,0 -66.8060297827226,18.0032664673692,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">40</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">71.4386174618911</SimpleData>
+		<SimpleData name="Shape_Area">260.373613522295</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.805956686546,18.0033419393624,0 -66.805976032987,18.0033259574431,0 -66.8059642563189,18.0033032472347,0 -66.8059499571408,18.0032788544592,0 -66.8058952839293,18.0032468914587,0 -66.8058406100978,18.0032367970077,0 -66.8058033215907,18.0032349246641,0 -66.8057674310416,18.0032098807313,0 -66.8057245335137,18.0032023107854,0 -66.8057018227267,18.0032073577597,0 -66.8057127571048,18.0032342742488,0 -66.80572957983,18.0032561437434,0 -66.8057682722847,18.0033007240028,0 -66.8058002349402,18.003329322273,0 -66.8058532270858,18.0033503504863,0 -66.8059070591214,18.0033511916846,0 -66.805956686546,18.0033419393624,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">41</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">very high confidence</SimpleData>
+		<SimpleData name="Shape_Length">101.630339065792</SimpleData>
+		<SimpleData name="Shape_Area">718.601809395577</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7999368904845,18.0293461396861,0 -66.7999733983194,18.0292147119506,0 -66.7999441923197,18.0291270938145,0 -66.799849271722,18.029141697466,0 -66.7997434002494,18.0291526490283,0 -66.7997068925641,18.0292037599144,0 -66.7997032419522,18.0292840767286,0 -66.7997214951197,18.0293643934169,0 -66.7997287969651,18.0294082025412,0 -66.7998018124155,18.0294301076225,0 -66.7999004523236,18.0293687905293,0 -66.7999368904845,18.0293461396861,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">42</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">83.9069853410235</SimpleData>
+		<SimpleData name="Shape_Area">299.588756751335</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7776932565933,18.0233487114349,0 -66.7777090788313,18.0234178589833,0 -66.7777276095489,18.0234988456922,0 -66.7777479232778,18.0235876240448,0 -66.7777650335425,18.0236624022559,0 -66.7778049095482,18.0236544270224,0 -66.777828834778,18.0236065762796,0 -66.7778261769581,18.0235427748793,0 -66.7778235178891,18.023481630998,0 -66.7777969342439,18.0234311215586,0 -66.7777783256857,18.0233513696853,0 -66.7776932565933,18.0233487114349,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">43</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">116.738986222058</SimpleData>
+		<SimpleData name="Shape_Area">321.192345586801</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7776932565933,18.0233487114349,0 -66.7777783256857,18.0233513696853,0 -66.7778611406499,18.02328792589,0 -66.7779207087177,18.0232663579983,0 -66.7780016316934,18.0232370582439,0 -66.7780467968691,18.0231730961075,0 -66.7780999922691,18.0231466719425,0 -66.7781425271152,18.0230802126319,0 -66.778097333705,18.0230802120885,0 -66.7780228985916,18.0231200882742,0 -66.7779431462387,18.023181231374,0 -66.7778474440335,18.0232343992897,0 -66.7777969346028,18.0232769340265,0 -66.7776932565933,18.0233487114349,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">44</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">478.812540966902</SimpleData>
+		<SimpleData name="Shape_Area">2073.40402568099</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7776932565933,18.0233487114349,0 -66.7778474440335,18.0232343992897,0 -66.7778660532032,18.023117429532,0 -66.777884661411,18.0230562869381,0 -66.7779697306225,18.0229845097517,0 -66.7780255568114,18.0229313417501,0 -66.7780468246092,18.0228382977167,0 -66.778046824101,18.0227133529575,0 -66.7780468239399,18.0226096747975,0 -66.7780494825107,18.0224980220502,0 -66.7780547995208,18.0223890275585,0 -66.7780468239838,18.022277374624,0 -66.7780893591071,18.0221497712389,0 -66.7781292348163,18.0220354592935,0 -66.7781398680256,18.0219450734807,0 -66.7781132843586,18.0218546884285,0 -66.7780574582529,18.021764302669,0 -66.7780105634872,18.0216323389998,0 -66.7780037583718,18.0215251528162,0 -66.7780377853145,18.0214707082419,0 -66.7780394867292,18.0214230701137,0 -66.7780139661559,18.0213924448177,0 -66.7779323000235,18.0214298749409,0 -66.7778982727977,18.021465603838,0 -66.7778922551867,18.0215208750291,0 -66.7778854382615,18.0215834890685,0 -66.7779391059886,18.0216765753583,0 -66.7779646266249,18.0217684495148,0 -66.7780122646543,18.0218450118688,0 -66.7780530979668,18.0219249765137,0 -66.7780336923529,18.0220017561999,0 -66.7780207720874,18.0221223359274,0 -66.77798064647,18.0222725849134,0 -66.7779578207709,18.0224353898421,0 -66.7779663273533,18.0225170563158,0 -66.7779424764908,18.0225896974515,0 -66.7779442099054,18.0226769860085,0 -66.7779578205314,18.0227756653044,0 -66.7779697306091,18.0228607347898,0 -66.7779612237753,18.0229355954403,0 -66.7778948697087,18.0229747270292,0 -66.777830217734,18.0230172610337,0 -66.777789384299,18.023042781994,0 -66.7777778878543,18.0230793703333,0 -66.7777551870448,18.0231516163422,0 -66.777729260525,18.0232341275257,0 -66.7776932565933,18.0233487114349,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">45</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">508.171579839033</SimpleData>
+		<SimpleData name="Shape_Area">1743.00587041136</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7776932565933,18.0233487114349,0 -66.7777456191041,18.023182068073,0 -66.777789384299,18.023042781994,0 -66.7777667899108,18.0230017444032,0 -66.777713435254,18.022985411249,0 -66.7776524575742,18.0229549223872,0 -66.7776087223051,18.0227471070794,0 -66.7775659569276,18.0224427563977,0 -66.77749830445,18.0221853556267,0 -66.777477144352,18.022059085661,0 -66.7774486832184,18.0218892474566,0 -66.777356486883,18.0216222046273,0 -66.7773175476457,18.0214225759743,0 -66.7772944960182,18.0213043986911,0 -66.7773157632413,18.0212246469206,0 -66.7772755683701,18.0211627592793,0 -66.7772347350193,18.0212223068855,0 -66.7772313318512,18.0213669244974,0 -66.7772738669386,18.0214553963021,0 -66.7772925816657,18.0216136243326,0 -66.7773657409551,18.02182799788,0 -66.777409977381,18.0220440724959,0 -66.7774763310397,18.0223009814158,0 -66.7775154622112,18.0225153542564,0 -66.7775409833255,18.0227297279217,0 -66.7775596985104,18.0228624356806,0 -66.7775784139362,18.0229475047615,0 -66.7776192465837,18.0230376777773,0 -66.7776464684675,18.0230938230789,0 -66.7776600797118,18.0231652811859,0 -66.7776532744012,18.0232503497687,0 -66.7776932565933,18.0233487114349,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">46</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">90.2884304791193</SimpleData>
+		<SimpleData name="Shape_Area">235.494315937402</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7776306797673,18.0224758148445,0 -66.7776600798759,18.0224692810969,0 -66.7776666131998,18.0224377042145,0 -66.7776644347962,18.0223876151233,0 -66.7776274131914,18.0222819932577,0 -66.7775991024112,18.0222362605373,0 -66.7775631692433,18.0221818163672,0 -66.777541391783,18.0221437058335,0 -66.7775119918904,18.0221153944464,0 -66.7774927162094,18.0221520090309,0 -66.7775026745786,18.0221753809118,0 -66.7775392141599,18.0222297272736,0 -66.7775564366685,18.022276064306,0 -66.7775893774638,18.0223646914299,0 -66.7776186083702,18.0224433368312,0 -66.7776306797673,18.0224758148445,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">47</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">163.797467465314</SimpleData>
+		<SimpleData name="Shape_Area">1127.47728509168</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7771536008657,18.0210917265244,0 -66.7772677427051,18.0211408337017,0 -66.7773822236142,18.0211900874353,0 -66.7774300743365,18.0211741372909,0 -66.7774725919587,18.0211318955984,0 -66.7775124845938,18.0211369191703,0 -66.7775656534025,18.0210837514368,0 -66.7776586975974,18.0210385581363,0 -66.7777124130147,18.0209667288565,0 -66.7777597166512,18.0209561479275,0 -66.7777889585877,18.0208950045969,0 -66.7777278160935,18.0208312026154,0 -66.7776719889468,18.0208258858673,0 -66.7776028703406,18.0208577872141,0 -66.7775284358265,18.0209082961494,0 -66.7774486831492,18.0209641231629,0 -66.7773423471452,18.0210252660446,0 -66.7772306940169,18.0210279244969,0 -66.7771536008657,18.0210917265244,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">48</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">63.7991675012461</SimpleData>
+		<SimpleData name="Shape_Area">234.745958405021</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7780847436701,18.0214947317498,0 -66.7781402767467,18.0214468211633,0 -66.7781674983885,18.0214010876039,0 -66.7782077873663,18.02136406566,0 -66.7782328313006,18.0213194217636,0 -66.7782088766398,18.0213020000728,0 -66.7781609655782,18.0213063548482,0 -66.7781065209051,18.0213270440876,0 -66.7780640549605,18.0213564441814,0 -66.7780422775241,18.0213738655123,0 -66.7780272310425,18.0214083635098,0 -66.7780531090249,18.0214472256654,0 -66.7780742015695,18.021478900335,0 -66.7780847436701,18.0214947317498,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">49</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">interesting landslide complex</SimpleData>
+		<SimpleData name="Shape_Length">63.5071981295459</SimpleData>
+		<SimpleData name="Shape_Area">257.818826597937</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7778336202573,18.0213277923183,0 -66.7778506336898,18.0213703267062,0 -66.777899045669,18.0213657817453,0 -66.7779391061026,18.0213890422559,0 -66.7779850433353,18.0213771321778,0 -66.7780173688979,18.0213533137181,0 -66.7780633060771,18.0213107787409,0 -66.7780701120377,18.0212869598675,0 -66.7780343826465,18.0212665430579,0 -66.7779799385381,18.0212563345916,0 -66.7779323000704,18.0212512302824,0 -66.777881258555,18.0212665432066,0 -66.7778336202573,18.0213277923183,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">50</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">54.2299175393428</SimpleData>
+		<SimpleData name="Shape_Area">198.948635451379</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7766572195285,18.0206236259354,0 -66.7767040393926,18.0206214178863,0 -66.7767726405163,18.0206181819241,0 -66.7768031290336,18.0205931375468,0 -66.7768151069224,18.0205648263869,0 -66.77680857365,18.0205299820802,0 -66.7767737296032,18.0204984049284,0 -66.7767432406785,18.0205016714402,0 -66.7767225525702,18.0205082049181,0 -66.7767062185669,18.0205223599552,0 -66.7766779079985,18.0205365155747,0 -66.7766485077945,18.0205463155627,0 -66.7766267303751,18.0205659155108,0 -66.7766278190221,18.0205931374687,0 -66.7766572195285,18.0206236259354,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">51</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">49.2376456971628</SimpleData>
+		<SimpleData name="Shape_Area">166.112525910785</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7766975077173,18.0209121800589,0 -66.7767312633239,18.020925246778,0 -66.776748114294,18.020894507525,0 -66.7767661075195,18.0208882249149,0 -66.776782440905,18.020864268975,0 -66.7767824406716,18.0208283362752,0 -66.7767704625603,18.0207978474837,0 -66.7767443294395,18.0207771586263,0 -66.7767149296857,18.0207630028931,0 -66.7766909746931,18.0207651810119,0 -66.7766539521503,18.0207913137436,0 -66.7766583081364,18.0208239804498,0 -66.7766975077173,18.0209121800589,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">52</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">39.6472163063619</SimpleData>
+		<SimpleData name="Shape_Area">95.2947469739372</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7766516940337,18.020475189559,0 -66.7766842327514,18.0204838025353,0 -66.7767049619739,18.020466923945,0 -66.776735091861,18.0204622486689,0 -66.7767627091954,18.0204579627491,0 -66.7767703653482,18.0204407361099,0 -66.7767684512261,18.0204187248835,0 -66.7767579241475,18.020398627261,0 -66.7767426112356,18.0203718308142,0 -66.7767139010017,18.020369916513,0 -66.7766890180735,18.0203947994653,0 -66.7766765765637,18.0204244674782,0 -66.7766516940337,18.020475189559,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">53</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">138.807558033732</SimpleData>
+		<SimpleData name="Shape_Area">927.237641786096</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7875246987351,18.1130226431656,0 -66.7875875038297,18.1130211477875,0 -66.7876383457862,18.1130316156849,0 -66.7877086273765,18.1130495594715,0 -66.7877609643372,18.1130420831642,0 -66.787799844318,18.1130166625869,0 -66.7878118062543,18.1129762875707,0 -66.7878103110433,18.1129284367145,0 -66.7877774140329,18.1128342288806,0 -66.7877549837378,18.1127774062451,0 -66.7877475063959,18.1127086194097,0 -66.7877400295647,18.1126592726361,0 -66.7877340486679,18.112617403449,0 -66.7877161037499,18.11258749575,0 -66.7876876923428,18.1125860005863,0 -66.787657784949,18.1125889912198,0 -66.7876468853434,18.1126245096063,0 -66.7876248877341,18.1126428244321,0 -66.7876199759521,18.1126614447824,0 -66.7876174106026,18.1127415178118,0 -66.787617410719,18.1127938544759,0 -66.7876025137691,18.1128306159663,0 -66.7875873789314,18.1128679654849,0 -66.7875753666022,18.1128976086261,0 -66.7875577419304,18.1129411027398,0 -66.7875477261378,18.1129658177875,0 -66.787514232069,18.1129852597628,0 -66.7875246987351,18.1130226431656,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">54</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">14.8159896277229</SimpleData>
+		<SimpleData name="Shape_Area">15.1633326781006</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7874354562743,18.113195625634,0 -66.7874517259508,18.1132023253446,0 -66.7874651245647,18.1131975399617,0 -66.7874679955185,18.1131841416776,0 -66.7874584250403,18.1131659584024,0 -66.7874478977368,18.1131621303181,0 -66.787435456143,18.113160216031,0 -66.7874220577955,18.1131659580163,0 -66.7874294343951,18.1131822923188,0 -66.7874354562743,18.113195625634,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">55</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">45.7513879442451</SimpleData>
+		<SimpleData name="Shape_Area">56.8924815459325</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7874306709258,18.1130568571683,0 -66.7874096169387,18.1130549433219,0 -66.7873921274533,18.1130797748555,0 -66.7873729418446,18.113091182745,0 -66.7873486919097,18.1131056018957,0 -66.7873166641805,18.1131246451539,0 -66.7872890316813,18.1131410750434,0 -66.7872947737103,18.1131602161153,0 -66.787305300936,18.113181270254,0 -66.7873292264191,18.1131927551059,0 -66.787347410115,18.1131650012293,0 -66.787351238253,18.1131315054447,0 -66.7873627226393,18.1131114078181,0 -66.7873895195034,18.1130970522459,0 -66.7874182302256,18.1130826969728,0 -66.7874306709258,18.1130568571683,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">56</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">22.2713606100775</SimpleData>
+		<SimpleData name="Shape_Area">29.8644692861746</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7877220852956,18.1119220643101,0 -66.7877355438587,18.1119370177345,0 -66.7877609642591,18.1119115970376,0 -66.7877490019445,18.1118831852723,0 -66.7877400301105,18.1118637460653,0 -66.7877265718934,18.1118532784653,0 -66.7877056371249,18.1118846808771,0 -66.787712979053,18.1119013679626,0 -66.7877220852956,18.1119220643101,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">57</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">53.7580054289785</SimpleData>
+		<SimpleData name="Shape_Area">126.626083577877</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7877895559109,18.1114346995375,0 -66.7878193107125,18.111419396851,0 -66.7878649597654,18.1113959201822,0 -66.7878964658947,18.1113797171233,0 -66.787934481089,18.11136016617,0 -66.7879570355707,18.1113485674436,0 -66.7879637341264,18.111300715815,0 -66.7879465082426,18.111289231207,0 -66.7879187544136,18.1112988019266,0 -66.7878919576732,18.1113227272363,0 -66.7878565471882,18.1113380399677,0 -66.7878163522919,18.1113610083766,0 -66.7877866846501,18.111381105912,0 -66.7877809428805,18.1114079025059,0 -66.7877895559109,18.1114346995375,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">58</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">28.0492278639447</SimpleData>
+		<SimpleData name="Shape_Area">51.2247294115363</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7877759186124,18.112494784402,0 -66.787825264455,18.1125097380381,0 -66.7878521807434,18.1125022606313,0 -66.7878566676309,18.1124499239969,0 -66.7878387232606,18.1124274938854,0 -66.7878147975299,18.1124319795573,0 -66.7877863706808,18.1124778987858,0 -66.7877759186124,18.112494784402,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">59</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">73.9140845089735</SimpleData>
+		<SimpleData name="Shape_Area">381.052927195179</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8409921317717,18.099057550691,0 -66.8410538150844,18.0990201669421,0 -66.8410668994012,18.0989510070276,0 -66.8410556838404,18.0988893237543,0 -66.8410164312618,18.0988538085947,0 -66.8409846550655,18.0988276399463,0 -66.8409341866352,18.0988369860628,0 -66.8409173643122,18.0988837158815,0 -66.8409024108541,18.0989267069564,0 -66.8408874567698,18.0989827828067,0 -66.8408930646557,18.0990482045015,0 -66.8409211023515,18.0990725038503,0 -66.8409921317717,18.099057550691,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">60</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">30.5677329739835</SimpleData>
+		<SimpleData name="Shape_Area">60.032203915507</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8345247712905,18.1304007974663,0 -66.8345500336939,18.1303650822592,0 -66.8345561312187,18.1303450463942,0 -66.8345413230495,18.1303345936027,0 -66.8345090919115,18.1303354649323,0 -66.8344890563611,18.1303450469498,0 -66.8344559539955,18.1303563708109,0 -66.8344437583753,18.1303703092528,0 -66.8344559545037,18.1303851174168,0 -66.8344659335186,18.1303873913527,0 -66.8344995099551,18.1304060244642,0 -66.8345247712905,18.1304007974663,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">61</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">34.5026393159472</SimpleData>
+		<SimpleData name="Shape_Area">65.2232004225781</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8342599550469,18.1305636942174,0 -66.8342773776871,18.1305558542529,0 -66.8342878305122,18.1305436586069,0 -66.8342887019345,18.1305027169543,0 -66.8342860883839,18.1304835523565,0 -66.8342791202106,18.1304748417523,0 -66.8342777966384,18.1304809785213,0 -66.8342442754788,18.1304966191494,0 -66.8342233692635,18.1305175253914,0 -66.8342042051919,18.1305384322638,0 -66.8341893964277,18.1305645651121,0 -66.834189395633,18.1305741476028,0 -66.8342245967855,18.1305689322244,0 -66.8342599550469,18.1305636942174,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">62</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">43.2642910115876</SimpleData>
+		<SimpleData name="Shape_Area">136.648963610095</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8341022850365,18.1306786805628,0 -66.8340871277885,18.1306988899732,0 -66.8340709254689,18.1307204931995,0 -66.8340709260454,18.1307413998194,0 -66.8340883480179,18.1307553372885,0 -66.8341205785723,18.1307736310286,0 -66.8341719739051,18.1307692753893,0 -66.8342190139008,18.1307422712774,0 -66.8342155290823,18.1307161376395,0 -66.8342024629193,18.1306961020499,0 -66.8341806847826,18.1306717110456,0 -66.8341484540034,18.1306664848514,0 -66.8341022850365,18.1306786805628,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">63</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">97.9389445859894</SimpleData>
+		<SimpleData name="Shape_Area">727.95630686545</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8216526208794,18.1730992403147,0 -66.8216881246129,18.1731626403475,0 -66.8217121691491,18.1732055758314,0 -66.8218312653033,18.1732204634918,0 -66.8219014473741,18.1731970693528,0 -66.8219354746901,18.1731375209269,0 -66.8219461080481,18.1730588323969,0 -66.821916334461,18.1730099179518,0 -66.8218631661226,18.1729737631719,0 -66.8217844774636,18.1729418626802,0 -66.8217270560795,18.1729461156477,0 -66.8216611273836,18.1730269313151,0 -66.8216526208794,18.1730992403147,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">64</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">32.0974839165155</SimpleData>
+		<SimpleData name="Shape_Area">71.283839865131</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8630040884948,18.1675682979428,0 -66.8629933217787,18.1675288206394,0 -66.86295384418,18.1674905398104,0 -66.8629251339901,18.1675013062562,0 -66.8629191519093,18.1675228394473,0 -66.8629263298089,18.167552746616,0 -66.8629382931228,18.1675826528096,0 -66.8629514519504,18.1675946157372,0 -66.8629921256211,18.1675898305617,0 -66.8630040884948,18.1675682979428,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">65</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/11 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacted infrastructure</SimpleData>
+		<SimpleData name="Shape_Length">121.589716133565</SimpleData>
+		<SimpleData name="Shape_Area">845.250414576059</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8861930464588,18.2737364433779,0 -66.8861862414647,18.2737759154987,0 -66.8862325184305,18.273869831702,0 -66.8863237127938,18.2738739149308,0 -66.8863591008972,18.2738548599538,0 -66.8864312391524,18.2738371651853,0 -66.8864992942487,18.2738262761874,0 -66.886546933313,18.2738004153334,0 -66.8865877661887,18.2737650266667,0 -66.8865864057164,18.2737173883898,0 -66.8865727944848,18.2736915270315,0 -66.8865877666408,18.2736602219441,0 -66.8866013776668,18.2736084998503,0 -66.8865646273158,18.2736016943294,0 -66.8864884063249,18.2736221109582,0 -66.8864162678753,18.2736438888565,0 -66.8863604620659,18.2736724723961,0 -66.8862379626471,18.2736969716702,0 -66.8861930464588,18.2737364433779,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">66</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">83.248943810678</SimpleData>
+		<SimpleData name="Shape_Area">179.533468945217</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7151957668248,18.0052153318543,0 -66.7152252766026,18.0052050674624,0 -66.7152316921913,18.0051755571889,0 -66.7151675397334,18.0051742744582,0 -66.7151213498502,18.0051794064914,0 -66.7150700279117,18.0051704247464,0 -66.7150148568293,18.0051498961217,0 -66.714963534566,18.0051319330507,0 -66.7149211943943,18.0051101214201,0 -66.7148839851385,18.0051152537011,0 -66.7148827023405,18.0051370653753,0 -66.7149057969254,18.0051575948524,0 -66.7149618082128,18.0051687474592,0 -66.7150122906632,18.0052025007636,0 -66.7151187837875,18.0052268787117,0 -66.7151517850302,18.0052219288725,0 -66.7151957668248,18.0052153318543,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">67</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">44.9249501896984</SimpleData>
+		<SimpleData name="Shape_Area">70.4729950205673</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7150666916585,18.0053069411757,0 -66.7151015910765,18.0052884654765,0 -66.715112881209,18.0052597254202,0 -66.715082088745,18.005250487331,0 -66.7150543746248,18.0052525404123,0 -66.7150143436776,18.005253566535,0 -66.7149753389828,18.0052484344672,0 -66.7149404399669,18.0052391966696,0 -66.7149229902233,18.0052504876561,0 -66.7149422990085,18.0052580727353,0 -66.7149790417706,18.0052725071729,0 -66.7150321082857,18.0052933551235,0 -66.7150666916585,18.0053069411757,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">68</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">139.682799573127</SimpleData>
+		<SimpleData name="Shape_Area">559.351189801146</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7174751028002,18.0076337985981,0 -66.7175492794181,18.0076297890944,0 -66.7175873696365,18.0075856839049,0 -66.7175352460036,18.0075495985158,0 -66.7174811174796,18.007523536653,0 -66.7174109498504,18.0075014841143,0 -66.7173608315034,18.0074994795679,0 -66.7172886594985,18.0075014838752,0 -66.717206464377,18.0074814365451,0 -66.7171523361393,18.0074313175667,0 -66.7170921924059,18.0073872121305,0 -66.7170360596139,18.0073791939087,0 -66.717024030538,18.0074132745949,0 -66.7170480881977,18.0074674027534,0 -66.7170864929037,18.0074823686077,0 -66.717166669876,18.0075136109176,0 -66.7172474349041,18.0075450823376,0 -66.7172926693859,18.0075957079498,0 -66.7173623954409,18.0076102662389,0 -66.7174085844724,18.0076199104635,0 -66.7174751028002,18.0076337985981,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">69</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">very shallow</SimpleData>
+		<SimpleData name="Shape_Length">77.744554825177</SimpleData>
+		<SimpleData name="Shape_Area">283.201435557901</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7176436163385,18.0028824038944,0 -66.7176243442169,18.0028411073232,0 -66.7175725097194,18.0028633954126,0 -66.7174568822416,18.0028324853195,0 -66.7173655506363,18.0028080697991,0 -66.7173462782373,18.0028438599897,0 -66.7173545378902,18.0028768981549,0 -66.7174013407192,18.0029374664666,0 -66.7174784282161,18.00295123242,0 -66.7176436163385,18.0028824038944,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">70</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacted main highway</SimpleData>
+		<SimpleData name="Shape_Length">64.9507605756898</SimpleData>
+		<SimpleData name="Shape_Area">270.696711761831</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.6982177171854,17.9780942311047,0 -66.6982628236785,17.9781167847884,0 -66.6983032337151,17.9781102650999,0 -66.6983440169873,17.9781179122318,0 -66.6983722087952,17.9781088908362,0 -66.69839589022,17.9780964864299,0 -66.6984387418604,17.9780795710381,0 -66.6984534020605,17.9780615278908,0 -66.6984500193251,17.9780310808927,0 -66.6984150605791,17.978015293094,0 -66.6983801032167,17.977996122553,0 -66.6983304852264,17.9779983778929,0 -66.6982763559375,17.9779995056702,0 -66.6982312493986,17.9780186759194,0 -66.6982098230534,17.9780468682676,0 -66.6982064403915,17.9780694216415,0 -66.6982177171854,17.9780942311047,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">71</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">low confidence of landslide shape, but impacts highway here</SimpleData>
+		<SimpleData name="Shape_Length">156.893109489836</SimpleData>
+		<SimpleData name="Shape_Area">925.931260300699</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.6994129643025,17.9782202334429,0 -66.6994096741645,17.9781691513844,0 -66.6993266268552,17.9781215615426,0 -66.6991806143502,17.9780581451986,0 -66.6990643227891,17.9780440487808,0 -66.6989409829036,17.9780334772109,0 -66.6988053088323,17.9780458106637,0 -66.6987365900785,17.978084575458,0 -66.6987630202308,17.978125101046,0 -66.698888122623,17.9781515307234,0 -66.6989956046339,17.9781779607514,0 -66.6990819422953,17.9781902953238,0 -66.6991647565488,17.9782202488213,0 -66.6992740007498,17.9782202490951,0 -66.6994129643025,17.9782202334429,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">72</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">uncertain if this was landslide was human made or natural; impacts infratructure</SimpleData>
+		<SimpleData name="Shape_Length">490.61415948415</SimpleData>
+		<SimpleData name="Shape_Area">13127.3617573973</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.6737010015712,17.9864297347212,0 -66.6738414109664,17.9865205880274,0 -66.6739570418755,17.9865508730088,0 -66.6740313761028,17.9864792913697,0 -66.674180044609,17.9864903042927,0 -66.6742819103654,17.9864490068301,0 -66.6743755166378,17.9863609071989,0 -66.6744030482525,17.9862562879625,0 -66.67441130722,17.9861241382525,0 -66.6743314663781,17.9859396786012,0 -66.6743011827135,17.9858433195521,0 -66.6742378605995,17.9856698728323,0 -66.6741883041455,17.9855872793784,0 -66.6740093508966,17.9853973134856,0 -66.6739047325621,17.9854000664952,0 -66.6738579297007,17.9852458920801,0 -66.673780841859,17.9851963353707,0 -66.6736734698319,17.9852045948983,0 -66.6735137891529,17.9852844356197,0 -66.6733403418293,17.9854055731834,0 -66.6732274639363,17.9855955389249,0 -66.6731283513198,17.9856891449787,0 -66.6730319917767,17.985796516259,0 -66.6729438920596,17.9859286663784,0 -66.672927372986,17.986014013777,0 -66.6730209883916,17.9860643193738,0 -66.6732081917511,17.9860663223326,0 -66.6733926513401,17.986027779233,0 -66.6734972696276,17.9860415444227,0 -66.6736046417007,17.9860855945428,0 -66.6736597048128,17.9861792008201,0 -66.6736738329657,17.9862649116919,0 -66.673691499676,17.9863720939417,0 -66.6737010015712,17.9864297347212,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">73</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possibly human made; other possible landslides adjacent</SimpleData>
+		<SimpleData name="Shape_Length">251.33776775563</SimpleData>
+		<SimpleData name="Shape_Area">3188.38924931852</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.6589498998277,18.0387264298368,0 -66.6589977783318,18.038747207168,0 -66.6590707911927,18.0387788920807,0 -66.6591437822297,18.0387652057209,0 -66.6592099304063,18.0387287107829,0 -66.6592122117609,18.0386762480326,0 -66.6592715172322,18.0385644803362,0 -66.6593422270503,18.0384276212127,0 -66.6593969704703,18.0383432253092,0 -66.6594676812081,18.0382177714275,0 -66.6596159445482,18.0381174092647,0 -66.6596319115515,18.0380581038895,0 -66.6595954152393,18.0380079220312,0 -66.6595269860007,18.0380284508269,0 -66.6593331034988,18.0380626658712,0 -66.6591620303438,18.0381516235977,0 -66.6589863951219,18.0382702345913,0 -66.6589134038634,18.0383979693384,0 -66.6588974374774,18.0385279843855,0 -66.6589498998277,18.0387264298368,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">74</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">63.5019604975316</SimpleData>
+		<SimpleData name="Shape_Area">215.810834964111</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7016480545448,18.0467347922432,0 -66.7016826968303,18.0467104140842,0 -66.7016955269161,18.0466898854559,0 -66.7016903953576,18.0466424118769,0 -66.7016621681776,18.0466282985972,0 -66.7015992986835,18.0466231663571,0 -66.7015749211064,18.0466655070428,0 -66.7015377123786,18.0467014327451,0 -66.7015056360401,18.0467617354634,0 -66.701486390695,18.0467899630984,0 -66.7015171833849,18.0467963785596,0 -66.7015879326789,18.0467630846908,0 -66.7016480545448,18.0467347922432,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">75</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possibly a construction site</SimpleData>
+		<SimpleData name="Shape_Length">96.4325750066306</SimpleData>
+		<SimpleData name="Shape_Area">317.716204718915</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.6637332759128,18.1189560766224,0 -66.6637456803891,18.1189966734265,0 -66.6637828937649,18.1190541854625,0 -66.6638257454983,18.119075610892,0 -66.6638584482475,18.1191252289501,0 -66.6638911506253,18.1191297399532,0 -66.6639633219785,18.1191477825217,0 -66.6640275998904,18.1191432719812,0 -66.6640749625946,18.1191184626852,0 -66.6641020269681,18.1190981645315,0 -66.6640975166414,18.1190789944878,0 -66.664065107344,18.1190680568886,0 -66.6640106847198,18.1190812497412,0 -66.663964478527,18.1190604005723,0 -66.663924316675,18.1190422784467,0 -66.6638606169909,18.1190135358584,0 -66.6638009363081,18.1190000562317,0 -66.6637795109627,18.1189684817742,0 -66.6637332759128,18.1189560766224,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">76</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacts infrastructure</SimpleData>
+		<SimpleData name="Shape_Length">54.9329062542746</SimpleData>
+		<SimpleData name="Shape_Area">188.112641112657</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.6797246193261,18.1533541822691,0 -66.6797034759336,18.1533947078565,0 -66.6797193333953,18.1534405196074,0 -66.6797387153883,18.1534458062969,0 -66.6797704315865,18.1534352335691,0 -66.6798180058623,18.1534123277735,0 -66.6798585314751,18.1534017556646,0 -66.6798920095926,18.153357706303,0 -66.6798796757781,18.1533330378744,0 -66.6798638176977,18.1533030835568,0 -66.6798373875155,18.1533030843445,0 -66.6797950995013,18.1533259898147,0 -66.6797246193261,18.1533541822691,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">77</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">adjacent to pre-existing landslide</SimpleData>
+		<SimpleData name="Shape_Length">116.879605098011</SimpleData>
+		<SimpleData name="Shape_Area">508.934035206382</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.615375815235,18.1470382113636,0 -66.6153664603392,18.1470799973176,0 -66.6153553988041,18.1471294051141,0 -66.615390787593,18.1471702384341,0 -66.6154370643967,18.1471566272745,0 -66.6154765370596,18.1471307663284,0 -66.615522814518,18.1470953777324,0 -66.6155677305796,18.1470599894041,0 -66.6156112855206,18.1470314061718,0 -66.6156507580331,18.1469932948732,0 -66.615729701805,18.1469252400067,0 -66.6157814237136,18.1468898510972,0 -66.6157732573229,18.1468748793126,0 -66.6157215351733,18.1468707959006,0 -66.615661646892,18.146891212102,0 -66.6155854249741,18.146941573282,0 -66.6154860641268,18.1469851281084,0 -66.615375815235,18.1470382113636,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">78</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">37.1505980432294</SimpleData>
+		<SimpleData name="Shape_Area">44.274072556665</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.629403457968,18.2021577118969,0 -66.6293598484846,18.2021745616647,0 -66.6293182209473,18.2021904197978,0 -66.6292765939577,18.2022033036301,0 -66.629252806768,18.202210241686,0 -66.6292785762002,18.2022161890551,0 -66.6293122747476,18.202216188281,0 -66.6293449816947,18.2022122245684,0 -66.6293757059433,18.2022082598286,0 -66.6294044490066,18.2021854637859,0 -66.629403457968,18.2021577118969,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">79</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">999</SimpleData>
+		<SimpleData name="Pre_Image">5</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">107.371558112892</SimpleData>
+		<SimpleData name="Shape_Area">606.623860678166</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.5536430087181,18.3495510741007,0 -66.5537257144793,18.3494860913775,0 -66.5537020846977,18.3493265867752,0 -66.5535839332682,18.3492025277151,0 -66.5534835047699,18.3491670827869,0 -66.553504271276,18.3492170778445,0 -66.5534835043582,18.3493265864459,0 -66.5535288672521,18.3493904313684,0 -66.5535913337099,18.3494783458683,0 -66.5536430087181,18.3495510741007,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">80</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">999</SimpleData>
+		<SimpleData name="Pre_Image">5</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">36.0631185587028</SimpleData>
+		<SimpleData name="Shape_Area">78.702367868742</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.5544120320756,18.3498456773222,0 -66.5544822045599,18.3498335790219,0 -66.5545233399032,18.3498069615872,0 -66.5544338091931,18.3497561469422,0 -66.5543902543227,18.3497997019862,0 -66.5544120320756,18.3498456773222,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">81</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">999</SimpleData>
+		<SimpleData name="Pre_Image">5</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">102.539494760373</SimpleData>
+		<SimpleData name="Shape_Area">447.220760864488</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.5693713054349,18.3490255375913,0 -66.5693864295236,18.3488138105441,0 -66.5694091147156,18.3486852612175,0 -66.5693410587429,18.3486134258404,0 -66.56927678488,18.3486512335489,0 -66.5692540996053,18.3487155084169,0 -66.5692749180752,18.3487705751125,0 -66.569314593069,18.3489915093327,0 -66.5693713054349,18.3490255375913,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">82</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">999</SimpleData>
+		<SimpleData name="Pre_Image">5</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacts highway</SimpleData>
+		<SimpleData name="Shape_Length">50.0235148634632</SimpleData>
+		<SimpleData name="Shape_Area">107.351999619081</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.4275625907049,18.3664111089199,0 -66.4275635083548,18.3663844935766,0 -66.4275640962426,18.3663674249053,0 -66.4275656873232,18.3663212883385,0 -66.427525547875,18.3662616147455,0 -66.4275192285864,18.3662361135333,0 -66.4274681240226,18.3662237240528,0 -66.4274805126953,18.366294961452,0 -66.4275192285765,18.3663708444222,0 -66.4275625907049,18.3664111089199,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">83</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">2</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possibly human made</SimpleData>
+		<SimpleData name="Shape_Length">73.4621584559019</SimpleData>
+		<SimpleData name="Shape_Area">399.445993835323</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-67.0678430295294,18.3462663830369,0 -67.0678494446065,18.346220193155,0 -67.0678148022481,18.34615475794,0 -67.0677788772577,18.3461496254201,0 -67.0677083091945,18.3461547576406,0 -67.0676800824223,18.3461932487485,0 -67.0676582706431,18.3462343064658,0 -67.0676428734722,18.3462843459519,0 -67.0676557044068,18.3463369510202,0 -67.0676967621814,18.3463664610108,0 -67.0677788768136,18.3463626112965,0 -67.0678006884481,18.3463395170988,0 -67.0678430295294,18.3462663830369,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">84</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">2</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">Possibly human made</SimpleData>
+		<SimpleData name="Shape_Length">76.4876542208079</SimpleData>
+		<SimpleData name="Shape_Area">416.009605207103</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-67.0359259058564,18.2964545791395,0 -67.0359862088696,18.2964674097125,0 -67.0360105873058,18.2964699758343,0 -67.0360465119192,18.2964712585952,0 -67.0360914185345,18.296436616678,0 -67.0360952684213,18.2963981250522,0 -67.0360773056518,18.296335255642,0 -67.0360529277139,18.2962993303277,0 -67.0360234171036,18.2962723863018,0 -67.0359926239985,18.2962634050763,0 -67.0359541322792,18.2962903490604,0 -67.0359092258326,18.2963198586933,0 -67.0358861314334,18.2963365383956,0 -67.0358630360497,18.2963621997564,0 -67.035856620539,18.2963994074462,0 -67.0358566210822,18.2964366160728,0 -67.0358883241014,18.2964448360733,0 -67.0359259058564,18.2964545791395,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">85</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">2</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">42.674340320242</SimpleData>
+		<SimpleData name="Shape_Area">97.6833304929864</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-67.0426807296885,18.2992070038849,0 -67.0427354734071,18.299209285068,0 -67.0427582829455,18.2991819133575,0 -67.0427400356313,18.2991408551791,0 -67.0427172259465,18.2990975170097,0 -67.0426944157512,18.2990678645864,0 -67.042667043964,18.2990655829871,0 -67.0426719259386,18.2991160279271,0 -67.0426772384222,18.2991709193449,0 -67.0426807296885,18.2992070038849,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">86</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">2</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possible reactivated landslide</SimpleData>
+		<SimpleData name="Shape_Length">76.1345115884384</SimpleData>
+		<SimpleData name="Shape_Area">306.339240430094</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-67.0239920022596,18.282307976501,0 -67.0240388055921,18.2822419012949,0 -67.0240112744786,18.2821703200902,0 -67.0239314339233,18.282090479362,0 -67.0238681118241,18.2820464296759,0 -67.0238782583754,18.2820678503798,0 -67.0238818779209,18.2821950977693,0 -67.0238818771976,18.2822391476852,0 -67.0238873841442,18.2822887047787,0 -67.0239290773766,18.2822963847798,0 -67.0239920022596,18.282307976501,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">87</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">2</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possible reactivated landslide</SimpleData>
+		<SimpleData name="Shape_Length">131.911469752709</SimpleData>
+		<SimpleData name="Shape_Area">1055.7740404683</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-67.0065540582837,18.2799542275311,0 -67.0066013781058,18.2799112099085,0 -67.0066616021109,18.2797907604115,0 -67.0066616026084,18.2796746135729,0 -67.0064938336998,18.2795756729887,0 -67.0063905920556,18.2794896381842,0 -67.0063604797591,18.2796358972914,0 -67.0063733844753,18.2797477430478,0 -67.0064336092658,18.2799155119878,0 -67.0065540582837,18.2799542275311,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">88</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacts road</SimpleData>
+		<SimpleData name="Shape_Length">71.1556256490153</SimpleData>
+		<SimpleData name="Shape_Area">291.557779682481</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9247468510157,18.1451952260265,0 -66.9247462716741,18.1451442435463,0 -66.9247459390468,18.1451150267991,0 -66.9247453781539,18.1450656832297,0 -66.9247450241288,18.1450345167804,0 -66.9247113028549,18.1450075333782,0 -66.9247011950639,18.1449541625709,0 -66.9246683227276,18.1449395527384,0 -66.9246336232798,18.1449870343454,0 -66.9246044038359,18.1450308640302,0 -66.9246098829868,18.1451166980635,0 -66.9246555386139,18.1451587013883,0 -66.9247468510157,18.1451952260265,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">89</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possible reactivated landslide</SimpleData>
+		<SimpleData name="Shape_Length">66.8332561734935</SimpleData>
+		<SimpleData name="Shape_Area">226.172205888872</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.943968028992,18.1461832212894,0 -66.9439369827413,18.1462690545296,0 -66.943940635665,18.1463238419058,0 -66.9439643766377,18.1463658453071,0 -66.9440337741845,18.1463822815111,0 -66.9441068234403,18.1464060225944,0 -66.9441104757302,18.1463658459459,0 -66.9440714725721,18.1463158408108,0 -66.9440179791604,18.1462472599965,0 -66.9439902061074,18.146211652781,0 -66.943968028992,18.1461832212894,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">90</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">44.3066750078628</SimpleData>
+		<SimpleData name="Shape_Area">143.698095601317</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9315231152358,18.1816161626835,0 -66.9315580427169,18.1816141079609,0 -66.9315744789513,18.1815925354874,0 -66.9315672879518,18.1815493907861,0 -66.9315477699663,18.1815165183083,0 -66.9315056526019,18.1814928913769,0 -66.9314707251676,18.1815062463417,0 -66.9314460716496,18.1815463089816,0 -66.9314470983625,18.1815873998663,0 -66.931456343316,18.1816099996826,0 -66.9315231152358,18.1816161626835,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">91</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">99</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">30.6444531380053</SimpleData>
+		<SimpleData name="Shape_Area">59.3904192022892</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9350517543704,18.1832525881692,0 -66.935072980459,18.1832374943723,0 -66.9350812579828,18.1832316075941,0 -66.9350979807602,18.1832197156919,0 -66.9350907905182,18.1832053343877,0 -66.9350620271486,18.1831899252039,0 -66.9350507270448,18.1831775982294,0 -66.9350229912262,18.1831683529513,0 -66.9350086097479,18.1831642442258,0 -66.9350003916103,18.1831868440032,0 -66.9349973097496,18.1832125253133,0 -66.9350168271742,18.1832279335353,0 -66.9350517543704,18.1832525881692,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">92</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">93.1098378563798</SimpleData>
+		<SimpleData name="Shape_Area">515.066009264796</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9179247600448,18.1937861134941,0 -66.9179992361715,18.1937386033624,0 -66.9180326221531,18.1936872399419,0 -66.9180313376681,18.1936204684367,0 -66.9180069406477,18.1935421397058,0 -66.9179851115369,18.1934933444513,0 -66.9179311799739,18.1934676630372,0 -66.9178926578404,18.1934548220617,0 -66.9178412949828,18.1934599586913,0 -66.9178271700623,18.1935036176042,0 -66.9178400601418,18.1935409317165,0 -66.9178596881487,18.193597748447,0 -66.9178739835838,18.1936391293852,0 -66.9178889204663,18.1936823673679,0 -66.9179029309531,18.1937655681743,0 -66.9179247600448,18.1937861134941,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">93</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">99</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">32.3471671705304</SimpleData>
+		<SimpleData name="Shape_Area">62.5153680596371</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9069379054875,18.2513338423088,0 -66.9069740654485,18.2513379514455,0 -66.9070061154467,18.2513461692437,0 -66.9070274823752,18.2513371299983,0 -66.9070324129014,18.2513272678178,0 -66.9070151558457,18.2512985051545,0 -66.9069995408906,18.2512820686254,0 -66.9069905009369,18.2512590580359,0 -66.9069831051295,18.2512500177052,0 -66.9069699556313,18.2512541268841,0 -66.9069633495219,18.2512705588878,0 -66.906948588953,18.2512845340251,0 -66.9069452323199,18.2513000241376,0 -66.9069414773042,18.2513173581522,0 -66.9069379054875,18.2513338423088,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">94</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">35.5015264356168</SimpleData>
+		<SimpleData name="Shape_Area">91.9505825400329</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9348286169683,18.2686171457987,0 -66.9348585952997,18.2685871680041,0 -66.9348533044474,18.2685448460823,0 -66.9348268531775,18.2685183944939,0 -66.9348039295726,18.2685254488256,0 -66.9347580801783,18.2685483724816,0 -66.9347563172746,18.2685854040098,0 -66.934775714312,18.2686206721395,0 -66.9348286169683,18.2686171457987,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">95</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">110.487753072444</SimpleData>
+		<SimpleData name="Shape_Area">520.91438441909</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9718534804816,18.2683678426827,0 -66.9719196082976,18.2683375345308,0 -66.9719416511549,18.2682879387094,0 -66.9718479703358,18.2680730228259,0 -66.9717983747684,18.2680179163834,0 -66.9717129595286,18.2680179165846,0 -66.97166336299,18.2680399597219,0 -66.9716749375486,18.2680599216286,0 -66.9716440760531,18.2681005761718,0 -66.9717046935767,18.2681226192793,0 -66.9717371085443,18.2681760448221,0 -66.9718231727024,18.2682328325967,0 -66.971839276458,18.2683045665021,0 -66.9718534804816,18.2683678426827,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">96</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possibly reactivated landslide</SimpleData>
+		<SimpleData name="Shape_Length">126.05811846563</SimpleData>
+		<SimpleData name="Shape_Area">830.699195644063</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9828286086115,18.3239176469596,0 -66.9828709303731,18.3238665087521,0 -66.9828979592518,18.3237380022387,0 -66.9829134567277,18.3236978581577,0 -66.982941459811,18.3236253209809,0 -66.9829619365099,18.3235722777706,0 -66.9829749706683,18.3235385144128,0 -66.9829273590219,18.3235138265171,0 -66.982858585731,18.323524406866,0 -66.9828056842237,18.3235843631171,0 -66.9827739425652,18.3236460824916,0 -66.982721040475,18.3237448335059,0 -66.982689298915,18.3237889179586,0 -66.9826628479718,18.3238435836528,0 -66.9826734282164,18.3238964864337,0 -66.98272985765,18.3239493881026,0 -66.982786286158,18.3239564422515,0 -66.9828286086115,18.3239176469596,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">97</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">very high confidence</SimpleData>
+		<SimpleData name="Shape_Length">185.800399837478</SimpleData>
+		<SimpleData name="Shape_Area">2507.41843613674</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9189691245234,18.3303442611831,0 -66.9190767548808,18.3302237155107,0 -66.9191284168331,18.3301290009992,0 -66.9191370272804,18.3300256765578,0 -66.9190810595389,18.329896520654,0 -66.9190250920984,18.3297931960824,0 -66.9189045467092,18.3297845850311,0 -66.9188012218536,18.3298534688734,0 -66.9186892869773,18.329926657091,0 -66.9186117929506,18.3300084552262,0 -66.9186117929157,18.3301548324802,0 -66.9186333192088,18.3302495462652,0 -66.918799994403,18.3302965575118,0 -66.9189691245234,18.3303442611831,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">98</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">9</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacts infrastructure</SimpleData>
+		<SimpleData name="Shape_Length">92.7631124250829</SimpleData>
+		<SimpleData name="Shape_Area">339.53220921136</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9193865564192,18.3296215045241,0 -66.919458194968,18.3295967068698,0 -66.9195133012354,18.3295719085771,0 -66.9195959609754,18.3295415996191,0 -66.9196455570957,18.329511291246,0 -66.919618003729,18.3294837383194,0 -66.9195215675646,18.3294864938033,0 -66.9194085987738,18.329500270412,0 -66.919334205489,18.3295002698932,0 -66.919284609505,18.3294975146044,0 -66.9192515451182,18.3295002703741,0 -66.9192871892586,18.3295322766293,0 -66.9193475507277,18.3295864787374,0 -66.9193865564192,18.3296215045241,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">99</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">91</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">impacts neighborhood</SimpleData>
+		<SimpleData name="Shape_Length">358.03639222976</SimpleData>
+		<SimpleData name="Shape_Area">4163.27085794895</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9944614626402,18.3169860291562,0 -66.9945362899091,18.316911202163,0 -66.9945446039817,18.3168072753776,0 -66.994473933641,18.3166368349552,0 -66.9943533781632,18.3165370651835,0 -66.9942868649115,18.3165162801219,0 -66.9941912522449,18.3165162796113,0 -66.9940790109708,18.3165578506479,0 -66.9939958695049,18.3165952639162,0 -66.9939251998527,18.3166784058117,0 -66.9939168854272,18.3167823325363,0 -66.9939542991013,18.3169070454563,0 -66.9939750846281,18.3170192857477,0 -66.9940041839241,18.3171273702375,0 -66.9940332838342,18.3172188260918,0 -66.9940415976461,18.3173352245394,0 -66.9941039541154,18.317451622018,0 -66.9941081105018,18.3175389211297,0 -66.9940997964139,18.3176470052492,0 -66.9940457548722,18.3177218319363,0 -66.9940457543853,18.3177758743299,0 -66.9941704674897,18.3176844184941,0 -66.9942147439258,18.3175781551386,0 -66.9942452450006,18.3175049509374,0 -66.994207880592,18.3174058947553,0 -66.9941663097889,18.3173310674474,0 -66.994124739138,18.3171980403453,0 -66.994187095355,18.3170857996306,0 -66.9943519824713,18.3170258406474,0 -66.9944614626402,18.3169860291562,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">100</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">9999</SimpleData>
+		<SimpleData name="Pre_Image">91</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">reactivated landlside</SimpleData>
+		<SimpleData name="Shape_Length">216.095732816778</SimpleData>
+		<SimpleData name="Shape_Area">3479.0544634272</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.990178597506,18.2815444161728,0 -66.9903258350287,18.2814301130789,0 -66.9903510207921,18.281292562448,0 -66.9902967751502,18.2811666352146,0 -66.9901398508719,18.2810658933387,0 -66.9900042369295,18.2810329588167,0 -66.9898298764999,18.281044582819,0 -66.9897194482052,18.2811104527249,0 -66.9896671394854,18.2811879461947,0 -66.9896303304094,18.2812770630594,0 -66.9896458290379,18.2813933041825,0 -66.9896748896179,18.2814804841426,0 -66.9898957462983,18.281530854702,0 -66.9900255475974,18.2815637896314,0 -66.990178597506,18.2815444161728,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">101</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">99</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">36.3033889508478</SimpleData>
+		<SimpleData name="Shape_Area">78.1888859933411</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8993421375522,18.181810315946,0 -66.8993616555552,18.1817938797464,0 -66.8993524100814,18.1817774432405,0 -66.8993215922556,18.1817599793913,0 -66.8992810208813,18.181758408142,0 -66.8992671473968,18.1817466256708,0 -66.8992496841611,18.1817517616956,0 -66.8992435200566,18.1817723069996,0 -66.8992291384305,18.1817969611897,0 -66.8992394110585,18.1818226430279,0 -66.8992620107515,18.1818216156487,0 -66.8993421375522,18.181810315946,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">102</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">99</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/12 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">44.0209902911929</SimpleData>
+		<SimpleData name="Shape_Area">93.9856640376913</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9098286654965,18.1486614654358,0 -66.9098655821839,18.1486438093498,0 -66.9098912633574,18.1486149179872,0 -66.9099153404644,18.1485908412719,0 -66.9099362063955,18.1485699754351,0 -66.9099426271902,18.1485523194415,0 -66.9099024991631,18.1485587398567,0 -66.9098607670641,18.1485699758174,0 -66.9098302700806,18.1485796057438,0 -66.9097997734721,18.1486020769619,0 -66.909807691932,18.1486183539828,0 -66.9097965634602,18.1486598608634,0 -66.9098286654965,18.1486614654358,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">103</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">63.9455759458449</SimpleData>
+		<SimpleData name="Shape_Area">226.318031738521</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8299997306409,17.9902027905812,0 -66.8300675114305,17.9901792146421,0 -66.8301018939861,17.9901202739235,0 -66.8301284174003,17.990053474685,0 -66.8301431516986,17.9900073048194,0 -66.8301077875694,17.9899915873124,0 -66.8300792998423,17.9899945347667,0 -66.8300459007743,17.990024005195,0 -66.83002428921,17.990066245303,0 -66.8300056247522,17.9900937506606,0 -66.8299791008452,17.9901409031987,0 -66.8299810655399,17.9902027911274,0 -66.8299997306409,17.9902027905812,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">104</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">35.4608936277886</SimpleData>
+		<SimpleData name="Shape_Area">59.1247586440068</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8316561521095,17.9898457301846,0 -66.8316768991044,17.9898394429558,0 -66.831688844848,17.9898249832074,0 -66.8316831857917,17.989809893764,0 -66.8316643256485,17.9897992058093,0 -66.8316416921452,17.9897891468086,0 -66.8316234602936,17.9897759446656,0 -66.8316121429151,17.9897558262559,0 -66.8315945396651,17.9897432517378,0 -66.8315750504958,17.9897476533152,0 -66.8315706497065,17.9897602273086,0 -66.8315835375509,17.9897731149133,0 -66.8315951685624,17.9897966911974,0 -66.8316033414013,17.9898124085889,0 -66.8316164255716,17.9898206642667,0 -66.8316353759427,17.9898326206184,0 -66.8316561521095,17.9898457301846,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">105</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">67.9785679076699</SimpleData>
+		<SimpleData name="Shape_Area">121.856113698122</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8316945028407,17.989985929155,0 -66.8317227938225,17.9899915880667,0 -66.8317372537881,17.9899802711581,0 -66.8317334821359,17.9899544946699,0 -66.8316976465661,17.9899262031252,0 -66.8316630676179,17.9898972833636,0 -66.831615915716,17.9898620756894,0 -66.8315832229692,17.9898149232791,0 -66.8315385862119,17.9897784591888,0 -66.8315197244709,17.989793547942,0 -66.831537328381,17.9898256110799,0 -66.8315593331828,17.989862704469,0 -66.8316146577831,17.989891625144,0 -66.8316686204948,17.9899553596525,0 -66.8316820739474,17.9899712499527,0 -66.8316945028407,17.989985929155,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">106</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">35.537582693</SimpleData>
+		<SimpleData name="Shape_Area">86.1327628925903</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8310203820232,17.9902882546076,0 -66.8310527986042,17.9902951305252,0 -66.8310704806553,17.9902833429671,0 -66.8310763753732,17.9902597668033,0 -66.8310557463907,17.9902234195655,0 -66.8310360991023,17.9902008257857,0 -66.8310193991028,17.9901890381961,0 -66.8309869818261,17.9901900203984,0 -66.8309692998882,17.9902057374679,0 -66.8309722471935,17.9902342255847,0 -66.8309997029103,17.9902650440383,0 -66.8310203820232,17.9902882546076,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">107</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">35.279023203988</SimpleData>
+		<SimpleData name="Shape_Area">84.2303998784913</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8310449401563,17.9905220512333,0 -66.8310940567702,17.990523033717,0 -66.8311304034624,17.9905092807412,0 -66.8311333506941,17.9904847221768,0 -66.8311176332736,17.9904690052333,0 -66.8310960215263,17.9904572168698,0 -66.8310714634564,17.990452305152,0 -66.8310419929327,17.9904552525817,0 -66.8310184175042,17.9904640934239,0 -66.8310076115647,17.9904896344714,0 -66.8310164522346,17.9905210692995,0 -66.8310449401563,17.9905220512333,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">108</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">38.9692346620022</SimpleData>
+		<SimpleData name="Shape_Area">93.5060311513549</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8313258890565,17.9902823606786,0 -66.8313563415984,17.9902803952807,0 -66.8313877769016,17.9902646785298,0 -66.8313671478509,17.9902283313184,0 -66.8313396423412,17.9902155610371,0 -66.8313170484717,17.990191984897,0 -66.8312954368844,17.9901772498723,0 -66.8312777546468,17.9901743031141,0 -66.8312698959924,17.9901998437453,0 -66.8312718605121,17.9902244021847,0 -66.8312728431413,17.9902450309566,0 -66.8312915071469,17.9902794131044,0 -66.8313258890565,17.9902823606786,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">109</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">landslide in shadow in pre image; very shallow; near dirt road</SimpleData>
+		<SimpleData name="Shape_Length">214.232282159756</SimpleData>
+		<SimpleData name="Shape_Area">2964.91554415571</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8596398786305,18.0587052910423,0 -66.8596909598578,18.0586384919192,0 -66.8597695473443,18.0584734588238,0 -66.8597760172274,18.0582592686466,0 -66.8597240784568,18.0580892688003,0 -66.8596614896348,18.0579724654911,0 -66.85959960215,18.0579371011363,0 -66.8595170857755,18.0579321893837,0 -66.8593846063681,18.0580183339513,0 -66.8592852539818,18.0580962403123,0 -66.8592882008071,18.0582249274459,0 -66.8593294591248,18.0583320020902,0 -66.8595416442248,18.0586119689881,0 -66.8596015670497,18.0586876089541,0 -66.8596398786305,18.0587052910423,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">110</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">99</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">299.956475915083</SimpleData>
+		<SimpleData name="Shape_Area">5287.58175100262</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8505860218225,18.2575209713486,0 -66.8505461141605,18.2574764588006,0 -66.8504847175726,18.2574749244195,0 -66.8504316170486,18.2576347394254,0 -66.8502270712109,18.2577854518268,0 -66.8501528439769,18.2580215274119,0 -66.8501043243106,18.2582885895228,0 -66.8500610840727,18.258357495234,0 -66.8500902473387,18.2583881936447,0 -66.8501639226675,18.258351355606,0 -66.850248342565,18.2583436810723,0 -66.8503941583597,18.2583344714517,0 -66.8505752774977,18.2582868894364,0 -66.8508346768861,18.2581886555128,0 -66.8509298409567,18.2580443749292,0 -66.8508530958857,18.2578693950736,0 -66.8507088142618,18.2576806016608,0 -66.8505860218225,18.2575209713486,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">111</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">looks like soil</SimpleData>
+		<SimpleData name="Shape_Length">359.346753795193</SimpleData>
+		<SimpleData name="Shape_Area">6022.27226246761</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8136118548,18.2928288060719,0 -66.8136154024421,18.2927560945277,0 -66.8136166514929,18.2927304757502,0 -66.8135758809901,18.2926873071399,0 -66.8134847454873,18.2926513322096,0 -66.8134056020605,18.2926081633022,0 -66.8134032037647,18.2925002397348,0 -66.8134511693128,18.2924354862275,0 -66.8135306850242,18.2923399000425,0 -66.8135087287741,18.2922076488083,0 -66.8135662876684,18.2920133871803,0 -66.8136022616579,18.2918095319602,0 -66.8135494995881,18.2917375832149,0 -66.8134463733071,18.291771160105,0 -66.8133024754741,18.2918359138545,0 -66.8131513831116,18.2919534302343,0 -66.8130602483232,18.2920829378078,0 -66.8130098844068,18.2922124451297,0 -66.8129667146061,18.2923803258723,0 -66.8129091561425,18.2926201544282,0 -66.8128803763981,18.2926992985003,0 -66.8130194771965,18.2927880348038,0 -66.8132137391474,18.29282400914,0 -66.8134367794411,18.2928288063756,0 -66.8136118548,18.2928288060719,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">112</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">looks like soil</SimpleData>
+		<SimpleData name="Shape_Length">329.400946711383</SimpleData>
+		<SimpleData name="Shape_Area">4707.9223848079</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.8127930670178,18.2925297295263,0 -66.8128962127332,18.2923774672147,0 -66.8129315771278,18.2922802150111,0 -66.8130098844068,18.2922124451297,0 -66.8130602483232,18.2920829378078,0 -66.8131232289238,18.2919934395425,0 -66.8131074158253,18.2919108554562,0 -66.8130494579314,18.2917703811449,0 -66.8129767643466,18.2917153695572,0 -66.8129011248413,18.2916976875934,0 -66.812816642799,18.2917065283425,0 -66.8127842257394,18.291757610269,0 -66.8128107486704,18.2918715613925,0 -66.8127999437445,18.2920120360788,0 -66.8126545572984,18.2921220585036,0 -66.8125484646808,18.2921515288054,0 -66.8124256721396,18.2921554583646,0 -66.8122292038916,18.2921220586503,0 -66.8121191820457,18.2921780516775,0 -66.8121849985993,18.2922890565035,0 -66.8122783208036,18.2924030076769,0 -66.8123706611014,18.2924786474784,0 -66.8125651637001,18.2925670583787,0 -66.8126967979473,18.292597511304,0 -66.8127930670178,18.2925297295263,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">113</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">134.769557237916</SimpleData>
+		<SimpleData name="Shape_Area">1294.45470072414</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7914753011107,18.0676809336061,0 -66.7914402506074,18.0677103581663,0 -66.7913957321141,18.0677477328433,0 -66.7913662620553,18.0678351605479,0 -66.7913859083103,18.0678803485607,0 -66.7914369903928,18.0679098190746,0 -66.7914910191923,18.0679216066342,0 -66.7915538886457,18.0679324122449,0 -66.791624617565,18.0679333948008,0 -66.7916914159343,18.0679186599076,0 -66.7917641093201,18.0679029427737,0 -66.7918034026859,18.0678744546416,0 -66.7918417140108,18.0678115851509,0 -66.7918446608736,18.0677506796271,0 -66.7917975086833,18.0676740570256,0 -66.7915627293623,18.0676259221255,0 -66.7914753011107,18.0676809336061,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">114</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">6</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">failure along dirt road</SimpleData>
+		<SimpleData name="Shape_Length">215.334948426979</SimpleData>
+		<SimpleData name="Shape_Area">2353.30396922764</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7360369019207,18.1220532989485,0 -66.7361072035391,18.1220452237254,0 -66.7361743112143,18.1220375155929,0 -66.7362229960466,18.1220319231067,0 -66.73628209326,18.1220338093356,0 -66.7363455920947,18.1220476407804,0 -66.7363952594125,18.1220734171635,0 -66.7364549853988,18.122107367235,0 -66.7365335730997,18.1221432028625,0 -66.7366002150807,18.1221388014365,0 -66.7366083880591,18.1220929070086,0 -66.7366021007615,18.1220099192198,0 -66.7366033577928,18.1218973816902,0 -66.7365668931741,18.1217892459327,0 -66.7365461469953,18.1217364356755,0 -66.7364989943534,18.1217119164566,0 -66.7364361246119,18.1217219751909,0 -66.7363569090256,18.1217175744324,0 -66.7362871231096,18.1216974563289,0 -66.7362305400396,18.1216817388415,0 -66.7361425227871,18.1216741940768,0 -66.7361173749103,18.121693055162,0 -66.7361029148102,18.1217414653419,0 -66.7361004001071,18.1218112502708,0 -66.7360702221373,18.1218747491984,0 -66.7360406736887,18.1219231590061,0 -66.735962715631,18.1219747120728,0 -66.7359092757802,18.1220294086746,0 -66.7359501412203,18.1220476404486,0 -66.7360369019207,18.1220532989485,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">115</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">99</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possibly pre-existing</SimpleData>
+		<SimpleData name="Shape_Length">65.1872099767745</SimpleData>
+		<SimpleData name="Shape_Area">269.365181517332</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7661427157043,18.0427223449775,0 -66.7661609476016,18.0427468644341,0 -66.7661898673687,18.0427487505486,0 -66.7662403307664,18.0427257946477,0 -66.7662760995906,18.0427270580401,0 -66.7663206367044,18.0427286323256,0 -66.7663495570134,18.042717315771,0 -66.7663671600591,18.0426802227966,0 -66.766361501974,18.0426387283987,0 -66.7663256666539,18.0426041496015,0 -66.7662741128912,18.0425884325385,0 -66.7662200452453,18.0426223824283,0 -66.7661835811533,18.0426538168183,0 -66.7661427157043,18.0427223449775,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">116</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">99</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possibly pre-existing</SimpleData>
+		<SimpleData name="Shape_Length">47.4263188868312</SimpleData>
+		<SimpleData name="Shape_Area">155.45922367992</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7663407554738,18.0427374335496,0 -66.7663005186695,18.0427525224834,0 -66.7662703413878,18.0427902442569,0 -66.7662703410766,18.0428292235075,0 -66.7662929743102,18.0428612876082,0 -66.7663237801413,18.0428656886133,0 -66.7663470423475,18.0428468273368,0 -66.7663753337378,18.0428248228777,0 -66.7664111688458,18.0428028188752,0 -66.7664117983147,18.0427694979451,0 -66.7663973379184,18.0427324047813,0 -66.7663407554738,18.0427374335496,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">117</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">near dirt road</SimpleData>
+		<SimpleData name="Shape_Length">75.3583267238317</SimpleData>
+		<SimpleData name="Shape_Area">380.231991277168</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7621615978922,18.0491021817633,0 -66.7621247608102,18.0491559042567,0 -66.7621216905317,18.0492265093597,0 -66.7621876914472,18.0492526031808,0 -66.7622521575505,18.0492234397805,0 -66.7622874606541,18.0491789275949,0 -66.7623212284583,18.0491098568003,0 -66.7622859258568,18.049026971361,0 -66.762229133762,18.049000878546,0 -66.7621784819708,18.0490377164833,0 -66.7621615978922,18.0491021817633,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">118</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">8</SimpleData>
+		<SimpleData name="Pre_Image">3</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">near dirt road</SimpleData>
+		<SimpleData name="Shape_Length">56.0881226501506</SimpleData>
+		<SimpleData name="Shape_Area">213.472092422864</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.7616809274141,18.0514300820838,0 -66.7616848562445,18.0513868596161,0 -66.7616322750418,18.0513619688626,0 -66.7616121627272,18.051333813088,0 -66.7615748342013,18.0513112190787,0 -66.7615394695493,18.0513131841056,0 -66.7615217878768,18.051338725043,0 -66.7615139288576,18.0513701599938,0 -66.7615099996283,18.0514212411434,0 -66.7615433993222,18.0514526762929,0 -66.7615993926782,18.051460535173,0 -66.7616809274141,18.0514300820838,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">119</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">possibly pre-existing landslide</SimpleData>
+		<SimpleData name="Shape_Length">32.3184224924013</SimpleData>
+		<SimpleData name="Shape_Area">57.8891074012154</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.923100494154,17.9741131346041,0 -66.9231228812025,17.9741187314179,0 -66.9231411989118,17.9741156781241,0 -66.9231554458648,17.9741014316866,0 -66.9231610426998,17.9740846408312,0 -66.9231712187392,17.974072938083,0 -66.9231920800444,17.9740571652965,0 -66.9231966589516,17.9740459717371,0 -66.9231849564414,17.9740342686631,0 -66.9231686740939,17.9740286721904,0 -66.9231584980319,17.9740286716182,0 -66.9231411983738,17.974039356752,0 -66.9231333991271,17.9740534933705,0 -66.9231193203444,17.9740653060884,0 -66.9231156584229,17.9740746096526,0 -66.9231010029556,17.9740795531963,0 -66.9230913354312,17.9740917645704,0 -66.9230913356376,17.9741065195185,0 -66.923100494154,17.9741131346041,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">120</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">23.5766258450186</SimpleData>
+		<SimpleData name="Shape_Area">37.3410514175308</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9218448464797,17.9740151888058,0 -66.921863927465,17.9740120083059,0 -66.9218726725318,17.9739961085443,0 -66.9218639269505,17.9739817983062,0 -66.9218535919898,17.9739690781525,0 -66.9218400763921,17.9739595372439,0 -66.9218265611776,17.9739468173378,0 -66.9218162259981,17.9739492026286,0 -66.9218098661943,17.9739587428455,0 -66.9218066864122,17.973977822524,0 -66.921805891216,17.9739921335086,0 -66.921807481199,17.9740104187355,0 -66.9218448464797,17.9740151888058,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">121</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">1</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Shape_Length">21.3783262758242</SimpleData>
+		<SimpleData name="Shape_Area">23.9093162596484</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9218976672409,17.9740174784818,0 -66.9219175115112,17.9740174779297,0 -66.9219236164596,17.9740037405758,0 -66.9219231077717,17.9739869493853,0 -66.921918020365,17.9739742294557,0 -66.9219088615815,17.9739548946984,0 -66.9219017383097,17.97394166603,0 -66.9218946152174,17.9739381035499,0 -66.921887999986,17.9739411565572,0 -66.9218887458068,17.9739470392419,0 -66.9218854563101,17.9739671060466,0 -66.9218888845769,17.9739812463818,0 -66.9218926297891,17.9739966973068,0 -66.9218952529928,17.9740075172169,0 -66.9218976672409,17.9740174784818,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">122</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">2</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">distortion in pre event image</SimpleData>
+		<SimpleData name="Shape_Length">64.7805062556701</SimpleData>
+		<SimpleData name="Shape_Area">226.127028270122</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9156036287362,17.9747134603395,0 -66.9156806458071,17.9747333358977,0 -66.9157154278839,17.9747184290856,0 -66.9157191546572,17.9746625301081,0 -66.9156843726606,17.9746016614953,0 -66.9156794038606,17.9745532149819,0 -66.9156682233781,17.9744973156776,0 -66.9156321991875,17.9745258862918,0 -66.9156061134768,17.9745842704353,0 -66.9155899641415,17.9746227795382,0 -66.9155966532323,17.9746671712068,0 -66.9156036287362,17.9747134603395,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Preliminary_Map_of_1_7_2020_Puerto_Rico_Co_Seismic_Landslides">
+		<SimpleData name="OBJECTID">123</SimpleData>
+		<SimpleData name="Author">1</SimpleData>
+		<SimpleData name="Post_Image">7</SimpleData>
+		<SimpleData name="Pre_Image">8</SimpleData>
+		<SimpleData name="Confidence">2</SimpleData>
+		<SimpleData name="Date">2020/01/13 22:23:19+00</SimpleData>
+		<SimpleData name="Comment">landslide in shadow</SimpleData>
+		<SimpleData name="Shape_Length">94.8972171518328</SimpleData>
+		<SimpleData name="Shape_Area">314.749355740899</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-66.9167626120325,17.9756972920584,0 -66.9167849716336,17.9756476033941,0 -66.9167601276564,17.9756227591536,0 -66.9167029859484,17.9756302124418,0 -66.9166731729943,17.9756674790505,0 -66.9166334220212,17.9757097140663,0 -66.9165613740705,17.9757618870417,0 -66.9165278343882,17.9758128178454,0 -66.9164942943895,17.9758674750771,0 -66.9164955363333,17.9759109527069,0 -66.9165290760066,17.975919647653,0 -66.9165737181569,17.9758771436151,0 -66.9166136118863,17.975839159647,0 -66.9166433599688,17.975792942576,0 -66.9166768994958,17.975739527454,0 -66.916721761999,17.9757174213371,0 -66.9167626120325,17.9756972920584,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder>
+</Document></kml>
