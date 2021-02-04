@@ -43,7 +43,7 @@ If working in **Docker**, follow the steps in [DOCKER_DEVELOPMENT.md](DOCKER_DEV
 $ solr_wrapper -p 8983 -i tmp/solr-development -d solr/config -n hydra-development --version=7.1.0
 ```
 
-Note: I don't understand Solr that well yet. With this wrapper, I sometimes need to stop Solr prior to running. Until I understand things better, here's what I usually do for that: 
+Note: I don't understand Solr that well yet. With this wrapper, I sometimes need to stop Solr prior to running. Until I understand things better, here's what I usually do for that:
 
 ```
 $ sudo service solr status
@@ -95,13 +95,16 @@ $ RAILS_ENV=development rails server
 ## Versioning
 
 For delivery to Rutgers, we create a new release.  Create a new release by navigating to Project Overview -> Releases -> New Release.  
-Tag name : vX.Y.Z  Start with v 
-Increment X by one when their are breaking changes that are not backwards compatible or on first formal release of the software to the public.
+Tag name : vX.Y.Z  Start with v
+Increment X by one when there are breaking changes that are not backwards compatible or on first formal release of the software to the public.
 Increment Y for new features.
-Increment Z for  any bug fixes, edits, patches, etc. 
+Increment Z for  any bug fixes, edits, patches, etc.
 
 After releasing a new version inform Rutgers IT contact - currently JJ - with the new release number so he can pull it down and deploy.  
 
+## Globus Integration
+
+Integration with Globus file transfer is documented in [globus.md](globus.md)
 
 ## Contributing
 
