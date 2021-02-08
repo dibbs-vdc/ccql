@@ -94,7 +94,7 @@ export default class SaveCollectionControl {
   // return true if a given element contains a value, otherwise false
   has_value(id) {
     let element = this.form.find(id)
-    if ($(element).val() === null) {
+    if ($(element).val() === undefined) {
       return false;
     }
     if (element.val().length > 0) {

@@ -8,6 +8,8 @@ For reference, see <https://gitlab.oit.duke.edu/ddr/rdr>.
 
 The new components added to the project to support Globus export include:
   - An ActiveRecord model: [Globus::Export](../app/models/globus/export.rb)
+  - A background job: [Globus::ExportJob](../app/jobs/globus/export_job.rb)
+  - An Actor: [Hyrax::Actor::CreateWithRemoteFilesAndGlobusDownloadActor](../app/actors/hyrax/actors/create_with_remote_files_and_globus_download_actor.rb)
 
 The model consists of two attributes plus timestamps:
 

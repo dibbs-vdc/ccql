@@ -14,6 +14,8 @@ class Globus::Export < ApplicationRecord
 
   after_initialize :initialize_workflow
 
+  self.table_name = 'globus_exports'
+
   WORKFLOW_STATE_NEW = 'new'
   WORKFLOW_STATE_COMPLETE = 'exported'
   WORKFLOW_STATE_ERROR = 'error'
@@ -27,6 +29,15 @@ class Globus::Export < ApplicationRecord
     find_or_create_by!(dataset_id: dataset_id).tap do |export|
       export.workflow_state = WORKFLOW_STATE_NEW
       export.run
+    end
+  end
+
+  # Export all datasets via background jobs
+  def self.export_all
+    Vdc::Resource.find_each do |resource|
+      # Only export public data sets
+      next unless resource.visibility == 'open'
+      ::Globus::ExportJob.perform_later(resource.id)
     end
   end
 
