@@ -128,7 +128,7 @@ Hyrax.config do |config|
   # # These must be lambdas that return a Pathname. Can be configured separately
   # config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
   #  config.cache_path = ->() { Rails.root + 'tmp' + 'uploads' + 'cache' }
-  
+
   # Configure upload_path via environment variables
   config.upload_path = ->() { ENV['UPLOAD_PATH'] }
 
@@ -220,6 +220,10 @@ Hyrax.config do |config|
     maxFileSize: 1e+9.to_i # 1.gigabytes
   }
 end
+
+# Replace one middleware with another.
+# See https://github.com/samvera/hyrax/wiki/Customizing-Actors
+Hyrax::CurationConcern.actor_factory.swap Hyrax::Actors::CreateWithRemoteFilesActor, Hyrax::Actors::CreateWithRemoteFilesAndGlobusDownloadActor
 
 Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
 
