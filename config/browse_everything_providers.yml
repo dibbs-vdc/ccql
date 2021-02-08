@@ -4,16 +4,18 @@
 #
 file_system:
   home: /home/app/webapp
+<% if ENV['DROPBOX_APP_KEY'].present? %>
 dropbox:
   client_id: <%= ENV['DROPBOX_APP_KEY'] %>
   client_secret: <%= ENV['DROPBOX_APP_SECRET'] %>
   download_directory: tmp/
+<% end %>
+<% if ENV['BOX_CLIENT_ID'].present? %>
 box:
   client_id: <%= ENV['BOX_CLIENT_ID'] %>
   client_secret: <%= ENV['BOX_CLIENT_SECRET'] %>
-# google_drive:
-#   client_id: <%= ENV['GOOGLE_API_ID'] %>
-#   client_secret: <%= ENV['GOOGLE_API_SECRET'] %>
+<% end %>
+<% if ENV['AWS_S3_BUCKET'] %>
 s3:
   bucket: <%= ENV['AWS_S3_BUCKET'] %>
   response_type: signed_url # set to :public_url for public urls or :s3_uri for an s3://BUCKET/KEY uri
@@ -22,3 +24,10 @@ s3:
   app_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %> # explicitly here, or left out to use system-configured
   region: <%= ENV['AWS_S3_REGION'] %>     # defaults.
   # See https://aws.amazon.com/blogs/security/a-new-and-standardized-way-to-manage-credentials-in-the-aws-sdks/
+<% end %>
+<% if ENV['GOOGLE_API_CLIENT_ID'].present? %>
+google_drive:
+  :client_id: <%= ENV['GOOGLE_API_CLIENT_ID'] %>
+  :client_secret: <%= ENV['GOOGLE_API_CLIENT_SECRET'] %>
+<% end %>
+#
