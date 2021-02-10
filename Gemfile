@@ -15,8 +15,9 @@ gem 'database_cleaner', group: %i[development test]
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
-gem 'factory_bot_rails', group: %i[development test]
+gem 'factory_bot_rails'
 gem 'fcrepo_wrapper', group: %i[development test]
+gem 'ffaker'
 gem 'hyrax', '~> 2.9'
 gem 'hyrax-spec', '~> 0.3', group: %i[development test]
 gem 'jbuilder', '~> 2.5'

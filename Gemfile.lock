@@ -274,6 +274,7 @@ GEM
       faraday
     fcrepo_wrapper (0.9.0)
       ruby-progressbar
+    ffaker (2.17.0)
     ffi (1.14.2)
     flipflop (2.6.0)
       activesupport (>= 4.0)
@@ -872,6 +873,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   fcrepo_wrapper
+  ffaker
   hyrax (~> 2.9)
   hyrax-spec (~> 0.3)
   jbuilder (~> 2.5)

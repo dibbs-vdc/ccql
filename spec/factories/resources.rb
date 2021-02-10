@@ -28,7 +28,6 @@ FactoryBot.define do
 
     factory :gis_dataset do
       title            { ['Puerto Rico Landslide Data'] }
-      vdc_title        { 'Puerto Rico Landslide Data' }
 
       abstract do
         'One hundred twenty landslides were mapped and inferred to have occurred during the period of  ' \
@@ -37,6 +36,7 @@ FactoryBot.define do
       end
 
       factory :public_dataset_with_public_files, traits: [:public] do
+        visibility { 'open' }
         after(:create) { |work, evaluator|
           2.times {
             work.ordered_members << FactoryBot.create(:public_file_set, depositor: evaluator.depositor)

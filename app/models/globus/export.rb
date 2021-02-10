@@ -82,6 +82,7 @@ class Globus::Export < ApplicationRecord
     export_dir = File.join(export_path, dataset.id)
     FileUtils.mkdir_p export_dir
     dataset.file_sets.each do |fs|
+      next if fs.files.empty?
       file = fs.original_file
       export_file = File.join(export_dir, file.original_name).to_s
       File.open(export_file, 'wb') do |f|
@@ -95,6 +96,7 @@ class Globus::Export < ApplicationRecord
     Rails.logger.error "Error in export for #{dataset.id}: #{e}"
     self.workflow_state = WORKFLOW_STATE_ERROR
     self.save
+    raise e
   end
 
   # The base url of the globus file manager
