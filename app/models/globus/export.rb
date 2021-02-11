@@ -13,6 +13,7 @@ class Globus::Export < ApplicationRecord
   attr_reader :dataset
   serialize :expected_file_sets, Array
   serialize :completed_file_sets, Array
+  validates_uniqueness_of :dataset_id
 
   after_initialize :initialize_workflow
 

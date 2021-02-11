@@ -221,10 +221,6 @@ Hyrax.config do |config|
   }
 end
 
-# Replace one middleware with another.
-# See https://github.com/samvera/hyrax/wiki/Customizing-Actors
-Hyrax::CurationConcern.actor_factory.swap Hyrax::Actors::CreateWithRemoteFilesActor, Hyrax::Actors::CreateWithRemoteFilesAndGlobusDownloadActor
-
 Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
 
 Qa::Authorities::Local.register_subauthority('subjects', 'Qa::Authorities::Local::TableBasedAuthority')

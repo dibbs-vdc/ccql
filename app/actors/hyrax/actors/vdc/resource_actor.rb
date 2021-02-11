@@ -12,12 +12,14 @@ module Hyrax
         set_creation_date(env)
         super
         post_processing(env)
+        prep_for_globus_export(env)
       end
 
       def update(env)
         update_creation_date(env)
         super
         post_processing(env)
+        prep_for_globus_export(env)
       end
 
       private
@@ -27,17 +29,29 @@ module Hyrax
         end
 
         def update_creation_date(env)
-          visibility = env.attributes[:visibility] 
+          visibility = env.attributes[:visibility]
           original_visibility = ::Vdc::Resource.find(env.curation_concern.id).visibility
           if (visibility == PUBLIC || visibility == VDC) && original_visibility == PRIVATE
             env.curation_concern.creation_date = [Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')]
           end
         end
 
+        ##
+        # By the end of the actor stack, the Vdc::Resource object should have some FileSets
+        # with ids, even if the actual files have not yet been attached. The actor should
+        # record these ids on a Globus::Export object, so that we can later compare which
+        # FileSets have finished the Globus::Export process.
+        def prep_for_globus_export(env)
+          file_set_ids = env.curation_concern.members.map { |a| a.id }
+          ge = Globus::Export.find_or_create_by(dataset_id: env.curation_concern.id)
+          ge.expected_file_sets = file_set_ids
+          ge.save
+        end
+
         def post_processing(env)
           # NOTE: This actor seems to do post-processing BEFORE the uploaded files have
           #       been processed. So, I'm adding processing that doesn't depend on
-          #       information on its members (like, getting the number of files and mime 
+          #       information on its members (like, getting the number of files and mime
           #       infomration.
           # TODO: Consider putting this in the controller post-processing?
           env.curation_concern.funder = env.attributes[:funder]
