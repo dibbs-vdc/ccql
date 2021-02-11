@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
-  subject(:actor)  { described_class.new(next_actor) } 
+  subject(:actor)  { described_class.new(next_actor) }
   let(:env)        { Hyrax::Actors::Environment.new(model, ability, attributes) }
   let(:next_actor) { Hyrax::Actors::Terminator.new() }
   let(:user)       { FactoryBot.create(:user) }
-  let(:model)      { FactoryBot.build(:vdc_resource) }
+  let(:model)      { FactoryBot.build(:vdc_resource, depositor: user.user_key) }
 
   let(:ability)    { Ability.new(user) }
   let(:attributes) { Hash.new() }
@@ -52,6 +52,24 @@ RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
           .to_not have_enqueued_job(GenerateDoiJob)
       end
     end
+
+    ##
+    # By the end of the actor stack, the Vdc::Resource object should have some FileSets
+    # with ids, even if the actual files have not yet been attached. The actor should
+    # record these ids on a Globus::Export object, so that we can later compare which
+    # FileSets have finished the Globus::Export process.
+    context 'with attached files' do
+      let(:model) { FactoryBot.create(:public_dataset_with_public_files, depositor: user.user_key) }
+      let(:file_set_ids) { env.curation_concern.members.map { |a| a.id } }
+      let(:globus_export) { Globus::Export.find_by(dataset_id: env.curation_concern.id) }
+      before do
+        actor.create(env)
+      end
+      it "adds the fileset ids to a Globus::Export object" do
+        expect(file_set_ids.size).to eq 2
+        expect(globus_export.expected_file_sets.uniq.sort).to eq file_set_ids.uniq.sort
+      end
+    end
   end
 
   describe '#update' do
@@ -68,8 +86,8 @@ RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
           let(:attributes) { { visibility: described_class::PUBLIC } }
 
           it 'updates creation date to now' do
-            expect { actor.update(env) }.to change{ 
-              model.creation_date.to_a 
+            expect { actor.update(env) }.to change{
+              model.creation_date.to_a
             }.from(['2018-09-09']).to([Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')])
           end
 
@@ -82,10 +100,10 @@ RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
 
         context 'switches to VDC' do
           let(:attributes) { { visibility: described_class::VDC } }
-     
+
           it 'updates creation date to now' do
             expect { actor.update(env) }.to change{
-              model.creation_date.to_a 
+              model.creation_date.to_a
             }.from(['2018-09-09']).to([Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')])
           end
 
@@ -93,6 +111,27 @@ RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
             ActiveJob::Base.queue_adapter = :test
             expect { actor.create(env) }
               .to have_enqueued_job(GenerateDoiJob)
+          end
+        end
+
+        ##
+        # By the end of the actor stack, the Vdc::Resource object should have some FileSets
+        # with ids, even if the actual files have not yet been attached. The actor should
+        # record these ids on a Globus::Export object, so that we can later compare which
+        # FileSets have finished the Globus::Export process.
+        context 'with attached files' do
+          let(:model) { FactoryBot.create(:public_dataset_with_public_files, depositor: user.user_key) }
+          let(:file_set_ids) { env.curation_concern.members.map { |a| a.id } }
+          it "adds the fileset ids to an existing Globus::Export object" do
+            Globus::Export.destroy_all
+            ge = Globus::Export.create(dataset_id: model.id)
+            expect(ge).to be_persisted
+            expect(ge.expected_file_sets).to be_empty
+            actor.update(env)
+            post_actor_stack_ge = Globus::Export.find_by(dataset_id: model.id)
+            expect(file_set_ids.size).to eq 2
+            expect(post_actor_stack_ge.id).to eq ge.id
+            expect(post_actor_stack_ge.expected_file_sets.uniq.sort).to eq file_set_ids.uniq.sort
           end
         end
       end

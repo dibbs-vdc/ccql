@@ -66,6 +66,18 @@ RSpec.describe Globus::Export, globus: true do
       end
     end
 
+    context "dataset_id must be unique" do
+      it "will not create a new object if there is an existing object with the same dataset id" do
+        dataset_id = "fake"
+        first = described_class.create(dataset_id: dataset_id)
+        second = described_class.create(dataset_id: dataset_id)
+        expect(first.persisted?).to eq true
+        expect(first.errors.empty?).to eq true
+        expect(second.persisted?).to eq false
+        expect(second.errors.empty?).to eq false
+      end
+    end
+
     context "export" do
       it "exports the dataset (once)" do
         attach_gis_files
