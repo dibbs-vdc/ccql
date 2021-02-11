@@ -11,6 +11,8 @@
 #
 class Globus::Export < ApplicationRecord
   attr_reader :dataset
+  serialize :expected_file_sets, Array
+  serialize :completed_file_sets, Array
 
   after_initialize :initialize_workflow
 
@@ -30,6 +32,16 @@ class Globus::Export < ApplicationRecord
       export.workflow_state = WORKFLOW_STATE_NEW
       export.run
     end
+  end
+
+  # Is the given dataset ready for download by Globus? In other words, have all of
+  # its filesets been attached and exported?
+  # @param dataset_id [String] the id of the Dataset to check
+  def self.ready_for_globus?(dataset_id)
+     ge = Globus::Export.find_by(dataset_id: dataset_id)
+     return false if ge.nil?
+     return true if ge.expected_file_sets.uniq.sort == ge.completed_file_sets.uniq.sort
+     false
   end
 
   # Export all datasets via background jobs
