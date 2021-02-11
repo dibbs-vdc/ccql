@@ -97,6 +97,24 @@ RSpec.describe Globus::Export, globus: true do
     end
   end
 
+  context '#ready_for_globus?' do
+    let(:ge) { Globus::Export.create(dataset_id: dataset.id) }
+    let(:file_set_ids) { dataset.members.map { |a| a.id } }
+    it "is ready for download if the expected_file_sets match the completed_file_sets" do
+      ge.expected_file_sets = file_set_ids
+      ge.completed_file_sets = file_set_ids
+      ge.save
+      expect(Globus::Export.ready_for_globus?(dataset.id)).to eq true
+    end
+
+    it "is NOT ready for download if the expected_file_sets do NOT match the completed_file_sets" do
+      ge.expected_file_sets = file_set_ids
+      ge.completed_file_sets = [file_set_ids.first]
+      ge.save
+      expect(Globus::Export.ready_for_globus?(dataset.id)).to eq false
+    end
+  end
+
 end
 
 # Attach known files to a work so we can tell whether the export happened as expected

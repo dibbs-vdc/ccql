@@ -11,6 +11,8 @@
 #
 class Globus::Export < ApplicationRecord
   attr_reader :dataset
+  serialize :expected_file_sets, Array
+  serialize :completed_file_sets, Array
 
   after_initialize :initialize_workflow
 
@@ -30,6 +32,16 @@ class Globus::Export < ApplicationRecord
       export.workflow_state = WORKFLOW_STATE_NEW
       export.run
     end
+  end
+
+  # Is the given dataset ready for download by Globus? In other words, have all of
+  # its filesets been attached and exported?
+  # @param dataset_id [String] the id of the Dataset to check
+  def self.ready_for_globus?(dataset_id)
+     ge = Globus::Export.find_by(dataset_id: dataset_id)
+     return false if ge.nil?
+     return true if ge.expected_file_sets.uniq.sort == ge.completed_file_sets.uniq.sort
+     false
   end
 
   # Export all datasets via background jobs
@@ -82,6 +94,7 @@ class Globus::Export < ApplicationRecord
     export_dir = File.join(export_path, dataset.id)
     FileUtils.mkdir_p export_dir
     dataset.file_sets.each do |fs|
+      next if fs.files.empty?
       file = fs.original_file
       export_file = File.join(export_dir, file.original_name).to_s
       File.open(export_file, 'wb') do |f|
@@ -95,6 +108,7 @@ class Globus::Export < ApplicationRecord
     Rails.logger.error "Error in export for #{dataset.id}: #{e}"
     self.workflow_state = WORKFLOW_STATE_ERROR
     self.save
+    raise e
   end
 
   # The base url of the globus file manager
