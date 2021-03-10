@@ -40,8 +40,7 @@ class Globus::Export < ApplicationRecord
   # @param dataset_id [String] the id of the Dataset to check
   def self.ready_for_globus?(dataset_id)
      ge = Globus::Export.find_by(dataset_id: dataset_id)
-     return false if ge.nil?
-     return true if ge.expected_file_sets.uniq.sort == ge.completed_file_sets.uniq.sort
+     return true if ge && ge.expected_file_sets.uniq.sort == ge.completed_file_sets.uniq.sort
      false
   end
 
@@ -51,6 +50,15 @@ class Globus::Export < ApplicationRecord
       # Only export public data sets
       next unless resource.visibility == 'open'
       ::Globus::ExportJob.perform_later(resource.id)
+    end
+  end
+
+  def self.file_set_added(file_set)
+    file_set.member_of.each do |concern|
+      ge = Globus::Export.find_or_create_by(dataset_id: concern.id)
+      return true if ge.expected_file_sets.include?(file_set.id)
+      ge.expected_file_sets << file_set.id
+      ge.save!
     end
   end
 
