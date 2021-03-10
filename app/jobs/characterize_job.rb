@@ -26,6 +26,9 @@ class CharacterizeJob < Hyrax::ApplicationJob
         if export && !export.completed_file_sets.include?(file_set.id)
           export.completed_file_sets << file_set.id
           export.save!
+          if export.ready_for_globus?
+            Globus::ExportJob.perform_later(export.dataset_id)
+          end
         end
       end
     end

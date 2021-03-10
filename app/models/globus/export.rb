@@ -40,7 +40,7 @@ class Globus::Export < ApplicationRecord
   # @param dataset_id [String] the id of the Dataset to check
   def self.ready_for_globus?(dataset_id)
      ge = Globus::Export.find_by(dataset_id: dataset_id)
-     return true if ge && ge.expected_file_sets.uniq.sort == ge.completed_file_sets.uniq.sort
+     return true if ge && ge.ready_for_globus?
      false
   end
 
@@ -66,6 +66,11 @@ class Globus::Export < ApplicationRecord
   # When a new object is created, set its workflow state to new
   def initialize_workflow
     self.workflow_state = WORKFLOW_STATE_NEW
+  end
+
+  def ready_for_globus?
+    return true if self.expected_file_sets.uniq.sort == self.completed_file_sets.uniq.sort
+    false
   end
 
   ##
