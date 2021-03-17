@@ -57,7 +57,7 @@ class Globus::Export < ApplicationRecord
   ##
   # When a new object is created, set its workflow state to new
   def initialize_workflow
-    self.workflow_state = WORKFLOW_STATE_NEW
+    self.workflow_state ||= WORKFLOW_STATE_NEW
   end
 
   ##
@@ -112,6 +112,14 @@ class Globus::Export < ApplicationRecord
     raise e
   end
 
+  def url
+    if self.workflow_state == WORKFLOW_STATE_COMPLETE
+      u = URI(self.class.globus_base_url)
+      u.query = URI.encode_www_form(origin_id: self.class.globus_export_origin_id, origin_path: "/#{dataset_id}/")
+      u.to_s
+    end
+  end
+
   # The base url of the globus file manager
   def self.globus_base_url
     ENV['GLOBUS_BASE_URL'] || "https://app.globus.org/file-manager"
@@ -128,9 +136,8 @@ class Globus::Export < ApplicationRecord
   # @example
   #   https://app.globus.org/file-manager?origin_id=b69b1552-13c8-11eb-81b3-0e2f230cc907&origin_path=%2F7s75dd04w%2F
   def self.url_for(dataset_id)
-    u = URI(self.globus_base_url)
-    u.query = URI.encode_www_form(origin_id: self.globus_export_origin_id, origin_path: "/#{dataset_id}/")
-    u.to_s
+    ge = Globus::Export.find_by(dataset_id: dataset_id)
+    ge.url if ge
   end
 
 
