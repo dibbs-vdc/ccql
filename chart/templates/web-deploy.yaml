@@ -35,7 +35,7 @@ spec:
         - name: shared
           persistentVolumeClaim:
             claimName: {{ template "app.rails-env.name" . }}-shared
-            - name: efs
+        - name: efs
           persistentVolumeClaim:
             claimName: efs2
       containers:
@@ -56,7 +56,7 @@ spec:
             - mountPath: /home/app/webapp/tmp/uploads
               name: shared
               subPath: upload_path
-              - mountPath: /home/app/webapp/public/globus
+            - mountPath: /home/app/webapp/public/globus
               name: efs
               subPath: example-pv/globus
             - mountPath: /home/app/webapp/public/uploads

@@ -25,8 +25,8 @@ fi
 
 if [[ $PASSENGER_APP_ENV == "production" ]] || [[ $PASSENGER_APP_ENV == "staging" ]]
 then
-    /bin/bash -l -c 'chown -R app:app /home/app/webapp/tmp' # mounted volume may have wrong permissions
-    /bin/bash -l -c 'chown -R app:app /home/app/webapp/public' # mounted volume may have wrong permissions
+    /bin/bash -l -c 'chown app:app /home/app/webapp/tmp' # mounted volume may have wrong permissions
+    /bin/bash -l -c 'chown app:app /home/app/webapp/public' # mounted volume may have wrong permissions
     /sbin/setuser app /bin/bash -l -c 'cd /home/app/webapp && bundle exec rake db:migrate'
     # copy new assets over to volume
     if [ -d /home/app/webapp/public/assets-new ]; then
