@@ -40,8 +40,7 @@ class Globus::Export < ApplicationRecord
   # @param dataset_id [String] the id of the Dataset to check
   def self.ready_for_globus?(dataset_id)
      ge = Globus::Export.find_by(dataset_id: dataset_id)
-     return false if ge.nil?
-     return true if ge.expected_file_sets.uniq.sort == ge.completed_file_sets.uniq.sort
+     return true if ge && ge.ready_for_globus?
      false
   end
 
@@ -54,10 +53,24 @@ class Globus::Export < ApplicationRecord
     end
   end
 
+  def self.file_set_added(file_set)
+    file_set.member_of.each do |concern|
+      ge = Globus::Export.find_or_create_by(dataset_id: concern.id)
+      return true if ge.expected_file_sets.include?(file_set.id)
+      ge.expected_file_sets << file_set.id
+      ge.save!
+    end
+  end
+
   ##
   # When a new object is created, set its workflow state to new
   def initialize_workflow
-    self.workflow_state = WORKFLOW_STATE_NEW
+    self.workflow_state ||= WORKFLOW_STATE_NEW
+  end
+
+  def ready_for_globus?
+    return true if self.expected_file_sets.uniq.sort == self.completed_file_sets.uniq.sort
+    false
   end
 
   ##
@@ -112,6 +125,14 @@ class Globus::Export < ApplicationRecord
     raise e
   end
 
+  def url
+    if self.workflow_state == WORKFLOW_STATE_COMPLETE
+      u = URI(self.class.globus_base_url)
+      u.query = URI.encode_www_form(origin_id: self.class.globus_export_origin_id, origin_path: "/#{dataset_id}/")
+      u.to_s
+    end
+  end
+
   # The base url of the globus file manager
   def self.globus_base_url
     ENV['GLOBUS_BASE_URL'] || "https://app.globus.org/file-manager"
@@ -128,9 +149,8 @@ class Globus::Export < ApplicationRecord
   # @example
   #   https://app.globus.org/file-manager?origin_id=b69b1552-13c8-11eb-81b3-0e2f230cc907&origin_path=%2F7s75dd04w%2F
   def self.url_for(dataset_id)
-    u = URI(self.globus_base_url)
-    u.query = URI.encode_www_form(origin_id: self.globus_export_origin_id, origin_path: "/#{dataset_id}/")
-    u.to_s
+    ge = Globus::Export.find_by(dataset_id: dataset_id)
+    ge.url if ge
   end
 
 
