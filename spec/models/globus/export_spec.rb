@@ -91,7 +91,7 @@ RSpec.describe Globus::Export, globus: true do
     context "#url_for" do
       it "gets the Globus url for a given dataset" do
         url = "https://app.globus.org/file-manager?origin_id=FAKE_ORIGIN_ID&origin_path=%2F#{dataset.id}%2F"
-        expect(described_class.url_for(dataset.id)).to eq url
+        expect(described_class.url_for(export.dataset_id)).to eq url
       end
     end
   end
