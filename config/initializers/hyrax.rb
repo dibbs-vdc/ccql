@@ -217,7 +217,7 @@ Hyrax.config do |config|
   config.uploader = {
     limitConcurrentUploads: 6,
     maxNumberOfFiles: 100,
-    maxFileSize: 1e+9.to_i # 1.gigabytes
+    maxFileSize: 20e+9.to_i # 1.gigabytes
   }
 end
 
