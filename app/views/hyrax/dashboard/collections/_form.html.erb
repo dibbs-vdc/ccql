@@ -1,6 +1,6 @@
 <!-- Hyrax 2.5 override to render new collection_form_progress partial -->
   <div class="row">
-    <%= simple_form_for @form, url: [hyrax, :dashboard, @form], html: { class: 'editor' } do |f| %>
+    <%= simple_form_for @form, url: [hyrax, :dashboard, @form], html: { class: 'editor', data: { behavior: 'collection-form'}} do |f| %>
       <div class="col-xs-12 col-sm-8">
         <div class="panel panel-default tabs" role="main">
           <ul class="nav nav-tabs" role="tablist">
