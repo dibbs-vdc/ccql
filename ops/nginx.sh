@@ -34,4 +34,7 @@ then
     fi
 fi
 
+/sbin/setuser app /bin/bash -l -c 'mkdir -p /home/app/webapp/public/globus'
+/sbin/setuser app /bin/bash -l -c 'mkdir -p /home/app/webapp/tmp/import'
+
 exec /usr/sbin/nginx
