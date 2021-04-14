@@ -117,7 +117,13 @@ Hyrax.config do |config|
   config.banner_image = 'vdc-logo.png'
   ## Whitelist all directories which can be used to ingest from the local file
   # system.
-  config.whitelisted_ingest_dirs = []
+  # Browse Everything Requirements
+  file_system_dirs = Array.wrap(BrowseEverything.config['file_system'].try(:[], :home)).compact
+  # Include the Rails tmp directory for cases where the BrowseEverything provider is required to download the file to a temporary directory first
+  tmp_dir = [Rails.root.join('tmp').to_s]
+  globus_dir = [ENV['GLOBUS_EXPORT_PATH']]
+
+  config.whitelisted_ingest_dirs = file_system_dirs + tmp_dir + globus_dir
 
   unless Rails.env == 'production'
     config.whitelisted_ingest_dirs <<
