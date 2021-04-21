@@ -149,7 +149,7 @@ Hyrax.config do |config|
   # Location on local file system where uploaded files will be staged
   # prior to being ingested into the repository or having derivatives generated.
   # If you use a multi-server architecture, this MUST be a shared volume.
-  # config.working_path = Rails.root.join( 'tmp', 'uploads')
+  config.working_path = ENV['UPLOAD_PATH']
 
   # Should the media display partial render a download link?
   # config.display_media_download_link = true
