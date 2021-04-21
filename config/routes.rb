@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     get   '/users/cancel', to: 'vdc/registrations#cancel', as: :cancel_user_registration
   end
 
-  authenticate :user, ->(user) { user.admin? } do
+  authenticate :user, ->(user) { user.groups.include?("admin") } do
     mount Sidekiq::Web => '/sidekiq'
   end
 
