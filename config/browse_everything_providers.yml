@@ -10,7 +10,7 @@ globus:
 dropbox:
   client_id: <%= ENV['DROPBOX_APP_KEY'] %>
   client_secret: <%= ENV['DROPBOX_APP_SECRET'] %>
-  download_directory: tmp/
+  download_directory: tmp/uploads/
 <% end %>
 <% if ENV['BOX_CLIENT_ID'].present? %>
 box:
