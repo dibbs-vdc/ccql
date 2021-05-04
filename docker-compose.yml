@@ -33,6 +33,7 @@ services:
       - .:/home/app/webapp:cached
       - app:/home/app/webapp/tmp/uploads
       - assets:/home/app/webapp/public/assets
+      - node_modules:/home/app/webapp/node_modules
       - rails_cache:/home/app/webapp/tmp/cache
 
   worker:
@@ -67,6 +68,9 @@ services:
       dockerfile: Dockerfile.solr
     ports:
       - "8983"
+    environment:
+      VIRTUAL_HOST: solr.vdc.docker
+      VIRTUAL_PORT: 8983
     volumes:
       - .:/app
       - './solr/config:/opt/config'
@@ -101,3 +105,4 @@ volumes:
   mysql:
   rails_cache:
   redis:
+  node_modules:

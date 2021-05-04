@@ -3,12 +3,14 @@
 # The file_system provider can be a path to any directory on the server where your application is running.
 #
 file_system:
-  home: /home/app/webapp
+  home: /home/app/webapp/tmp/import
+globus:
+  home: /home/app/webapp/public/globus
 <% if ENV['DROPBOX_APP_KEY'].present? %>
 dropbox:
   client_id: <%= ENV['DROPBOX_APP_KEY'] %>
   client_secret: <%= ENV['DROPBOX_APP_SECRET'] %>
-  download_directory: tmp/
+  download_directory: tmp/uploads/
 <% end %>
 <% if ENV['BOX_CLIENT_ID'].present? %>
 box:

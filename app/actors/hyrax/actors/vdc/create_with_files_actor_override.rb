@@ -51,7 +51,7 @@ module Hyrax
             true
           end
 
-          # Fetch readme_file from the database                                                                                                                             
+          # Fetch readme_file from the database
           def readme_file(readme_file_id)
             return nil if readme_file_id.nil?
             readme_file = UploadedFile.find(readme_file_id)

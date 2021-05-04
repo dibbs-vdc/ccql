@@ -117,7 +117,13 @@ Hyrax.config do |config|
   config.banner_image = 'vdc-logo.png'
   ## Whitelist all directories which can be used to ingest from the local file
   # system.
-  config.whitelisted_ingest_dirs = []
+  # Browse Everything Requirements
+  file_system_dirs = Array.wrap(BrowseEverything.config['file_system'].try(:[], :home)).compact
+  # Include the Rails tmp directory for cases where the BrowseEverything provider is required to download the file to a temporary directory first
+  tmp_dir = [Rails.root.join('tmp').to_s]
+  globus_dir = [ENV['GLOBUS_EXPORT_PATH']]
+
+  config.whitelisted_ingest_dirs = file_system_dirs + tmp_dir + globus_dir
 
   unless Rails.env == 'production'
     config.whitelisted_ingest_dirs <<
@@ -149,7 +155,7 @@ Hyrax.config do |config|
   # Location on local file system where uploaded files will be staged
   # prior to being ingested into the repository or having derivatives generated.
   # If you use a multi-server architecture, this MUST be a shared volume.
-  # config.working_path = Rails.root.join( 'tmp', 'uploads')
+  config.working_path = ENV['UPLOAD_PATH']
 
   # Should the media display partial render a download link?
   # config.display_media_download_link = true
@@ -217,7 +223,7 @@ Hyrax.config do |config|
   config.uploader = {
     limitConcurrentUploads: 6,
     maxNumberOfFiles: 100,
-    maxFileSize: 1e+9.to_i # 1.gigabytes
+    maxFileSize: 20e+9.to_i # 20 GB 4.6 GB
   }
 end
 

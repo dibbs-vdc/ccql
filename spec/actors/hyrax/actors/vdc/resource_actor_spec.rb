@@ -64,6 +64,9 @@ RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
       let(:globus_export) { Globus::Export.find_by(dataset_id: env.curation_concern.id) }
       before do
         actor.create(env)
+        env.curation_concern.file_sets.each do |fs|
+          Hyrax.config.callback.run(:after_create_fileset, fs, user)
+        end
       end
       it "adds the fileset ids to a Globus::Export object" do
         expect(file_set_ids.size).to eq 2
@@ -128,6 +131,9 @@ RSpec.describe Hyrax::Actors::Vdc::ResourceActor do
             expect(ge).to be_persisted
             expect(ge.expected_file_sets).to be_empty
             actor.update(env)
+            env.curation_concern.file_sets.each do |fs|
+              Hyrax.config.callback.run(:after_create_fileset, fs, user)
+            end
             post_actor_stack_ge = Globus::Export.find_by(dataset_id: model.id)
             expect(file_set_ids.size).to eq 2
             expect(post_actor_stack_ge.id).to eq ge.id

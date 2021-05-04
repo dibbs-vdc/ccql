@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_190136) do
+ActiveRecord::Schema.define(version: 2021_04_21_160805) do
 
   create_table "bookmarks", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(version: 2021_02_11_190136) do
     t.string "workflow_state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "expected_file_sets"
-    t.string "completed_file_sets"
+    t.text "expected_file_sets"
+    t.text "completed_file_sets"
     t.index ["dataset_id"], name: "index_globus_exports_on_dataset_id", unique: true
   end
 
