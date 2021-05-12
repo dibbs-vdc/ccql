@@ -11,6 +11,7 @@ namespace :hyrax do
         user.identifier_system = nil
         user.save
       end
+      Sipity::Workflow.destroy_all
       # we need to wait till Fedora is done with its cleanup
       # otherwise creating the admin set will fail
       while AdminSet.exists?(AdminSet::DEFAULT_ID)
