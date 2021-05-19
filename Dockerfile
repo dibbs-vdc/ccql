@@ -1,4 +1,4 @@
-FROM registry.gitlab.com/notch8/dev-ops/samvera:v1.1.0
+FROM registry.gitlab.com/notch8/docker-images/samvera:v1.1.0
 
 RUN echo 'Extra Packages' && \
     apt-get update -qq && \
