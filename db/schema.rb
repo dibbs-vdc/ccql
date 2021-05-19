@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_160805) do
+ActiveRecord::Schema.define(version: 2021_05_19_171652) do
 
   create_table "bookmarks", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -573,6 +573,8 @@ ActiveRecord::Schema.define(version: 2021_04_21_160805) do
     t.string "identifier_system"
     t.boolean "approved", default: false, null: false
     t.string "preferred_locale"
+    t.string "provider"
+    t.string "uid"
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
