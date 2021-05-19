@@ -9,10 +9,14 @@ RSpec.describe 'User login', :clean, type: feature do
   scenario 'with approved user' do
     visit new_user_session_path
 
+    click_button 'Manual Sign In'
+
     page.fill_in 'Email', with: approved_user.email
     page.fill_in 'Password', with: 'testing123'
 
-    click_button 'Log in'
+    within 'div#direct_login' do
+      click_button 'Sign in'
+    end
 
     expect(page.current_path).to eq "/dashboard/profiles/#{approved_user.email.gsub('.com', '-dot-com')}"
   end
@@ -20,10 +24,14 @@ RSpec.describe 'User login', :clean, type: feature do
   scenario 'with unapproved user' do
     visit new_user_session_path
 
+    click_button 'Manual Sign In'
+
     page.fill_in 'Email', with: not_approved_user.email
     page.fill_in 'Password', with: 'testing123'
 
-    click_button 'Log in'
+    within 'div#direct_login' do
+      click_button 'Sign in'
+    end
 
     expect(page.current_path).to eq '/users/sign_in'
     expect(page).to have_content(I18n.t('devise.failure.not_approved'))
