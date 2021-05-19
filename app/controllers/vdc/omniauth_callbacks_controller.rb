@@ -21,7 +21,7 @@ class Vdc::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication # this will throw if @user is not activated
     else
       session["devise.openid_connect_data"] = request.env["omniauth.auth"].except(:extra) # removing extra as it can overflow some session stores
-      redirect_to new_user_registration_url, notice: 'Please registry and wait for approval before using CILogin'
+      redirect_to new_user_registration_url, notice: 'Please register and wait for approval before using CILogin'
     end
   end
 
