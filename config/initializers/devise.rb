@@ -256,9 +256,25 @@ Devise.setup do |config|
   config.omniauth :shibboleth, {:uid_field => 'eppn',
   :info_fields => {:email => 'mail', :name => 'cn', :last_name => 'sn'},
   :extra_fields => [:schacHomeOrganization],
-  :request_type => :header 
+  :request_type => :header
   }
 
+  config.omniauth :openid_connect, {
+    name: :openid_connect,
+    scope: [:openid, :email, :profile],
+    response_type: :code,
+    discovery: true,
+    issuer: "https://cilogon.org",
+    uid_field: "sub",
+    client_options: {
+      port: 443,
+      scheme: "https",
+      host: "cilogon.org",
+      identifier: ENV["OP_CLIENT_ID"],
+      secret: ENV["OP_SECRET_KEY"],
+      redirect_uri: "#{ENV['APP_URL']}/users/auth/openid_connect/callback"
+    },
+  }
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
