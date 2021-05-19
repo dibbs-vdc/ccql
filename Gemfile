@@ -26,6 +26,7 @@ gem 'launchy', group: %i[test]
 gem 'listen', '~> 3.0.5', group: %i[development]
 gem 'mysql2'
 gem 'omniauth-shibboleth'
+gem 'omniauth_openid_connect'
 gem 'pry-rails', group: %i[development test]
 gem 'puma', '~> 3.0'
 gem 'qa'
