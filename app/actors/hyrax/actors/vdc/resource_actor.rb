@@ -27,7 +27,7 @@ module Hyrax
         end
 
         def update_creation_date(env)
-          visibility = env.attributes[:visibility] 
+          visibility = env.attributes[:visibility]
           original_visibility = ::Vdc::Resource.find(env.curation_concern.id).visibility
           if (visibility == PUBLIC || visibility == VDC) && original_visibility == PRIVATE
             env.curation_concern.creation_date = [Hyrax::TimeService.time_in_utc.strftime('%Y-%m-%d')]
@@ -37,7 +37,7 @@ module Hyrax
         def post_processing(env)
           # NOTE: This actor seems to do post-processing BEFORE the uploaded files have
           #       been processed. So, I'm adding processing that doesn't depend on
-          #       information on its members (like, getting the number of files and mime 
+          #       information on its members (like, getting the number of files and mime
           #       infomration.
           # TODO: Consider putting this in the controller post-processing?
           env.curation_concern.funder = env.attributes[:funder]

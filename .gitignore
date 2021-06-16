@@ -16,6 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+fits.log
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -24,6 +25,6 @@
 /public/assets/*
 /public/uploads/*
 
-# Ignore dotenv developement file
-/.env.development
+# Ignore dotenv development file
+.env.development
 .env.production

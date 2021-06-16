@@ -53,7 +53,7 @@ Hyrax.config do |config|
   # config.persistent_hostpath = 'http://localhost/files/'
 
   # If you have ffmpeg installed and want to transcode audio and video uncomment this line
-  # config.enable_ffmpeg = true
+  config.enable_ffmpeg = true
 
   # Hyrax uses NOIDs for files and collections instead of Fedora UUIDs
   # where NOID = 10-character string and UUID = 32-character string w/ hyphens
@@ -117,7 +117,13 @@ Hyrax.config do |config|
   config.banner_image = 'vdc-logo.png'
   ## Whitelist all directories which can be used to ingest from the local file
   # system.
-  config.whitelisted_ingest_dirs = []
+  # Browse Everything Requirements
+  file_system_dirs = Array.wrap(BrowseEverything.config['file_system'].try(:[], :home)).compact
+  # Include the Rails tmp directory for cases where the BrowseEverything provider is required to download the file to a temporary directory first
+  tmp_dir = [Rails.root.join('tmp').to_s]
+  globus_dir = [ENV['GLOBUS_EXPORT_PATH']]
+
+  config.whitelisted_ingest_dirs = file_system_dirs + tmp_dir + globus_dir
 
   unless Rails.env == 'production'
     config.whitelisted_ingest_dirs <<
@@ -125,13 +131,19 @@ Hyrax.config do |config|
   end
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
-  # These must be lambdas that return a Pathname. Can be configured separately
-  #  config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
+  # # These must be lambdas that return a Pathname. Can be configured separately
+  # config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
   #  config.cache_path = ->() { Rails.root + 'tmp' + 'uploads' + 'cache' }
+
+  # Configure upload_path via environment variables
+  config.upload_path = ->() { ENV['UPLOAD_PATH'] }
 
   # Location on local file system where derivatives will be stored
   # If you use a multi-server architecture, this MUST be a shared volume
   # config.derivatives_path = Rails.root.join('tmp', 'derivatives')
+
+  # Configure derivatives_path via environment variables
+  config.derivatives_path = ENV['DERIVATIVES_PATH']
 
   # Should schema.org microdata be displayed?
   # config.display_microdata = true
@@ -143,7 +155,7 @@ Hyrax.config do |config|
   # Location on local file system where uploaded files will be staged
   # prior to being ingested into the repository or having derivatives generated.
   # If you use a multi-server architecture, this MUST be a shared volume.
-  # config.working_path = Rails.root.join( 'tmp', 'uploads')
+  config.working_path = ENV['UPLOAD_PATH']
 
   # Should the media display partial render a download link?
   # config.display_media_download_link = true
@@ -163,7 +175,7 @@ Hyrax.config do |config|
   # config.model_to_create = ->(_attributes) { Hyrax.primary_work_type.model_name.name }
 
   # Path to the ffmpeg tool
-  # config.ffmpeg_path = 'ffmpeg'
+  config.ffmpeg_path = '/usr/bin/ffmpeg'
 
   # Max length of FITS messages to display in UI
   # config.fits_message_length = 5
@@ -211,7 +223,7 @@ Hyrax.config do |config|
   config.uploader = {
     limitConcurrentUploads: 6,
     maxNumberOfFiles: 100,
-    maxFileSize: 1e+9.to_i # 1.gigabytes
+    maxFileSize: 20e+9.to_i # 20 GB 4.6 GB
   }
 end
 

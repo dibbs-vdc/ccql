@@ -19,6 +19,7 @@
 <%= presenter.attribute_to_html(:relation_type) %>
 <%= presenter.attribute_to_html(:relation_uri) %>
 <%= presenter.attribute_to_html(:readme_abstract) %>
+<%= presenter.attribute_to_html(:globus_url, render_as: :external_link) %>
 <%= presenter.attribute_to_html(:usage_count) %>
 <%= presenter.attribute_to_html(:usage_purposes) %>
 <%# partial to render for usage_purposes %>

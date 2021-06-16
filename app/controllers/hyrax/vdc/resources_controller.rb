@@ -18,7 +18,7 @@ module Hyrax
         readme_file_ids_from_form = params.fetch(:readme_file_ids_from_form, nil)
         attributes[:funder] = [params["vdc_resource"]["funder"]]
         attributes[:readme_file_ids_from_form] = readme_file_ids_from_form
-        attributes        
+        attributes
       end
     end
 
@@ -43,10 +43,13 @@ module Hyrax
     end
 
     # Post-processing for Create and Update
+    # TODO: This is not going to work as expected most of the time. The files are attached
+    # via background jobs, and chances are good that the background jobs will not have
+    # finished running by the time this method is called.
     def perform_cu_post_processing
-      # Reload to get all fields (including member extracted_text and mime_type) 
+      # Reload to get all fields (including member extracted_text and mime_type)
       # loaded properly
-      curation_concern.reload 
+      curation_concern.reload
 
       set_extent
       set_format
@@ -54,20 +57,26 @@ module Hyrax
       curation_concern.save!
 
       # Reindex the members to get them into solr properly
-      curation_concern.members.each{ |member| member.update_index } 
+      curation_concern.members.each{ |member| member.update_index }
     end
 
     def set_extent
       curation_concern.extent = curation_concern.members.size
     end
 
+    # TODO: This is not going to work as expected most of the time. The files are attached
+    # via background jobs, and chances are good that the background jobs will not have
+    # finished running by the time this method is called.
     def set_format
       unique_formats = Set.new
       curation_concern.members.each do |member|
         unique_formats.add(member.mime_type) if member.respond_to?(:mime_type)
       end
+      return if unique_formats.empty?
       curation_concern.format = unique_formats.to_a
+    rescue ActiveTriples::Relation::ValueError => e
+      Rails.logger.error("Unable to set format for work #{curation_concern.id}: #{e}")
+      return nil
     end
   end
 end
-

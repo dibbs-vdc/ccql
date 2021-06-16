@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Profile buttons and routes", :type => :feature do
+RSpec.describe "Profile buttons and routes", type: feature do
 
   context 'Logged in user on Profile page' do
 

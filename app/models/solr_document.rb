@@ -26,6 +26,10 @@ class SolrDocument
 
   use_extension( Hydra::ContentNegotiation )
 
+  def parent
+    OpenStruct.new(id: self['parent_ssi'])
+  end
+
   def usage_count
     fetch(Solrizer.solr_name('usage_count', :displayable, type: :integer), 0)
   end

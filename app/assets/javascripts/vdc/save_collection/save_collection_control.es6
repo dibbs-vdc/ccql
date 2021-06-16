@@ -51,9 +51,9 @@ export default class SaveCollectionControl {
     }
     this.requiredFields = new RequiredFields(this.form, () => this.formStateChanged())
     this.saveButton = this.element.find(':submit')
-    this.requiredTitle = new ChecklistItem(this.element.find('#collection_title'))
-    this.requiredDepositor = new ChecklistItem(this.element.find('#collection_depositor'))
-    this.requiredSize = new ChecklistItem(this.element.find('#collection_size'))
+    this.requiredTitle = new ChecklistItem(this.element.find('#collection_title_progress'))
+    this.requiredDepositor = new ChecklistItem(this.element.find('#collection_depositor_progress'))
+    this.requiredSize = new ChecklistItem(this.element.find('#collection_size_progress'))
     this.preventSubmit()
     this.watchMultivaluedFields()
     this.formChanged()
@@ -91,36 +91,46 @@ export default class SaveCollectionControl {
     return requiredTitle && requiredDepositor && requiredSize
   }
 
-  checkStatus(id) {
+  // return true if a given element contains a value, otherwise false
+  has_value(id) {
     let element = this.form.find(id)
-    return ($(element).val() === null) || ($(element).val().length < 1)
+    if ($(element).val() === undefined) {
+      return false;
+    }
+    if (element.val().length > 0) {
+      return true;
+    }
+    return false;
   }
 
   validateTitle() {
-    if (!this.checkStatus('#collection_title')) {
+    if (this.has_value('#collection_title')) {
       this.requiredTitle.check()
       return true
+    } else {
+      this.requiredTitle.uncheck()
+      return false
     }
-    this.requiredTitle.uncheck()
-    return false
   }
 
   validateDepositor() {
-    if (!this.checkStatus('#collection_vdc_creator')) {
+    if (this.has_value('#collection_vdc_creator')) {
       this.requiredDepositor.check()
       return true
+    } else {
+      this.requiredDepositor.uncheck()
+      return false
     }
-    this.requiredDepositor.uncheck()
-    return false
   }
 
   validateSize() {
-    if (!this.checkStatus('#collection_collection_size')) {
+    if (this.has_value('#collection_collection_size')) {
       this.requiredSize.check()
       return true
+    } else {
+      this.requiredSize.uncheck()
+      return false
     }
-    this.requiredSize.uncheck()
-    return false
   }
 
   // If someone changes the visibility, updated required fields and fire a formChanged event.

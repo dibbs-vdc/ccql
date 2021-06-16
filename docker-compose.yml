@@ -1,18 +1,10 @@
 version: '2.2'
-services:
-  base:
-    image: "${REGISTRY_HOST}${REGISTRY_URI}/base:latest"
-    build:
-      context: .
-      dockerfile: Dockerfile.base
-    env_file:
-      - .env
-      - .env.development
 
+services:
   main:
     image: "${REGISTRY_HOST}${REGISTRY_URI}:${TAG}"
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
     env_file:
       - .env
@@ -25,14 +17,24 @@ services:
     environment:
       VIRTUAL_HOST: vdc.docker
       VIRTUAL_PORT: 80
+      IN_DOCKER: 'true'
+      HUB_URL: "http://chrome:4444/wd/hub"
     ports:
       - "${DEV_PORT}"
+      - "3010:3010"
     depends_on:
       - redis
       - solr
       - fcrepo
       - mysql
       - worker
+      - chrome
+    volumes:
+      - .:/home/app/webapp:cached
+      - app:/home/app/webapp/tmp/uploads
+      - assets:/home/app/webapp/public/assets
+      - node_modules:/home/app/webapp/node_modules
+      - rails_cache:/home/app/webapp/tmp/cache
 
   worker:
     extends: main
@@ -66,13 +68,17 @@ services:
       dockerfile: Dockerfile.solr
     ports:
       - "8983"
+    environment:
+      VIRTUAL_HOST: solr.vdc.docker
+      VIRTUAL_PORT: 8983
     volumes:
+      - .:/app
       - './solr/config:/opt/config'
-    entrypoint:
-      - docker-entrypoint.sh
-      - solr-precreate
-      - hyrax
-      - /opt/config
+    command:
+      - sh
+      - -c
+      - "precreate-core hyrax_test /opt/config; solr-precreate hyrax /opt/config"
+
 
   fcrepo:
     image: botimer/fcrepo:4.5.1
@@ -81,7 +87,22 @@ services:
     ports:
       - "8984:8080"
 
+  chrome:
+    image: selenium/standalone-chrome-debug:3.141.59-20201010
+    logging:
+      driver: none
+    volumes:
+      - /dev/shm:/dev/shm
+    shm_size: 2G
+    ports:
+      - "4444:4444"
+      - "5959:5900"
+
 volumes:
+  app:
+  assets:
   fcrepo:
   mysql:
+  rails_cache:
   redis:
+  node_modules:

@@ -1,0 +1,9 @@
+dependencies:
+- name: redis
+  repository: https://charts.helm.sh/stable
+  version: 10.5.7
+- name: mariadb
+  repository: https://charts.helm.sh/stable
+  version: 7.3.14
+digest: sha256:a2040c3d3fb1ad0eab52ab86c5a218f423703c114c07e5e418662074d67972c7
+generated: "2021-04-21T11:15:32.221524-07:00"

@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+        mount BrowseEverything::Engine => '/browse'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount Blacklight::Engine => '/'
 
@@ -26,7 +27,10 @@ Rails.application.routes.draw do
     get   '/users/cancel', to: 'vdc/registrations#cancel', as: :cancel_user_registration
   end
 
-  mount Sidekiq::Web => '/sidekiq'
+  authenticate :user, ->(user) { user.groups.include?("admin") } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'
   resources :welcome, only: 'index'
@@ -66,7 +70,7 @@ Hyrax::Engine.routes.draw do
 
   match "/download_cv/:id/", controller: "admin/users", action: "download_cv", via: :get
   get 'download/usage/:id', to: 'downloads#download_usage', as: :download_usage
-  
+
   namespace :vdc do
     resources :usages, only: [:index, :new, :create]
   end

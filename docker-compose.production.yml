@@ -9,6 +9,7 @@ services:
       - 'rails-tmp:/home/app/webapp/tmp'
       - 'rails-assets:/home/app/webapp/public/assets'
     env_file:
+      - .env
       - .env.production
 
   web:
@@ -45,6 +46,7 @@ services:
   mysql:
     image: mysql:5.7
     env_file:
+      - .env
       - .env.production
     ports:
       - '3306:3306'

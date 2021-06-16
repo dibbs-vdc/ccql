@@ -30,6 +30,7 @@ module Ccql
       Hyrax::Statistics::SystemStats.prepend Hyrax::Statistics::Vdc::SystemStatsOverride
       Hyrax::Admin::DashboardPresenter.prepend Hyrax::Admin::Vdc::DashboardPresenterOverride
       Hyrax::Actors::CreateWithFilesActor.prepend Hyrax::Actors::Vdc::CreateWithFilesActorOverride
+      BrowseEverything::Driver.prepend BrowseEverythingOverride
     end
   end
 end

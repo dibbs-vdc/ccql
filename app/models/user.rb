@@ -62,6 +62,11 @@ class User < ApplicationRecord
     end
   end
 
+  def self.from_omniauth(auth)
+    Rails.logger.error("omniauth: #{auth}")
+    find_by(email: auth.info.email)
+  end
+
   validate :validate_organization
   def validate_organization
     #TODO: Should I make 'other' a constant somewhere?

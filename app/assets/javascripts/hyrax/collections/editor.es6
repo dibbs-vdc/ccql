@@ -9,15 +9,17 @@ import SaveCollectionControl from 'vdc/save_collection/save_collection_control'
 // Add search for thumbnail to the edit descriptions
 export default class {
   constructor(elem) {
-    let url =  window.location.pathname.replace('edit', 'files')
-    let field = elem.find('#collection_thumbnail_id')
-    this.thumbnailSelect = new ThumbnailSelect(url, field)
-    tabifyForm(elem.find('form.editor'))
+    if($("form[data-behavior='collection-form']").length > 0) {
+     let url =  window.location.pathname.replace('edit', 'files')
+     let field = elem.find('#collection_thumbnail_id')
+     this.thumbnailSelect = new ThumbnailSelect(url, field)
+     tabifyForm(elem.find('form.editor'))
 
-    let participants = new Participants(elem.find('#participants'))
-    participants.setup()
-    this.autocomplete()
-    new SaveCollectionControl($("#form-progress"))
+      let participants = new Participants(elem.find('#participants'))
+      participants.setup()
+      this.autocomplete()
+      new SaveCollectionControl($("#form-progress"))
+    }
   }
 
   autocomplete() {
