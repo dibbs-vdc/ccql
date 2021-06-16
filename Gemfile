@@ -28,7 +28,7 @@ gem 'mysql2'
 gem 'omniauth-shibboleth'
 gem 'omniauth_openid_connect'
 gem 'pry-rails', group: %i[development test]
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3'
 gem 'qa'
 gem 'rails', '~> 5'
 gem 'redis', '~> 3.0'
