@@ -599,7 +599,8 @@ GEM
       pry (>= 0.10.4)
     public_suffix (4.0.6)
     pul_uv_rails (2.0.1)
-    puma (3.12.0)
+    puma (5.5.1)
+      nio4r (~> 2.0)
     qa (5.5.2)
       activerecord-import
       deprecation
@@ -927,7 +928,7 @@ DEPENDENCIES
   omniauth-shibboleth
   omniauth_openid_connect
   pry-rails
-  puma (~> 3.0)
+  puma (~> 5.5)
   qa
   rails (~> 5)
   redis (~> 3.0)
